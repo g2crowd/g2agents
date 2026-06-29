@@ -1466,9 +1466,9 @@ function DocsView() {
 
 function MetaBlock({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-md border border-border bg-muted/20 p-2">
+    <div className="min-w-0 rounded-md border border-border bg-muted/20 p-2">
       <div className="mono-label">{label}</div>
-      <div className="mt-1 truncate">{value}</div>
+      <div className="mt-1 min-w-0 break-words [overflow-wrap:anywhere]">{value}</div>
     </div>
   )
 }
