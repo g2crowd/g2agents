@@ -1,0 +1,601 @@
+import { useMemo, useState } from 'react'
+import {
+  ArrowUpRight,
+  BadgeCheck,
+  Boxes,
+  Building2,
+  CircleDot,
+  Copy,
+  FileText,
+  Filter,
+  GitBranch,
+  Search,
+  ShieldCheck,
+  Tags,
+} from 'lucide-react'
+import { registry } from '@/data/registry'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { cn } from '@/lib/utils'
+
+type RegistryData = typeof registry
+type CategoryMembership = {
+  category_id: string
+  fit: string
+  source_tier: string
+  reviewed_at?: string
+}
+type ProductFeature = {
+  capability: string
+  status: string
+  evidence: string
+  notes: string
+}
+type Product = {
+  slug: string
+  path: string
+  title: string
+  description: string
+  vendorId: string
+  displayCategory: string
+  categoryMemberships: CategoryMembership[]
+  sourceTier: string
+  owner: string
+  claimPolicy: string
+  resource: string
+  rank: number
+  rating: string
+  reviewCount: number
+  observedAt: string
+  expiresAt: string
+  profile: string
+  buyerFit: string
+  strengths: string[]
+  cautions: string[]
+  features: ProductFeature[]
+  pricingSignal: string
+  files: Array<{ name: string; path: string }>
+}
+type Category = {
+  slug: string
+  path: string
+  title: string
+  description: string
+  sourceTier: string
+  parents: string[]
+  children: string[]
+  relatedCategories: string[]
+  status: string
+  resource: string
+  reviewedAt: string
+  expiresAt: string
+  productRows: Array<{
+    rank: string
+    product: string
+    vendor: string
+    fit: string
+    rating: string
+    reviewCount: string
+    segment: string
+  }>
+}
+type Vendor = {
+  slug: string
+  path: string
+  title: string
+  description: string
+  sourceTier: string
+  resource: string
+  products: Array<{ product: string; category: string; fit: string }>
+}
+type Registry = {
+  products: Product[]
+  categories: Category[]
+  vendors: Vendor[]
+  stats: RegistryData['stats']
+}
+
+const registryData = registry as unknown as Registry
+
+const fitOrder = ['all', 'core', 'adjacent', 'partial', 'legacy', 'vendor-claimed', 'disputed'] as const
+const fitLabels: Record<string, string> = {
+  all: 'All',
+  core: 'Core',
+  adjacent: 'Adjacent',
+  partial: 'Partial',
+  legacy: 'Legacy',
+  'vendor-claimed': 'Vendor claimed',
+  disputed: 'Disputed',
+}
+
+const sourceTierLabels: Record<string, string> = {
+  'g2-curated': 'G2 curated',
+  'vendor-attested': 'Vendor',
+  'review-derived': 'Reviews',
+  'public-cited': 'Public cited',
+  'agent-inferred': 'Agent inferred',
+  mixed: 'Mixed',
+}
+
+function cleanMarkdownLink(value: string) {
+  return value.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+}
+
+function getFit(product: Product) {
+  return product.categoryMemberships[0]?.fit || 'unknown'
+}
+
+function fitVariant(fit: string) {
+  if (fit === 'core') return 'core'
+  if (fit === 'adjacent') return 'adjacent'
+  if (fit === 'partial') return 'partial'
+  return 'muted'
+}
+
+function formatCount(value: number) {
+  return new Intl.NumberFormat('en-US').format(value)
+}
+
+function Stat({ label, value }: { label: string; value: string | number }) {
+  return (
+    <div className="border-l border-border pl-3">
+      <div className="mono-label">{label}</div>
+      <div className="mt-1 text-xl font-semibold leading-none">{value}</div>
+    </div>
+  )
+}
+
+function SourceBadge({ tier }: { tier: string }) {
+  return <Badge variant="outline">{sourceTierLabels[tier] || tier || 'Unknown'}</Badge>
+}
+
+function ProductTable({
+  products,
+  selected,
+  onSelect,
+}: {
+  products: Product[]
+  selected: string
+  onSelect: (slug: string) => void
+}) {
+  return (
+    <div className="overflow-auto">
+      <table className="w-full table-fixed border-collapse text-sm">
+        <thead>
+          <tr className="border-b border-border text-left mono-label">
+            <th className="w-12 py-2 pr-3 font-medium">#</th>
+            <th className="py-2 pr-3 font-medium">Product</th>
+            <th className="hidden w-24 py-2 pr-3 font-medium md:table-cell">Fit</th>
+            <th className="hidden w-20 py-2 pr-3 font-medium md:table-cell">Rating</th>
+            <th className="hidden w-24 py-2 pr-3 text-right font-medium md:table-cell">Reviews</th>
+            <th className="hidden w-28 py-2 pr-3 font-medium lg:table-cell">Tier</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => {
+            const active = product.slug === selected
+            const fit = getFit(product)
+            return (
+              <tr
+                key={product.slug}
+                className={cn(
+                  'cursor-pointer border-b border-border/80 transition-colors hover:bg-muted/35',
+                  active && 'bg-muted/55',
+                )}
+                onClick={() => onSelect(product.slug)}
+              >
+                <td className="py-2.5 pr-3 font-mono text-muted-foreground">{product.rank || '-'}</td>
+                <td className="py-2.5 pr-3">
+                  <div className="flex min-w-0 max-w-[calc(100vw-8rem)] items-center gap-2 md:max-w-none">
+                    <div className="truncate font-medium leading-tight">{product.title}</div>
+                    <Badge className="md:hidden" variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>
+                  </div>
+                  <div className="mt-0.5 max-w-[calc(100vw-8rem)] truncate font-mono text-xs text-muted-foreground md:max-w-none">
+                    {product.vendorId} / {product.path}
+                  </div>
+                </td>
+                <td className="hidden py-2.5 pr-3 md:table-cell">
+                  <Badge variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>
+                </td>
+                <td className="hidden py-2.5 pr-3 font-mono text-muted-foreground md:table-cell">{product.rating || '-'}</td>
+                <td className="hidden py-2.5 pr-3 text-right font-mono text-muted-foreground md:table-cell">
+                  {product.reviewCount ? formatCount(product.reviewCount) : '-'}
+                </td>
+                <td className="hidden py-2.5 pr-3 lg:table-cell">
+                  <SourceBadge tier={product.sourceTier} />
+                </td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function ProductDetail({ product, vendor }: { product: Product; vendor?: Vendor }) {
+  const fit = getFit(product)
+
+  return (
+    <section className="dense-panel self-start overflow-hidden">
+      <div className="border-b border-border px-4 py-3">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <div className="flex flex-wrap items-center gap-2">
+              <h2 className="text-lg font-semibold leading-tight">{product.title}</h2>
+              <Badge variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>
+              <SourceBadge tier={product.sourceTier} />
+            </div>
+            <div className="mt-1 font-mono text-xs text-muted-foreground">{product.path}</div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(product.path)}>
+              <Copy className="h-3.5 w-3.5" />
+              Path
+            </Button>
+            {product.resource ? (
+              <Button variant="outline" size="sm" asChild>
+                <a href={product.resource} target="_blank" rel="noreferrer">
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                  G2
+                </a>
+              </Button>
+            ) : null}
+          </div>
+        </div>
+      </div>
+
+      <Tabs defaultValue="overview" className="px-4 py-3">
+        <TabsList>
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="evidence">Evidence</TabsTrigger>
+          <TabsTrigger value="files">Files</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="overview">
+          <div className="grid gap-3 lg:grid-cols-[1fr_220px]">
+            <div className="space-y-3">
+              <div>
+                <div className="mono-label">Profile</div>
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">{product.profile || product.description}</p>
+              </div>
+              <div>
+                <div className="mono-label">Buyer fit</div>
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">{product.buyerFit || 'Not captured yet.'}</p>
+              </div>
+            </div>
+            <dl className="grid grid-cols-2 gap-x-4 gap-y-3 rounded-md border border-border bg-muted/20 p-3 text-sm lg:grid-cols-1">
+              <div>
+                <dt className="mono-label">Vendor</dt>
+                <dd className="mt-1">{vendor?.title || product.vendorId}</dd>
+              </div>
+              <div>
+                <dt className="mono-label">Rating</dt>
+                <dd className="mt-1 font-mono">{product.rating || '-'}</dd>
+              </div>
+              <div>
+                <dt className="mono-label">Reviews</dt>
+                <dd className="mt-1 font-mono">{product.reviewCount ? formatCount(product.reviewCount) : '-'}</dd>
+              </div>
+              <div>
+                <dt className="mono-label">Observed</dt>
+                <dd className="mt-1 font-mono">{product.observedAt || '-'}</dd>
+              </div>
+            </dl>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="evidence">
+          <div className="grid gap-4 lg:grid-cols-2">
+            <SignalList title="Review-derived strengths" items={product.strengths} icon="good" />
+            <SignalList title="Review-derived cautions" items={product.cautions} icon="warn" />
+          </div>
+          <div className="mt-4 overflow-hidden rounded-md border border-border">
+            <table className="w-full min-w-[560px] border-collapse text-sm">
+              <thead>
+                <tr className="border-b border-border bg-muted/20 text-left mono-label">
+                  <th className="px-3 py-2 font-medium">Capability</th>
+                  <th className="px-3 py-2 font-medium">Status</th>
+                  <th className="px-3 py-2 font-medium">Evidence</th>
+                </tr>
+              </thead>
+              <tbody>
+                {product.features.slice(0, 7).map((feature) => (
+                  <tr key={`${product.slug}-${feature.capability}`} className="border-b border-border/80 last:border-0">
+                    <td className="px-3 py-2">{feature.capability}</td>
+                    <td className="px-3 py-2 text-muted-foreground">{feature.status}</td>
+                    <td className="px-3 py-2">
+                      <Badge variant="muted">{feature.evidence}</Badge>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="files">
+          <div className="grid gap-2 sm:grid-cols-2">
+            {product.files.map((file) => (
+              <div key={file.path} className="flex items-center justify-between rounded-md border border-border bg-muted/20 px-3 py-2">
+                <div className="min-w-0">
+                  <div className="truncate text-sm font-medium">{file.name}</div>
+                  <div className="truncate font-mono text-[11px] text-muted-foreground">{file.path}</div>
+                </div>
+                <Button variant="ghost" size="icon" onClick={() => navigator.clipboard.writeText(file.path)}>
+                  <Copy className="h-3.5 w-3.5" />
+                </Button>
+              </div>
+            ))}
+          </div>
+        </TabsContent>
+      </Tabs>
+    </section>
+  )
+}
+
+function SignalList({ title, items, icon }: { title: string; items: readonly string[]; icon: 'good' | 'warn' }) {
+  return (
+    <div className="rounded-md border border-border bg-muted/20 p-3">
+      <div className="flex items-center gap-2 mono-label">
+        {icon === 'good' ? <BadgeCheck className="h-3.5 w-3.5 text-emerald-300" /> : <CircleDot className="h-3.5 w-3.5 text-amber-300" />}
+        {title}
+      </div>
+      <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
+        {(items.length ? items : ['Not captured yet.']).map((item) => (
+          <li key={item} className="flex gap-2">
+            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted-foreground" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+function CategoryView({ categories }: { categories: readonly Category[] }) {
+  return (
+    <div className="grid gap-3 lg:grid-cols-2">
+      {categories.map((category) => (
+        <section key={category.slug} className="dense-panel p-4">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <div className="flex items-center gap-2">
+                <Tags className="h-4 w-4 text-muted-foreground" />
+                <h2 className="font-semibold">{category.title}</h2>
+                <SourceBadge tier={category.sourceTier} />
+              </div>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{category.description}</p>
+            </div>
+            <Badge variant="muted">{category.status || 'draft'}</Badge>
+          </div>
+          <div className="mt-3 grid gap-2 text-sm sm:grid-cols-3">
+            <MetaBlock label="Parents" value={category.parents.join(', ') || '-'} />
+            <MetaBlock label="Children" value={category.children.join(', ') || '-'} />
+            <MetaBlock label="Products" value={String(category.productRows.length)} />
+          </div>
+        </section>
+      ))}
+    </div>
+  )
+}
+
+function VendorView({ vendors }: { vendors: readonly Vendor[] }) {
+  return (
+    <div className="overflow-hidden rounded-md border border-border">
+      <table className="w-full min-w-[680px] border-collapse text-sm">
+        <thead>
+          <tr className="border-b border-border bg-muted/20 text-left mono-label">
+            <th className="px-3 py-2 font-medium">Vendor</th>
+            <th className="px-3 py-2 font-medium">Source</th>
+            <th className="px-3 py-2 font-medium">Products</th>
+            <th className="px-3 py-2 font-medium">Path</th>
+          </tr>
+        </thead>
+        <tbody>
+          {vendors.map((vendor) => (
+            <tr key={vendor.slug} className="border-b border-border/80 last:border-0">
+              <td className="px-3 py-2 font-medium">{vendor.title}</td>
+              <td className="px-3 py-2">
+                <SourceBadge tier={vendor.sourceTier} />
+              </td>
+              <td className="px-3 py-2 text-muted-foreground">{vendor.products.map((product) => cleanMarkdownLink(product.product)).join(', ')}</td>
+              <td className="px-3 py-2 font-mono text-xs text-muted-foreground">{vendor.path}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function DocsView() {
+  const docs = [
+    ['Agent Consumption Guide', 'docs/agent-consumption-guide.md', 'How buyer agents read source tiers, freshness, comparisons, and refusals.'],
+    ['Taxonomy Model', 'docs/taxonomy.md', 'Graph and facet model for categories, capabilities, and buyer context.'],
+    ['Product Folder Contract', 'docs/product-folder-contract.md', 'Required files, ownership, and frontmatter for each product folder.'],
+    ['Governance Model', 'docs/governance.md', 'Vendor PR flow, dispute handling, freshness policy, and CI checks.'],
+    ['Source Tiers', 'docs/source-tiers.md', 'Registry-wide provenance vocabulary for agent-readable claims.'],
+  ] as const
+
+  return (
+    <div className="grid gap-2">
+      {docs.map(([title, path, description]) => (
+        <div key={path} className="flex flex-col gap-2 rounded-md border border-border bg-muted/20 px-3 py-2 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div className="font-medium">{title}</div>
+            <div className="mt-0.5 text-sm text-muted-foreground">{description}</div>
+          </div>
+          <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
+            <FileText className="h-3.5 w-3.5" />
+            {path}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function MetaBlock({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-md border border-border bg-muted/20 p-2">
+      <div className="mono-label">{label}</div>
+      <div className="mt-1 truncate">{value}</div>
+    </div>
+  )
+}
+
+function App() {
+  const products = [...registryData.products].sort((a, b) => {
+    if (!a.rank && !b.rank) return a.title.localeCompare(b.title)
+    if (!a.rank) return 1
+    if (!b.rank) return -1
+    return a.rank - b.rank
+  })
+  const [query, setQuery] = useState('')
+  const [fit, setFit] = useState<(typeof fitOrder)[number]>('all')
+  const [selectedSlug, setSelectedSlug] = useState<string>(products[0]?.slug || '')
+
+  const filteredProducts = useMemo(() => {
+    const normalized = query.trim().toLowerCase()
+    return products.filter((product) => {
+      const productFit = getFit(product)
+      const matchesFit = fit === 'all' || productFit === fit
+      const matchesQuery =
+        !normalized ||
+        [product.title, product.vendorId, product.description, product.profile, product.buyerFit, product.path]
+          .join(' ')
+          .toLowerCase()
+          .includes(normalized)
+      return matchesFit && matchesQuery
+    })
+  }, [fit, products, query])
+
+  const selectedProduct = products.find((product) => product.slug === selectedSlug) || filteredProducts[0] || products[0]
+  const selectedVendor = registryData.vendors.find((vendor) => vendor.slug === selectedProduct?.vendorId)
+
+  return (
+    <div className="min-h-screen bg-background">
+      <header className="sticky top-0 z-40 border-b border-border bg-background/95">
+        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4">
+          <a href="/" className="flex items-center gap-3">
+            <div className="flex h-6 w-6 items-center justify-center border border-foreground text-[10px] font-bold">G2</div>
+            <span className="text-base font-semibold">G2 Agents</span>
+          </a>
+          <nav className="hidden items-center gap-5 text-sm text-muted-foreground sm:flex">
+            <a className="transition-colors hover:text-foreground" href="#products">Products</a>
+            <a className="transition-colors hover:text-foreground" href="#categories">Categories</a>
+            <a className="transition-colors hover:text-foreground" href="#docs">Docs</a>
+            <a className="transition-colors hover:text-foreground" href="https://github.com/g2crowd/g2agents" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main className="mx-auto max-w-7xl overflow-x-hidden px-4 py-4">
+        <section className="grid min-w-0 gap-5 border-b border-border pb-4 lg:grid-cols-[360px_1fr]">
+          <div className="min-w-0">
+            <pre className="select-none overflow-hidden font-mono text-[19px] font-semibold leading-[0.9] text-foreground sm:text-[24px]">
+{` ██████╗ ██████╗
+██╔════╝ ╚════██╗
+██║  ███╗ █████╔╝
+██║   ██║██╔═══╝
+╚██████╔╝███████╗
+ ╚═════╝ ╚══════╝`}
+            </pre>
+            <div className="mt-2 font-mono text-sm uppercase text-foreground">Agent-readable software buying</div>
+          </div>
+          <div className="grid min-w-0 content-start gap-4">
+            <p className="w-[calc(100vw-3rem)] max-w-3xl text-xl leading-tight text-muted-foreground sm:w-auto sm:text-2xl">
+              Browse G2 product knowledge as versioned Markdown: category graph, product dossiers, source tiers, review signals, and vendor claim slots.
+            </p>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <Stat label="Products" value={registryData.stats.products} />
+              <Stat label="Categories" value={registryData.stats.categories} />
+              <Stat label="Vendors" value={registryData.stats.vendors} />
+              <Stat label="Product files" value={registryData.stats.files} />
+            </div>
+          </div>
+        </section>
+
+        <Tabs defaultValue="products" className="mt-4">
+          <div className="flex flex-col gap-3 border-b border-border pb-3 lg:flex-row lg:items-center lg:justify-between">
+            <TabsList>
+              <TabsTrigger value="products">
+                <Boxes className="mr-1.5 h-3.5 w-3.5" />
+                Products
+              </TabsTrigger>
+              <TabsTrigger value="categories">
+                <GitBranch className="mr-1.5 h-3.5 w-3.5" />
+                Categories
+              </TabsTrigger>
+              <TabsTrigger value="vendors">
+                <Building2 className="mr-1.5 h-3.5 w-3.5" />
+                Vendors
+              </TabsTrigger>
+              <TabsTrigger value="docs">
+                <ShieldCheck className="mr-1.5 h-3.5 w-3.5" />
+                Docs
+              </TabsTrigger>
+            </TabsList>
+
+            <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:items-center">
+              <div className="relative min-w-0 sm:min-w-[260px]">
+                <Search className="pointer-events-none absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Input
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="Search products, vendors, files..."
+                  className="pl-8 font-mono"
+                />
+              </div>
+              <div className="flex flex-wrap items-center gap-1.5">
+                <Filter className="h-4 w-4 text-muted-foreground" />
+                {fitOrder.slice(0, 4).map((option) => (
+                  <Button
+                    key={option}
+                    variant={fit === option ? 'secondary' : 'ghost'}
+                    size="sm"
+                    onClick={() => setFit(option)}
+                  >
+                    {fitLabels[option]}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <TabsContent value="products" id="products">
+            <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_520px]">
+              <section className="dense-panel min-w-0 overflow-hidden">
+                <div className="flex items-center justify-between border-b border-border px-3 py-2">
+                  <div className="mono-label">{filteredProducts.length} products</div>
+                  <div className="font-mono text-xs text-muted-foreground">default sort: G2 Score seed</div>
+                </div>
+                <ProductTable products={filteredProducts} selected={selectedProduct?.slug || ''} onSelect={setSelectedSlug} />
+              </section>
+              {selectedProduct ? <ProductDetail product={selectedProduct} vendor={selectedVendor} /> : null}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="categories" id="categories">
+            <CategoryView categories={registryData.categories} />
+          </TabsContent>
+
+          <TabsContent value="vendors">
+            <VendorView vendors={registryData.vendors} />
+          </TabsContent>
+
+          <TabsContent value="docs" id="docs">
+            <DocsView />
+          </TabsContent>
+        </Tabs>
+      </main>
+    </div>
+  )
+}
+
+export default App
