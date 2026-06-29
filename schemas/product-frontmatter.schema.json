@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:g2agents:schemas:product-frontmatter",
+  "title": "G2 Agents Product Frontmatter",
+  "type": "object",
+  "required": [
+    "type",
+    "title",
+    "timestamp",
+    "g2_product_id",
+    "vendor_id",
+    "owner",
+    "source_tier",
+    "claim_policy"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "g2_product_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "vendor_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "primary_category": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      }
+    },
+    "owner": {
+      "enum": ["g2", "vendor", "shared"]
+    },
+    "source_tier": {
+      "enum": [
+        "g2-curated",
+        "vendor-attested",
+        "review-derived",
+        "public-cited",
+        "agent-inferred",
+        "mixed"
+      ]
+    },
+    "claim_policy": {
+      "enum": ["cited", "attested", "synthesis", "none"]
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "dispute_status": {
+      "enum": ["none", "open", "resolved"]
+    },
+    "dispute_reason": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,67 @@
+# g2agents
+
+`g2agents` is a prototype registry for agent-readable software buying knowledge.
+
+The repo follows the spirit of the Open Knowledge Format (OKF): plain Markdown files with YAML frontmatter, organized in git so every product claim can have history, review, attribution, and proposed changes.
+
+## Product thesis
+
+G2 should become the canonical agent-readable trust layer for software buying.
+
+Instead of treating product pages as prose meant only for human browsing, this repo models each software product as a maintained folder of buyer-relevant knowledge:
+
+- neutral G2-curated summaries
+- vendor-attested claims
+- review-derived signals
+- pricing and packaging notes
+- security and compliance posture
+- integrations
+- alternatives and comparison guidance
+- change history
+
+The core idea is not that vendors can edit their G2 pages. The stronger idea is that vendors can submit claims into a governed buying knowledge system, while G2 preserves provenance and trust.
+
+## Repository map
+
+```text
+.
+  index.md
+  log.md
+  docs/
+    agent-consumption-guide.md
+    governance.md
+    product-folder-contract.md
+    source-tiers.md
+  schemas/
+    product-frontmatter.schema.json
+  software/
+    index.md
+    categories/
+      crm/
+        index.md
+    vendors/
+      exampleco/
+        index.md
+    products/
+      example-crm/
+        index.md
+        profile.md
+        vendor-claims.md
+        features.md
+        pricing.md
+        integrations.md
+        security-compliance.md
+        reviews-summary.md
+        alternatives.md
+        log.md
+```
+
+## First milestone
+
+The first proof point is narrow:
+
+> A buyer agent can answer materially better software-selection questions from this repo than from ordinary product web pages, while clearly separating G2-curated facts, vendor claims, and review-derived evidence.
+
+## Current status
+
+This is an initial scaffold. `software/products/example-crm/` is a synthetic fixture used to exercise the format. It is not a real G2 listing.
