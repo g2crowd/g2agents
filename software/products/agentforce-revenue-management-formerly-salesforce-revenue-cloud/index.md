@@ -45,6 +45,7 @@ Agentforce Revenue Management (formerly Salesforce Revenue Cloud) is seeded from
 - [Security and Compliance](security-compliance.md)
 - [Reviews Summary](reviews-summary.md)
 - [Alternatives](alternatives.md)
+- [News](news.md)
 - [Product Log](log.md)
 
 ## Source

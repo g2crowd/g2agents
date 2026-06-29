@@ -93,6 +93,12 @@ function tableRowsFromSection(body, heading) {
     )
 }
 
+function markdownLinkParts(value) {
+  const match = value.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+  if (!match) return { label: value, url: '' }
+  return { label: match[1], url: match[2] }
+}
+
 function productRecord(slug) {
   const dir = path.join(softwareDir, 'products', slug)
   const index = readMarkdown(path.join(dir, 'index.md'))
@@ -106,6 +112,9 @@ function productRecord(slug) {
   const features = fs.existsSync(path.join(dir, 'features.md'))
     ? readMarkdown(path.join(dir, 'features.md'))
     : { frontmatter: {}, body: '' }
+  const news = fs.existsSync(path.join(dir, 'news.md'))
+    ? readMarkdown(path.join(dir, 'news.md'))
+    : { frontmatter: {}, body: '' }
   const files = listMarkdown(dir).map((file) => {
     const markdown = readMarkdown(path.join(dir, file))
     return {
@@ -116,11 +125,12 @@ function productRecord(slug) {
       content: markdown.body,
     }
   })
+  const title = index.frontmatter.title || slug
 
   return {
     slug,
     path: `software/products/${slug}/index.md`,
-    title: index.frontmatter.title || slug,
+    title,
     description: index.frontmatter.description || profile.frontmatter.description || '',
     vendorId: index.frontmatter.vendor_id || '',
     displayCategory: index.frontmatter.display_category || '',
@@ -143,6 +153,19 @@ function productRecord(slug) {
       evidence: row[2] || '',
       notes: row[3] || '',
     })),
+    news: tableRowsFromSection(news.body, 'News log').map((row) => {
+      const source = markdownLinkParts(row[4] || '')
+      return {
+        date: row[0] || '',
+        type: row[1] || '',
+        headline: row[2] || '',
+        buyerRelevance: row[3] || '',
+        sourceLabel: source.label,
+        sourceUrl: source.url,
+        submitter: row[5] || '',
+        status: row[6] || '',
+      }
+    }),
     pricingSignal: tableRowsFromSection(pricing.body, 'Category-page pricing signal').find((row) => row[0] === 'Entry-level price signal')?.[1] || '',
     files,
   }
@@ -202,15 +225,34 @@ const categorySlugs = listDirs(path.join(softwareDir, 'categories')).filter((slu
 const vendorSlugs = listDirs(path.join(softwareDir, 'vendors')).filter((slug) =>
   fs.existsSync(path.join(softwareDir, 'vendors', slug, 'index.md')),
 )
+const products = productSlugs.map(productRecord)
+const news = products
+  .flatMap((product) =>
+    product.news.map((entry) => ({
+      ...entry,
+      productSlug: product.slug,
+      productTitle: product.title,
+      productPath: product.path,
+      vendorId: product.vendorId,
+      category: product.displayCategory,
+    })),
+  )
+  .sort((a, b) => {
+    const dateCompare = String(b.date).localeCompare(String(a.date))
+    if (dateCompare) return dateCompare
+    return String(a.productTitle).localeCompare(String(b.productTitle))
+  })
 
 const registry = {
-  products: productSlugs.map(productRecord),
+  products,
   categories: categorySlugs.map(categoryRecord),
   vendors: vendorSlugs.map(vendorRecord),
+  news,
   stats: {
     products: productSlugs.length,
     categories: categorySlugs.length,
     vendors: vendorSlugs.length,
+    newsItems: news.length,
     files: productSlugs.reduce((count, slug) => count + listMarkdown(path.join(softwareDir, 'products', slug)).length, 0),
   },
 }

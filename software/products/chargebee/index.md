@@ -45,6 +45,7 @@ Chargebee is seeded from the G2 Subscription Billing category page as rank 1 und
 - [Security and Compliance](security-compliance.md)
 - [Reviews Summary](reviews-summary.md)
 - [Alternatives](alternatives.md)
+- [News](news.md)
 - [Product Log](log.md)
 
 ## Source

@@ -20,7 +20,7 @@ Each file should have an owner class:
 | --- | --- | --- |
 | `g2` | G2 controls the editorial judgment. | `profile.md`, `reviews-summary.md`, `alternatives.md` |
 | `vendor` | Vendor can propose or maintain claims, subject to G2 review. | `vendor-claims.md` |
-| `shared` | Vendor can update facts, but G2 reviews evidence and framing. | `features.md`, `pricing.md`, `integrations.md`, `security-compliance.md` |
+| `shared` | Vendor can update facts, but G2 reviews evidence and framing. | `features.md`, `pricing.md`, `integrations.md`, `security-compliance.md`, `news.md` |
 
 ## Source tiers
 
@@ -39,6 +39,7 @@ Minimum policy:
 - PR author identity is associated with the vendor.
 - Changed files are limited to the vendor's product folders unless explicitly approved.
 - Claims include citations or are clearly marked as vendor-attested.
+- News entries include date, type, headline, buyer relevance, source, submitter, and review status.
 - Pricing, security, compliance, and AI-capability claims include `reviewed_at`.
 - G2-owned files require G2 approval.
 - Disputed claims are marked rather than silently removed.
@@ -86,6 +87,7 @@ Recommended default review windows:
 | Pricing and packaging | 90 days |
 | Security and compliance | 180 days |
 | Integrations | 180 days |
+| News entries | Review at submission and after material corrections |
 | Product profile | 365 days |
 | Review summaries | 180 days or after material review-volume change |
 

@@ -45,6 +45,7 @@ PayPal Invoicing is seeded from the G2 Subscription Billing category page as ran
 - [Security and Compliance](security-compliance.md)
 - [Reviews Summary](reviews-summary.md)
 - [Alternatives](alternatives.md)
+- [News](news.md)
 - [Product Log](log.md)
 
 ## Source

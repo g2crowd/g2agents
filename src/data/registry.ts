@@ -41,6 +41,18 @@ export const registry = {
         "customization expertise"
       ],
       "features": [],
+      "news": [
+        {
+          "date": "2026-06-29",
+          "type": "registry-note",
+          "headline": "Initial Subscription Billing dossier seeded",
+          "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+          "sourceLabel": "G2 category",
+          "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+          "submitter": "G2",
+          "status": "accepted"
+        }
+      ],
       "pricingSignal": "Not shown in category listing",
       "files": [
         {
@@ -157,8 +169,8 @@ export const registry = {
             "g2_review_count": 1497,
             "source_observed_at": "2026-06-29"
           },
-          "raw": "---\ntype: G2 Product\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud)\ndescription: Initial seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud) in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Agentforce Revenue Management (formerly Salesforce Revenue Cloud)\n\nAgentforce Revenue Management (formerly Salesforce Revenue Cloud) is seeded from the G2 Subscription Billing category page as rank 7 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
-          "content": "# Agentforce Revenue Management (formerly Salesforce Revenue Cloud)\n\nAgentforce Revenue Management (formerly Salesforce Revenue Cloud) is seeded from the G2 Subscription Billing category page as rank 7 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
+          "raw": "---\ntype: G2 Product\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud)\ndescription: Initial seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud) in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Agentforce Revenue Management (formerly Salesforce Revenue Cloud)\n\nAgentforce Revenue Management (formerly Salesforce Revenue Cloud) is seeded from the G2 Subscription Billing category page as rank 7 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Agentforce Revenue Management (formerly Salesforce Revenue Cloud)\n\nAgentforce Revenue Management (formerly Salesforce Revenue Cloud) is seeded from the G2 Subscription Billing category page as rank 7 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
@@ -237,6 +249,41 @@ export const registry = {
           },
           "raw": "---\ntype: OKF Log\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Product Log\ndescription: Product-level change log for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Agentforce Revenue Management (formerly Salesforce Revenue Cloud) product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 7, review count 1497 from the category listing.\n",
           "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Agentforce Revenue Management (formerly Salesforce Revenue Cloud) product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 7, review count 1497 from the category listing."
+        },
+        {
+          "name": "news.md",
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/news.md",
+          "frontmatter": {
+            "type": "G2 Product News",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud) News",
+            "description": "Dated product news log for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying",
+              "product-news"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews"
+          },
+          "raw": "---\ntype: G2 Product News\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) News\ndescription: Dated product news log for Agentforce Revenue Management (formerly\n  Salesforce Revenue Cloud).\ntags:\n  - subscription-billing\n  - billing\n  - software-buying\n  - product-news\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\n---\n\n# Agentforce Revenue Management (formerly Salesforce Revenue Cloud) News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |\n",
+          "content": "# Agentforce Revenue Management (formerly Salesforce Revenue Cloud) News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |"
         },
         {
           "name": "pricing.md",
@@ -475,6 +522,18 @@ export const registry = {
         "missing features"
       ],
       "features": [],
+      "news": [
+        {
+          "date": "2026-06-29",
+          "type": "registry-note",
+          "headline": "Initial Subscription Billing dossier seeded",
+          "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+          "sourceLabel": "G2 category",
+          "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+          "submitter": "G2",
+          "status": "accepted"
+        }
+      ],
       "pricingSignal": "Free",
       "files": [
         {
@@ -591,8 +650,8 @@ export const registry = {
             "g2_review_count": 961,
             "source_observed_at": "2026-06-29"
           },
-          "raw": "---\ntype: G2 Product\ntitle: Chargebee\ndescription: Initial seed for Chargebee in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Chargebee\n\nChargebee is seeded from the G2 Subscription Billing category page as rank 1 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/chargebee/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
-          "content": "# Chargebee\n\nChargebee is seeded from the G2 Subscription Billing category page as rank 1 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/chargebee/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
+          "raw": "---\ntype: G2 Product\ntitle: Chargebee\ndescription: Initial seed for Chargebee in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Chargebee\n\nChargebee is seeded from the G2 Subscription Billing category page as rank 1 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/chargebee/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Chargebee\n\nChargebee is seeded from the G2 Subscription Billing category page as rank 1 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/chargebee/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
@@ -671,6 +730,41 @@ export const registry = {
           },
           "raw": "---\ntype: OKF Log\ntitle: Chargebee Product Log\ndescription: Product-level change log for Chargebee.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Chargebee product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 1, review count 961 from the category listing.\n",
           "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Chargebee product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 1, review count 961 from the category listing."
+        },
+        {
+          "name": "news.md",
+          "path": "software/products/chargebee/news.md",
+          "frontmatter": {
+            "type": "G2 Product News",
+            "title": "Chargebee News",
+            "description": "Dated product news log for Chargebee.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying",
+              "product-news"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/chargebee/reviews"
+          },
+          "raw": "---\ntype: G2 Product News\ntitle: Chargebee News\ndescription: Dated product news log for Chargebee.\ntags:\n  - subscription-billing\n  - billing\n  - software-buying\n  - product-news\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/chargebee/reviews\n---\n\n# Chargebee News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |\n",
+          "content": "# Chargebee News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |"
         },
         {
           "name": "pricing.md",
@@ -909,6 +1003,18 @@ export const registry = {
         "add-on complexity"
       ],
       "features": [],
+      "news": [
+        {
+          "date": "2026-06-29",
+          "type": "registry-note",
+          "headline": "Initial Subscription Billing dossier seeded",
+          "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+          "sourceLabel": "G2 category",
+          "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+          "submitter": "G2",
+          "status": "accepted"
+        }
+      ],
       "pricingSignal": "Free trial available",
       "files": [
         {
@@ -1025,8 +1131,8 @@ export const registry = {
             "g2_review_count": 829,
             "source_observed_at": "2026-06-29"
           },
-          "raw": "---\ntype: G2 Product\ntitle: Maxio\ndescription: Initial seed for Maxio in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Maxio\n\nMaxio is seeded from the G2 Subscription Billing category page as rank 4 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/maxio/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
-          "content": "# Maxio\n\nMaxio is seeded from the G2 Subscription Billing category page as rank 4 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/maxio/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
+          "raw": "---\ntype: G2 Product\ntitle: Maxio\ndescription: Initial seed for Maxio in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Maxio\n\nMaxio is seeded from the G2 Subscription Billing category page as rank 4 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/maxio/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Maxio\n\nMaxio is seeded from the G2 Subscription Billing category page as rank 4 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/maxio/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
@@ -1105,6 +1211,41 @@ export const registry = {
           },
           "raw": "---\ntype: OKF Log\ntitle: Maxio Product Log\ndescription: Product-level change log for Maxio.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Maxio product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 4, review count 829 from the category listing.\n",
           "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Maxio product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 4, review count 829 from the category listing."
+        },
+        {
+          "name": "news.md",
+          "path": "software/products/maxio/news.md",
+          "frontmatter": {
+            "type": "G2 Product News",
+            "title": "Maxio News",
+            "description": "Dated product news log for Maxio.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying",
+              "product-news"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/maxio/reviews"
+          },
+          "raw": "---\ntype: G2 Product News\ntitle: Maxio News\ndescription: Dated product news log for Maxio.\ntags:\n  - subscription-billing\n  - billing\n  - software-buying\n  - product-news\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/maxio/reviews\n---\n\n# Maxio News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |\n",
+          "content": "# Maxio News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |"
         },
         {
           "name": "pricing.md",
@@ -1343,6 +1484,18 @@ export const registry = {
         "unclear error handling"
       ],
       "features": [],
+      "news": [
+        {
+          "date": "2026-06-29",
+          "type": "registry-note",
+          "headline": "Initial Subscription Billing dossier seeded",
+          "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+          "sourceLabel": "G2 category",
+          "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+          "submitter": "G2",
+          "status": "accepted"
+        }
+      ],
       "pricingSignal": "Not shown in category listing",
       "files": [
         {
@@ -1459,8 +1612,8 @@ export const registry = {
             "g2_review_count": 4677,
             "source_observed_at": "2026-06-29"
           },
-          "raw": "---\ntype: G2 Product\ntitle: NetSuite\ndescription: Initial seed for NetSuite in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# NetSuite\n\nNetSuite is seeded from the G2 Subscription Billing category page as rank 2 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/netsuite/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
-          "content": "# NetSuite\n\nNetSuite is seeded from the G2 Subscription Billing category page as rank 2 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/netsuite/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
+          "raw": "---\ntype: G2 Product\ntitle: NetSuite\ndescription: Initial seed for NetSuite in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# NetSuite\n\nNetSuite is seeded from the G2 Subscription Billing category page as rank 2 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/netsuite/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# NetSuite\n\nNetSuite is seeded from the G2 Subscription Billing category page as rank 2 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/netsuite/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
@@ -1539,6 +1692,41 @@ export const registry = {
           },
           "raw": "---\ntype: OKF Log\ntitle: NetSuite Product Log\ndescription: Product-level change log for NetSuite.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial NetSuite product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 2, review count 4677 from the category listing.\n",
           "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial NetSuite product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 2, review count 4677 from the category listing."
+        },
+        {
+          "name": "news.md",
+          "path": "software/products/netsuite/news.md",
+          "frontmatter": {
+            "type": "G2 Product News",
+            "title": "NetSuite News",
+            "description": "Dated product news log for NetSuite.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying",
+              "product-news"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/netsuite/reviews"
+          },
+          "raw": "---\ntype: G2 Product News\ntitle: NetSuite News\ndescription: Dated product news log for NetSuite.\ntags:\n  - subscription-billing\n  - billing\n  - software-buying\n  - product-news\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/netsuite/reviews\n---\n\n# NetSuite News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |\n",
+          "content": "# NetSuite News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |"
         },
         {
           "name": "pricing.md",
@@ -1777,6 +1965,18 @@ export const registry = {
         "limited data visibility"
       ],
       "features": [],
+      "news": [
+        {
+          "date": "2026-06-29",
+          "type": "registry-note",
+          "headline": "Initial Subscription Billing dossier seeded",
+          "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+          "sourceLabel": "G2 category",
+          "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+          "submitter": "G2",
+          "status": "accepted"
+        }
+      ],
       "pricingSignal": "Pay As You Go",
       "files": [
         {
@@ -1893,8 +2093,8 @@ export const registry = {
             "g2_review_count": 236,
             "source_observed_at": "2026-06-29"
           },
-          "raw": "---\ntype: G2 Product\ntitle: Paddle\ndescription: Initial seed for Paddle in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Paddle\n\nPaddle is seeded from the G2 Subscription Billing category page as rank 5 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paddle/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
-          "content": "# Paddle\n\nPaddle is seeded from the G2 Subscription Billing category page as rank 5 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paddle/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
+          "raw": "---\ntype: G2 Product\ntitle: Paddle\ndescription: Initial seed for Paddle in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Paddle\n\nPaddle is seeded from the G2 Subscription Billing category page as rank 5 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paddle/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Paddle\n\nPaddle is seeded from the G2 Subscription Billing category page as rank 5 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paddle/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
@@ -1973,6 +2173,41 @@ export const registry = {
           },
           "raw": "---\ntype: OKF Log\ntitle: Paddle Product Log\ndescription: Product-level change log for Paddle.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Paddle product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 5, review count 236 from the category listing.\n",
           "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Paddle product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 5, review count 236 from the category listing."
+        },
+        {
+          "name": "news.md",
+          "path": "software/products/paddle/news.md",
+          "frontmatter": {
+            "type": "G2 Product News",
+            "title": "Paddle News",
+            "description": "Dated product news log for Paddle.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying",
+              "product-news"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/paddle/reviews"
+          },
+          "raw": "---\ntype: G2 Product News\ntitle: Paddle News\ndescription: Dated product news log for Paddle.\ntags:\n  - subscription-billing\n  - billing\n  - software-buying\n  - product-news\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/paddle/reviews\n---\n\n# Paddle News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |\n",
+          "content": "# Paddle News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |"
         },
         {
           "name": "pricing.md",
@@ -2211,6 +2446,18 @@ export const registry = {
         "invoicing issues"
       ],
       "features": [],
+      "news": [
+        {
+          "date": "2026-06-29",
+          "type": "registry-note",
+          "headline": "Initial Subscription Billing dossier seeded",
+          "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+          "sourceLabel": "G2 category",
+          "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+          "submitter": "G2",
+          "status": "accepted"
+        }
+      ],
       "pricingSignal": "Pay As You Go",
       "files": [
         {
@@ -2327,8 +2574,8 @@ export const registry = {
             "g2_review_count": 175,
             "source_observed_at": "2026-06-29"
           },
-          "raw": "---\ntype: G2 Product\ntitle: PayPal Invoicing\ndescription: Initial seed for PayPal Invoicing in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# PayPal Invoicing\n\nPayPal Invoicing is seeded from the G2 Subscription Billing category page as rank 6 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paypal-invoicing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
-          "content": "# PayPal Invoicing\n\nPayPal Invoicing is seeded from the G2 Subscription Billing category page as rank 6 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paypal-invoicing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
+          "raw": "---\ntype: G2 Product\ntitle: PayPal Invoicing\ndescription: Initial seed for PayPal Invoicing in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# PayPal Invoicing\n\nPayPal Invoicing is seeded from the G2 Subscription Billing category page as rank 6 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paypal-invoicing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# PayPal Invoicing\n\nPayPal Invoicing is seeded from the G2 Subscription Billing category page as rank 6 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paypal-invoicing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
@@ -2407,6 +2654,41 @@ export const registry = {
           },
           "raw": "---\ntype: OKF Log\ntitle: PayPal Invoicing Product Log\ndescription: Product-level change log for PayPal Invoicing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial PayPal Invoicing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to partial.\n- Added category rank 6, review count 175 from the category listing.\n",
           "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial PayPal Invoicing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to partial.\n- Added category rank 6, review count 175 from the category listing."
+        },
+        {
+          "name": "news.md",
+          "path": "software/products/paypal-invoicing/news.md",
+          "frontmatter": {
+            "type": "G2 Product News",
+            "title": "PayPal Invoicing News",
+            "description": "Dated product news log for PayPal Invoicing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying",
+              "product-news"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews"
+          },
+          "raw": "---\ntype: G2 Product News\ntitle: PayPal Invoicing News\ndescription: Dated product news log for PayPal Invoicing.\ntags:\n  - subscription-billing\n  - billing\n  - software-buying\n  - product-news\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/paypal-invoicing/reviews\n---\n\n# PayPal Invoicing News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |\n",
+          "content": "# PayPal Invoicing News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |"
         },
         {
           "name": "pricing.md",
@@ -2645,6 +2927,18 @@ export const registry = {
         "new-user complexity"
       ],
       "features": [],
+      "news": [
+        {
+          "date": "2026-06-29",
+          "type": "registry-note",
+          "headline": "Initial Subscription Billing dossier seeded",
+          "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+          "sourceLabel": "G2 category",
+          "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+          "submitter": "G2",
+          "status": "accepted"
+        }
+      ],
       "pricingSignal": "Not shown in category listing",
       "files": [
         {
@@ -2761,8 +3055,8 @@ export const registry = {
             "g2_review_count": 4118,
             "source_observed_at": "2026-06-29"
           },
-          "raw": "---\ntype: G2 Product\ntitle: Sage Intacct\ndescription: Initial seed for Sage Intacct in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Sage Intacct\n\nSage Intacct is seeded from the G2 Subscription Billing category page as rank 3 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/sage-intacct/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
-          "content": "# Sage Intacct\n\nSage Intacct is seeded from the G2 Subscription Billing category page as rank 3 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/sage-intacct/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
+          "raw": "---\ntype: G2 Product\ntitle: Sage Intacct\ndescription: Initial seed for Sage Intacct in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Sage Intacct\n\nSage Intacct is seeded from the G2 Subscription Billing category page as rank 3 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/sage-intacct/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Sage Intacct\n\nSage Intacct is seeded from the G2 Subscription Billing category page as rank 3 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/sage-intacct/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
@@ -2841,6 +3135,41 @@ export const registry = {
           },
           "raw": "---\ntype: OKF Log\ntitle: Sage Intacct Product Log\ndescription: Product-level change log for Sage Intacct.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Sage Intacct product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 3, review count 4118 from the category listing.\n",
           "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Sage Intacct product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 3, review count 4118 from the category listing."
+        },
+        {
+          "name": "news.md",
+          "path": "software/products/sage-intacct/news.md",
+          "frontmatter": {
+            "type": "G2 Product News",
+            "title": "Sage Intacct News",
+            "description": "Dated product news log for Sage Intacct.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying",
+              "product-news"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews"
+          },
+          "raw": "---\ntype: G2 Product News\ntitle: Sage Intacct News\ndescription: Dated product news log for Sage Intacct.\ntags:\n  - subscription-billing\n  - billing\n  - software-buying\n  - product-news\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/sage-intacct/reviews\n---\n\n# Sage Intacct News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |\n",
+          "content": "# Sage Intacct News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |"
         },
         {
           "name": "pricing.md",
@@ -3079,6 +3408,18 @@ export const registry = {
         "payment issues"
       ],
       "features": [],
+      "news": [
+        {
+          "date": "2026-06-29",
+          "type": "registry-note",
+          "headline": "Initial Subscription Billing dossier seeded",
+          "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+          "sourceLabel": "G2 category",
+          "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+          "submitter": "G2",
+          "status": "accepted"
+        }
+      ],
       "pricingSignal": "Free",
       "files": [
         {
@@ -3195,8 +3536,8 @@ export const registry = {
             "g2_review_count": 1196,
             "source_observed_at": "2026-06-29"
           },
-          "raw": "---\ntype: G2 Product\ntitle: Square Point of Sale\ndescription: Initial seed for Square Point of Sale in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Square Point of Sale\n\nSquare Point of Sale is seeded from the G2 Subscription Billing category page as rank 10 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/square-point-of-sale/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
-          "content": "# Square Point of Sale\n\nSquare Point of Sale is seeded from the G2 Subscription Billing category page as rank 10 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/square-point-of-sale/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
+          "raw": "---\ntype: G2 Product\ntitle: Square Point of Sale\ndescription: Initial seed for Square Point of Sale in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Square Point of Sale\n\nSquare Point of Sale is seeded from the G2 Subscription Billing category page as rank 10 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/square-point-of-sale/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Square Point of Sale\n\nSquare Point of Sale is seeded from the G2 Subscription Billing category page as rank 10 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/square-point-of-sale/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
@@ -3275,6 +3616,41 @@ export const registry = {
           },
           "raw": "---\ntype: OKF Log\ntitle: Square Point of Sale Product Log\ndescription: Product-level change log for Square Point of Sale.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Square Point of Sale product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to partial.\n- Added category rank 10, review count 1196 from the category listing.\n",
           "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Square Point of Sale product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to partial.\n- Added category rank 10, review count 1196 from the category listing."
+        },
+        {
+          "name": "news.md",
+          "path": "software/products/square-point-of-sale/news.md",
+          "frontmatter": {
+            "type": "G2 Product News",
+            "title": "Square Point of Sale News",
+            "description": "Dated product news log for Square Point of Sale.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying",
+              "product-news"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews"
+          },
+          "raw": "---\ntype: G2 Product News\ntitle: Square Point of Sale News\ndescription: Dated product news log for Square Point of Sale.\ntags:\n  - subscription-billing\n  - billing\n  - software-buying\n  - product-news\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/square-point-of-sale/reviews\n---\n\n# Square Point of Sale News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |\n",
+          "content": "# Square Point of Sale News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |"
         },
         {
           "name": "pricing.md",
@@ -3513,6 +3889,18 @@ export const registry = {
         "high fees"
       ],
       "features": [],
+      "news": [
+        {
+          "date": "2026-06-29",
+          "type": "registry-note",
+          "headline": "Initial Subscription Billing dossier seeded",
+          "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+          "sourceLabel": "G2 category",
+          "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+          "submitter": "G2",
+          "status": "accepted"
+        }
+      ],
       "pricingSignal": "2.9% + 30c per successful charge, as displayed in the category listing",
       "files": [
         {
@@ -3629,8 +4017,8 @@ export const registry = {
             "g2_review_count": 139,
             "source_observed_at": "2026-06-29"
           },
-          "raw": "---\ntype: G2 Product\ntitle: Stripe Billing\ndescription: Initial seed for Stripe Billing in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Stripe Billing\n\nStripe Billing is seeded from the G2 Subscription Billing category page as rank 8 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/stripe-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
-          "content": "# Stripe Billing\n\nStripe Billing is seeded from the G2 Subscription Billing category page as rank 8 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/stripe-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
+          "raw": "---\ntype: G2 Product\ntitle: Stripe Billing\ndescription: Initial seed for Stripe Billing in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Stripe Billing\n\nStripe Billing is seeded from the G2 Subscription Billing category page as rank 8 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/stripe-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Stripe Billing\n\nStripe Billing is seeded from the G2 Subscription Billing category page as rank 8 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/stripe-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
@@ -3709,6 +4097,41 @@ export const registry = {
           },
           "raw": "---\ntype: OKF Log\ntitle: Stripe Billing Product Log\ndescription: Product-level change log for Stripe Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Stripe Billing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 8, review count 139 from the category listing.\n",
           "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Stripe Billing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 8, review count 139 from the category listing."
+        },
+        {
+          "name": "news.md",
+          "path": "software/products/stripe-billing/news.md",
+          "frontmatter": {
+            "type": "G2 Product News",
+            "title": "Stripe Billing News",
+            "description": "Dated product news log for Stripe Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying",
+              "product-news"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews"
+          },
+          "raw": "---\ntype: G2 Product News\ntitle: Stripe Billing News\ndescription: Dated product news log for Stripe Billing.\ntags:\n  - subscription-billing\n  - billing\n  - software-buying\n  - product-news\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/stripe-billing/reviews\n---\n\n# Stripe Billing News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |\n",
+          "content": "# Stripe Billing News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |"
         },
         {
           "name": "pricing.md",
@@ -3947,6 +4370,18 @@ export const registry = {
         "inefficiency"
       ],
       "features": [],
+      "news": [
+        {
+          "date": "2026-06-29",
+          "type": "registry-note",
+          "headline": "Initial Subscription Billing dossier seeded",
+          "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+          "sourceLabel": "G2 category",
+          "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+          "submitter": "G2",
+          "status": "accepted"
+        }
+      ],
       "pricingSignal": "$25.00",
       "files": [
         {
@@ -4063,8 +4498,8 @@ export const registry = {
             "g2_review_count": 45,
             "source_observed_at": "2026-06-29"
           },
-          "raw": "---\ntype: G2 Product\ntitle: Zoho Billing\ndescription: Initial seed for Zoho Billing in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Zoho Billing\n\nZoho Billing is seeded from the G2 Subscription Billing category page as rank 9 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/zoho-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
-          "content": "# Zoho Billing\n\nZoho Billing is seeded from the G2 Subscription Billing category page as rank 9 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/zoho-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
+          "raw": "---\ntype: G2 Product\ntitle: Zoho Billing\ndescription: Initial seed for Zoho Billing in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Zoho Billing\n\nZoho Billing is seeded from the G2 Subscription Billing category page as rank 9 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/zoho-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Zoho Billing\n\nZoho Billing is seeded from the G2 Subscription Billing category page as rank 9 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [News](news.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/zoho-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
@@ -4143,6 +4578,41 @@ export const registry = {
           },
           "raw": "---\ntype: OKF Log\ntitle: Zoho Billing Product Log\ndescription: Product-level change log for Zoho Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Zoho Billing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 9, review count 45 from the category listing.\n",
           "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Zoho Billing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 9, review count 45 from the category listing."
+        },
+        {
+          "name": "news.md",
+          "path": "software/products/zoho-billing/news.md",
+          "frontmatter": {
+            "type": "G2 Product News",
+            "title": "Zoho Billing News",
+            "description": "Dated product news log for Zoho Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying",
+              "product-news"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews"
+          },
+          "raw": "---\ntype: G2 Product News\ntitle: Zoho Billing News\ndescription: Dated product news log for Zoho Billing.\ntags:\n  - subscription-billing\n  - billing\n  - software-buying\n  - product-news\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/zoho-billing/reviews\n---\n\n# Zoho Billing News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |\n",
+          "content": "# Zoho Billing News\n\nNews entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.\n\n## Contributor guidance\n\n- Vendor PR teams may propose entries by opening a pull request against this file.\n- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.\n- Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.\n- G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.\n\n## News log\n\n| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |\n| --- | --- | --- | --- | --- | --- | --- |\n| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |"
         },
         {
           "name": "pricing.md",
@@ -4625,10 +5095,163 @@ export const registry = {
       ]
     }
   ],
+  "news": [
+    {
+      "date": "2026-06-29",
+      "type": "registry-note",
+      "headline": "Initial Subscription Billing dossier seeded",
+      "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+      "sourceLabel": "G2 category",
+      "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+      "submitter": "G2",
+      "status": "accepted",
+      "productSlug": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+      "productTitle": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud)",
+      "productPath": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md",
+      "vendorId": "salesforce",
+      "category": "subscription-billing"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "registry-note",
+      "headline": "Initial Subscription Billing dossier seeded",
+      "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+      "sourceLabel": "G2 category",
+      "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+      "submitter": "G2",
+      "status": "accepted",
+      "productSlug": "chargebee",
+      "productTitle": "Chargebee",
+      "productPath": "software/products/chargebee/index.md",
+      "vendorId": "chargebee",
+      "category": "subscription-billing"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "registry-note",
+      "headline": "Initial Subscription Billing dossier seeded",
+      "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+      "sourceLabel": "G2 category",
+      "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+      "submitter": "G2",
+      "status": "accepted",
+      "productSlug": "maxio",
+      "productTitle": "Maxio",
+      "productPath": "software/products/maxio/index.md",
+      "vendorId": "maxio",
+      "category": "subscription-billing"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "registry-note",
+      "headline": "Initial Subscription Billing dossier seeded",
+      "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+      "sourceLabel": "G2 category",
+      "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+      "submitter": "G2",
+      "status": "accepted",
+      "productSlug": "netsuite",
+      "productTitle": "NetSuite",
+      "productPath": "software/products/netsuite/index.md",
+      "vendorId": "oracle",
+      "category": "subscription-billing"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "registry-note",
+      "headline": "Initial Subscription Billing dossier seeded",
+      "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+      "sourceLabel": "G2 category",
+      "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+      "submitter": "G2",
+      "status": "accepted",
+      "productSlug": "paddle",
+      "productTitle": "Paddle",
+      "productPath": "software/products/paddle/index.md",
+      "vendorId": "paddle",
+      "category": "subscription-billing"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "registry-note",
+      "headline": "Initial Subscription Billing dossier seeded",
+      "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+      "sourceLabel": "G2 category",
+      "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+      "submitter": "G2",
+      "status": "accepted",
+      "productSlug": "paypal-invoicing",
+      "productTitle": "PayPal Invoicing",
+      "productPath": "software/products/paypal-invoicing/index.md",
+      "vendorId": "paypal",
+      "category": "subscription-billing"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "registry-note",
+      "headline": "Initial Subscription Billing dossier seeded",
+      "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+      "sourceLabel": "G2 category",
+      "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+      "submitter": "G2",
+      "status": "accepted",
+      "productSlug": "sage-intacct",
+      "productTitle": "Sage Intacct",
+      "productPath": "software/products/sage-intacct/index.md",
+      "vendorId": "sage-software",
+      "category": "subscription-billing"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "registry-note",
+      "headline": "Initial Subscription Billing dossier seeded",
+      "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+      "sourceLabel": "G2 category",
+      "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+      "submitter": "G2",
+      "status": "accepted",
+      "productSlug": "square-point-of-sale",
+      "productTitle": "Square Point of Sale",
+      "productPath": "software/products/square-point-of-sale/index.md",
+      "vendorId": "block",
+      "category": "subscription-billing"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "registry-note",
+      "headline": "Initial Subscription Billing dossier seeded",
+      "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+      "sourceLabel": "G2 category",
+      "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+      "submitter": "G2",
+      "status": "accepted",
+      "productSlug": "stripe-billing",
+      "productTitle": "Stripe Billing",
+      "productPath": "software/products/stripe-billing/index.md",
+      "vendorId": "stripe",
+      "category": "subscription-billing"
+    },
+    {
+      "date": "2026-06-29",
+      "type": "registry-note",
+      "headline": "Initial Subscription Billing dossier seeded",
+      "buyerRelevance": "Created the initial product news log and dossier slot from the G2 Subscription Billing category seed.",
+      "sourceLabel": "G2 category",
+      "sourceUrl": "https://www.g2.com/categories/subscription-billing",
+      "submitter": "G2",
+      "status": "accepted",
+      "productSlug": "zoho-billing",
+      "productTitle": "Zoho Billing",
+      "productPath": "software/products/zoho-billing/index.md",
+      "vendorId": "zoho",
+      "category": "subscription-billing"
+    }
+  ],
   "stats": {
     "products": 10,
     "categories": 2,
     "vendors": 10,
-    "files": 100
+    "newsItems": 10,
+    "files": 110
   }
 } as const

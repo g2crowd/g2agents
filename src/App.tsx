@@ -14,6 +14,7 @@ import {
   GitBranch,
   Maximize2,
   Minimize2,
+  Newspaper,
   Search,
   ShieldCheck,
   Tags,
@@ -37,6 +38,23 @@ type ProductFeature = {
   status: string
   evidence: string
   notes: string
+}
+type ProductNewsEntry = {
+  date: string
+  type: string
+  headline: string
+  buyerRelevance: string
+  sourceLabel: string
+  sourceUrl: string
+  submitter: string
+  status: string
+}
+type NewsFeedEntry = ProductNewsEntry & {
+  productSlug: string
+  productTitle: string
+  productPath: string
+  vendorId: string
+  category: string
 }
 type ProductFile = {
   name: string
@@ -66,6 +84,7 @@ type Product = {
   strengths: string[]
   cautions: string[]
   features: ProductFeature[]
+  news: ProductNewsEntry[]
   pricingSignal: string
   files: ProductFile[]
 }
@@ -104,6 +123,7 @@ type Registry = {
   products: Product[]
   categories: Category[]
   vendors: Vendor[]
+  news: NewsFeedEntry[]
   stats: RegistryData['stats']
 }
 
@@ -660,12 +680,25 @@ function FileBrowser({ product, mode = 'compact' }: { product: Product; mode?: '
 
 function ProductTabs({ product, vendor, includeFiles = true }: { product: Product; vendor?: Vendor; includeFiles?: boolean }) {
   const fit = getFit(product)
+  const productNews = useMemo(
+    () =>
+      product.news.map((item) => ({
+        ...item,
+        productSlug: product.slug,
+        productTitle: product.title,
+        productPath: product.path,
+        vendorId: product.vendorId,
+        category: product.displayCategory,
+      })),
+    [product],
+  )
 
   return (
     <Tabs defaultValue="overview" className="min-w-0">
       <TabsList>
         <TabsTrigger value="overview">Overview</TabsTrigger>
         <TabsTrigger value="evidence">Evidence</TabsTrigger>
+        <TabsTrigger value="news">News</TabsTrigger>
         {includeFiles ? <TabsTrigger value="files">Files</TabsTrigger> : null}
       </TabsList>
 
@@ -732,6 +765,10 @@ function ProductTabs({ product, vendor, includeFiles = true }: { product: Produc
             </tbody>
           </table>
         </div>
+      </TabsContent>
+
+      <TabsContent value="news">
+        <NewsItems items={productNews} />
       </TabsContent>
 
       {includeFiles ? (
@@ -820,6 +857,98 @@ function SignalList({ title, items, icon }: { title: string; items: readonly str
         ))}
       </ul>
     </div>
+  )
+}
+
+function NewsItems({ items, onOpenProduct }: { items: readonly NewsFeedEntry[]; onOpenProduct?: (slug: string) => void }) {
+  if (!items.length) {
+    return (
+      <div className="dense-panel p-4 text-sm text-muted-foreground">
+        No product news entries match the current filter.
+      </div>
+    )
+  }
+
+  return (
+    <div className="grid gap-3">
+      {items.map((item, index) => (
+        <article key={`${item.productSlug}-${item.date}-${item.headline}-${index}`} className="dense-panel p-4">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="font-mono text-xs text-muted-foreground">{item.date || 'undated'}</div>
+                <Badge variant="muted">{item.type || 'news'}</Badge>
+                <Badge variant={item.status === 'accepted' ? 'core' : 'outline'}>{item.status || 'proposed'}</Badge>
+              </div>
+              <h2 className="mt-2 text-lg font-semibold leading-tight">{item.headline || 'Untitled news item'}</h2>
+              <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">{item.buyerRelevance || 'No buyer relevance summary captured yet.'}</p>
+              <div className="mt-2 flex flex-wrap items-center gap-2 font-mono text-xs text-muted-foreground">
+                <span>{item.productTitle}</span>
+                <span>/</span>
+                <span>{item.vendorId}</span>
+                <span>/</span>
+                <span>{item.category}</span>
+              </div>
+            </div>
+            <div className="flex shrink-0 flex-wrap items-center gap-2">
+              {item.sourceUrl ? (
+                <Button variant="outline" size="sm" asChild>
+                  <a href={item.sourceUrl} target="_blank" rel="noreferrer">
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                    {item.sourceLabel || 'Source'}
+                  </a>
+                </Button>
+              ) : null}
+              {onOpenProduct ? (
+                <Button variant="outline" size="sm" onClick={() => onOpenProduct(item.productSlug)}>
+                  <FileText className="h-3.5 w-3.5" />
+                  Product
+                </Button>
+              ) : null}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  )
+}
+
+function NewsView({
+  news,
+  query,
+  onOpenProduct,
+}: {
+  news: readonly NewsFeedEntry[]
+  query: string
+  onOpenProduct: (slug: string) => void
+}) {
+  const filteredNews = useMemo(() => {
+    const normalized = query.trim().toLowerCase()
+    if (!normalized) return [...news]
+    return news.filter((item) =>
+      [item.date, item.type, item.headline, item.buyerRelevance, item.productTitle, item.vendorId, item.category, item.submitter, item.status]
+        .join(' ')
+        .toLowerCase()
+        .includes(normalized),
+    )
+  }, [news, query])
+
+  return (
+    <section className="grid gap-3">
+      <div className="dense-panel p-4">
+        <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+          <div>
+            <div className="mono-label">Product news feed</div>
+            <h2 className="mt-1 text-xl font-semibold">Buyer-relevant product updates</h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
+              Aggregated from each product folder's <span className="font-mono">news.md</span>. Vendor PR teams can propose rows, and G2 reviews source quality and neutral buyer framing before merge.
+            </p>
+          </div>
+          <div className="font-mono text-xs text-muted-foreground">{filteredNews.length} entries</div>
+        </div>
+      </div>
+      <NewsItems items={filteredNews} onOpenProduct={onOpenProduct} />
+    </section>
   )
 }
 
@@ -926,6 +1055,7 @@ function App() {
   const [fit, setFit] = useState<(typeof fitOrder)[number]>('all')
   const [selectedSlug, setSelectedSlug] = useState<string>(products[0]?.slug || '')
   const [detailExpanded, setDetailExpanded] = useState(false)
+  const [activeTab, setActiveTab] = useState('products')
 
   const filteredProducts = useMemo(() => {
     const normalized = query.trim().toLowerCase()
@@ -944,6 +1074,11 @@ function App() {
 
   const selectedProduct = products.find((product) => product.slug === selectedSlug) || filteredProducts[0] || products[0]
   const selectedVendor = registryData.vendors.find((vendor) => vendor.slug === selectedProduct?.vendorId)
+  const openProduct = (slug: string) => {
+    setSelectedSlug(slug)
+    setDetailExpanded(true)
+    setActiveTab('products')
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -955,6 +1090,7 @@ function App() {
           </a>
           <nav className="hidden items-center gap-5 text-sm text-muted-foreground sm:flex">
             <a className="transition-colors hover:text-foreground" href="#products">Products</a>
+            <a className="transition-colors hover:text-foreground" href="#news">News</a>
             <a className="transition-colors hover:text-foreground" href="#categories">Categories</a>
             <a className="transition-colors hover:text-foreground" href="#docs">Docs</a>
             <a className="transition-colors hover:text-foreground" href="https://github.com/g2crowd/g2agents" target="_blank" rel="noreferrer">
@@ -981,21 +1117,26 @@ function App() {
             <p className="w-[calc(100vw-3rem)] max-w-3xl text-xl leading-tight text-muted-foreground sm:w-auto sm:text-2xl">
               Browse G2 product knowledge as versioned Markdown: category graph, product dossiers, source tiers, review signals, and vendor claim slots.
             </p>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
               <Stat label="Products" value={registryData.stats.products} />
               <Stat label="Categories" value={registryData.stats.categories} />
               <Stat label="Vendors" value={registryData.stats.vendors} />
+              <Stat label="News" value={registryData.stats.newsItems} />
               <Stat label="Product files" value={registryData.stats.files} />
             </div>
           </div>
         </section>
 
-        <Tabs defaultValue="products" className="mt-4">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-4">
           <div className="flex flex-col gap-3 border-b border-border pb-3 lg:flex-row lg:items-center lg:justify-between">
             <TabsList>
               <TabsTrigger value="products">
                 <Boxes className="mr-1.5 h-3.5 w-3.5" />
                 Products
+              </TabsTrigger>
+              <TabsTrigger value="news">
+                <Newspaper className="mr-1.5 h-3.5 w-3.5" />
+                News
               </TabsTrigger>
               <TabsTrigger value="categories">
                 <GitBranch className="mr-1.5 h-3.5 w-3.5" />
@@ -1065,6 +1206,10 @@ function App() {
                 ) : null}
               </div>
             )}
+          </TabsContent>
+
+          <TabsContent value="news" id="news">
+            <NewsView news={registryData.news} query={query} onOpenProduct={openProduct} />
           </TabsContent>
 
           <TabsContent value="categories" id="categories">

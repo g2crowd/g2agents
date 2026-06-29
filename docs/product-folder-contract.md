@@ -31,6 +31,7 @@ The product slug is the durable product identity inside the registry. Do not enc
 | `security-compliance.md` | `shared` | Security, privacy, compliance, and procurement risk notes. |
 | `reviews-summary.md` | `g2` | Review-derived synthesis and user sentiment. |
 | `alternatives.md` | `g2` | Comparison context and neighboring products. |
+| `news.md` | `shared` | Dated product, company, release, security, partnership, funding, and other buyer-relevant news entries. |
 | `log.md` | `g2` | Product-level changes, disputes, and review notes. |
 
 ## Required frontmatter
@@ -103,6 +104,10 @@ This file should be generated or maintained from G2 review evidence. It should n
 ### `alternatives.md`
 
 This file should help buyers understand the choice set. It should not be pay-to-play placement.
+
+### `news.md`
+
+Use this as the product's dated news log. Vendor PR teams may propose rows, but each row should include date, type, headline, buyer relevance, source, submitter, and review status. G2 reviewers should verify the source and keep the buyer relevance field neutral before merge.
 
 ### `log.md`
 
