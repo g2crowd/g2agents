@@ -164,6 +164,7 @@ function productRecord(slug) {
         sourceUrl: source.url,
         submitter: row[5] || '',
         status: row[6] || '',
+        sourceNote: row[7] || '',
       }
     }),
     pricingSignal: tableRowsFromSection(pricing.body, 'Category-page pricing signal').find((row) => row[0] === 'Entry-level price signal')?.[1] || '',

@@ -26,17 +26,19 @@ resource: https://www.g2.com/products/square-point-of-sale/reviews
 
 # Square Point of Sale News
 
-News entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. This file is intended for G2-maintained entries and vendor PR submissions.
+News entries capture dated product, company, pricing, packaging, security, leadership, partnership, funding, acquisition, and other buyer-relevant updates. Registry setup notes and internal maintenance events do not belong in this file.
 
 ## Contributor guidance
 
 - Vendor PR teams may propose entries by opening a pull request against this file.
-- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, and review status.
+- Each entry should include a date, type, headline, buyer relevance, source URL, submitter, review status, and source note.
 - Sources should be public and durable where possible. Press releases, vendor blogs, SEC filings, security advisories, docs changelogs, and reputable news articles are acceptable starting points.
 - G2 maintainers should verify the source, classify provenance, and keep promotional language out of the buyer relevance field before merging.
 
 ## News log
 
-| Date | Type | Headline | Buyer relevance | Source | Submitter | Status |
-| --- | --- | --- | --- | --- | --- | --- |
-| 2026-06-29 | registry-note | Initial Subscription Billing dossier seeded | Created the initial product news log and dossier slot from the G2 Subscription Billing category seed. | [G2 category](https://www.g2.com/categories/subscription-billing) | G2 | accepted |
+| Date | Type | Headline | Buyer relevance | Source | Submitter | Status | Source note |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-06-25 | feature-update | Square ships POS improvements for alerts, variation controls, audio cues, and item grids | Good signal for busy sellers comparing POS speed, staff workflow, and online-order handling. | [Square Feature Log](https://squareup.com/us/en/feature-log) | G2 research | accepted | Official Square changelog with dated POS feature entries. |
+| 2025-05-13 | hardware-launch | Square launches Square Handheld for pocketable POS operations | Important for restaurants and retailers deciding whether Square can support mobile checkout and floor operations. | [Square Press](https://squareup.com/us/en/press/square-handheld) | G2 research | accepted | Official Square product release with specs, use cases, and availability. |
+| 2025-04-24 | product-launch | Square introduces unified Point of Sale app with seven industry modes | Major buyer signal because Square consolidated restaurant, retail, services, bookings, bar, quick-service, and standard POS workflows into one app. | [Square Press](https://squareup.com/us/en/press/single-point-of-sale) | G2 research | accepted | Official Square release with product scope and mode list. |

@@ -48,6 +48,7 @@ type ProductNewsEntry = {
   sourceUrl: string
   submitter: string
   status: string
+  sourceNote: string
 }
 type NewsFeedEntry = ProductNewsEntry & {
   productSlug: string
@@ -899,6 +900,7 @@ function NewsItems({ items, onOpenProduct }: { items: readonly NewsFeedEntry[]; 
               </div>
               <h2 className="mt-2 text-lg font-semibold leading-tight">{item.headline || 'Untitled news item'}</h2>
               <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">{item.buyerRelevance || 'No buyer relevance summary captured yet.'}</p>
+              {item.sourceNote ? <p className="mt-2 max-w-4xl text-xs leading-5 text-muted-foreground">Source: {item.sourceNote}</p> : null}
               <div className="mt-2 flex flex-wrap items-center gap-2 font-mono text-xs text-muted-foreground">
                 <span>{item.productTitle}</span>
                 <span>/</span>
@@ -943,7 +945,7 @@ function NewsView({
     const normalized = query.trim().toLowerCase()
     if (!normalized) return [...news]
     return news.filter((item) =>
-      [item.date, item.type, item.headline, item.buyerRelevance, item.productTitle, item.vendorId, item.category, item.submitter, item.status]
+      [item.date, item.type, item.headline, item.buyerRelevance, item.sourceNote, item.productTitle, item.vendorId, item.category, item.submitter, item.status]
         .join(' ')
         .toLowerCase()
         .includes(normalized),
@@ -958,7 +960,7 @@ function NewsView({
             <div className="mono-label">Product news feed</div>
             <h2 className="mt-1 text-xl font-semibold">Buyer-relevant product updates</h2>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-              Aggregated from each product folder's <span className="font-mono">news.md</span>. Vendor PR teams can propose rows, and G2 reviews source quality and neutral buyer framing before merge.
+              Product launches, feature releases, acquisitions, partnerships, and other sourced updates from each product folder's <span className="font-mono">news.md</span>. Vendor PR teams can propose rows, and G2 reviews source quality and neutral buyer framing before merge.
             </p>
           </div>
           <div className="font-mono text-xs text-muted-foreground">{filteredNews.length} entries</div>
