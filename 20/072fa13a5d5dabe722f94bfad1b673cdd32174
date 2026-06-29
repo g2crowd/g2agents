@@ -1,0 +1,54 @@
+software/categories/subscription-billing/index.md
+  s_fda4ed059e285b::t_f17bba4eb5f156 46-57
+src/App.tsx
+  s_fda4ed059e285b::t_b4b00da880222b 563
+  s_fda4ed059e285b::t_11bea4e3105d5d 795
+  s_fda4ed059e285b::t_d822bde78da6bd 188,207
+  s_fda4ed059e285b::t_9dbf93bd878b3d 186-187,189-201,203-206,208-213
+  s_fda4ed059e285b::t_eb2cb55e73c343 697,811-836
+  s_fda4ed059e285b::t_65c041a7860c9c 230-244,264-266,273-275
+  s_fda4ed059e285b::t_31ead71c6135bb 1,7,10,13,15-16,41-47,70,132-155
+  s_fda4ed059e285b::t_9eb43155feb07c 156,292-524,528,531,534-536,539,541-545,562,564-571
+  s_fda4ed059e285b::t_2943a5c583b661 157
+scripts/build-registry-data.mjs
+  s_fda4ed059e285b::t_4f9c8177c8bfef 109-114,116-118,172-173
+  s_fda4ed059e285b::t_069ee1dafa05e7 13,115
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/log.md
+  s_fda4ed059e285b::t_26639b0288aec5 34
+software/products/chargebee/log.md
+  s_fda4ed059e285b::t_2fa7cee32f25cc 34
+software/products/maxio/log.md
+  s_fda4ed059e285b::t_c9e5f535ba5c07 34
+software/products/netsuite/log.md
+  s_fda4ed059e285b::t_3fac27227930aa 34
+software/products/paddle/log.md
+  s_fda4ed059e285b::t_ba1ac0fd099d4c 34
+software/products/paypal-invoicing/log.md
+  s_fda4ed059e285b::t_6dd897b665e078 34
+software/products/sage-intacct/log.md
+  s_fda4ed059e285b::t_df4f28f7be0dc5 34
+software/products/square-point-of-sale/log.md
+  s_fda4ed059e285b::t_0bb5e27af8d9dd 34
+software/products/stripe-billing/log.md
+  s_fda4ed059e285b::t_e3f8c741a6b850 34
+software/products/zoho-billing/log.md
+  s_fda4ed059e285b::t_5b4049e68e61c7 34
+src/data/registry.ts
+  s_fda4ed059e285b::t_8aa9f995e734df 48-83,87-122,126-161,165-200,204-239,243-278,282-317,321-356,360-395,399-434,482-517,521-556,560-595,599-634,638-673,677-712,716-751,755-790,794-829,833-868,916-951,955-990,994-1029,1033-1068,1072-1107,1111-1146,1150-1185,1189-1224,1228-1263,1267-1302,1350-1385,1389-1424,1428-1463,1467-1502,1506-1541,1545-1580,1584-1619,1623-1658,1662-1697,1701-1736,1784-1819,1823-1858,1862-1897,1901-1936,1940-1975,1979-2014,2018-2053,2057-2092,2096-2131,2135-2170,2218-2253,2257-2292,2296-2331,2335-2370,2374-2409,2413-2448,2452-2487,2491-2526,2530-2565,2569-2604,2652-2687,2691-2726,2730-2765,2769-2804,2808-2843,2847-2882,2886-2921,2925-2960,2964-2999,3003-3038,3086-3121,3125-3160,3164-3199,3203-3238,3242-3277,3281-3316,3320-3355,3359-3394,3398-3433,3437-3472,3520-3555,3559-3594,3598-3633,3637-3672,3676-3711,3715-3750,3754-3789,3793-3828,3832-3867,3871-3906,3954-3989,3993-4028,4032-4067,4071-4106,4110-4145,4149-4184,4188-4223,4227-4262,4266-4301,4305-4340
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "20072fa13a5d5dabe722f94bfad1b673cdd32174",
+  "prompts": {},
+  "sessions": {
+    "s_fda4ed059e285b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f132e-d764-7c63-b87d-376363118fe7",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
