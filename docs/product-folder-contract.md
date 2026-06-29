@@ -40,12 +40,12 @@ All product files should include:
 ```yaml
 ---
 type: G2 Product Profile
-title: Example CRM
+title: Product Name
 description: Short description for humans and agents.
 tags: [crm, sales]
 timestamp: 2026-06-29T00:00:00+02:00
-g2_product_id: example-crm
-vendor_id: exampleco
+g2_product_id: product-slug
+vendor_id: vendor-slug
 display_category: crm
 category_memberships:
   - category_id: crm

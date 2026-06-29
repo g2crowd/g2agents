@@ -36,9 +36,7 @@ Products should not be treated as core CRM products solely because they integrat
 
 ## Products
 
-| Product | Vendor | Membership fit | Evidence status |
-| --- | --- | --- | --- |
-| [Example CRM](../../products/example-crm/index.md) | [ExampleCo](../../vendors/exampleco/index.md) | core | Synthetic fixture |
+No products have been seeded for this category yet.
 
 ## Agent guidance
 

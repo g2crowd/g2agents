@@ -10,7 +10,6 @@ timestamp: 2026-06-29T00:00:00+02:00
 
 | Vendor | Status | Products |
 | --- | --- | --- |
-| [ExampleCo](exampleco/index.md) | Synthetic fixture | [Example CRM](../products/example-crm/index.md) |
 | [Chargebee](chargebee/index.md) | Public-cited seed | [Chargebee](../products/chargebee/index.md) |
 | [Oracle](oracle/index.md) | Public-cited seed | [NetSuite](../products/netsuite/index.md) |
 | [Sage Software](sage-software/index.md) | Public-cited seed | [Sage Intacct](../products/sage-intacct/index.md) |

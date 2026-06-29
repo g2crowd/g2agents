@@ -172,79 +172,6 @@ export const registry = {
       ]
     },
     {
-      "slug": "example-crm",
-      "path": "software/products/example-crm/index.md",
-      "title": "Example CRM",
-      "description": "Synthetic CRM product fixture for the G2 Agents Registry prototype.",
-      "vendorId": "exampleco",
-      "displayCategory": "crm",
-      "categoryMemberships": [
-        {
-          "category_id": "crm",
-          "fit": "core",
-          "source_tier": "g2-curated",
-          "reviewed_at": "2026-06-29"
-        }
-      ],
-      "sourceTier": "g2-curated",
-      "owner": "g2",
-      "claimPolicy": "none",
-      "resource": "",
-      "rank": 0,
-      "rating": "",
-      "reviewCount": 0,
-      "observedAt": "2026-06-29",
-      "expiresAt": "2027-06-29",
-      "profile": "Example CRM is a synthetic fixture that represents how a G2-curated product profile should be structured.",
-      "buyerFit": "This section should eventually describe: - best-fit company sizes - common use cases - implementation complexity - likely buyer roles - notable constraints",
-      "strengths": [],
-      "cautions": [],
-      "features": [],
-      "pricingSignal": "",
-      "files": [
-        {
-          "name": "alternatives.md",
-          "path": "software/products/example-crm/alternatives.md"
-        },
-        {
-          "name": "features.md",
-          "path": "software/products/example-crm/features.md"
-        },
-        {
-          "name": "index.md",
-          "path": "software/products/example-crm/index.md"
-        },
-        {
-          "name": "integrations.md",
-          "path": "software/products/example-crm/integrations.md"
-        },
-        {
-          "name": "log.md",
-          "path": "software/products/example-crm/log.md"
-        },
-        {
-          "name": "pricing.md",
-          "path": "software/products/example-crm/pricing.md"
-        },
-        {
-          "name": "profile.md",
-          "path": "software/products/example-crm/profile.md"
-        },
-        {
-          "name": "reviews-summary.md",
-          "path": "software/products/example-crm/reviews-summary.md"
-        },
-        {
-          "name": "security-compliance.md",
-          "path": "software/products/example-crm/security-compliance.md"
-        },
-        {
-          "name": "vendor-claims.md",
-          "path": "software/products/example-crm/vendor-claims.md"
-        }
-      ]
-    },
-    {
       "slug": "maxio",
       "path": "software/products/maxio/index.md",
       "title": "Maxio",
@@ -948,17 +875,7 @@ export const registry = {
       "resource": "",
       "reviewedAt": "",
       "expiresAt": "",
-      "productRows": [
-        {
-          "rank": "[Example CRM](../../products/example-crm/index.md)",
-          "product": "[ExampleCo](../../vendors/exampleco/index.md)",
-          "vendor": "core",
-          "fit": "Synthetic fixture",
-          "rating": "",
-          "reviewCount": "",
-          "segment": ""
-        }
-      ]
+      "productRows": []
     },
     {
       "slug": "subscription-billing",
@@ -1108,15 +1025,6 @@ export const registry = {
       ]
     },
     {
-      "slug": "exampleco",
-      "path": "software/vendors/exampleco/index.md",
-      "title": "ExampleCo",
-      "description": "Synthetic vendor fixture for the G2 Agents Registry prototype.",
-      "sourceTier": "g2-curated",
-      "resource": "",
-      "products": []
-    },
-    {
       "slug": "maxio",
       "path": "software/vendors/maxio/index.md",
       "title": "Maxio",
@@ -1238,9 +1146,9 @@ export const registry = {
     }
   ],
   "stats": {
-    "products": 11,
+    "products": 10,
     "categories": 2,
-    "vendors": 11,
-    "files": 110
+    "vendors": 10,
+    "files": 100
   }
 } as const

@@ -112,7 +112,7 @@ When answering a buyer, cite file paths and section names when possible.
 
 Good:
 
-> The registry's `software/products/example-crm/pricing.md` labels pricing as vendor-attested and freshness-sensitive.
+> The registry's `software/products/chargebee/pricing.md` labels pricing as public-cited and freshness-sensitive.
 
 Bad:
 

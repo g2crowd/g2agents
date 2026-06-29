@@ -49,11 +49,8 @@ This lets the registry support multi-category products, changing category defini
       index.md
       crm/
         index.md
-    vendors/
-      exampleco/
-        index.md
     products/
-      example-crm/
+      chargebee/
         index.md
         profile.md
         vendor-claims.md
@@ -74,4 +71,4 @@ The first proof point is narrow:
 
 ## Current status
 
-This is an initial scaffold. `software/products/example-crm/` is a synthetic fixture used to exercise the format. It is not a real G2 listing.
+This is an initial scaffold with a seeded Subscription Billing category and product folders sourced from the public G2 category page.

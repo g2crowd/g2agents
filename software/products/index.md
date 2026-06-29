@@ -10,7 +10,6 @@ timestamp: 2026-06-29T00:00:00+02:00
 
 | Product | Vendor | Display category | Category memberships | Status |
 | --- | --- | --- | --- | --- |
-| [Example CRM](example-crm/index.md) | [ExampleCo](../vendors/exampleco/index.md) | [CRM](../categories/crm/index.md) | CRM: core | Synthetic fixture |
 | [Chargebee](chargebee/index.md) | [Chargebee](../vendors/chargebee/index.md) | [Subscription Billing](../categories/subscription-billing/index.md) | Subscription Billing: core | Seed rank 1 |
 | [NetSuite](netsuite/index.md) | [Oracle](../vendors/oracle/index.md) | [Subscription Billing](../categories/subscription-billing/index.md) | Subscription Billing: adjacent | Seed rank 2 |
 | [Sage Intacct](sage-intacct/index.md) | [Sage Software](../vendors/sage-software/index.md) | [Subscription Billing](../categories/subscription-billing/index.md) | Subscription Billing: adjacent | Seed rank 3 |

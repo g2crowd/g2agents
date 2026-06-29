@@ -28,13 +28,13 @@ Product folders should not live under category folders.
 Good:
 
 ```text
-software/products/example-crm/
+software/products/product-slug/
 ```
 
 Avoid:
 
 ```text
-software/categories/crm/products/example-crm/
+software/categories/crm/products/product-slug/
 ```
 
 The avoided shape makes category assignment part of product identity. That breaks down when a product is multi-category, categories split, categories merge, or G2 changes market definitions.
