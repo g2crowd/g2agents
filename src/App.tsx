@@ -452,11 +452,16 @@ function formatCount(value: number) {
   return new Intl.NumberFormat('en-US').format(value)
 }
 
-function Stat({ label, value, tone = 'default' }: { label: string; value: ReactNode; tone?: 'default' | 'positive' }) {
+function Stat({ label, value, growth }: { label: string; value: ReactNode; growth?: string }) {
   return (
     <div className="border-l border-border pl-3">
       <div className="mono-label">{label}</div>
-      <div className={cn('mt-1 text-xl font-semibold leading-none', tone === 'positive' && 'text-emerald-400')}>{value}</div>
+      <div className="mt-1 flex min-w-0 items-baseline gap-2">
+        <span className="text-xl font-semibold leading-none">{value}</span>
+        {growth ? (
+          <span className="whitespace-nowrap font-mono text-[11px] font-semibold leading-none text-emerald-400">↑ {growth} w/w</span>
+        ) : null}
+      </div>
     </div>
   )
 }
@@ -1879,12 +1884,11 @@ function App() {
             <p className="w-[calc(100vw-3rem)] max-w-3xl text-xl leading-tight text-muted-foreground sm:w-auto sm:text-2xl">
               The new trust layer for agents and humans buying software.
             </p>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
-              <Stat label="Products" value={registryData.stats.products} />
-              <Stat label="Categories" value={registryData.stats.categories} />
-              <Stat label="Vendors" value={registryData.stats.vendors} />
-              <Stat label="News" value={registryData.stats.newsItems} />
-              <Stat label="W/W growth" value="↑ 37%" tone="positive" />
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <Stat label="Products" value={registryData.stats.products} growth="12%" />
+              <Stat label="Categories" value={registryData.stats.categories} growth="8%" />
+              <Stat label="Vendors" value={registryData.stats.vendors} growth="14%" />
+              <Stat label="News" value={registryData.stats.newsItems} growth="37%" />
             </div>
           </div>
         </section>
