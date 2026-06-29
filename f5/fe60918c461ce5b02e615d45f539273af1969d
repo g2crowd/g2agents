@@ -1,0 +1,43 @@
+scripts/build-registry-data.mjs
+  s_fda4ed059e285b::t_dc69272201d97f 167
+src/App.tsx
+  s_fda4ed059e285b::t_dc69272201d97f 51,903,948,963
+software/products/chargebee/news.md
+  s_fda4ed059e285b::t_14470e657cfc8b 29,34,40-44
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/news.md
+  s_fda4ed059e285b::t_4f5e72098ea815 30,35,41-44
+software/products/maxio/news.md
+  s_fda4ed059e285b::t_45f7157587d14a 29,34,40-44
+software/products/netsuite/news.md
+  s_fda4ed059e285b::t_9d1f49852802fd 29,34,40-43
+software/products/paddle/news.md
+  s_fda4ed059e285b::t_89f71056e5c985 29,34,40-44
+software/products/paypal-invoicing/news.md
+  s_fda4ed059e285b::t_a68cbf0f9b73c3 29,34,40-44
+software/products/sage-intacct/news.md
+  s_fda4ed059e285b::t_6635806eefb082 29,34,40-44
+software/products/square-point-of-sale/news.md
+  s_fda4ed059e285b::t_ecd4a56adb87bb 29,34,40-44
+software/products/stripe-billing/news.md
+  s_fda4ed059e285b::t_8b86edef0ddc38 29,34,40-44
+software/products/zoho-billing/news.md
+  s_fda4ed059e285b::t_59049e6dfd22ed 29,34,40-44
+src/data/registry.ts
+  s_fda4ed059e285b::t_979b3d0ee6834d 46-65,297-298,539-569,801-802,1043-1073,1305-1306,1547-1566,1798-1799,2040-2070,2302-2303,2544-2574,2806-2807,3048-3078,3310-3311,3552-3582,3814-3815,4056-4086,4318-4319,4560-4590,4822-4823,5308-5314,5316-5320,5324-5330,5332-5336,5340-5346,5348,5356-5362,5364-5368,5372-5378,5380-5396,5404-5410,5412,5420-5426,5428-5476,5484-5490,5492-5528,5532-5538,5540-5604,5612-5618,5620-5636,5642-5753,5760
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "f5fe60918c461ce5b02e615d45f539273af1969d",
+  "prompts": {},
+  "sessions": {
+    "s_fda4ed059e285b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f132e-d764-7c63-b87d-376363118fe7",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
