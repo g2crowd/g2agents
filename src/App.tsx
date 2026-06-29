@@ -1808,7 +1808,12 @@ function App() {
 
       <main className={cn('mx-auto overflow-x-hidden px-4 py-4', detailExpanded ? 'max-w-[1680px]' : 'max-w-7xl')}>
         <section className="grid min-w-0 gap-5 border-b border-border pb-4 lg:grid-cols-[360px_1fr]">
-          <div className="min-w-0">
+          <a
+            href="#products"
+            className="block min-w-0 rounded-md transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            onClick={goHome}
+            aria-label="Return to G2 Agents home"
+          >
             <pre className="select-none overflow-hidden font-mono text-[19px] font-semibold leading-[0.9] text-foreground sm:text-[24px]">
 {` ██████╗ ██████╗
 ██╔════╝ ╚════██╗
@@ -1818,7 +1823,7 @@ function App() {
  ╚═════╝ ╚══════╝`}
             </pre>
             <div className="mt-2 font-mono text-sm uppercase text-foreground">Agent-readable software buying</div>
-          </div>
+          </a>
           <div className="grid min-w-0 content-start gap-4">
             <p className="w-[calc(100vw-3rem)] max-w-3xl text-xl leading-tight text-muted-foreground sm:w-auto sm:text-2xl">
               Browse G2 product knowledge as versioned Markdown: category graph, product dossiers, source tiers, review signals, and vendor claim slots.
