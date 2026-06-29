@@ -191,6 +191,163 @@ function fitVariant(fit: string) {
   return 'muted'
 }
 
+const genericSearchTerms = new Set([
+  'a',
+  'an',
+  'and',
+  'app',
+  'apps',
+  'for',
+  'g2',
+  'of',
+  'platform',
+  'platforms',
+  'product',
+  'products',
+  'software',
+  'solution',
+  'solutions',
+  'system',
+  'systems',
+  'the',
+  'to',
+  'tool',
+  'tools',
+  'with',
+])
+
+const searchConcepts = [
+  {
+    marker: 'concept-billing',
+    terms: ['billing', 'bill', 'bills', 'invoice', 'invoicing', 'monetization', 'plan', 'plans', 'prebilling', 'recurring', 'renewal', 'renewals', 'subscription', 'subscriptions', 'usage'],
+  },
+  {
+    marker: 'concept-revenue',
+    terms: ['arpu', 'cash', 'charge', 'charges', 'finance', 'financial', 'monetization', 'pricing', 'quote', 'quoting', 'revenue', 'revenuecloud', 'revops', 'salesforce'],
+  },
+  {
+    marker: 'concept-payments',
+    terms: ['autopay', 'card', 'cards', 'checkout', 'gateway', 'merchant', 'payment', 'payments', 'paypal', 'pix', 'stripe', 'surcharge', 'upi'],
+  },
+  {
+    marker: 'concept-erp',
+    terms: ['accounting', 'ap', 'ar', 'close', 'controller', 'erp', 'finance', 'financial', 'netsuite', 'reconciliation', 'sage'],
+  },
+  {
+    marker: 'concept-ai',
+    terms: ['agentforce', 'agentic', 'ai', 'assistant', 'assistants', 'automation', 'mcp'],
+  },
+  {
+    marker: 'concept-pos',
+    terms: ['checkout', 'handheld', 'pos', 'retail', 'restaurant', 'square', 'store', 'terminal'],
+  },
+]
+
+function normalizeSearchText(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function hasSearchTerm(text: string, term: string) {
+  const normalized = normalizeSearchText(term)
+  if (!normalized) return false
+  if (normalized.includes(' ')) return text.includes(normalized)
+  return new RegExp(`(^| )${normalized}( |$)`).test(text)
+}
+
+function searchTokens(query: string) {
+  const normalized = normalizeSearchText(query)
+  const tokens = normalized.split(' ').filter((token) => token.length > 1 && !genericSearchTerms.has(token))
+  return tokens.length ? tokens : normalized.split(' ').filter((token) => token.length > 1)
+}
+
+function enrichSearchText(text: string) {
+  const normalized = normalizeSearchText(text)
+  const markers = searchConcepts
+    .filter((concept) => concept.terms.some((term) => hasSearchTerm(normalized, term)))
+    .flatMap((concept) => [concept.marker, ...concept.terms])
+  return `${normalized} ${markers.map(normalizeSearchText).join(' ')}`
+}
+
+function productSearchText(product: Product, vendor?: Vendor) {
+  const categoryLabels = product.categoryMemberships.map((membership) => [membership.category_id, fitLabels[membership.fit], relationshipDescriptions[membership.fit]].join(' '))
+  const newsText = product.news.map((item) => [item.type, item.headline, item.buyerRelevance, item.sourceLabel, item.sourceNote].join(' '))
+  const featureText = product.features.map((feature) => [feature.capability, feature.status, feature.evidence, feature.notes].join(' '))
+  const fileText = product.files.filter((file) => file.name !== 'alternatives.md').map((file) => [file.name, file.path, file.content].join(' '))
+  return enrichSearchText(
+    [
+      product.title,
+      product.slug,
+      product.vendorId,
+      vendor?.title || '',
+      product.displayCategory,
+      product.description,
+      product.profile,
+      product.buyerFit,
+      product.path,
+      product.resource,
+      product.pricingSignal,
+      product.strengths.join(' '),
+      product.cautions.join(' '),
+      categoryLabels.join(' '),
+      featureText.join(' '),
+      newsText.join(' '),
+      fileText.join(' '),
+    ].join(' '),
+  )
+}
+
+function newsSearchText(item: NewsFeedEntry) {
+  return enrichSearchText(
+    [
+      item.date,
+      item.type,
+      item.headline,
+      item.buyerRelevance,
+      item.sourceLabel,
+      item.sourceNote,
+      item.productTitle,
+      item.productSlug,
+      item.vendorId,
+      item.category,
+      item.submitter,
+      item.status,
+    ].join(' '),
+  )
+}
+
+function searchScore(text: string, query: string) {
+  const normalizedQuery = normalizeSearchText(query)
+  if (!normalizedQuery) return 1
+  const tokens = searchTokens(query)
+  if (!tokens.length) return 1
+
+  let score = hasSearchTerm(text, normalizedQuery) ? 8 : 0
+  let matched = 0
+
+  for (const token of tokens) {
+    if (hasSearchTerm(text, token)) {
+      matched += 1
+      score += token.length > 4 ? 3 : 2
+      continue
+    }
+
+    const concept = searchConcepts.find((item) => item.terms.includes(token))
+    if (concept && hasSearchTerm(text, concept.marker)) {
+      matched += 1
+      score += 1.5
+    }
+  }
+
+  if (matched === tokens.length) return score + matched
+  if (matched > 0 && tokens.length > 2) return score * (matched / tokens.length)
+  return 0
+}
+
 function formatCount(value: number) {
   return new Intl.NumberFormat('en-US').format(value)
 }
@@ -942,14 +1099,16 @@ function NewsView({
   onOpenProduct: (slug: string) => void
 }) {
   const filteredNews = useMemo(() => {
-    const normalized = query.trim().toLowerCase()
+    const normalized = normalizeSearchText(query)
     if (!normalized) return [...news]
-    return news.filter((item) =>
-      [item.date, item.type, item.headline, item.buyerRelevance, item.sourceNote, item.productTitle, item.vendorId, item.category, item.submitter, item.status]
-        .join(' ')
-        .toLowerCase()
-        .includes(normalized),
-    )
+    return news
+      .map((item) => ({
+        item,
+        score: searchScore(newsSearchText(item), query),
+      }))
+      .filter(({ score }) => score > 0)
+      .sort((a, b) => b.score - a.score || String(b.item.date).localeCompare(String(a.item.date)))
+      .map(({ item }) => item)
   }, [news, query])
 
   return (
@@ -1064,35 +1223,45 @@ function MetaBlock({ label, value }: { label: string; value: string }) {
 }
 
 function App() {
-  const products = [...registryData.products].sort((a, b) => {
+  const products = useMemo(() => [...registryData.products].sort((a, b) => {
     if (!a.rank && !b.rank) return a.title.localeCompare(b.title)
     if (!a.rank) return 1
     if (!b.rank) return -1
     return a.rank - b.rank
-  })
+  }), [])
   const [query, setQuery] = useState('')
   const [fit, setFit] = useState<(typeof fitOrder)[number]>('all')
   const [selectedSlug, setSelectedSlug] = useState<string>(products[0]?.slug || '')
   const [detailExpanded, setDetailExpanded] = useState(false)
   const [activeTab, setActiveTab] = useState('products')
+  const vendorBySlug = useMemo(() => new Map(registryData.vendors.map((vendor) => [vendor.slug, vendor])), [])
+  const productSearchIndex = useMemo(
+    () => new Map(products.map((product) => [product.slug, productSearchText(product, vendorBySlug.get(product.vendorId))])),
+    [products, vendorBySlug],
+  )
 
   const filteredProducts = useMemo(() => {
-    const normalized = query.trim().toLowerCase()
-    return products.filter((product) => {
-      const productFit = getFit(product)
-      const matchesFit = fit === 'all' || productFit === fit
-      const matchesQuery =
-        !normalized ||
-        [product.title, product.vendorId, product.description, product.profile, product.buyerFit, product.path]
-          .join(' ')
-          .toLowerCase()
-          .includes(normalized)
-      return matchesFit && matchesQuery
-    })
-  }, [fit, products, query])
+    const normalized = normalizeSearchText(query)
+    return products
+      .map((product) => ({
+        product,
+        score: searchScore(productSearchIndex.get(product.slug) || '', query),
+      }))
+      .filter(({ product, score }) => {
+        const productFit = getFit(product)
+        const matchesFit = fit === 'all' || productFit === fit
+        const matchesQuery = !normalized || score > 0
+        return matchesFit && matchesQuery
+      })
+      .sort((a, b) => {
+        if (!normalized) return 0
+        return b.score - a.score || a.product.rank - b.product.rank || a.product.title.localeCompare(b.product.title)
+      })
+      .map(({ product }) => product)
+  }, [fit, productSearchIndex, products, query])
 
-  const selectedProduct = products.find((product) => product.slug === selectedSlug) || filteredProducts[0] || products[0]
-  const selectedVendor = registryData.vendors.find((vendor) => vendor.slug === selectedProduct?.vendorId)
+  const selectedProduct = filteredProducts.find((product) => product.slug === selectedSlug) || filteredProducts[0] || products.find((product) => product.slug === selectedSlug) || products[0]
+  const selectedVendor = selectedProduct ? vendorBySlug.get(selectedProduct.vendorId) : undefined
   const openProduct = (slug: string) => {
     setSelectedSlug(slug)
     setDetailExpanded(true)
