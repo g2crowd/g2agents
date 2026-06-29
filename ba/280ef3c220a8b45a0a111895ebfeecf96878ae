@@ -1,0 +1,249 @@
+log.md
+  s_fda4ed059e285b::t_b91b45f977489e 13
+software/categories/index.md
+  s_fda4ed059e285b::t_891acef7d04296 16
+software/categories/subscription-billing/index.md
+  s_fda4ed059e285b::t_9e8559ebaf0983 1-61
+software/index.md
+  s_fda4ed059e285b::t_7c52ab0169e0d1 14,17
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/alternatives.md
+  s_fda4ed059e285b::t_72e7f226763705 1-47
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/features.md
+  s_fda4ed059e285b::t_94f117d4b6d65f 1-44
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md
+  s_fda4ed059e285b::t_badbf645975e8e 1-54
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/integrations.md
+  s_fda4ed059e285b::t_0dab62091a02b3 1-43
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/log.md
+  s_fda4ed059e285b::t_636826d6f60a15 1-35
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/pricing.md
+  s_fda4ed059e285b::t_585e65cf796e88 1-44
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/profile.md
+  s_fda4ed059e285b::t_24e870d53ec610 1-59
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews-summary.md
+  s_fda4ed059e285b::t_3c57b352a8567b 1-61
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/security-compliance.md
+  s_fda4ed059e285b::t_f773c8cc15589b 1-41
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/vendor-claims.md
+  s_fda4ed059e285b::t_f364be00036616 1-45
+software/products/chargebee/alternatives.md
+  s_fda4ed059e285b::t_d92b6cb1fe6558 1-47
+software/products/chargebee/features.md
+  s_fda4ed059e285b::t_db72a320ee7e71 1-44
+software/products/chargebee/index.md
+  s_fda4ed059e285b::t_32ff97ccfb9f9e 1-54
+software/products/chargebee/integrations.md
+  s_fda4ed059e285b::t_3b37c85c3f2e58 1-43
+software/products/chargebee/log.md
+  s_fda4ed059e285b::t_e2b2ccfe79faa0 1-35
+software/products/chargebee/pricing.md
+  s_fda4ed059e285b::t_3cd3f3db49ccec 1-44
+software/products/chargebee/profile.md
+  s_fda4ed059e285b::t_ea7245b8e4c6f9 1-59
+software/products/chargebee/reviews-summary.md
+  s_fda4ed059e285b::t_ff771692a813ba 1-61
+software/products/chargebee/security-compliance.md
+  s_fda4ed059e285b::t_f9866b3431e781 1-41
+software/products/chargebee/vendor-claims.md
+  s_fda4ed059e285b::t_0042d7215163ee 1-45
+software/products/index.md
+  s_fda4ed059e285b::t_6fa8d5ba67befd 14-23
+software/products/maxio/alternatives.md
+  s_fda4ed059e285b::t_e25e3e7afebdcf 1-47
+software/products/maxio/features.md
+  s_fda4ed059e285b::t_70d174cc34150e 1-44
+software/products/maxio/index.md
+  s_fda4ed059e285b::t_39fe5ff3dd5fa5 1-54
+software/products/maxio/integrations.md
+  s_fda4ed059e285b::t_c3244e80ca02b7 1-43
+software/products/maxio/log.md
+  s_fda4ed059e285b::t_b07e2763a4d685 1-35
+software/products/maxio/pricing.md
+  s_fda4ed059e285b::t_39909d1bb0eadd 1-44
+software/products/maxio/profile.md
+  s_fda4ed059e285b::t_57655e1e1a6e4f 1-59
+software/products/maxio/reviews-summary.md
+  s_fda4ed059e285b::t_e347c33b46b5f1 1-61
+software/products/maxio/security-compliance.md
+  s_fda4ed059e285b::t_ce4748abb95d72 1-41
+software/products/maxio/vendor-claims.md
+  s_fda4ed059e285b::t_fe2cd7dff2ad46 1-45
+software/products/netsuite/alternatives.md
+  s_fda4ed059e285b::t_54405379324679 1-47
+software/products/netsuite/features.md
+  s_fda4ed059e285b::t_608b6edbc850c7 1-43
+software/products/netsuite/index.md
+  s_fda4ed059e285b::t_14c73e9013c0ba 1-54
+software/products/netsuite/integrations.md
+  s_fda4ed059e285b::t_6a0d7cd276ef97 1-43
+software/products/netsuite/log.md
+  s_fda4ed059e285b::t_f2430455ce7524 1-35
+software/products/netsuite/pricing.md
+  s_fda4ed059e285b::t_39234582c3406f 1-44
+software/products/netsuite/profile.md
+  s_fda4ed059e285b::t_4b60a16e83409d 1-59
+software/products/netsuite/reviews-summary.md
+  s_fda4ed059e285b::t_311d04d8f16757 1-61
+software/products/netsuite/security-compliance.md
+  s_fda4ed059e285b::t_fcbf44ba43d710 1-41
+software/products/netsuite/vendor-claims.md
+  s_fda4ed059e285b::t_81a39969ea55d5 1-45
+software/products/paddle/alternatives.md
+  s_fda4ed059e285b::t_c763eb106a3c74 1-47
+software/products/paddle/features.md
+  s_fda4ed059e285b::t_7b344893e6b53e 1-44
+software/products/paddle/index.md
+  s_fda4ed059e285b::t_569d63730497ad 1-54
+software/products/paddle/integrations.md
+  s_fda4ed059e285b::t_9e66c8f35020fe 1-43
+software/products/paddle/log.md
+  s_fda4ed059e285b::t_939904d50eb448 1-35
+software/products/paddle/pricing.md
+  s_fda4ed059e285b::t_2731775ec9648b 1-44
+software/products/paddle/profile.md
+  s_fda4ed059e285b::t_4f9a2dfbb768d7 1-59
+software/products/paddle/reviews-summary.md
+  s_fda4ed059e285b::t_2496a055f18f91 1-61
+software/products/paddle/security-compliance.md
+  s_fda4ed059e285b::t_ee3d69ea2b2056 1-41
+software/products/paddle/vendor-claims.md
+  s_fda4ed059e285b::t_3c9f2eeb18d641 1-45
+software/products/paypal-invoicing/alternatives.md
+  s_fda4ed059e285b::t_b51bb8b83f1b75 1-47
+software/products/paypal-invoicing/features.md
+  s_fda4ed059e285b::t_806960f20de491 1-42
+software/products/paypal-invoicing/index.md
+  s_fda4ed059e285b::t_fc89418efb1ddf 1-54
+software/products/paypal-invoicing/integrations.md
+  s_fda4ed059e285b::t_8b0c7c9cde080b 1-43
+software/products/paypal-invoicing/log.md
+  s_fda4ed059e285b::t_658967c49eb23c 1-35
+software/products/paypal-invoicing/pricing.md
+  s_fda4ed059e285b::t_ce313db41c9def 1-44
+software/products/paypal-invoicing/profile.md
+  s_fda4ed059e285b::t_04a5ff4dbe913c 1-59
+software/products/paypal-invoicing/reviews-summary.md
+  s_fda4ed059e285b::t_3cd6d6e3f840c8 1-61
+software/products/paypal-invoicing/security-compliance.md
+  s_fda4ed059e285b::t_57b7e3c30ac0d7 1-41
+software/products/paypal-invoicing/vendor-claims.md
+  s_fda4ed059e285b::t_9695c1e6688cb4 1-45
+software/products/sage-intacct/alternatives.md
+  s_fda4ed059e285b::t_a72c397b191ea4 1-47
+software/products/sage-intacct/features.md
+  s_fda4ed059e285b::t_47a920f12de2e0 1-43
+software/products/sage-intacct/index.md
+  s_fda4ed059e285b::t_a54cb0bac21a49 1-54
+software/products/sage-intacct/integrations.md
+  s_fda4ed059e285b::t_74717f12447a8e 1-43
+software/products/sage-intacct/log.md
+  s_fda4ed059e285b::t_4f39fca80b8c68 1-35
+software/products/sage-intacct/pricing.md
+  s_fda4ed059e285b::t_fd65f3e9d1e808 1-44
+software/products/sage-intacct/profile.md
+  s_fda4ed059e285b::t_6726345abfa67e 1-59
+software/products/sage-intacct/reviews-summary.md
+  s_fda4ed059e285b::t_15580a4052d6ab 1-61
+software/products/sage-intacct/security-compliance.md
+  s_fda4ed059e285b::t_de9f4642fb57dd 1-41
+software/products/sage-intacct/vendor-claims.md
+  s_fda4ed059e285b::t_06deef1aa13b4d 1-45
+software/products/square-point-of-sale/alternatives.md
+  s_fda4ed059e285b::t_675f84caf965f6 1-47
+software/products/square-point-of-sale/features.md
+  s_fda4ed059e285b::t_8081b7b11ebc23 1-42
+software/products/square-point-of-sale/index.md
+  s_fda4ed059e285b::t_c4fec9f17f2397 1-54
+software/products/square-point-of-sale/integrations.md
+  s_fda4ed059e285b::t_d6ec5cfecc7fc7 1-43
+software/products/square-point-of-sale/log.md
+  s_fda4ed059e285b::t_1837f36cf4492c 1-35
+software/products/square-point-of-sale/pricing.md
+  s_fda4ed059e285b::t_80a16fc59e4eda 1-44
+software/products/square-point-of-sale/profile.md
+  s_fda4ed059e285b::t_5bbba0c9ac4fc7 1-59
+software/products/square-point-of-sale/reviews-summary.md
+  s_fda4ed059e285b::t_f57c3aa1f208dd 1-61
+software/products/square-point-of-sale/security-compliance.md
+  s_fda4ed059e285b::t_80d98748103b98 1-41
+software/products/square-point-of-sale/vendor-claims.md
+  s_fda4ed059e285b::t_0dcd676be36f81 1-45
+software/products/stripe-billing/alternatives.md
+  s_fda4ed059e285b::t_cc914cf9a7f93b 1-47
+software/products/stripe-billing/features.md
+  s_fda4ed059e285b::t_d650664c0929bf 1-44
+software/products/stripe-billing/index.md
+  s_fda4ed059e285b::t_29731430460f49 1-54
+software/products/stripe-billing/integrations.md
+  s_fda4ed059e285b::t_f366a60d632b7a 1-43
+software/products/stripe-billing/log.md
+  s_fda4ed059e285b::t_f158d7ee528da9 1-35
+software/products/stripe-billing/pricing.md
+  s_fda4ed059e285b::t_66e39a6664bae6 1-44
+software/products/stripe-billing/profile.md
+  s_fda4ed059e285b::t_3c14d7c475a445 1-59
+software/products/stripe-billing/reviews-summary.md
+  s_fda4ed059e285b::t_97878d08ebbe9d 1-61
+software/products/stripe-billing/security-compliance.md
+  s_fda4ed059e285b::t_76232de3cad475 1-41
+software/products/stripe-billing/vendor-claims.md
+  s_fda4ed059e285b::t_b6e31d6eae340e 1-45
+software/products/zoho-billing/alternatives.md
+  s_fda4ed059e285b::t_1e98da13b27ed4 1-47
+software/products/zoho-billing/features.md
+  s_fda4ed059e285b::t_2ef817a5879c03 1-43
+software/products/zoho-billing/index.md
+  s_fda4ed059e285b::t_a0c3d1af45e6c0 1-54
+software/products/zoho-billing/integrations.md
+  s_fda4ed059e285b::t_1ce24b57a9a4c8 1-43
+software/products/zoho-billing/log.md
+  s_fda4ed059e285b::t_63831e716a7706 1-35
+software/products/zoho-billing/pricing.md
+  s_fda4ed059e285b::t_d8126beb63606e 1-44
+software/products/zoho-billing/profile.md
+  s_fda4ed059e285b::t_e50bb2052aef19 1-59
+software/products/zoho-billing/reviews-summary.md
+  s_fda4ed059e285b::t_336efd9b11f048 1-61
+software/products/zoho-billing/security-compliance.md
+  s_fda4ed059e285b::t_acd44988647cc8 1-41
+software/products/zoho-billing/vendor-claims.md
+  s_fda4ed059e285b::t_9bef48f2fbc1f9 1-45
+software/vendors/block/index.md
+  s_fda4ed059e285b::t_cd89162d830f11 1-24
+software/vendors/chargebee/index.md
+  s_fda4ed059e285b::t_79a3cecc09c922 1-24
+software/vendors/index.md
+  s_fda4ed059e285b::t_0344062c50a9ed 1-23
+software/vendors/maxio/index.md
+  s_fda4ed059e285b::t_0d4ddd77ae22d4 1-24
+software/vendors/oracle/index.md
+  s_fda4ed059e285b::t_62ca701fd5f72a 1-24
+software/vendors/paddle/index.md
+  s_fda4ed059e285b::t_c9ddb193e1d8a8 1-24
+software/vendors/paypal/index.md
+  s_fda4ed059e285b::t_42ce71c205f08c 1-24
+software/vendors/sage-software/index.md
+  s_fda4ed059e285b::t_ff80c26e96f8f2 1-24
+software/vendors/salesforce/index.md
+  s_fda4ed059e285b::t_6aa9e13239553f 1-24
+software/vendors/stripe/index.md
+  s_fda4ed059e285b::t_defed165beb30b 1-24
+software/vendors/zoho/index.md
+  s_fda4ed059e285b::t_81ee5e21a92cf7 1-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "ba280ef3c220a8b45a0a111895ebfeecf96878ae",
+  "prompts": {},
+  "sessions": {
+    "s_fda4ed059e285b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f132e-d764-7c63-b87d-376363118fe7",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
