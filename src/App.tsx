@@ -197,7 +197,7 @@ const columnHelp = {
   rank: 'Seed order from the category source page. This is not a recommendation or score.',
   product: 'Canonical product folder in the registry.',
   reviews: 'Review count captured from the source snapshot.',
-  source: 'Where the registry claim came from, such as public-cited or G2-curated.',
+  source: 'Source tier and freshness status for this row.',
 }
 
 const categoryTitleBySlug = new Map(registryData.categories.map((category) => [category.slug, category.title]))
@@ -664,25 +664,6 @@ function diffStats(lines: DiffLine[]) {
   }
 }
 
-function CategoryFitLegend({ categoryLabel }: { categoryLabel: string }) {
-  return (
-    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-border px-3 py-2 text-xs text-muted-foreground">
-      <span className="mono-label">Category</span>
-      <span className="font-medium text-foreground">{categoryLabel}</span>
-      <span className="mono-label">Match labels</span>
-      <span>
-        <span className="text-foreground">Primary</span> direct match
-      </span>
-      <span>
-        <span className="text-foreground">Related suite</span> broader product suite
-      </span>
-      <span>
-        <span className="text-foreground">Limited slice</span> partial workflow coverage
-      </span>
-    </div>
-  )
-}
-
 function ProductComparePanel({
   products,
   onRemove,
@@ -778,13 +759,15 @@ function ProductTable({
   onToggleCompare: (slug: string) => void
   onSelect: (slug: string) => void
 }) {
+  const hasQuery = query.trim().length > 0
+
   return (
     <div className="overflow-auto">
       <table className="w-full table-fixed border-collapse text-sm">
         <thead>
           <tr className="border-b border-border text-left mono-label">
             <th className="w-10 py-2 pr-3 font-medium">
-              <HelpLabel label="Compare" description="Select up to four products to compare side by side." />
+              <HelpLabel label="+" description="Select up to four products to compare side by side." />
             </th>
             <th className="w-10 py-2 pr-3 font-medium">
               <HelpLabel label="#" description={columnHelp.rank} />
@@ -802,7 +785,7 @@ function ProductTable({
               <HelpLabel label="Reviews" description={columnHelp.reviews} align="right" />
             </th>
             <th className="hidden w-32 py-2 pr-3 font-medium lg:table-cell">
-              <HelpLabel label="Source" description={columnHelp.source} align="right" />
+              <HelpLabel label="Trust" description={columnHelp.source} align="right" />
             </th>
           </tr>
         </thead>
@@ -843,16 +826,14 @@ function ProductTable({
                   </div>
                   <div className="mt-1 flex min-w-0 flex-wrap items-center gap-1.5 font-mono text-[11px] text-muted-foreground">
                     <span>{product.vendorId}</span>
-                    <span>/</span>
-                    <span>{productCategoryLabel}</span>
-                    {matches.slice(0, 2).map((match) => (
+                    {hasQuery ? matches.slice(0, 2).map((match) => (
                       <PopoverTip
                         key={`${product.slug}-${match.label}`}
-                        trigger={<Badge variant="muted">{query.trim() ? `matched: ${match.label}` : match.label}</Badge>}
+                        trigger={<Badge variant="muted">{`matched: ${match.label}`}</Badge>}
                         description={match.detail}
                         width="w-52"
                       />
-                    ))}
+                    )) : null}
                   </div>
                 </td>
                 <td className="hidden py-2.5 pr-3 md:table-cell">
@@ -862,10 +843,9 @@ function ProductTable({
                   {product.reviewCount ? formatCount(product.reviewCount) : '-'}
                 </td>
                 <td className="hidden py-2.5 pr-3 lg:table-cell">
-                  <div className="flex flex-col items-start gap-1.5">
+                  <div className="flex flex-wrap items-center gap-1.5">
                     <SourceBadge tier={product.sourceTier} align="right" />
                     <FreshnessBadge product={product} align="right" />
-                    <span className="font-mono text-[11px] text-muted-foreground">reviewed {product.observedAt || '-'}</span>
                   </div>
                 </td>
               </tr>
@@ -2278,7 +2258,6 @@ function App() {
               </div>
               <div className="flex flex-wrap items-center gap-1.5">
                 <Filter className="h-4 w-4 text-muted-foreground" />
-                <span className="mono-label hidden sm:inline">Category</span>
                 <div className="flex flex-wrap items-center gap-1">
                   {registryData.categories.map((category) => (
                     <Button
@@ -2291,7 +2270,6 @@ function App() {
                     </Button>
                   ))}
                 </div>
-                <span className="mono-label hidden sm:inline">Match</span>
                 {fitOrder.slice(0, 4).map((option) => (
                   <Button
                     key={option}
@@ -2326,9 +2304,8 @@ function App() {
                         <Badge variant="outline">{activeCategoryLabel}</Badge>
                       </div>
                     </div>
-                    <div className="font-mono text-xs text-muted-foreground">seed order: {activeCategoryLabel} category page</div>
+                    <div className="font-mono text-xs text-muted-foreground">G2 seed order</div>
                   </div>
-                  <CategoryFitLegend categoryLabel={activeCategoryLabel} />
                   {filteredProducts.length ? (
                     <ProductTable
                       products={filteredProducts}
