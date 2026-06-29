@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type FormEvent, type MouseEvent, type ReactNode } from 'react'
 import {
   ArrowUpRight,
   BadgeCheck,
@@ -1774,12 +1774,23 @@ function App() {
     setSelectedNewsKey('')
     writeHash({ tab: 'products', product: selectedProduct?.slug || selectedSlug, expanded: nextExpanded }, 'push')
   }
+  const goHome = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    setActiveTab('products')
+    setQuery('')
+    setFit('all')
+    setSelectedSlug(products[0]?.slug || '')
+    setSelectedNewsKey('')
+    setDetailExpanded(false)
+    writeHash({ tab: 'products', product: undefined, news: undefined, query: '', fit: 'all', expanded: false }, 'push')
+    window.scrollTo({ top: 0 })
+  }
 
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 border-b border-border bg-background/95">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4">
-          <a href="/" className="flex items-center gap-3">
+          <a href="#products" className="flex items-center gap-3" onClick={goHome}>
             <div className="flex h-6 w-6 items-center justify-center border border-foreground text-[10px] font-bold">G2</div>
             <span className="text-base font-semibold">G2 Agents</span>
           </a>
