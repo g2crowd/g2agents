@@ -1,0 +1,26 @@
+src/App.tsx
+  s_fda4ed059e285b::t_c2e05b85e91396 273
+  s_fda4ed059e285b::t_520fe0e0751b5f 1102,1104-1111
+  s_fda4ed059e285b::t_ba2ef145ab1e01 194-237,239-254,262-270,272,274-279,281-303,323-328,330-332,334-339,341-350
+  s_fda4ed059e285b::t_5b40cefa59af6a 255-261,271,329,333,340
+  s_fda4ed059e285b::t_59f712a646012d 1226,1231,1237-1241,1244-1264
+  s_fda4ed059e285b::t_f6482d734b3050 238
+  s_fda4ed059e285b::t_4a0af80a21b488 304-322
+  s_fda4ed059e285b::t_6b26bb634728ce 280
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "0da0c73e717818173b5c8155d2d48b118874d124",
+  "prompts": {},
+  "sessions": {
+    "s_fda4ed059e285b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f132e-d764-7c63-b87d-376363118fe7",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
