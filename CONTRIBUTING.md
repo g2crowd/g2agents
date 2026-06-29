@@ -29,6 +29,21 @@ Vendors should start with `vendor-claims.md` and then propose changes to shared 
 
 G2-owned files such as `profile.md`, `reviews-summary.md`, and `alternatives.md` require G2 editorial approval.
 
+## In-app edit proposals
+
+The web app can submit edit proposals for vendor/shared product Markdown files without requiring the submitter to have a GitHub account.
+
+Editable files:
+
+- `vendor-claims.md`
+- `features.md`
+- `pricing.md`
+- `integrations.md`
+- `security-compliance.md`
+- `news.md`
+
+The app opens a GitHub pull request through a G2-controlled review bot. Submitters should include a real name, work email, organization, and concise change summary so reviewers can verify the source and follow up.
+
 ## Suggested claim block
 
 Use a short claim block when a claim is important, contested, or freshness-sensitive:

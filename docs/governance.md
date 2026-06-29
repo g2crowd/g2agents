@@ -44,6 +44,29 @@ Minimum policy:
 - G2-owned files require G2 approval.
 - Disputed claims are marked rather than silently removed.
 
+## In-app public edit flow
+
+The registry browser can accept edit proposals from people or agents that do not have GitHub accounts.
+
+The browser only exposes editing for product files whose frontmatter owner is `vendor` or `shared`, and the server independently allowlists these file names:
+
+- `vendor-claims.md`
+- `features.md`
+- `pricing.md`
+- `integrations.md`
+- `security-compliance.md`
+- `news.md`
+
+Submitted changes are posted to `/api/submit-change`. The endpoint creates a branch, commits the proposed Markdown update, and opens a pull request using a G2-controlled GitHub App or bot token. The submitter provides name, email, organization, and a change summary for reviewer follow-up, but does not need GitHub authentication.
+
+Required production configuration:
+
+- Preferred: `GITHUB_APP_ID`, `GITHUB_APP_INSTALLATION_ID`, and `GITHUB_APP_PRIVATE_KEY` for a GitHub App installed on `g2crowd/g2agents` with contents and pull request write access.
+- Alternative: `GITHUB_PR_TOKEN` for a narrowly scoped bot token with access to create branches, commits, and pull requests.
+- Optional: `GITHUB_REPOSITORY`, `GITHUB_BASE_BRANCH`, `GITHUB_COMMITTER_NAME`, and `GITHUB_COMMITTER_EMAIL`.
+
+G2-owned files remain read-only in the public editor. Changes to those files should be made by G2 maintainers or proposed through a reviewed internal workflow.
+
 ## G2 review responsibilities
 
 G2 reviewers should evaluate:

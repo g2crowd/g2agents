@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react'
 import {
   ArrowUpRight,
   BadgeCheck,
@@ -12,12 +12,16 @@ import {
   Filter,
   Folder,
   GitBranch,
+  Loader2,
   Maximize2,
   Minimize2,
   Newspaper,
+  PencilLine,
   Search,
+  Send,
   ShieldCheck,
   Tags,
+  X,
 } from 'lucide-react'
 import { registry } from '@/data/registry'
 import { Badge } from '@/components/ui/badge'
@@ -810,6 +814,153 @@ function MarkdownDocument({ markdown }: { markdown: string }) {
   return <article className="markdown-doc">{blocks.length ? blocks : <p>No Markdown content captured.</p>}</article>
 }
 
+const editableProductFiles = new Set(['features.md', 'integrations.md', 'news.md', 'pricing.md', 'security-compliance.md', 'vendor-claims.md'])
+const editableOwners = new Set(['shared', 'vendor'])
+
+type ReviewSubmitResult = {
+  prUrl?: string
+  prNumber?: number
+  branch?: string
+}
+
+function fileOwner(file?: ProductFile) {
+  return String(file?.frontmatter?.owner || '').toLowerCase()
+}
+
+function canEditFile(file?: ProductFile) {
+  if (!file) return false
+  return editableProductFiles.has(file.name) && editableOwners.has(fileOwner(file))
+}
+
+function MarkdownEditPanel({
+  file,
+  initialContent,
+  onCancel,
+}: {
+  file: ProductFile
+  initialContent: string
+  onCancel: () => void
+}) {
+  const [draft, setDraft] = useState(initialContent)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [organization, setOrganization] = useState('')
+  const [summary, setSummary] = useState('')
+  const [website, setWebsite] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
+  const [result, setResult] = useState<ReviewSubmitResult | null>(null)
+
+  useEffect(() => {
+    setDraft(initialContent)
+    setResult(null)
+    setError('')
+  }, [file.path, initialContent])
+
+  const changed = draft !== initialContent
+  const canSubmit = changed && name.trim().length > 1 && email.includes('@') && summary.trim().length > 7 && !submitting
+
+  const submitChange = async (event: FormEvent) => {
+    event.preventDefault()
+    if (!canSubmit) return
+
+    setSubmitting(true)
+    setError('')
+    setResult(null)
+
+    try {
+      const response = await fetch('/api/submit-change', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          path: file.path,
+          content: draft,
+          website,
+          contributor: {
+            name,
+            email,
+            organization,
+            summary,
+          },
+        }),
+      })
+      const payload = await response.json().catch(() => ({}))
+      if (!response.ok) throw new Error(payload.error || 'Could not submit change for review.')
+      setResult(payload)
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : 'Could not submit change for review.')
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  return (
+    <form className="grid min-h-[520px] gap-0 lg:grid-cols-[minmax(0,1fr)_300px]" onSubmit={submitChange}>
+      <div className="min-w-0 border-b border-border lg:border-b-0 lg:border-r">
+        <div className="border-b border-border px-3 py-2">
+          <div className="mono-label">Markdown editor</div>
+          <div className="mt-0.5 break-words font-mono text-xs text-muted-foreground">{file.path}</div>
+        </div>
+        <textarea
+          value={draft}
+          onChange={(event) => setDraft(event.target.value)}
+          spellCheck={false}
+          className="min-h-[640px] w-full resize-y bg-transparent p-3 font-mono text-xs leading-5 text-foreground outline-none placeholder:text-muted-foreground"
+        />
+      </div>
+      <div className="grid content-start gap-3 p-3">
+        <div>
+          <div className="mono-label">Submitter</div>
+          <div className="mt-2 grid gap-2">
+            <Input value={name} onChange={(event) => setName(event.target.value)} placeholder="Name" />
+            <Input value={email} onChange={(event) => setEmail(event.target.value)} placeholder="Work email" type="email" />
+            <Input value={organization} onChange={(event) => setOrganization(event.target.value)} placeholder="Organization" />
+            <input className="hidden" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} aria-hidden="true" />
+          </div>
+        </div>
+
+        <div>
+          <div className="mono-label">Change summary</div>
+          <textarea
+            value={summary}
+            onChange={(event) => setSummary(event.target.value)}
+            placeholder="What changed and why should a reviewer accept it?"
+            className="mt-2 min-h-24 w-full resize-y rounded-md border border-input bg-transparent px-3 py-2 text-sm leading-5 outline-none placeholder:text-muted-foreground focus-visible:ring-1 focus-visible:ring-ring"
+          />
+        </div>
+
+        <div className="rounded-md border border-border bg-muted/20 p-2 text-xs leading-5 text-muted-foreground">
+          Editable scope: vendor and shared product files. G2-owned editorial files stay review-only here.
+        </div>
+
+        {error ? <div className="rounded-md border border-amber-500/30 bg-amber-500/10 p-2 text-xs leading-5 text-amber-300">{error}</div> : null}
+
+        {result ? (
+          <div className="rounded-md border border-emerald-500/30 bg-emerald-500/10 p-2 text-xs leading-5 text-emerald-300">
+            PR created{result.prNumber ? ` #${result.prNumber}` : ''}.
+            {result.prUrl ? (
+              <a className="ml-1 underline underline-offset-4" href={result.prUrl} target="_blank" rel="noreferrer">
+                Open review
+              </a>
+            ) : null}
+          </div>
+        ) : null}
+
+        <div className="flex flex-wrap gap-2">
+          <Button type="submit" size="sm" disabled={!canSubmit}>
+            {submitting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Send className="h-3.5 w-3.5" />}
+            Submit change for review
+          </Button>
+          <Button type="button" variant="outline" size="sm" onClick={onCancel}>
+            <X className="h-3.5 w-3.5" />
+            Close
+          </Button>
+        </div>
+      </div>
+    </form>
+  )
+}
+
 function FileTreeList({
   nodes,
   selectedPath,
@@ -862,12 +1013,19 @@ function FileBrowser({ product, mode = 'compact' }: { product: Product; mode?: '
   const defaultPath = product.files.find((file) => file.name === 'index.md')?.path || product.files[0]?.path || ''
   const [selectedPath, setSelectedPath] = useState(defaultPath)
   const [viewMode, setViewMode] = useState<'rendered' | 'raw'>('rendered')
+  const [editorOpen, setEditorOpen] = useState(false)
   const fileTree = useMemo(() => buildFileTree(product.files), [product.files])
   const selectedFile = product.files.find((file) => file.path === selectedPath) || product.files[0]
+  const selectedEditable = canEditFile(selectedFile)
 
   useEffect(() => {
     setSelectedPath(defaultPath)
+    setEditorOpen(false)
   }, [defaultPath, product.slug])
+
+  useEffect(() => {
+    setEditorOpen(false)
+  }, [selectedPath])
 
   return (
     <div
@@ -894,6 +1052,21 @@ function FileBrowser({ product, mode = 'compact' }: { product: Product; mode?: '
             {mode === 'reader' ? <div className="mt-1 mono-label">Rendered Markdown</div> : null}
           </div>
           <div className="flex items-center gap-1.5">
+            {selectedFile ? (
+              <Button
+                variant={editorOpen ? 'secondary' : 'outline'}
+                size="sm"
+                disabled={!selectedEditable}
+                title={selectedEditable ? 'Edit this Markdown file' : `${fileOwner(selectedFile) || 'G2'}-owned file is review-only here`}
+                onClick={() => {
+                  setEditorOpen((value) => !value)
+                  setViewMode('raw')
+                }}
+              >
+                <PencilLine className="h-3.5 w-3.5" />
+                Edit
+              </Button>
+            ) : null}
             <Button variant={viewMode === 'rendered' ? 'secondary' : 'ghost'} size="sm" onClick={() => setViewMode('rendered')}>
               Rendered
             </Button>
@@ -908,7 +1081,9 @@ function FileBrowser({ product, mode = 'compact' }: { product: Product; mode?: '
           </div>
         </div>
         <div className={cn('overflow-auto', mode === 'reader' ? 'max-h-[680px]' : 'max-h-[520px]')}>
-          {viewMode === 'rendered' ? (
+          {selectedFile && editorOpen ? (
+            <MarkdownEditPanel file={selectedFile} initialContent={selectedFile.raw || selectedFile.content || ''} onCancel={() => setEditorOpen(false)} />
+          ) : viewMode === 'rendered' ? (
             <MarkdownDocument markdown={selectedFile?.content || ''} />
           ) : (
             <pre className="whitespace-pre-wrap break-words p-3 font-mono text-[11px] leading-5 text-muted-foreground">
