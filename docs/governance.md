@@ -52,6 +52,7 @@ G2 reviewers should evaluate:
 - whether language is neutral enough for the file type
 - whether citations support the claim
 - whether stale or disputed information is clearly labeled
+- whether category memberships reflect G2's category definitions
 - whether changes improve agent answers
 
 ## Disputes
@@ -67,6 +68,14 @@ dispute_opened_at: 2026-06-29
 ```
 
 Agents should surface open disputes when the disputed topic is relevant to the buyer question.
+
+## Taxonomy governance
+
+G2 owns category definitions and endorsed category memberships.
+
+Vendors may propose category additions or membership changes, but vendor-submitted category claims should default to `vendor-claimed` until G2 reviews them.
+
+Category membership can be disputed without moving the product folder or changing product identity.
 
 ## Freshness policy
 
@@ -93,3 +102,4 @@ The eventual CI checks should validate:
 - expired freshness windows
 - missing citations for citation-required file types
 - category references that point to missing product folders
+- category memberships that point to missing category folders

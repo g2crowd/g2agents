@@ -21,6 +21,14 @@ Instead of treating product pages as prose meant only for human browsing, this r
 
 The core idea is not that vendors can edit their G2 pages. The stronger idea is that vendors can submit claims into a governed buying knowledge system, while G2 preserves provenance and trust.
 
+## Taxonomy stance
+
+Products are not owned by category paths. Product identity is durable and canonical under `software/products/{product_slug}/`.
+
+Categories are graph nodes. Products attach to categories through explicit membership records with fit levels such as `core`, `adjacent`, `partial`, `legacy`, `vendor-claimed`, or `disputed`.
+
+This lets the registry support multi-category products, changing category definitions, subcategories, adjacent categories, and disputed vendor category claims without breaking product identity.
+
 ## Repository map
 
 ```text
@@ -32,11 +40,13 @@ The core idea is not that vendors can edit their G2 pages. The stronger idea is 
     governance.md
     product-folder-contract.md
     source-tiers.md
+    taxonomy.md
   schemas/
     product-frontmatter.schema.json
   software/
     index.md
     categories/
+      index.md
       crm/
         index.md
     vendors/

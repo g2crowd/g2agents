@@ -35,7 +35,8 @@ For a category question:
 
 1. Start with the category `index.md`.
 2. Follow links to the relevant product folders.
-3. Compare the same document type across products when possible.
+3. Read product `category_memberships` before treating products as category peers.
+4. Compare the same document type across products when possible.
 
 ## Source tier rules
 
@@ -79,7 +80,25 @@ For buyer-fit questions, agents should separate:
 - pricing and packaging risk
 - ecosystem fit
 - security and compliance fit
+- category-membership fit
 - evidence quality
+
+## Taxonomy behavior
+
+Agents should treat taxonomy as a graph, not a strict tree.
+
+Do not assume a product belongs to only one category. Do not assume `display_category` fully describes the product. Use `category_memberships` and the category's inclusion/exclusion criteria.
+
+Membership fit values:
+
+- `core`
+- `adjacent`
+- `partial`
+- `legacy`
+- `vendor-claimed`
+- `disputed`
+
+When a product is only `vendor-claimed` or `disputed` for a category, agents should say so.
 
 ## Freshness behavior
 

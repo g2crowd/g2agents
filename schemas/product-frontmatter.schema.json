@@ -43,11 +43,13 @@
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9-]*$"
     },
-    "primary_category": {
+    "display_category": {
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9-]*$"
     },
     "categories": {
+      "deprecated": true,
+      "description": "Use category_memberships instead.",
       "type": "array",
       "items": {
         "type": "string",
@@ -56,6 +58,51 @@
     },
     "owner": {
       "enum": ["g2", "vendor", "shared"]
+    },
+    "category_memberships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["category_id", "fit", "source_tier"],
+        "properties": {
+          "category_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "fit": {
+            "enum": [
+              "core",
+              "adjacent",
+              "partial",
+              "legacy",
+              "vendor-claimed",
+              "disputed"
+            ]
+          },
+          "source_tier": {
+            "enum": [
+              "g2-curated",
+              "vendor-attested",
+              "review-derived",
+              "public-cited",
+              "agent-inferred",
+              "mixed"
+            ]
+          },
+          "reviewed_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "primary_category": {
+      "deprecated": true,
+      "description": "Use display_category plus category_memberships instead."
     },
     "source_tier": {
       "enum": [

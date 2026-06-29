@@ -6,8 +6,12 @@ tags: [crm, pricing, fixture]
 timestamp: 2026-06-29T00:00:00+02:00
 g2_product_id: example-crm
 vendor_id: exampleco
-primary_category: crm
-categories: [crm]
+display_category: crm
+category_memberships:
+  - category_id: crm
+    fit: core
+    source_tier: g2-curated
+    reviewed_at: 2026-06-29
 owner: shared
 source_tier: vendor-attested
 claim_policy: cited

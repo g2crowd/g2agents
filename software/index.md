@@ -12,6 +12,6 @@ Browse by:
 
 - [Products](products/index.md)
 - [Vendors](vendors/exampleco/index.md)
-- [Categories](categories/crm/index.md)
+- [Categories](categories/index.md)
 
-Canonical product identity lives under `software/products/`. Category pages link to products rather than owning product folders.
+Canonical product identity lives under `software/products/`. Category pages are taxonomy graph nodes. Products link to categories through explicit category-membership records.

@@ -16,6 +16,7 @@ Start here:
 - [Product Folder Contract](docs/product-folder-contract.md)
 - [Governance](docs/governance.md)
 - [Source Tiers](docs/source-tiers.md)
+- [Taxonomy](docs/taxonomy.md)
 - [Software Index](software/index.md)
 
 The registry is organized around canonical product folders, not category paths. Categories link to products, because products can belong to several categories and category membership changes over time.

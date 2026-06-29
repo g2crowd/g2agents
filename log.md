@@ -10,6 +10,7 @@ timestamp: 2026-06-29T00:00:00+02:00
 
 ## 2026-06-29
 
+- Added graph-based taxonomy model with explicit category memberships and fit levels.
 - Created the initial `g2agents` scaffold.
 - Added the first draft of the agent consumption guide, governance model, source tiers, and product folder contract.
 - Added a synthetic `example-crm` product fixture.
