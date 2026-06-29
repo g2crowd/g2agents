@@ -47,6 +47,87 @@
   .dense-panel {
     @apply rounded-md border border-border bg-card;
   }
+
+  .markdown-doc {
+    @apply mx-auto w-full max-w-5xl px-5 py-5 text-sm leading-7 text-muted-foreground sm:px-7 sm:py-6;
+  }
+
+  .markdown-doc h1 {
+    @apply mb-4 mt-0 text-3xl font-semibold leading-tight text-foreground;
+  }
+
+  .markdown-doc h2 {
+    @apply mb-3 mt-8 border-t border-border pt-5 text-lg font-semibold leading-tight text-foreground;
+  }
+
+  .markdown-doc h3 {
+    @apply mb-2 mt-6 text-base font-semibold leading-tight text-foreground;
+  }
+
+  .markdown-doc p {
+    @apply my-3 max-w-4xl;
+  }
+
+  .markdown-doc a {
+    @apply text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground;
+  }
+
+  .markdown-doc code {
+    @apply rounded border border-border bg-muted px-1 py-0.5 font-mono text-xs text-foreground;
+  }
+
+  .markdown-doc pre {
+    @apply my-4 max-w-full overflow-auto rounded-md border border-border bg-muted/40 p-3 font-mono text-xs leading-5 text-muted-foreground;
+  }
+
+  .markdown-doc pre code {
+    @apply border-0 bg-transparent p-0 text-muted-foreground;
+  }
+
+  .markdown-doc ul,
+  .markdown-doc ol {
+    @apply my-3 max-w-4xl space-y-2 pl-5;
+  }
+
+  .markdown-doc ul {
+    @apply list-disc;
+  }
+
+  .markdown-doc ol {
+    @apply list-decimal;
+  }
+
+  .markdown-doc li {
+    @apply pl-1;
+  }
+
+  .markdown-doc blockquote {
+    @apply my-4 max-w-4xl border-l border-border pl-4 text-foreground;
+  }
+
+  .markdown-doc hr {
+    @apply my-6 border-border;
+  }
+
+  .markdown-table-wrap {
+    @apply my-4 max-w-full overflow-auto rounded-md border border-border;
+  }
+
+  .markdown-doc table {
+    @apply w-full min-w-[560px] border-collapse text-sm;
+  }
+
+  .markdown-doc th {
+    @apply border-b border-border bg-muted/30 px-3 py-2 text-left font-mono text-[11px] uppercase tracking-normal text-muted-foreground;
+  }
+
+  .markdown-doc td {
+    @apply border-b border-border/80 px-3 py-2 align-top;
+  }
+
+  .markdown-doc tbody tr:last-child td {
+    @apply border-b-0;
+  }
 }
 
 ::-webkit-scrollbar {

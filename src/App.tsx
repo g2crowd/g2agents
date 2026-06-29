@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import {
   ArrowUpRight,
   BadgeCheck,
@@ -340,6 +340,213 @@ function buildFileTree(files: ProductFile[]) {
   return root.children
 }
 
+function splitTableRow(line: string) {
+  return line
+    .trim()
+    .replace(/^\|/, '')
+    .replace(/\|$/, '')
+    .split('|')
+    .map((cell) => cell.trim())
+}
+
+function isTableSeparator(line: string) {
+  return /^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$/.test(line.trim())
+}
+
+function isMarkdownBoundary(line: string) {
+  const trimmed = line.trim()
+  return (
+    !trimmed ||
+    /^#{1,6}\s/.test(trimmed) ||
+    /^[-*]\s+/.test(trimmed) ||
+    /^\d+\.\s+/.test(trimmed) ||
+    /^>\s?/.test(trimmed) ||
+    /^```/.test(trimmed) ||
+    /^\|/.test(trimmed) ||
+    /^-{3,}$/.test(trimmed)
+  )
+}
+
+function renderInline(text: string): ReactNode[] {
+  const nodes: ReactNode[] = []
+  const pattern = /(\[([^\]]+)\]\(([^)]+)\)|`([^`]+)`|\*\*([^*]+)\*\*)/g
+  let cursor = 0
+  let match: RegExpExecArray | null
+
+  while ((match = pattern.exec(text))) {
+    if (match.index > cursor) {
+      nodes.push(text.slice(cursor, match.index))
+    }
+
+    if (match[2] && match[3]) {
+      const href = match[3]
+      const isExternal = /^https?:\/\//.test(href)
+      nodes.push(
+        isExternal ? (
+          <a key={`${match.index}-link`} href={href} target="_blank" rel="noreferrer">
+            {match[2]}
+          </a>
+        ) : (
+          <span key={`${match.index}-link`} title={href}>
+            {match[2]}
+          </span>
+        ),
+      )
+    } else if (match[4]) {
+      nodes.push(<code key={`${match.index}-code`}>{match[4]}</code>)
+    } else if (match[5]) {
+      nodes.push(<strong key={`${match.index}-strong`}>{match[5]}</strong>)
+    }
+
+    cursor = match.index + match[0].length
+  }
+
+  if (cursor < text.length) {
+    nodes.push(text.slice(cursor))
+  }
+
+  return nodes
+}
+
+function MarkdownDocument({ markdown }: { markdown: string }) {
+  const blocks = useMemo(() => {
+    const lines = markdown.replace(/\r\n/g, '\n').split('\n')
+    const rendered: ReactNode[] = []
+    let index = 0
+
+    while (index < lines.length) {
+      const line = lines[index]
+      const trimmed = line.trim()
+
+      if (!trimmed) {
+        index += 1
+        continue
+      }
+
+      if (/^```/.test(trimmed)) {
+        const language = trimmed.replace(/^```/, '').trim()
+        const code: string[] = []
+        index += 1
+        while (index < lines.length && !/^```/.test(lines[index].trim())) {
+          code.push(lines[index])
+          index += 1
+        }
+        index += 1
+        rendered.push(
+          <pre key={`code-${index}`}>
+            <code>{language ? `// ${language}\n${code.join('\n')}` : code.join('\n')}</code>
+          </pre>,
+        )
+        continue
+      }
+
+      const heading = trimmed.match(/^(#{1,6})\s+(.*)$/)
+      if (heading) {
+        const level = heading[1].length
+        const content = renderInline(heading[2])
+        if (level === 1) rendered.push(<h1 key={`h-${index}`}>{content}</h1>)
+        else if (level === 2) rendered.push(<h2 key={`h-${index}`}>{content}</h2>)
+        else rendered.push(<h3 key={`h-${index}`}>{content}</h3>)
+        index += 1
+        continue
+      }
+
+      if (/^-{3,}$/.test(trimmed)) {
+        rendered.push(<hr key={`hr-${index}`} />)
+        index += 1
+        continue
+      }
+
+      if (/^\|/.test(trimmed) && index + 1 < lines.length && isTableSeparator(lines[index + 1])) {
+        const headers = splitTableRow(trimmed)
+        const rows: string[][] = []
+        index += 2
+        while (index < lines.length && /^\|/.test(lines[index].trim())) {
+          rows.push(splitTableRow(lines[index]))
+          index += 1
+        }
+        rendered.push(
+          <div key={`table-${index}`} className="markdown-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  {headers.map((header, headerIndex) => (
+                    <th key={`${header}-${headerIndex}`}>{renderInline(header)}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((row, rowIndex) => (
+                  <tr key={`row-${rowIndex}`}>
+                    {headers.map((_, cellIndex) => (
+                      <td key={`${rowIndex}-${cellIndex}`}>{renderInline(row[cellIndex] || '')}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>,
+        )
+        continue
+      }
+
+      if (/^[-*]\s+/.test(trimmed)) {
+        const items: string[] = []
+        while (index < lines.length && /^[-*]\s+/.test(lines[index].trim())) {
+          items.push(lines[index].trim().replace(/^[-*]\s+/, ''))
+          index += 1
+        }
+        rendered.push(
+          <ul key={`ul-${index}`}>
+            {items.map((item, itemIndex) => (
+              <li key={`${item}-${itemIndex}`}>{renderInline(item)}</li>
+            ))}
+          </ul>,
+        )
+        continue
+      }
+
+      if (/^\d+\.\s+/.test(trimmed)) {
+        const items: string[] = []
+        while (index < lines.length && /^\d+\.\s+/.test(lines[index].trim())) {
+          items.push(lines[index].trim().replace(/^\d+\.\s+/, ''))
+          index += 1
+        }
+        rendered.push(
+          <ol key={`ol-${index}`}>
+            {items.map((item, itemIndex) => (
+              <li key={`${item}-${itemIndex}`}>{renderInline(item)}</li>
+            ))}
+          </ol>,
+        )
+        continue
+      }
+
+      if (/^>\s?/.test(trimmed)) {
+        const quote: string[] = []
+        while (index < lines.length && /^>\s?/.test(lines[index].trim())) {
+          quote.push(lines[index].trim().replace(/^>\s?/, ''))
+          index += 1
+        }
+        rendered.push(<blockquote key={`quote-${index}`}>{renderInline(quote.join(' '))}</blockquote>)
+        continue
+      }
+
+      const paragraph: string[] = [trimmed]
+      index += 1
+      while (index < lines.length && !isMarkdownBoundary(lines[index])) {
+        paragraph.push(lines[index].trim())
+        index += 1
+      }
+      rendered.push(<p key={`p-${index}`}>{renderInline(paragraph.join(' '))}</p>)
+    }
+
+    return rendered
+  }, [markdown])
+
+  return <article className="markdown-doc">{blocks.length ? blocks : <p>No Markdown content captured.</p>}</article>
+}
+
 function FileTreeList({
   nodes,
   selectedPath,
@@ -388,9 +595,10 @@ function FileTreeList({
   )
 }
 
-function FileBrowser({ product }: { product: Product }) {
+function FileBrowser({ product, mode = 'compact' }: { product: Product; mode?: 'compact' | 'reader' }) {
   const defaultPath = product.files.find((file) => file.name === 'index.md')?.path || product.files[0]?.path || ''
   const [selectedPath, setSelectedPath] = useState(defaultPath)
+  const [viewMode, setViewMode] = useState<'rendered' | 'raw'>('rendered')
   const fileTree = useMemo(() => buildFileTree(product.files), [product.files])
   const selectedFile = product.files.find((file) => file.path === selectedPath) || product.files[0]
 
@@ -399,28 +607,52 @@ function FileBrowser({ product }: { product: Product }) {
   }, [defaultPath, product.slug])
 
   return (
-    <div className="grid min-h-[360px] overflow-hidden rounded-md border border-border bg-muted/10 lg:grid-cols-[260px_minmax(0,1fr)]">
+    <div
+      className={cn(
+        'grid overflow-hidden rounded-md border border-border bg-muted/10',
+        mode === 'reader'
+          ? 'min-h-[680px] lg:grid-cols-[280px_minmax(0,1fr)]'
+          : 'min-h-[360px] lg:grid-cols-[260px_minmax(0,1fr)]',
+      )}
+    >
       <div className="min-w-0 border-b border-border lg:border-b-0 lg:border-r">
         <div className="border-b border-border px-3 py-2">
           <div className="mono-label">Files</div>
           <div className="mt-0.5 font-mono text-xs text-muted-foreground">{product.files.length} Markdown files</div>
         </div>
-        <div className="max-h-[520px] overflow-auto p-2">
+        <div className={cn('overflow-auto p-2', mode === 'reader' ? 'max-h-[680px]' : 'max-h-[520px]')}>
           {fileTree.length ? <FileTreeList nodes={fileTree} selectedPath={selectedFile?.path || ''} onSelect={setSelectedPath} /> : <div className="p-2 text-sm text-muted-foreground">No files captured.</div>}
         </div>
       </div>
       <div className="min-w-0">
-        <div className="flex min-w-0 items-center justify-between gap-2 border-b border-border px-3 py-2">
-          <div className="min-w-0 truncate font-mono text-xs text-muted-foreground">{selectedFile?.path || 'No file selected'}</div>
-          {selectedFile ? (
-            <Button variant="ghost" size="icon" onClick={() => navigator.clipboard.writeText(selectedFile.path)}>
-              <Copy className="h-3.5 w-3.5" />
+        <div className="flex min-w-0 flex-wrap items-center justify-between gap-2 border-b border-border px-3 py-2">
+          <div className="min-w-0">
+            <div className="min-w-0 truncate font-mono text-xs text-muted-foreground">{selectedFile?.path || 'No file selected'}</div>
+            {mode === 'reader' ? <div className="mt-1 mono-label">Rendered Markdown</div> : null}
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Button variant={viewMode === 'rendered' ? 'secondary' : 'ghost'} size="sm" onClick={() => setViewMode('rendered')}>
+              Rendered
             </Button>
-          ) : null}
+            <Button variant={viewMode === 'raw' ? 'secondary' : 'ghost'} size="sm" onClick={() => setViewMode('raw')}>
+              Raw
+            </Button>
+            {selectedFile ? (
+              <Button variant="ghost" size="icon" onClick={() => navigator.clipboard.writeText(selectedFile.path)}>
+                <Copy className="h-3.5 w-3.5" />
+              </Button>
+            ) : null}
+          </div>
         </div>
-        <pre className="max-h-[520px] overflow-auto whitespace-pre-wrap break-words p-3 font-mono text-[11px] leading-5 text-muted-foreground">
-          {selectedFile?.raw || selectedFile?.content || 'No file content captured.'}
-        </pre>
+        <div className={cn('overflow-auto', mode === 'reader' ? 'max-h-[680px]' : 'max-h-[520px]')}>
+          {viewMode === 'rendered' ? (
+            <MarkdownDocument markdown={selectedFile?.content || ''} />
+          ) : (
+            <pre className="whitespace-pre-wrap break-words p-3 font-mono text-[11px] leading-5 text-muted-foreground">
+              {selectedFile?.raw || selectedFile?.content || 'No file content captured.'}
+            </pre>
+          )}
+        </div>
       </div>
     </div>
   )
@@ -560,9 +792,8 @@ function ProductDetail({
       </div>
 
       {expanded ? (
-        <div className="grid min-w-0 gap-4 p-4 xl:grid-cols-[minmax(560px,1fr)_minmax(420px,1fr)]">
-          <FileBrowser product={product} />
-          <ProductTabs product={product} vendor={vendor} includeFiles={false} />
+        <div className="min-w-0 p-4">
+          <FileBrowser product={product} mode="reader" />
         </div>
       ) : (
         <div className="px-4 py-3">
@@ -733,7 +964,7 @@ function App() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl overflow-x-hidden px-4 py-4">
+      <main className={cn('mx-auto overflow-x-hidden px-4 py-4', detailExpanded ? 'max-w-[1680px]' : 'max-w-7xl')}>
         <section className="grid min-w-0 gap-5 border-b border-border pb-4 lg:grid-cols-[360px_1fr]">
           <div className="min-w-0">
             <pre className="select-none overflow-hidden font-mono text-[19px] font-semibold leading-[0.9] text-foreground sm:text-[24px]">
