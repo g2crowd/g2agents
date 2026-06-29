@@ -188,17 +188,45 @@ const sourceTierDescriptions: Record<string, string> = {
 const columnHelp = {
   rank: 'Seed order from the category source page. This is not a recommendation or score.',
   product: 'Canonical product folder in the registry.',
-  relationship: 'G2 category fit for the selected category. This is not a search score.',
   reviews: 'Review count captured from the source snapshot.',
   source: 'Where the registry claim came from, such as public-cited or G2-curated.',
+}
+
+const categoryTitleBySlug = new Map(registryData.categories.map((category) => [category.slug, category.title]))
+
+function humanizeSlug(value: string) {
+  return value
+    .split('-')
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
+
+function formatCategoryLabel(categoryId?: string) {
+  if (!categoryId) return 'Uncategorized'
+  return categoryTitleBySlug.get(categoryId) || humanizeSlug(categoryId)
 }
 
 function cleanMarkdownLink(value: string) {
   return value.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
 }
 
+function getProductCategoryId(product: Product) {
+  return product.categoryMemberships[0]?.category_id || product.displayCategory
+}
+
+function getProductCategoryLabel(product: Product) {
+  return formatCategoryLabel(getProductCategoryId(product))
+}
+
 function getFit(product: Product) {
   return product.categoryMemberships[0]?.fit || 'unknown'
+}
+
+function describeFitForCategory(fit: string, categoryLabel: string) {
+  const label = fitLabels[fit] || fit || 'Unclassified'
+  const description = relationshipDescriptions[fit] || 'Category relationship is not classified yet.'
+  return `${label} for ${categoryLabel}. ${description}`
 }
 
 function fitVariant(fit: string) {
@@ -463,10 +491,12 @@ function SourceBadge({ tier }: { tier: string }) {
   )
 }
 
-function CategoryFitLegend() {
+function CategoryFitLegend({ categoryLabel }: { categoryLabel: string }) {
   return (
     <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-border px-3 py-2 text-xs text-muted-foreground">
-      <span className="mono-label">Category match</span>
+      <span className="mono-label">Category</span>
+      <span className="font-medium text-foreground">{categoryLabel}</span>
+      <span className="mono-label">Match labels</span>
       <span>
         <span className="text-foreground">Primary</span> direct match
       </span>
@@ -483,10 +513,12 @@ function CategoryFitLegend() {
 function ProductTable({
   products,
   selected,
+  categoryLabel,
   onSelect,
 }: {
   products: Product[]
   selected: string
+  categoryLabel: string
   onSelect: (slug: string) => void
 }) {
   return (
@@ -500,8 +532,11 @@ function ProductTable({
             <th className="py-2 pr-3 font-medium">
               <HelpLabel label="Product" description={columnHelp.product} />
             </th>
-            <th className="hidden w-36 py-2 pr-3 font-medium md:table-cell">
-              <HelpLabel label="Category match" description={columnHelp.relationship} />
+            <th className="hidden w-44 py-2 pr-3 font-medium md:table-cell">
+              <HelpLabel
+                label="Match"
+                description={`How each product maps to ${categoryLabel}. This is not a search score or recommendation.`}
+              />
             </th>
             <th className="hidden w-24 py-2 pr-3 text-right font-medium md:table-cell">
               <HelpLabel label="Reviews" description={columnHelp.reviews} align="right" />
@@ -515,6 +550,8 @@ function ProductTable({
           {products.map((product) => {
             const active = product.slug === selected
             const fit = getFit(product)
+            const productCategoryLabel = getProductCategoryLabel(product)
+            const fitDescription = describeFitForCategory(fit, productCategoryLabel)
             return (
               <tr
                 key={product.slug}
@@ -528,16 +565,16 @@ function ProductTable({
                 <td className="py-2.5 pr-3">
                   <div className="flex min-w-0 max-w-[calc(100vw-8rem)] items-center gap-2 md:max-w-none">
                     <div className="truncate font-medium leading-tight">{product.title}</div>
-                    <Badge className="md:hidden" variant={fitVariant(fit)} title={relationshipDescriptions[fit]}>
+                    <Badge className="md:hidden" variant={fitVariant(fit)} title={fitDescription}>
                       {fitLabels[fit] || fit}
                     </Badge>
                   </div>
                   <div className="mt-0.5 max-w-[calc(100vw-8rem)] truncate font-mono text-xs text-muted-foreground md:max-w-none">
-                    {product.vendorId} / {product.path}
+                    {product.vendorId} / {productCategoryLabel} / {product.path}
                   </div>
                 </td>
                 <td className="hidden py-2.5 pr-3 md:table-cell">
-                  <Badge variant={fitVariant(fit)} title={relationshipDescriptions[fit]}>
+                  <Badge variant={fitVariant(fit)} title={fitDescription}>
                     {fitLabels[fit] || fit}
                   </Badge>
                 </td>
@@ -1098,6 +1135,7 @@ function FileBrowser({ product, mode = 'compact' }: { product: Product; mode?: '
 
 function ProductTabs({ product, vendor, includeFiles = true }: { product: Product; vendor?: Vendor; includeFiles?: boolean }) {
   const fit = getFit(product)
+  const categoryLabel = getProductCategoryLabel(product)
   const productNews = useMemo(
     () =>
       product.news.map((item) => ({
@@ -1138,10 +1176,16 @@ function ProductTabs({ product, vendor, includeFiles = true }: { product: Produc
               <dd className="mt-1">{vendor?.title || product.vendorId}</dd>
             </div>
             <div>
+              <dt className="mono-label">Category</dt>
+              <dd className="mt-1">{categoryLabel}</dd>
+            </div>
+            <div>
               <dt className="mono-label">Category match</dt>
               <dd className="mt-1">
                 <Badge variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>
-                <div className="mt-1 text-xs leading-4 text-muted-foreground">{relationshipDescriptions[fit] || 'Category relationship is not classified yet.'}</div>
+                <div className="mt-1 text-xs leading-4 text-muted-foreground">
+                  For {categoryLabel}. {relationshipDescriptions[fit] || 'Category relationship is not classified yet.'}
+                </div>
               </dd>
             </div>
             <div>
@@ -1210,6 +1254,8 @@ function ProductDetail({
   onToggleExpanded: () => void
 }) {
   const fit = getFit(product)
+  const categoryLabel = getProductCategoryLabel(product)
+  const fitDescription = describeFitForCategory(fit, categoryLabel)
 
   return (
     <section className={cn('dense-panel self-start overflow-hidden', expanded && 'min-w-0')}>
@@ -1218,12 +1264,16 @@ function ProductDetail({
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2">
               <h2 className="text-lg font-semibold leading-tight">{product.title}</h2>
-              <Badge variant={fitVariant(fit)} title={relationshipDescriptions[fit]}>
+              <Badge variant={fitVariant(fit)} title={fitDescription}>
                 {fitLabels[fit] || fit}
               </Badge>
               <SourceBadge tier={product.sourceTier} />
             </div>
-            <div className="mt-1 truncate font-mono text-xs text-muted-foreground">{product.path}</div>
+            <div className="mt-1 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-muted-foreground">
+              <span className="truncate">{product.path}</span>
+              <span className="hidden sm:inline">/</span>
+              <span>category: {categoryLabel}</span>
+            </div>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <Button variant="outline" size="sm" onClick={onToggleExpanded}>
@@ -1727,6 +1777,7 @@ function App() {
 
   const selectedProduct = filteredProducts.find((product) => product.slug === selectedSlug) || filteredProducts[0] || products.find((product) => product.slug === selectedSlug) || products[0]
   const selectedVendor = selectedProduct ? vendorBySlug.get(selectedProduct.vendorId) : undefined
+  const activeCategoryLabel = selectedProduct ? getProductCategoryLabel(selectedProduct) : formatCategoryLabel(products[0]?.displayCategory)
   const selectProduct = (slug: string, expanded = detailExpanded) => {
     setSelectedSlug(slug)
     setActiveTab('products')
@@ -1875,7 +1926,11 @@ function App() {
               </div>
               <div className="flex flex-wrap items-center gap-1.5">
                 <Filter className="h-4 w-4 text-muted-foreground" />
-                <span className="mono-label hidden sm:inline">Category match</span>
+                <span className="mono-label hidden sm:inline">Category</span>
+                <Badge variant="outline" className="hidden sm:inline-flex">
+                  {activeCategoryLabel}
+                </Badge>
+                <span className="mono-label hidden sm:inline">Match</span>
                 {fitOrder.slice(0, 4).map((option) => (
                   <Button
                     key={option}
@@ -1901,12 +1956,20 @@ function App() {
             ) : (
               <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_520px]">
                 <section className="dense-panel min-w-0 overflow-hidden">
-                  <div className="flex items-center justify-between border-b border-border px-3 py-2">
-                    <div className="mono-label">{filteredProducts.length} products</div>
-                    <div className="font-mono text-xs text-muted-foreground">seed order: category page</div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-3 py-2">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <div className="mono-label">{filteredProducts.length} products</div>
+                      <Badge variant="outline">Category: {activeCategoryLabel}</Badge>
+                    </div>
+                    <div className="font-mono text-xs text-muted-foreground">seed order: {activeCategoryLabel} category page</div>
                   </div>
-                  <CategoryFitLegend />
-                  <ProductTable products={filteredProducts} selected={selectedProduct?.slug || ''} onSelect={(slug) => selectProduct(slug, false)} />
+                  <CategoryFitLegend categoryLabel={activeCategoryLabel} />
+                  <ProductTable
+                    products={filteredProducts}
+                    selected={selectedProduct?.slug || ''}
+                    categoryLabel={activeCategoryLabel}
+                    onSelect={(slug) => selectProduct(slug, false)}
+                  />
                 </section>
                 {selectedProduct ? (
                   <ProductDetail
