@@ -1,0 +1,74 @@
+tsconfig.app.json
+  s_fda4ed059e285b::t_d0d1664369ac87 18-22
+  s_fda4ed059e285b::t_2a8c1e90e10078 1-17,23-25
+tailwind.config.ts
+  s_fda4ed059e285b::t_2a8c1e90e10078 1-53
+tsconfig.node.json
+  s_fda4ed059e285b::t_d0d1664369ac87 11-15
+  s_fda4ed059e285b::t_2a8c1e90e10078 1-10,16-18
+src/data/registry.ts
+  s_fda4ed059e285b::t_2a8c1e90e10078 1-11
+  s_fda4ed059e285b::t_19db338625bf11 12-1246
+src/components/ui/badge.tsx
+  s_fda4ed059e285b::t_07ac87699d4f2b 1-33
+src/App.tsx
+  s_fda4ed059e285b::t_28419c2ab66a36 165
+  s_fda4ed059e285b::t_1d1b1453611632 170,192-194,199,573
+  s_fda4ed059e285b::t_f67d67b375ba71 202-203,206,222,498-500,511,545-546,572
+  s_fda4ed059e285b::t_e0b124122603bc 24-100,451,459,477,516-519,585,589
+  s_fda4ed059e285b::t_b4afa6a035112f 1-23,101-164,166-169,174-190,196-198,200-201,204-205,207-221,223-450,452-458,460-476,478-497,501-510,513-515,520-544,547-571,574-584,586-588,590-601
+  s_fda4ed059e285b::t_fe922d71a5b396 171-173
+  s_fda4ed059e285b::t_64b0b1988393f7 191,195,512
+src/components/ui/button.tsx
+  s_fda4ed059e285b::t_07ac87699d4f2b 1-43
+src/components/ui/tabs.tsx
+  s_fda4ed059e285b::t_07ac87699d4f2b 1-42
+vite.config.ts
+  s_fda4ed059e285b::t_d0d1664369ac87 3,7-11
+  s_fda4ed059e285b::t_2a8c1e90e10078 1-2,4-6,12
+src/components/ui/input.tsx
+  s_fda4ed059e285b::t_07ac87699d4f2b 1-21
+postcss.config.js
+  s_fda4ed059e285b::t_2a8c1e90e10078 1-6
+index.html
+  s_fda4ed059e285b::t_2a8c1e90e10078 1-16
+scripts/build-registry-data.mjs
+  s_fda4ed059e285b::t_e0b124122603bc 3,11,13-30
+  s_fda4ed059e285b::t_b30eff0a430003 1-2,4-10,12,31-222
+src/main.tsx
+  s_fda4ed059e285b::t_d0d1664369ac87 1-10
+src/index.css
+  s_fda4ed059e285b::t_d0d1664369ac87 1-37,39-64
+  s_fda4ed059e285b::t_f67d67b375ba71 38
+src/lib/utils.ts
+  s_fda4ed059e285b::t_2a8c1e90e10078 1-6
+package.json
+  s_fda4ed059e285b::t_e0b124122603bc 22-23
+  s_fda4ed059e285b::t_2a8c1e90e10078 1-15,17-21,24-36
+  s_fda4ed059e285b::t_d0d1664369ac87 16
+tsconfig.json
+  s_fda4ed059e285b::t_2a8c1e90e10078 1-7
+scripts/check-registry.mjs
+  s_fda4ed059e285b::t_e0b124122603bc 3,23-25
+  s_fda4ed059e285b::t_b30eff0a430003 1-2,4-22,26-51
+.gitignore
+  s_fda4ed059e285b::t_6e0db207c88e10 7
+package-lock.json
+  s_fda4ed059e285b::t_f7dbe903aa2f77 1-3121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "ec95160a850d6d3c593ab1efedccb51869c6d88a",
+  "prompts": {},
+  "sessions": {
+    "s_fda4ed059e285b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f132e-d764-7c63-b87d-376363118fe7",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
