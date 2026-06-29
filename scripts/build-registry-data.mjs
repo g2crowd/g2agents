@@ -93,10 +93,50 @@ function tableRowsFromSection(body, heading) {
     )
 }
 
+function subsectionsFromSection(body, heading) {
+  const result = {}
+  const lines = section(body, heading).split('\n')
+  let current = ''
+  let collected = []
+
+  const flush = () => {
+    if (!current) return
+    result[current] = collected.join('\n').trim()
+  }
+
+  for (const line of lines) {
+    if (line.startsWith('### ')) {
+      flush()
+      current = line.replace(/^###\s+/, '').trim()
+      collected = []
+    } else if (current) {
+      collected.push(line)
+    }
+  }
+
+  flush()
+  return result
+}
+
 function markdownLinkParts(value) {
   const match = value.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
   if (!match) return { label: value, url: '' }
   return { label: match[1], url: match[2] }
+}
+
+function slugSegment(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/^-|-$/g, '') || 'news'
+}
+
+function newsEntryKey(productSlug, row) {
+  return `${productSlug}-${row[0] || 'undated'}-${slugSegment(row[2] || 'news')}`
 }
 
 function productRecord(slug) {
@@ -115,6 +155,7 @@ function productRecord(slug) {
   const news = fs.existsSync(path.join(dir, 'news.md'))
     ? readMarkdown(path.join(dir, 'news.md'))
     : { frontmatter: {}, body: '' }
+  const newsDetails = subsectionsFromSection(news.body, 'News details')
   const files = listMarkdown(dir).map((file) => {
     const markdown = readMarkdown(path.join(dir, file))
     return {
@@ -155,7 +196,9 @@ function productRecord(slug) {
     })),
     news: tableRowsFromSection(news.body, 'News log').map((row) => {
       const source = markdownLinkParts(row[4] || '')
+      const key = newsEntryKey(slug, row)
       return {
+        key,
         date: row[0] || '',
         type: row[1] || '',
         headline: row[2] || '',
@@ -165,6 +208,7 @@ function productRecord(slug) {
         submitter: row[5] || '',
         status: row[6] || '',
         sourceNote: row[7] || '',
+        article: newsDetails[key] || '',
       }
     }),
     pricingSignal: tableRowsFromSection(pricing.body, 'Category-page pricing signal').find((row) => row[0] === 'Entry-level price signal')?.[1] || '',

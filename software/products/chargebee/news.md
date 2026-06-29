@@ -42,3 +42,32 @@ News entries capture dated product, company, pricing, packaging, security, leade
 | 2026-03-26 | customer-win | Agicap selects Chargebee for global recurring-revenue operations | Signals Chargebee is being chosen for multi-entity, multi-currency, upmarket billing complexity. | [GlobeNewswire](https://www.globenewswire.com/news-release/2026/03/26/3263477/0/en/Agicap-Selects-Chargebee-to-Power-Its-Next-Phase-of-Global-Growth.html) | G2 research | accepted | Chargebee-distributed release with customer and implementation details. |
 | 2025-09-03 | acquisition | Chargebee acquires Inai for AI-powered payments intelligence | Adds payment observability, fee intelligence, revenue recovery, and multi-gateway optimization to Chargebee payments workflows. | [Business Wire](https://www.businesswire.com/news/home/20250903404872/en/Chargebee-Acquires-Inai-to-Supercharge-AI-Powered-Payments-Intelligence) | G2 research | accepted | Official acquisition announcement with product capability details. |
 | 2025-06-20 | product-launch | Chargebee launches Better Billing for usage and hybrid pricing | Relevant for buyers evaluating usage-based billing, AI token monetization, and flexible pricing experiments. | [Chargebee Blog](https://www.chargebee.com/blog/better-billing/) | G2 research | accepted | Official Chargebee product blog from company leadership. |
+
+## News details
+
+### chargebee-2026-03-26-agicap-selects-chargebee-for-global-recurring-revenue-operations
+
+Agicap selected Chargebee for global recurring-revenue operations, according to a [Chargebee-distributed release](https://www.globenewswire.com/news-release/2026/03/26/3263477/0/en/Agicap-Selects-Chargebee-to-Power-Its-Next-Phase-of-Global-Growth.html).
+
+The story is a customer win, but the buyer signal is more specific: Agicap represents the type of scaling software company that needs multi-entity, multi-currency, and operationally reliable subscription billing. For evaluators, this is evidence to inspect Chargebee's fit for upmarket revenue complexity rather than only simple self-serve subscriptions.
+
+- Buyer signal: Useful proof point for global SaaS teams with finance operations that span countries, entities, and currencies.
+- Follow-up: Ask for implementation details around migration, accounting integrations, tax handling, and how Chargebee supports global revenue operations after go-live.
+
+### chargebee-2025-09-03-chargebee-acquires-inai-for-ai-powered-payments-intelligence
+
+Chargebee announced the acquisition of Inai in a [Business Wire release](https://www.businesswire.com/news/home/20250903404872/en/Chargebee-Acquires-Inai-to-Supercharge-AI-Powered-Payments-Intelligence), framing the deal around AI-powered payments intelligence.
+
+For buyers, the acquisition points to a broader payment-operations strategy. Subscription billing teams care about failed payments, gateway routing, fee visibility, and revenue recovery because small payment improvements compound across recurring revenue. Inai brings a payments-observability angle that could strengthen Chargebee's billing and collections story.
+
+- Buyer signal: Chargebee is investing in payment intelligence, not only subscription lifecycle management.
+- Follow-up: Clarify what is already integrated into Chargebee, what remains standalone, and whether optimization recommendations are explainable and auditable.
+
+### chargebee-2025-06-20-chargebee-launches-better-billing-for-usage-and-hybrid-pricing
+
+Chargebee's [Better Billing launch post](https://www.chargebee.com/blog/better-billing/) focuses on usage-based and hybrid pricing, including scenarios such as AI token monetization and flexible packaging experiments.
+
+This is a meaningful direction because pricing models are becoming more fluid. Buyers increasingly need billing systems that can support subscriptions, usage, commitments, credits, add-ons, and plan changes without forcing a custom billing build. Chargebee is positioning Better Billing as a response to that complexity.
+
+- Buyer signal: Stronger fit for teams moving from flat subscriptions into usage-based or hybrid monetization.
+- Follow-up: Validate metering ingestion, pricing model flexibility, invoice explainability, revenue recognition, and how quickly non-engineers can change packaging.

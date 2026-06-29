@@ -40,6 +40,7 @@ type ProductFeature = {
   notes: string
 }
 type ProductNewsEntry = {
+  key: string
   date: string
   type: string
   headline: string
@@ -49,6 +50,7 @@ type ProductNewsEntry = {
   submitter: string
   status: string
   sourceNote: string
+  article: string
 }
 type NewsFeedEntry = ProductNewsEntry & {
   productSlug: string
@@ -319,6 +321,7 @@ function newsSearchText(item: NewsFeedEntry) {
       item.type,
       item.headline,
       item.buyerRelevance,
+      item.article,
       item.sourceLabel,
       item.sourceNote,
       item.productTitle,
@@ -410,7 +413,7 @@ function slugSegment(value: string) {
 }
 
 function newsEntryKey(item: NewsFeedEntry) {
-  return `${item.productSlug}-${item.date || 'undated'}-${slugSegment(item.headline || 'news')}`
+  return item.key || `${item.productSlug}-${item.date || 'undated'}-${slugSegment(item.headline || 'news')}`
 }
 
 function formatCount(value: number) {
@@ -1199,6 +1202,61 @@ function NewsItems({
   )
 }
 
+function InlineMarkdown({ text }: { text: string }) {
+  const parts: ReactNode[] = []
+  const linkPattern = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g
+  let lastIndex = 0
+
+  for (const match of text.matchAll(linkPattern)) {
+    if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index))
+    parts.push(
+      <a key={`${match[2]}-${match.index}`} className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground" href={match[2]} target="_blank" rel="noreferrer">
+        {match[1]}
+      </a>,
+    )
+    lastIndex = match.index + match[0].length
+  }
+
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex))
+  return <>{parts}</>
+}
+
+function NewsArticle({ markdown }: { markdown: string }) {
+  const blocks = markdown.trim().split(/\n{2,}/).map((block) => block.trim()).filter(Boolean)
+
+  if (!blocks.length) {
+    return <p className="text-sm leading-6 text-muted-foreground">No long-form brief captured yet.</p>
+  }
+
+  return (
+    <div className="space-y-4">
+      {blocks.map((block, index) => {
+        const lines = block.split('\n').map((line) => line.trim()).filter(Boolean)
+        const bulletLines = lines.filter((line) => line.startsWith('- '))
+
+        if (bulletLines.length === lines.length) {
+          return (
+            <ul key={`${block}-${index}`} className="space-y-2 text-sm leading-6 text-muted-foreground">
+              {bulletLines.map((line) => (
+                <li key={line} className="flex gap-2">
+                  <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-muted-foreground" />
+                  <span><InlineMarkdown text={line.slice(2)} /></span>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+
+        return (
+          <p key={`${block}-${index}`} className="max-w-4xl text-base leading-7 text-foreground">
+            <InlineMarkdown text={lines.join(' ')} />
+          </p>
+        )
+      })}
+    </div>
+  )
+}
+
 function NewsDetail({
   item,
   onBack,
@@ -1248,12 +1306,15 @@ function NewsDetail({
       <div className="grid gap-4 p-4 lg:grid-cols-[minmax(0,1fr)_320px]">
         <div className="min-w-0 space-y-4">
           <div>
-            <div className="mono-label">Buyer relevance</div>
-            <p className="mt-2 max-w-4xl text-base leading-7 text-foreground">{item.buyerRelevance || 'No buyer relevance summary captured yet.'}</p>
+            <div className="mono-label">Brief</div>
+            <div className="mt-3">
+              <NewsArticle markdown={item.article || item.buyerRelevance} />
+            </div>
           </div>
           <div>
-            <div className="mono-label">Source note</div>
+            <div className="mono-label">Source and buyer signal</div>
             <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">{item.sourceNote || 'No source note captured yet.'}</p>
+            <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">{item.buyerRelevance || 'No buyer relevance summary captured yet.'}</p>
           </div>
         </div>
         <div className="grid content-start gap-3 rounded-md border border-border bg-muted/10 p-3 text-sm">
