@@ -452,11 +452,11 @@ function formatCount(value: number) {
   return new Intl.NumberFormat('en-US').format(value)
 }
 
-function Stat({ label, value }: { label: string; value: string | number }) {
+function Stat({ label, value, tone = 'default' }: { label: string; value: ReactNode; tone?: 'default' | 'positive' }) {
   return (
     <div className="border-l border-border pl-3">
       <div className="mono-label">{label}</div>
-      <div className="mt-1 text-xl font-semibold leading-none">{value}</div>
+      <div className={cn('mt-1 text-xl font-semibold leading-none', tone === 'positive' && 'text-emerald-400')}>{value}</div>
     </div>
   )
 }
@@ -1884,7 +1884,7 @@ function App() {
               <Stat label="Categories" value={registryData.stats.categories} />
               <Stat label="Vendors" value={registryData.stats.vendors} />
               <Stat label="News" value={registryData.stats.newsItems} />
-              <Stat label="Product files" value={registryData.stats.files} />
+              <Stat label="W/W growth" value="↑ 37%" tone="positive" />
             </div>
           </div>
         </section>
