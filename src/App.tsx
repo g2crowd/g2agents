@@ -147,6 +147,14 @@ type AppHashState = {
   fit: FitFilter
   expanded: boolean
 }
+type SearchMatch = {
+  label: string
+  detail: string
+}
+type DiffLine = {
+  type: 'added' | 'removed' | 'context'
+  text: string
+}
 const appTabs = ['products', 'news', 'categories', 'vendors', 'docs'] as const
 const fitLabels: Record<string, string> = {
   all: 'All',
@@ -193,6 +201,27 @@ const columnHelp = {
 }
 
 const categoryTitleBySlug = new Map(registryData.categories.map((category) => [category.slug, category.title]))
+const defaultCategoryId = registryData.categories.find((category) => category.slug === 'subscription-billing')?.slug || registryData.categories[0]?.slug || 'subscription-billing'
+
+const newsTypeLabels: Record<string, string> = {
+  acquisition: 'Acquisitions',
+  'agentic-commerce': 'Agentic commerce',
+  'ai-integration': 'AI',
+  'customer-win': 'Customer wins',
+  'developer-platform': 'Developer platform',
+  'feature-update': 'Feature updates',
+  'hardware-launch': 'Hardware',
+  'implementation-partnership': 'Partnerships',
+  'partner-integration': 'Integrations',
+  'payment-method': 'Payments',
+  pricing: 'Pricing',
+  'product-ai-integration': 'AI',
+  'product-event': 'Events',
+  'product-launch': 'Launches',
+  'product-release': 'Releases',
+  reporting: 'Reporting',
+  'subscription-billing': 'Subscription billing',
+}
 
 function humanizeSlug(value: string) {
   return value
@@ -205,6 +234,10 @@ function humanizeSlug(value: string) {
 function formatCategoryLabel(categoryId?: string) {
   if (!categoryId) return 'Uncategorized'
   return categoryTitleBySlug.get(categoryId) || humanizeSlug(categoryId)
+}
+
+function productInCategory(product: Product, categoryId: string) {
+  return getProductCategoryId(product) === categoryId || product.categoryMemberships.some((membership) => membership.category_id === categoryId)
 }
 
 function cleanMarkdownLink(value: string) {
@@ -227,6 +260,61 @@ function describeFitForCategory(fit: string, categoryLabel: string) {
   const label = fitLabels[fit] || fit || 'Unclassified'
   const description = relationshipDescriptions[fit] || 'Category relationship is not classified yet.'
   return `${label} for ${categoryLabel}. ${description}`
+}
+
+function productUseCaseSummary(product: Product) {
+  const capabilities = product.features.map((feature) => feature.capability).filter(Boolean)
+  const fallback = [...product.strengths, ...product.cautions].filter(Boolean)
+  const terms = (capabilities.length ? capabilities : fallback).slice(0, 4)
+  if (terms.length) return terms.join(', ')
+  return product.profile || product.description || 'Product dossier seed'
+}
+
+function trustFreshness(product: Product) {
+  const expires = product.expiresAt ? new Date(`${product.expiresAt}T00:00:00`) : null
+  if (!expires || Number.isNaN(expires.getTime())) {
+    return { label: 'Freshness unknown', tone: 'muted' as const, description: 'No expiry date has been captured.' }
+  }
+
+  const now = new Date()
+  const diffDays = Math.ceil((expires.getTime() - now.getTime()) / 86_400_000)
+  if (diffDays < 0) return { label: 'Stale', tone: 'partial' as const, description: `Expired ${Math.abs(diffDays)} days ago.` }
+  if (diffDays <= 30) return { label: 'Refresh soon', tone: 'adjacent' as const, description: `Expires in ${diffDays} days.` }
+  return { label: 'Fresh', tone: 'core' as const, description: `Fresh for ${diffDays} more days.` }
+}
+
+function matchSource(text: string, query: string) {
+  const normalized = normalizeSearchText(text)
+  const tokens = searchTokens(query)
+  return tokens.some((token) => hasSearchTerm(normalized, token))
+}
+
+function productSearchMatches(product: Product, vendor: Vendor | undefined, query: string): SearchMatch[] {
+  const normalized = normalizeSearchText(query)
+  if (!normalized) {
+    return [
+      { label: 'Category', detail: getProductCategoryLabel(product) },
+      { label: 'Dossier', detail: productUseCaseSummary(product) },
+    ]
+  }
+
+  const sources: SearchMatch[] = []
+  const checks: Array<[string, string, string]> = [
+    ['Product', product.title, product.title],
+    ['Vendor', [product.vendorId, vendor?.title].join(' '), vendor?.title || product.vendorId],
+    ['Category', getProductCategoryLabel(product), getProductCategoryLabel(product)],
+    ['Profile', [product.profile, product.buyerFit].join(' '), productUseCaseSummary(product)],
+    ['Features', product.features.map((feature) => feature.capability).join(' '), product.features.slice(0, 3).map((feature) => feature.capability).join(', ')],
+    ['Reviews', [...product.strengths, ...product.cautions].join(' '), product.strengths.slice(0, 3).join(', ') || 'review-derived signals'],
+    ['News', product.news.map((item) => [item.headline, item.buyerRelevance, item.type].join(' ')).join(' '), product.news[0]?.headline || 'product news'],
+    ['Files', product.files.map((file) => [file.name, file.content].join(' ')).join(' '), 'registry markdown files'],
+  ]
+
+  checks.forEach(([label, text, detail]) => {
+    if (sources.length < 3 && matchSource(text, query)) sources.push({ label, detail })
+  })
+
+  return sources.length ? sources : [{ label: 'Semantic', detail: 'related registry language and category concepts' }]
 }
 
 function fitVariant(fit: string) {
@@ -466,14 +554,40 @@ function Stat({ label, value, growth }: { label: string; value: ReactNode; growt
   )
 }
 
-function HelpLabel({ label, description, align = 'left' }: { label: string; description: string; align?: 'left' | 'right' }) {
+function PopoverTip({
+  trigger,
+  description,
+  align = 'left',
+  width = 'w-56',
+}: {
+  trigger: ReactNode
+  description: ReactNode
+  align?: 'left' | 'right'
+  width?: string
+}) {
+  const [open, setOpen] = useState(false)
+
   return (
-    <span className="group relative inline-flex cursor-help items-center" tabIndex={0} title={description}>
-      <span>{label}</span>
+    <span className="relative inline-flex">
+      <button
+        type="button"
+        className="inline-flex cursor-help items-center text-left"
+        aria-expanded={open}
+        onClick={(event) => {
+          event.stopPropagation()
+          setOpen(true)
+        }}
+        onFocus={() => setOpen(true)}
+        onBlur={() => setOpen(false)}
+      >
+        {trigger}
+      </button>
       <span
         className={cn(
-          'pointer-events-none absolute bottom-full z-30 mb-2 w-64 rounded-md border border-border bg-card px-2.5 py-2 text-left font-sans text-xs font-normal normal-case leading-4 text-foreground opacity-0 shadow-xl transition-opacity group-hover:opacity-100 group-focus:opacity-100',
+          'pointer-events-none absolute bottom-full z-30 mb-2 rounded-md border border-border bg-card px-2.5 py-2 text-left text-xs font-normal normal-case leading-4 text-foreground opacity-0 shadow-xl transition-opacity',
+          width,
           align === 'right' ? 'right-0' : 'left-0',
+          open && 'opacity-100',
         )}
       >
         {description}
@@ -482,23 +596,72 @@ function HelpLabel({ label, description, align = 'left' }: { label: string; desc
   )
 }
 
+function HelpLabel({ label, description, align = 'left' }: { label: string; description: string; align?: 'left' | 'right' }) {
+  return (
+    <PopoverTip trigger={<span>{label}</span>} description={description} align={align} width="w-64" />
+  )
+}
+
 function SourceBadge({ tier, align = 'left' }: { tier: string; align?: 'left' | 'right' }) {
   const label = sourceTierLabels[tier] || tier || 'Unknown'
   const description = sourceTierDescriptions[tier] || 'Source provenance has not been classified yet.'
 
   return (
-    <span className="group relative inline-flex cursor-help" tabIndex={0} title={description}>
-      <Badge variant="outline">{label}</Badge>
-      <span
-        className={cn(
-          'pointer-events-none absolute bottom-full z-30 mb-2 w-48 rounded-md border border-border bg-card px-2.5 py-2 text-left text-xs leading-4 text-foreground opacity-0 shadow-xl transition-opacity group-hover:opacity-100 group-focus:opacity-100',
-          align === 'right' ? 'right-0' : 'left-0',
-        )}
-      >
-        {description}
-      </span>
-    </span>
+    <PopoverTip trigger={<Badge variant="outline">{label}</Badge>} description={description} align={align} width="w-48" />
   )
+}
+
+function CategoryMatchBadge({ fit, categoryLabel, align = 'left' }: { fit: string; categoryLabel: string; align?: 'left' | 'right' }) {
+  return (
+    <PopoverTip
+      trigger={<Badge variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>}
+      description={describeFitForCategory(fit, categoryLabel)}
+      align={align}
+      width="w-56"
+    />
+  )
+}
+
+function FreshnessBadge({ product, align = 'left' }: { product: Product; align?: 'left' | 'right' }) {
+  const freshness = trustFreshness(product)
+  return (
+    <PopoverTip
+      trigger={<Badge variant={freshness.tone}>{freshness.label}</Badge>}
+      description={freshness.description}
+      align={align}
+      width="w-44"
+    />
+  )
+}
+
+function lineDiff(before: string, after: string): DiffLine[] {
+  const beforeLines = before.replace(/\r\n/g, '\n').split('\n')
+  const afterLines = after.replace(/\r\n/g, '\n').split('\n')
+  const max = Math.max(beforeLines.length, afterLines.length)
+  const lines: DiffLine[] = []
+
+  for (let index = 0; index < max; index += 1) {
+    const oldLine = beforeLines[index]
+    const newLine = afterLines[index]
+    if (oldLine === newLine) {
+      if (lines.length < 80 && oldLine !== undefined && lines.some((line) => line.type !== 'context')) {
+        lines.push({ type: 'context', text: `  ${oldLine}` })
+      }
+      continue
+    }
+    if (oldLine !== undefined) lines.push({ type: 'removed', text: `- ${oldLine}` })
+    if (newLine !== undefined) lines.push({ type: 'added', text: `+ ${newLine}` })
+    if (lines.length > 80) break
+  }
+
+  return lines
+}
+
+function diffStats(lines: DiffLine[]) {
+  return {
+    added: lines.filter((line) => line.type === 'added').length,
+    removed: lines.filter((line) => line.type === 'removed').length,
+  }
 }
 
 function CategoryFitLegend({ categoryLabel }: { categoryLabel: string }) {
@@ -520,15 +683,99 @@ function CategoryFitLegend({ categoryLabel }: { categoryLabel: string }) {
   )
 }
 
+function ProductComparePanel({
+  products,
+  onRemove,
+  onClear,
+}: {
+  products: Product[]
+  onRemove: (slug: string) => void
+  onClear: () => void
+}) {
+  if (products.length < 2) return null
+
+  const rows: Array<[string, (product: Product) => ReactNode]> = [
+    ['Category match', (product) => <CategoryMatchBadge fit={getFit(product)} categoryLabel={getProductCategoryLabel(product)} />],
+    ['Source', (product) => <SourceBadge tier={product.sourceTier} />],
+    ['Freshness', (product) => <FreshnessBadge product={product} />],
+    ['Reviews', (product) => <span className="font-mono">{product.reviewCount ? formatCount(product.reviewCount) : '-'}</span>],
+    ['Pricing', (product) => product.pricingSignal || 'Not captured'],
+    ['Best for', (product) => productUseCaseSummary(product)],
+    ['Strengths', (product) => product.strengths.slice(0, 3).join(', ') || 'Not captured'],
+    ['Recent news', (product) => product.news[0]?.headline || 'No accepted news yet'],
+  ]
+
+  return (
+    <section className="dense-panel overflow-hidden">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-3 py-2">
+        <div>
+          <div className="mono-label">Compare</div>
+          <div className="mt-0.5 text-sm text-muted-foreground">{products.length} selected products</div>
+        </div>
+        <Button variant="outline" size="sm" onClick={onClear}>
+          Clear
+        </Button>
+      </div>
+      <div className="overflow-auto">
+        <table className="w-full min-w-[760px] border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-border bg-muted/20 text-left">
+              <th className="w-36 px-3 py-2 mono-label">Signal</th>
+              {products.map((product) => (
+                <th key={product.slug} className="min-w-44 px-3 py-2 align-top">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <div className="font-semibold">{product.title}</div>
+                      <div className="mt-0.5 font-mono text-xs text-muted-foreground">{product.vendorId}</div>
+                    </div>
+                    <button
+                      type="button"
+                      className="rounded p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                      onClick={() => onRemove(product.slug)}
+                      aria-label={`Remove ${product.title} from compare`}
+                    >
+                      <X className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(([label, render]) => (
+              <tr key={label} className="border-b border-border/80 last:border-0">
+                <td className="px-3 py-2 align-top mono-label">{label}</td>
+                {products.map((product) => (
+                  <td key={`${product.slug}-${label}`} className="px-3 py-2 align-top text-muted-foreground">
+                    {render(product)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )
+}
+
 function ProductTable({
   products,
   selected,
   categoryLabel,
+  query,
+  vendorBySlug,
+  compareSlugs,
+  onToggleCompare,
   onSelect,
 }: {
   products: Product[]
   selected: string
   categoryLabel: string
+  query: string
+  vendorBySlug: Map<string, Vendor>
+  compareSlugs: string[]
+  onToggleCompare: (slug: string) => void
   onSelect: (slug: string) => void
 }) {
   return (
@@ -536,7 +783,10 @@ function ProductTable({
       <table className="w-full table-fixed border-collapse text-sm">
         <thead>
           <tr className="border-b border-border text-left mono-label">
-            <th className="w-12 py-2 pr-3 font-medium">
+            <th className="w-10 py-2 pr-3 font-medium">
+              <HelpLabel label="Compare" description="Select up to four products to compare side by side." />
+            </th>
+            <th className="w-10 py-2 pr-3 font-medium">
               <HelpLabel label="#" description={columnHelp.rank} />
             </th>
             <th className="py-2 pr-3 font-medium">
@@ -561,7 +811,8 @@ function ProductTable({
             const active = product.slug === selected
             const fit = getFit(product)
             const productCategoryLabel = getProductCategoryLabel(product)
-            const fitDescription = describeFitForCategory(fit, productCategoryLabel)
+            const matches = productSearchMatches(product, vendorBySlug.get(product.vendorId), query)
+            const compared = compareSlugs.includes(product.slug)
             return (
               <tr
                 key={product.slug}
@@ -571,28 +822,51 @@ function ProductTable({
                 )}
                 onClick={() => onSelect(product.slug)}
               >
+                <td className="py-2.5 pr-3 align-top">
+                  <input
+                    type="checkbox"
+                    className="mt-1 h-3.5 w-3.5 accent-emerald-400"
+                    checked={compared}
+                    aria-label={`Compare ${product.title}`}
+                    onClick={(event) => event.stopPropagation()}
+                    onChange={() => onToggleCompare(product.slug)}
+                  />
+                </td>
                 <td className="py-2.5 pr-3 font-mono text-muted-foreground">{product.rank || '-'}</td>
                 <td className="py-2.5 pr-3">
                   <div className="flex min-w-0 max-w-[calc(100vw-8rem)] items-center gap-2 md:max-w-none">
                     <div className="truncate font-medium leading-tight">{product.title}</div>
-                    <Badge className="md:hidden" variant={fitVariant(fit)} title={fitDescription}>
-                      {fitLabels[fit] || fit}
-                    </Badge>
+                    <span className="md:hidden"><CategoryMatchBadge fit={fit} categoryLabel={productCategoryLabel} /></span>
                   </div>
-                  <div className="mt-0.5 max-w-[calc(100vw-8rem)] truncate font-mono text-xs text-muted-foreground md:max-w-none">
-                    {product.vendorId} / {productCategoryLabel} / {product.path}
+                  <div className="mt-1 max-w-[calc(100vw-8rem)] truncate text-xs leading-4 text-muted-foreground md:max-w-none">
+                    {productUseCaseSummary(product)}
+                  </div>
+                  <div className="mt-1 flex min-w-0 flex-wrap items-center gap-1.5 font-mono text-[11px] text-muted-foreground">
+                    <span>{product.vendorId}</span>
+                    <span>/</span>
+                    <span>{productCategoryLabel}</span>
+                    {matches.slice(0, 2).map((match) => (
+                      <PopoverTip
+                        key={`${product.slug}-${match.label}`}
+                        trigger={<Badge variant="muted">{query.trim() ? `matched: ${match.label}` : match.label}</Badge>}
+                        description={match.detail}
+                        width="w-52"
+                      />
+                    ))}
                   </div>
                 </td>
                 <td className="hidden py-2.5 pr-3 md:table-cell">
-                  <Badge variant={fitVariant(fit)} title={fitDescription}>
-                    {fitLabels[fit] || fit}
-                  </Badge>
+                  <CategoryMatchBadge fit={fit} categoryLabel={productCategoryLabel} />
                 </td>
                 <td className="hidden py-2.5 pr-3 text-right font-mono text-muted-foreground md:table-cell">
                   {product.reviewCount ? formatCount(product.reviewCount) : '-'}
                 </td>
                 <td className="hidden py-2.5 pr-3 lg:table-cell">
-                  <SourceBadge tier={product.sourceTier} align="right" />
+                  <div className="flex flex-col items-start gap-1.5">
+                    <SourceBadge tier={product.sourceTier} align="right" />
+                    <FreshnessBadge product={product} align="right" />
+                    <span className="font-mono text-[11px] text-muted-foreground">reviewed {product.observedAt || '-'}</span>
+                  </div>
                 </td>
               </tr>
             )
@@ -905,6 +1179,8 @@ function MarkdownEditPanel({
   }, [file.path, initialContent])
 
   const changed = draft !== initialContent
+  const diffLines = useMemo(() => lineDiff(initialContent, draft), [draft, initialContent])
+  const diffSummary = diffStats(diffLines)
   const canSubmit = changed && name.trim().length > 1 && email.includes('@') && summary.trim().length > 7 && !submitting
 
   const submitChange = async (event: FormEvent) => {
@@ -978,6 +1254,34 @@ function MarkdownEditPanel({
 
         <div className="rounded-md border border-border bg-muted/20 p-2 text-xs leading-5 text-muted-foreground">
           Editable scope: vendor and shared product files. G2-owned editorial files stay review-only here.
+        </div>
+
+        <div className="rounded-md border border-border bg-muted/10">
+          <div className="flex items-center justify-between gap-2 border-b border-border px-2 py-1.5">
+            <div className="mono-label">Review diff</div>
+            <div className="font-mono text-[11px] text-muted-foreground">
+              +{diffSummary.added} / -{diffSummary.removed}
+            </div>
+          </div>
+          <div className="max-h-56 overflow-auto p-2 font-mono text-[11px] leading-5">
+            {changed && diffLines.length ? (
+              diffLines.map((line, index) => (
+                <div
+                  key={`${line.type}-${index}-${line.text}`}
+                  className={cn(
+                    'whitespace-pre-wrap break-words rounded px-1',
+                    line.type === 'added' && 'bg-emerald-500/10 text-emerald-300',
+                    line.type === 'removed' && 'bg-red-500/10 text-red-300',
+                    line.type === 'context' && 'text-muted-foreground',
+                  )}
+                >
+                  {line.text || ' '}
+                </div>
+              ))
+            ) : (
+              <div className="text-muted-foreground">No changes yet.</div>
+            )}
+          </div>
         </div>
 
         {error ? <div className="rounded-md border border-amber-500/30 bg-amber-500/10 p-2 text-xs leading-5 text-amber-300">{error}</div> : null}
@@ -1192,10 +1496,17 @@ function ProductTabs({ product, vendor, includeFiles = true }: { product: Produc
             <div>
               <dt className="mono-label">Category match</dt>
               <dd className="mt-1">
-                <Badge variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>
+                <CategoryMatchBadge fit={fit} categoryLabel={categoryLabel} />
                 <div className="mt-1 text-xs leading-4 text-muted-foreground">
                   For {categoryLabel}. {relationshipDescriptions[fit] || 'Category relationship is not classified yet.'}
                 </div>
+              </dd>
+            </div>
+            <div>
+              <dt className="mono-label">Trust</dt>
+              <dd className="mt-1 flex flex-wrap gap-1.5">
+                <SourceBadge tier={product.sourceTier} />
+                <FreshnessBadge product={product} />
               </dd>
             </div>
             <div>
@@ -1265,7 +1576,6 @@ function ProductDetail({
 }) {
   const fit = getFit(product)
   const categoryLabel = getProductCategoryLabel(product)
-  const fitDescription = describeFitForCategory(fit, categoryLabel)
 
   return (
     <section className={cn('dense-panel self-start overflow-hidden', expanded && 'min-w-0')}>
@@ -1274,10 +1584,9 @@ function ProductDetail({
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2">
               <h2 className="text-lg font-semibold leading-tight">{product.title}</h2>
-              <Badge variant={fitVariant(fit)} title={fitDescription}>
-                {fitLabels[fit] || fit}
-              </Badge>
+              <CategoryMatchBadge fit={fit} categoryLabel={categoryLabel} />
               <SourceBadge tier={product.sourceTier} />
+              <FreshnessBadge product={product} />
             </div>
             <div className="mt-1 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-muted-foreground">
               <span className="truncate">{product.path}</span>
@@ -1579,10 +1888,13 @@ function NewsView({
   onCloseNews: () => void
   onOpenProduct: (slug: string) => void
 }) {
+  const [newsType, setNewsType] = useState('all')
+  const newsTypes = useMemo(() => Array.from(new Set(news.map((item) => item.type || 'news'))).sort(), [news])
   const filteredNews = useMemo(() => {
     const normalized = normalizeSearchText(query)
-    if (!normalized) return [...news]
-    return news
+    const typedNews = newsType === 'all' ? news : news.filter((item) => (item.type || 'news') === newsType)
+    if (!normalized) return [...typedNews]
+    return typedNews
       .map((item) => ({
         item,
         score: searchScore(newsSearchText(item), query),
@@ -1590,7 +1902,7 @@ function NewsView({
       .filter(({ score }) => score > 0)
       .sort((a, b) => b.score - a.score || String(b.item.date).localeCompare(String(a.item.date)))
       .map(({ item }) => item)
-  }, [news, query])
+  }, [news, newsType, query])
   const selectedNews = selectedNewsKey ? news.find((item) => newsEntryKey(item) === selectedNewsKey) : undefined
 
   if (selectedNews) {
@@ -1609,6 +1921,17 @@ function NewsView({
             </p>
           </div>
           <div className="font-mono text-xs text-muted-foreground">{filteredNews.length} entries</div>
+        </div>
+        <div className="mt-3 flex flex-wrap items-center gap-1.5">
+          <span className="mono-label mr-1">Type</span>
+          <Button variant={newsType === 'all' ? 'secondary' : 'ghost'} size="sm" onClick={() => setNewsType('all')}>
+            All
+          </Button>
+          {newsTypes.map((type) => (
+            <Button key={type} variant={newsType === type ? 'secondary' : 'ghost'} size="sm" onClick={() => setNewsType(type)}>
+              {newsTypeLabels[type] || humanizeSlug(type)}
+            </Button>
+          ))}
         </div>
       </div>
       <NewsItems items={filteredNews} onOpenNews={onOpenNews} onOpenProduct={onOpenProduct} />
@@ -1722,11 +2045,14 @@ function App() {
   const [selectedNewsKey, setSelectedNewsKey] = useState<string>(initialHashState.news || '')
   const [detailExpanded, setDetailExpanded] = useState(initialHashState.expanded)
   const [activeTab, setActiveTab] = useState<AppTab>(initialHashState.tab)
+  const [activeCategoryId, setActiveCategoryId] = useState(defaultCategoryId)
+  const [compareSlugs, setCompareSlugs] = useState<string[]>([])
   const vendorBySlug = useMemo(() => new Map(registryData.vendors.map((vendor) => [vendor.slug, vendor])), [])
   const productSearchIndex = useMemo(
     () => new Map(products.map((product) => [product.slug, productSearchText(product, vendorBySlug.get(product.vendorId))])),
     [products, vendorBySlug],
   )
+  const categoryProducts = useMemo(() => products.filter((product) => productInCategory(product, activeCategoryId)), [activeCategoryId, products])
 
   const writeHash = (overrides: Partial<AppHashState>, mode: 'push' | 'replace' = 'push') => {
     if (typeof window === 'undefined') return
@@ -1767,7 +2093,7 @@ function App() {
 
   const filteredProducts = useMemo(() => {
     const normalized = normalizeSearchText(query)
-    return products
+    return categoryProducts
       .map((product) => ({
         product,
         score: searchScore(productSearchIndex.get(product.slug) || '', query),
@@ -1783,11 +2109,27 @@ function App() {
         return b.score - a.score || a.product.rank - b.product.rank || a.product.title.localeCompare(b.product.title)
       })
       .map(({ product }) => product)
-  }, [fit, productSearchIndex, products, query])
+  }, [categoryProducts, fit, productSearchIndex, query])
 
-  const selectedProduct = filteredProducts.find((product) => product.slug === selectedSlug) || filteredProducts[0] || products.find((product) => product.slug === selectedSlug) || products[0]
+  const selectedProduct = filteredProducts.find((product) => product.slug === selectedSlug) || filteredProducts[0] || categoryProducts[0]
   const selectedVendor = selectedProduct ? vendorBySlug.get(selectedProduct.vendorId) : undefined
-  const activeCategoryLabel = selectedProduct ? getProductCategoryLabel(selectedProduct) : formatCategoryLabel(products[0]?.displayCategory)
+  const activeCategoryLabel = formatCategoryLabel(activeCategoryId)
+  const comparedProducts = compareSlugs.map((slug) => products.find((product) => product.slug === slug)).filter(Boolean) as Product[]
+  const toggleCompare = (slug: string) => {
+    setCompareSlugs((current) => {
+      if (current.includes(slug)) return current.filter((item) => item !== slug)
+      return [...current.slice(-3), slug]
+    })
+  }
+  const removeCompare = (slug: string) => setCompareSlugs((current) => current.filter((item) => item !== slug))
+  const changeCategory = (categoryId: string) => {
+    setActiveCategoryId(categoryId)
+    const nextProduct = products.find((product) => productInCategory(product, categoryId))
+    setSelectedSlug(nextProduct?.slug || '')
+    setDetailExpanded(false)
+    setCompareSlugs((current) => current.filter((slug) => products.some((product) => product.slug === slug && productInCategory(product, categoryId))))
+    writeHash({ tab: 'products', product: nextProduct?.slug, expanded: false }, 'push')
+  }
   const selectProduct = (slug: string, expanded = detailExpanded) => {
     setSelectedSlug(slug)
     setActiveTab('products')
@@ -1840,6 +2182,7 @@ function App() {
     setActiveTab('products')
     setQuery('')
     setFit('all')
+    setActiveCategoryId(defaultCategoryId)
     setSelectedSlug(products[0]?.slug || '')
     setSelectedNewsKey('')
     setDetailExpanded(false)
@@ -1936,9 +2279,18 @@ function App() {
               <div className="flex flex-wrap items-center gap-1.5">
                 <Filter className="h-4 w-4 text-muted-foreground" />
                 <span className="mono-label hidden sm:inline">Category</span>
-                <Badge variant="outline" className="hidden sm:inline-flex">
-                  {activeCategoryLabel}
-                </Badge>
+                <div className="flex flex-wrap items-center gap-1">
+                  {registryData.categories.map((category) => (
+                    <Button
+                      key={category.slug}
+                      variant={activeCategoryId === category.slug ? 'secondary' : 'ghost'}
+                      size="sm"
+                      onClick={() => changeCategory(category.slug)}
+                    >
+                      {category.title}
+                    </Button>
+                  ))}
+                </div>
                 <span className="mono-label hidden sm:inline">Match</span>
                 {fitOrder.slice(0, 4).map((option) => (
                   <Button
@@ -1968,17 +2320,31 @@ function App() {
                   <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-3 py-2">
                     <div className="flex flex-wrap items-center gap-2">
                       <div className="mono-label">{filteredProducts.length} products</div>
-                      <Badge variant="outline">Category: {activeCategoryLabel}</Badge>
+                      <div className="flex flex-wrap items-center gap-1.5 font-mono text-xs text-muted-foreground">
+                        <span>Software</span>
+                        <ChevronRight className="h-3.5 w-3.5" />
+                        <Badge variant="outline">{activeCategoryLabel}</Badge>
+                      </div>
                     </div>
                     <div className="font-mono text-xs text-muted-foreground">seed order: {activeCategoryLabel} category page</div>
                   </div>
                   <CategoryFitLegend categoryLabel={activeCategoryLabel} />
-                  <ProductTable
-                    products={filteredProducts}
-                    selected={selectedProduct?.slug || ''}
-                    categoryLabel={activeCategoryLabel}
-                    onSelect={(slug) => selectProduct(slug, false)}
-                  />
+                  {filteredProducts.length ? (
+                    <ProductTable
+                      products={filteredProducts}
+                      selected={selectedProduct?.slug || ''}
+                      categoryLabel={activeCategoryLabel}
+                      query={query}
+                      vendorBySlug={vendorBySlug}
+                      compareSlugs={compareSlugs}
+                      onToggleCompare={toggleCompare}
+                      onSelect={(slug) => selectProduct(slug, false)}
+                    />
+                  ) : (
+                    <div className="p-4 text-sm text-muted-foreground">
+                      No products are seeded for {activeCategoryLabel} yet. Use the category model as a placeholder until product folders are added.
+                    </div>
+                  )}
                 </section>
                 {selectedProduct ? (
                   <ProductDetail
@@ -1987,6 +2353,11 @@ function App() {
                     expanded={detailExpanded}
                     onToggleExpanded={toggleDetailExpanded}
                   />
+                ) : null}
+                {comparedProducts.length >= 2 ? (
+                  <div className="xl:col-span-2">
+                    <ProductComparePanel products={comparedProducts} onRemove={removeCompare} onClear={() => setCompareSlugs([])} />
+                  </div>
                 ) : null}
               </div>
             )}
