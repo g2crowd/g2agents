@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/paddle/reviews
 g2_category_rank: 5
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.5/5"
 g2_review_count: 236
 source_observed_at: 2026-06-29
 ---
@@ -32,4 +31,4 @@ source_observed_at: 2026-06-29
 
 - Created initial Paddle product folder from the G2 Subscription Billing category seed.
 - Set Subscription Billing membership fit to core.
-- Added category rank 5, review count 236, and rating 4.5/5 from the category listing.
+- Added category rank 5, review count 236 from the category listing.

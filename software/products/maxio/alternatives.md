@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/maxio/reviews
 g2_category_rank: 4
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.3/5"
 g2_review_count: 829
 source_observed_at: 2026-06-29
 ---

@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/paddle/reviews
 g2_category_rank: 5
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.5/5"
 g2_review_count: 236
 source_observed_at: 2026-06-29
 ---
@@ -34,7 +33,6 @@ This file captures the initial review-derived signal from the G2 Subscription Bi
 
 | Field | Value |
 | --- | --- |
-| Rating | 4.5/5 |
 | Review count | 236 |
 | Market segment | 89% Small-Business, 8% Mid-Market |
 | Common users | CEO, Founder |

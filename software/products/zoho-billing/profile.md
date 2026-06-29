@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/zoho-billing/reviews
 g2_category_rank: 9
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.4/5"
 g2_review_count: 45
 source_observed_at: 2026-06-29
 ---
@@ -39,7 +38,6 @@ Best modeled as a core Subscription Billing product for small and mid-sized busi
 | Field | Value |
 | --- | --- |
 | Category rank | 9 by G2 Score |
-| Rating | 4.4/5 |
 | Review count | 45 |
 | Vendor | Zoho |
 | Market segment | 71% Small-Business, 18% Mid-Market |

@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/paddle/reviews
 g2_category_rank: 5
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.5/5"
 g2_review_count: 236
 source_observed_at: 2026-06-29
 ---
@@ -39,7 +38,6 @@ Best modeled as a core Subscription Billing product for SaaS, AI, app, game, and
 | Field | Value |
 | --- | --- |
 | Category rank | 5 by G2 Score |
-| Rating | 4.5/5 |
 | Review count | 236 |
 | Vendor | Paddle |
 | Market segment | 89% Small-Business, 8% Mid-Market |

@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/agentforce-revenue-management-formerly-sal
 g2_category_rank: 7
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.2/5"
 g2_review_count: 1497
 source_observed_at: 2026-06-29
 ---
@@ -39,7 +38,6 @@ Best modeled as adjacent to Subscription Billing: strong for Salesforce-centered
 | Field | Value |
 | --- | --- |
 | Category rank | 7 by G2 Score |
-| Rating | 4.2/5 |
 | Review count | 1497 |
 | Vendor | Salesforce |
 | Market segment | 45% Mid-Market, 33% Enterprise |

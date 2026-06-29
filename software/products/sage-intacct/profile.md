@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/sage-intacct/reviews
 g2_category_rank: 3
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.3/5"
 g2_review_count: 4118
 source_observed_at: 2026-06-29
 ---
@@ -39,7 +38,6 @@ Best modeled as adjacent to Subscription Billing: strong for finance teams that 
 | Field | Value |
 | --- | --- |
 | Category rank | 3 by G2 Score |
-| Rating | 4.3/5 |
 | Review count | 4118 |
 | Vendor | Sage Software |
 | Market segment | 58% Mid-Market, 25% Small-Business |

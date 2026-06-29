@@ -10,6 +10,7 @@ function readMarkdown(filePath) {
   const raw = fs.readFileSync(filePath, 'utf8')
   const parsed = parseFrontmatter(raw)
   return {
+    raw,
     frontmatter: parsed.frontmatter,
     body: parsed.body.trim(),
   }
@@ -105,10 +106,16 @@ function productRecord(slug) {
   const features = fs.existsSync(path.join(dir, 'features.md'))
     ? readMarkdown(path.join(dir, 'features.md'))
     : { frontmatter: {}, body: '' }
-  const files = listMarkdown(dir).map((file) => ({
-    name: file,
-    path: `software/products/${slug}/${file}`,
-  }))
+  const files = listMarkdown(dir).map((file) => {
+    const markdown = readMarkdown(path.join(dir, file))
+    return {
+      name: file,
+      path: `software/products/${slug}/${file}`,
+      frontmatter: markdown.frontmatter,
+      raw: markdown.raw,
+      content: markdown.body,
+    }
+  })
 
   return {
     slug,
@@ -123,7 +130,6 @@ function productRecord(slug) {
     claimPolicy: index.frontmatter.claim_policy || '',
     resource: index.frontmatter.resource || '',
     rank: Number(index.frontmatter.g2_category_rank || 0),
-    rating: String(index.frontmatter.g2_rating || ''),
     reviewCount: Number(index.frontmatter.g2_review_count || 0),
     observedAt: String(index.frontmatter.source_observed_at || index.frontmatter.reviewed_at || ''),
     expiresAt: String(index.frontmatter.expires_at || ''),
@@ -163,9 +169,8 @@ function categoryRecord(slug) {
       product: row[1] || '',
       vendor: row[2] || '',
       fit: row[3] || '',
-      rating: row[4] || '',
-      reviewCount: row[5] || '',
-      segment: row[6] || '',
+      reviewCount: row[4] || '',
+      segment: row[5] || '',
     })),
   }
 }

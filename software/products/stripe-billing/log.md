@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/stripe-billing/reviews
 g2_category_rank: 8
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.4/5"
 g2_review_count: 139
 source_observed_at: 2026-06-29
 ---
@@ -32,4 +31,4 @@ source_observed_at: 2026-06-29
 
 - Created initial Stripe Billing product folder from the G2 Subscription Billing category seed.
 - Set Subscription Billing membership fit to core.
-- Added category rank 8, review count 139, and rating 4.4/5 from the category listing.
+- Added category rank 8, review count 139 from the category listing.

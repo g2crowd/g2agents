@@ -1,14 +1,19 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   ArrowUpRight,
   BadgeCheck,
   Boxes,
   Building2,
+  ChevronRight,
   CircleDot,
   Copy,
+  File,
   FileText,
   Filter,
+  Folder,
   GitBranch,
+  Maximize2,
+  Minimize2,
   Search,
   ShieldCheck,
   Tags,
@@ -33,6 +38,13 @@ type ProductFeature = {
   evidence: string
   notes: string
 }
+type ProductFile = {
+  name: string
+  path: string
+  frontmatter: Record<string, unknown>
+  raw: string
+  content: string
+}
 type Product = {
   slug: string
   path: string
@@ -46,7 +58,6 @@ type Product = {
   claimPolicy: string
   resource: string
   rank: number
-  rating: string
   reviewCount: number
   observedAt: string
   expiresAt: string
@@ -56,7 +67,7 @@ type Product = {
   cautions: string[]
   features: ProductFeature[]
   pricingSignal: string
-  files: Array<{ name: string; path: string }>
+  files: ProductFile[]
 }
 type Category = {
   slug: string
@@ -76,7 +87,6 @@ type Category = {
     product: string
     vendor: string
     fit: string
-    rating: string
     reviewCount: string
     segment: string
   }>
@@ -119,6 +129,32 @@ const sourceTierLabels: Record<string, string> = {
   mixed: 'Mixed',
 }
 
+const relationshipDescriptions: Record<string, string> = {
+  core: 'Primary product for the current category.',
+  adjacent: 'Relevant to the category through a broader suite or neighboring workflow.',
+  partial: 'Covers part of the category use case, but is not primarily built for it.',
+  legacy: 'Previously associated or retained for historical continuity.',
+  'vendor-claimed': 'Vendor says this belongs here; G2 has not curated it yet.',
+  disputed: 'Category relationship needs review.',
+}
+
+const sourceTierDescriptions: Record<string, string> = {
+  'g2-curated': 'Written or verified by G2 registry maintainers.',
+  'vendor-attested': 'Supplied by a vendor and subject to review.',
+  'review-derived': 'Extracted from patterns in review content.',
+  'public-cited': 'Captured from public sources with citations.',
+  'agent-inferred': 'Inferred by an agent and needs stronger evidence.',
+  mixed: 'Combines multiple source types.',
+}
+
+const columnHelp = {
+  rank: 'Seed order from the category source page. This is not a recommendation or score.',
+  product: 'Canonical product folder in the registry.',
+  relationship: 'Static category membership: core, adjacent, or partial. This is not based on your current search.',
+  reviews: 'Review count captured from the source snapshot.',
+  source: 'Where the registry claim came from, such as public-cited or G2-curated.',
+}
+
 function cleanMarkdownLink(value: string) {
   return value.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
 }
@@ -147,8 +183,34 @@ function Stat({ label, value }: { label: string; value: string | number }) {
   )
 }
 
+function HelpLabel({ label, description, align = 'left' }: { label: string; description: string; align?: 'left' | 'right' }) {
+  return (
+    <span className="group relative inline-flex cursor-help items-center" tabIndex={0} title={description}>
+      <span>{label}</span>
+      <span
+        className={cn(
+          'pointer-events-none absolute bottom-full z-30 mb-2 w-64 rounded-md border border-border bg-card px-2.5 py-2 text-left font-sans text-xs font-normal normal-case leading-4 text-foreground opacity-0 shadow-xl transition-opacity group-hover:opacity-100 group-focus:opacity-100',
+          align === 'right' ? 'right-0' : 'left-0',
+        )}
+      >
+        {description}
+      </span>
+    </span>
+  )
+}
+
 function SourceBadge({ tier }: { tier: string }) {
-  return <Badge variant="outline">{sourceTierLabels[tier] || tier || 'Unknown'}</Badge>
+  const label = sourceTierLabels[tier] || tier || 'Unknown'
+  const description = sourceTierDescriptions[tier] || 'Source provenance has not been classified yet.'
+
+  return (
+    <span className="group relative inline-flex cursor-help" tabIndex={0} title={description}>
+      <Badge variant="outline">{label}</Badge>
+      <span className="pointer-events-none absolute bottom-full left-0 z-30 mb-2 w-56 rounded-md border border-border bg-card px-2.5 py-2 text-left text-xs leading-4 text-foreground opacity-0 shadow-xl transition-opacity group-hover:opacity-100 group-focus:opacity-100">
+        {description}
+      </span>
+    </span>
+  )
 }
 
 function ProductTable({
@@ -165,12 +227,21 @@ function ProductTable({
       <table className="w-full table-fixed border-collapse text-sm">
         <thead>
           <tr className="border-b border-border text-left mono-label">
-            <th className="w-12 py-2 pr-3 font-medium">#</th>
-            <th className="py-2 pr-3 font-medium">Product</th>
-            <th className="hidden w-24 py-2 pr-3 font-medium md:table-cell">Fit</th>
-            <th className="hidden w-20 py-2 pr-3 font-medium md:table-cell">Rating</th>
-            <th className="hidden w-24 py-2 pr-3 text-right font-medium md:table-cell">Reviews</th>
-            <th className="hidden w-28 py-2 pr-3 font-medium lg:table-cell">Tier</th>
+            <th className="w-12 py-2 pr-3 font-medium">
+              <HelpLabel label="#" description={columnHelp.rank} />
+            </th>
+            <th className="py-2 pr-3 font-medium">
+              <HelpLabel label="Product" description={columnHelp.product} />
+            </th>
+            <th className="hidden w-36 py-2 pr-3 font-medium md:table-cell">
+              <HelpLabel label="Relationship" description={columnHelp.relationship} />
+            </th>
+            <th className="hidden w-24 py-2 pr-3 text-right font-medium md:table-cell">
+              <HelpLabel label="Reviews" description={columnHelp.reviews} align="right" />
+            </th>
+            <th className="hidden w-32 py-2 pr-3 font-medium lg:table-cell">
+              <HelpLabel label="Source" description={columnHelp.source} align="right" />
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -190,16 +261,19 @@ function ProductTable({
                 <td className="py-2.5 pr-3">
                   <div className="flex min-w-0 max-w-[calc(100vw-8rem)] items-center gap-2 md:max-w-none">
                     <div className="truncate font-medium leading-tight">{product.title}</div>
-                    <Badge className="md:hidden" variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>
+                    <Badge className="md:hidden" variant={fitVariant(fit)} title={relationshipDescriptions[fit]}>
+                      {fitLabels[fit] || fit}
+                    </Badge>
                   </div>
                   <div className="mt-0.5 max-w-[calc(100vw-8rem)] truncate font-mono text-xs text-muted-foreground md:max-w-none">
                     {product.vendorId} / {product.path}
                   </div>
                 </td>
                 <td className="hidden py-2.5 pr-3 md:table-cell">
-                  <Badge variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>
+                  <Badge variant={fitVariant(fit)} title={relationshipDescriptions[fit]}>
+                    {fitLabels[fit] || fit}
+                  </Badge>
                 </td>
-                <td className="hidden py-2.5 pr-3 font-mono text-muted-foreground md:table-cell">{product.rating || '-'}</td>
                 <td className="hidden py-2.5 pr-3 text-right font-mono text-muted-foreground md:table-cell">
                   {product.reviewCount ? formatCount(product.reviewCount) : '-'}
                 </td>
@@ -215,22 +289,260 @@ function ProductTable({
   )
 }
 
-function ProductDetail({ product, vendor }: { product: Product; vendor?: Vendor }) {
+type FileTreeNode = {
+  name: string
+  path: string
+  type: 'folder' | 'file'
+  children: FileTreeNode[]
+  file?: ProductFile
+}
+
+function sortFileTree(nodes: FileTreeNode[]) {
+  nodes.sort((a, b) => {
+    if (a.type !== b.type) return a.type === 'folder' ? -1 : 1
+    return a.name.localeCompare(b.name)
+  })
+  nodes.forEach((node) => sortFileTree(node.children))
+}
+
+function buildFileTree(files: ProductFile[]) {
+  const root: FileTreeNode = { name: 'root', path: '', type: 'folder', children: [] }
+
+  files.forEach((file) => {
+    const parts = file.path.split('/').slice(3)
+    let current = root
+
+    parts.forEach((part, index) => {
+      const isFile = index === parts.length - 1
+      const nodePath = current.path ? `${current.path}/${part}` : part
+      let next = current.children.find((child) => child.name === part && child.type === (isFile ? 'file' : 'folder'))
+
+      if (!next) {
+        next = {
+          name: part,
+          path: nodePath,
+          type: isFile ? 'file' : 'folder',
+          children: [],
+          file: isFile ? file : undefined,
+        }
+        current.children.push(next)
+      }
+
+      if (isFile) {
+        next.file = file
+      } else {
+        current = next
+      }
+    })
+  })
+
+  sortFileTree(root.children)
+  return root.children
+}
+
+function FileTreeList({
+  nodes,
+  selectedPath,
+  onSelect,
+  depth = 0,
+}: {
+  nodes: FileTreeNode[]
+  selectedPath: string
+  onSelect: (path: string) => void
+  depth?: number
+}) {
+  return (
+    <div className={cn(depth === 0 ? 'space-y-1' : 'mt-1 space-y-1')}>
+      {nodes.map((node) => {
+        if (node.type === 'folder') {
+          return (
+            <div key={node.path}>
+              <div className="flex items-center gap-1 rounded px-1.5 py-1 font-mono text-xs text-muted-foreground" style={{ paddingLeft: `${0.375 + depth * 0.75}rem` }}>
+                <ChevronRight className="h-3 w-3 rotate-90" />
+                <Folder className="h-3.5 w-3.5" />
+                <span className="truncate">{node.name}</span>
+              </div>
+              <FileTreeList nodes={node.children} selectedPath={selectedPath} onSelect={onSelect} depth={depth + 1} />
+            </div>
+          )
+        }
+
+        const active = node.file?.path === selectedPath
+        return (
+          <button
+            key={node.path}
+            type="button"
+            className={cn(
+              'flex w-full items-center gap-1.5 rounded px-1.5 py-1 text-left font-mono text-xs text-muted-foreground transition-colors hover:bg-muted/45 hover:text-foreground',
+              active && 'bg-muted text-foreground',
+            )}
+            style={{ paddingLeft: `${0.625 + depth * 0.75}rem` }}
+            onClick={() => node.file && onSelect(node.file.path)}
+          >
+            <File className="h-3.5 w-3.5 shrink-0" />
+            <span className="truncate">{node.name}</span>
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+function FileBrowser({ product }: { product: Product }) {
+  const defaultPath = product.files.find((file) => file.name === 'index.md')?.path || product.files[0]?.path || ''
+  const [selectedPath, setSelectedPath] = useState(defaultPath)
+  const fileTree = useMemo(() => buildFileTree(product.files), [product.files])
+  const selectedFile = product.files.find((file) => file.path === selectedPath) || product.files[0]
+
+  useEffect(() => {
+    setSelectedPath(defaultPath)
+  }, [defaultPath, product.slug])
+
+  return (
+    <div className="grid min-h-[360px] overflow-hidden rounded-md border border-border bg-muted/10 lg:grid-cols-[260px_minmax(0,1fr)]">
+      <div className="min-w-0 border-b border-border lg:border-b-0 lg:border-r">
+        <div className="border-b border-border px-3 py-2">
+          <div className="mono-label">Files</div>
+          <div className="mt-0.5 font-mono text-xs text-muted-foreground">{product.files.length} Markdown files</div>
+        </div>
+        <div className="max-h-[520px] overflow-auto p-2">
+          {fileTree.length ? <FileTreeList nodes={fileTree} selectedPath={selectedFile?.path || ''} onSelect={setSelectedPath} /> : <div className="p-2 text-sm text-muted-foreground">No files captured.</div>}
+        </div>
+      </div>
+      <div className="min-w-0">
+        <div className="flex min-w-0 items-center justify-between gap-2 border-b border-border px-3 py-2">
+          <div className="min-w-0 truncate font-mono text-xs text-muted-foreground">{selectedFile?.path || 'No file selected'}</div>
+          {selectedFile ? (
+            <Button variant="ghost" size="icon" onClick={() => navigator.clipboard.writeText(selectedFile.path)}>
+              <Copy className="h-3.5 w-3.5" />
+            </Button>
+          ) : null}
+        </div>
+        <pre className="max-h-[520px] overflow-auto whitespace-pre-wrap break-words p-3 font-mono text-[11px] leading-5 text-muted-foreground">
+          {selectedFile?.raw || selectedFile?.content || 'No file content captured.'}
+        </pre>
+      </div>
+    </div>
+  )
+}
+
+function ProductTabs({ product, vendor, includeFiles = true }: { product: Product; vendor?: Vendor; includeFiles?: boolean }) {
   const fit = getFit(product)
 
   return (
-    <section className="dense-panel self-start overflow-hidden">
+    <Tabs defaultValue="overview" className="min-w-0">
+      <TabsList>
+        <TabsTrigger value="overview">Overview</TabsTrigger>
+        <TabsTrigger value="evidence">Evidence</TabsTrigger>
+        {includeFiles ? <TabsTrigger value="files">Files</TabsTrigger> : null}
+      </TabsList>
+
+      <TabsContent value="overview">
+        <div className="grid gap-3 lg:grid-cols-[1fr_220px]">
+          <div className="space-y-3">
+            <div>
+              <div className="mono-label">Profile</div>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground">{product.profile || product.description}</p>
+            </div>
+            <div>
+              <div className="mono-label">Buyer fit</div>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground">{product.buyerFit || 'Not captured yet.'}</p>
+            </div>
+          </div>
+          <dl className="grid grid-cols-2 gap-x-4 gap-y-3 rounded-md border border-border bg-muted/20 p-3 text-sm lg:grid-cols-1">
+            <div>
+              <dt className="mono-label">Vendor</dt>
+              <dd className="mt-1">{vendor?.title || product.vendorId}</dd>
+            </div>
+            <div>
+              <dt className="mono-label">Relationship</dt>
+              <dd className="mt-1">
+                <Badge variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>
+                <div className="mt-1 text-xs leading-4 text-muted-foreground">{relationshipDescriptions[fit] || 'Category relationship is not classified yet.'}</div>
+              </dd>
+            </div>
+            <div>
+              <dt className="mono-label">Reviews</dt>
+              <dd className="mt-1 font-mono">{product.reviewCount ? formatCount(product.reviewCount) : '-'}</dd>
+            </div>
+            <div>
+              <dt className="mono-label">Observed</dt>
+              <dd className="mt-1 font-mono">{product.observedAt || '-'}</dd>
+            </div>
+          </dl>
+        </div>
+      </TabsContent>
+
+      <TabsContent value="evidence">
+        <div className="grid gap-4 lg:grid-cols-2">
+          <SignalList title="Review-derived strengths" items={product.strengths} icon="good" />
+          <SignalList title="Review-derived cautions" items={product.cautions} icon="warn" />
+        </div>
+        <div className="mt-4 overflow-hidden rounded-md border border-border">
+          <table className="w-full min-w-[560px] border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border bg-muted/20 text-left mono-label">
+                <th className="px-3 py-2 font-medium">Capability</th>
+                <th className="px-3 py-2 font-medium">Status</th>
+                <th className="px-3 py-2 font-medium">Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              {product.features.slice(0, 7).map((feature) => (
+                <tr key={`${product.slug}-${feature.capability}`} className="border-b border-border/80 last:border-0">
+                  <td className="px-3 py-2">{feature.capability}</td>
+                  <td className="px-3 py-2 text-muted-foreground">{feature.status}</td>
+                  <td className="px-3 py-2">
+                    <Badge variant="muted">{feature.evidence}</Badge>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </TabsContent>
+
+      {includeFiles ? (
+        <TabsContent value="files">
+          <FileBrowser product={product} />
+        </TabsContent>
+      ) : null}
+    </Tabs>
+  )
+}
+
+function ProductDetail({
+  product,
+  vendor,
+  expanded,
+  onToggleExpanded,
+}: {
+  product: Product
+  vendor?: Vendor
+  expanded: boolean
+  onToggleExpanded: () => void
+}) {
+  const fit = getFit(product)
+
+  return (
+    <section className={cn('dense-panel self-start overflow-hidden', expanded && 'min-w-0')}>
       <div className="border-b border-border px-4 py-3">
         <div className="flex flex-wrap items-start justify-between gap-3">
-          <div>
+          <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2">
               <h2 className="text-lg font-semibold leading-tight">{product.title}</h2>
-              <Badge variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>
+              <Badge variant={fitVariant(fit)} title={relationshipDescriptions[fit]}>
+                {fitLabels[fit] || fit}
+              </Badge>
               <SourceBadge tier={product.sourceTier} />
             </div>
-            <div className="mt-1 font-mono text-xs text-muted-foreground">{product.path}</div>
+            <div className="mt-1 truncate font-mono text-xs text-muted-foreground">{product.path}</div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <Button variant="outline" size="sm" onClick={onToggleExpanded}>
+              {expanded ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+              {expanded ? 'Collapse' : 'Expand'}
+            </Button>
             <Button variant="outline" size="sm" onClick={() => navigator.clipboard.writeText(product.path)}>
               <Copy className="h-3.5 w-3.5" />
               Path
@@ -247,91 +559,16 @@ function ProductDetail({ product, vendor }: { product: Product; vendor?: Vendor 
         </div>
       </div>
 
-      <Tabs defaultValue="overview" className="px-4 py-3">
-        <TabsList>
-          <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="evidence">Evidence</TabsTrigger>
-          <TabsTrigger value="files">Files</TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="overview">
-          <div className="grid gap-3 lg:grid-cols-[1fr_220px]">
-            <div className="space-y-3">
-              <div>
-                <div className="mono-label">Profile</div>
-                <p className="mt-1 text-sm leading-6 text-muted-foreground">{product.profile || product.description}</p>
-              </div>
-              <div>
-                <div className="mono-label">Buyer fit</div>
-                <p className="mt-1 text-sm leading-6 text-muted-foreground">{product.buyerFit || 'Not captured yet.'}</p>
-              </div>
-            </div>
-            <dl className="grid grid-cols-2 gap-x-4 gap-y-3 rounded-md border border-border bg-muted/20 p-3 text-sm lg:grid-cols-1">
-              <div>
-                <dt className="mono-label">Vendor</dt>
-                <dd className="mt-1">{vendor?.title || product.vendorId}</dd>
-              </div>
-              <div>
-                <dt className="mono-label">Rating</dt>
-                <dd className="mt-1 font-mono">{product.rating || '-'}</dd>
-              </div>
-              <div>
-                <dt className="mono-label">Reviews</dt>
-                <dd className="mt-1 font-mono">{product.reviewCount ? formatCount(product.reviewCount) : '-'}</dd>
-              </div>
-              <div>
-                <dt className="mono-label">Observed</dt>
-                <dd className="mt-1 font-mono">{product.observedAt || '-'}</dd>
-              </div>
-            </dl>
-          </div>
-        </TabsContent>
-
-        <TabsContent value="evidence">
-          <div className="grid gap-4 lg:grid-cols-2">
-            <SignalList title="Review-derived strengths" items={product.strengths} icon="good" />
-            <SignalList title="Review-derived cautions" items={product.cautions} icon="warn" />
-          </div>
-          <div className="mt-4 overflow-hidden rounded-md border border-border">
-            <table className="w-full min-w-[560px] border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-border bg-muted/20 text-left mono-label">
-                  <th className="px-3 py-2 font-medium">Capability</th>
-                  <th className="px-3 py-2 font-medium">Status</th>
-                  <th className="px-3 py-2 font-medium">Evidence</th>
-                </tr>
-              </thead>
-              <tbody>
-                {product.features.slice(0, 7).map((feature) => (
-                  <tr key={`${product.slug}-${feature.capability}`} className="border-b border-border/80 last:border-0">
-                    <td className="px-3 py-2">{feature.capability}</td>
-                    <td className="px-3 py-2 text-muted-foreground">{feature.status}</td>
-                    <td className="px-3 py-2">
-                      <Badge variant="muted">{feature.evidence}</Badge>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </TabsContent>
-
-        <TabsContent value="files">
-          <div className="grid gap-2 sm:grid-cols-2">
-            {product.files.map((file) => (
-              <div key={file.path} className="flex items-center justify-between rounded-md border border-border bg-muted/20 px-3 py-2">
-                <div className="min-w-0">
-                  <div className="truncate text-sm font-medium">{file.name}</div>
-                  <div className="truncate font-mono text-[11px] text-muted-foreground">{file.path}</div>
-                </div>
-                <Button variant="ghost" size="icon" onClick={() => navigator.clipboard.writeText(file.path)}>
-                  <Copy className="h-3.5 w-3.5" />
-                </Button>
-              </div>
-            ))}
-          </div>
-        </TabsContent>
-      </Tabs>
+      {expanded ? (
+        <div className="grid min-w-0 gap-4 p-4 xl:grid-cols-[minmax(560px,1fr)_minmax(420px,1fr)]">
+          <FileBrowser product={product} />
+          <ProductTabs product={product} vendor={vendor} includeFiles={false} />
+        </div>
+      ) : (
+        <div className="px-4 py-3">
+          <ProductTabs product={product} vendor={vendor} />
+        </div>
+      )}
     </section>
   )
 }
@@ -457,6 +694,7 @@ function App() {
   const [query, setQuery] = useState('')
   const [fit, setFit] = useState<(typeof fitOrder)[number]>('all')
   const [selectedSlug, setSelectedSlug] = useState<string>(products[0]?.slug || '')
+  const [detailExpanded, setDetailExpanded] = useState(false)
 
   const filteredProducts = useMemo(() => {
     const normalized = query.trim().toLowerCase()
@@ -554,6 +792,7 @@ function App() {
               </div>
               <div className="flex flex-wrap items-center gap-1.5">
                 <Filter className="h-4 w-4 text-muted-foreground" />
+                <span className="mono-label hidden sm:inline">Relationship</span>
                 {fitOrder.slice(0, 4).map((option) => (
                   <Button
                     key={option}
@@ -569,16 +808,32 @@ function App() {
           </div>
 
           <TabsContent value="products" id="products">
-            <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_520px]">
-              <section className="dense-panel min-w-0 overflow-hidden">
-                <div className="flex items-center justify-between border-b border-border px-3 py-2">
-                  <div className="mono-label">{filteredProducts.length} products</div>
-                  <div className="font-mono text-xs text-muted-foreground">default sort: G2 Score seed</div>
-                </div>
-                <ProductTable products={filteredProducts} selected={selectedProduct?.slug || ''} onSelect={setSelectedSlug} />
-              </section>
-              {selectedProduct ? <ProductDetail product={selectedProduct} vendor={selectedVendor} /> : null}
-            </div>
+            {selectedProduct && detailExpanded ? (
+              <ProductDetail
+                product={selectedProduct}
+                vendor={selectedVendor}
+                expanded={detailExpanded}
+                onToggleExpanded={() => setDetailExpanded((value) => !value)}
+              />
+            ) : (
+              <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_520px]">
+                <section className="dense-panel min-w-0 overflow-hidden">
+                  <div className="flex items-center justify-between border-b border-border px-3 py-2">
+                    <div className="mono-label">{filteredProducts.length} products</div>
+                    <div className="font-mono text-xs text-muted-foreground">seed order: category page</div>
+                  </div>
+                  <ProductTable products={filteredProducts} selected={selectedProduct?.slug || ''} onSelect={setSelectedSlug} />
+                </section>
+                {selectedProduct ? (
+                  <ProductDetail
+                    product={selectedProduct}
+                    vendor={selectedVendor}
+                    expanded={detailExpanded}
+                    onToggleExpanded={() => setDetailExpanded((value) => !value)}
+                  />
+                ) : null}
+              </div>
+            )}
           </TabsContent>
 
           <TabsContent value="categories" id="categories">

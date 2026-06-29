@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/stripe-billing/reviews
 g2_category_rank: 8
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.4/5"
 g2_review_count: 139
 source_observed_at: 2026-06-29
 ---
@@ -39,7 +38,6 @@ Best modeled as a core Subscription Billing product for companies already using 
 | Field | Value |
 | --- | --- |
 | Category rank | 8 by G2 Score |
-| Rating | 4.4/5 |
 | Review count | 139 |
 | Vendor | Stripe |
 | Market segment | 78% Small-Business, 18% Mid-Market |

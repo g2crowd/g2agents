@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/square-point-of-sale/reviews
 g2_category_rank: 10
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.6/5"
 g2_review_count: 1196
 source_observed_at: 2026-06-29
 ---

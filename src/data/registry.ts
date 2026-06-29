@@ -21,7 +21,6 @@ export const registry = {
       "claimPolicy": "none",
       "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
       "rank": 7,
-      "rating": "4.2/5",
       "reviewCount": 1497,
       "observedAt": "2026-06-29",
       "expiresAt": "2027-06-29",
@@ -46,43 +45,393 @@ export const registry = {
       "files": [
         {
           "name": "alternatives.md",
-          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/alternatives.md"
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/alternatives.md",
+          "frontmatter": {
+            "type": "G2 Product Alternatives",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Alternatives",
+            "description": "Alternatives seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
+            "g2_category_rank": 7,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1497,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Alternatives\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Alternatives\ndescription: Alternatives seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope.\n",
+          "content": "# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope."
         },
         {
           "name": "features.md",
-          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/features.md"
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/features.md",
+          "frontmatter": {
+            "type": "G2 Product Features",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Features",
+            "description": "Feature seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
+            "g2_category_rank": 7,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1497,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Features\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Features\ndescription: Feature seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| CPQ | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| pricing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| quoting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| billing automation | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| revenue operations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| Salesforce ecosystem integration | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.\n",
+          "content": "# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| CPQ | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| pricing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| quoting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| billing automation | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| revenue operations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| Salesforce ecosystem integration | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass."
         },
         {
           "name": "index.md",
-          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md"
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md",
+          "frontmatter": {
+            "type": "G2 Product",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud)",
+            "description": "Initial seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud) in Subscription Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
+            "g2_category_rank": 7,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1497,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud)\ndescription: Initial seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud) in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Agentforce Revenue Management (formerly Salesforce Revenue Cloud)\n\nAgentforce Revenue Management (formerly Salesforce Revenue Cloud) is seeded from the G2 Subscription Billing category page as rank 7 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Agentforce Revenue Management (formerly Salesforce Revenue Cloud)\n\nAgentforce Revenue Management (formerly Salesforce Revenue Cloud) is seeded from the G2 Subscription Billing category page as rank 7 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
-          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/integrations.md"
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/integrations.md",
+          "frontmatter": {
+            "type": "G2 Product Integrations",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Integrations",
+            "description": "Integration seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
+            "g2_category_rank": 7,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1497,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Integrations\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Integrations\ndescription: Integration seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Integrations\n\n## Initial integration signal\n\nThe G2 sentiment excerpt emphasizes integration with other Salesforce products.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.\n",
+          "content": "# Integrations\n\n## Initial integration signal\n\nThe G2 sentiment excerpt emphasizes integration with other Salesforce products.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass."
         },
         {
           "name": "log.md",
-          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/log.md"
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/log.md",
+          "frontmatter": {
+            "type": "OKF Log",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Product Log",
+            "description": "Product-level change log for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
+            "g2_category_rank": 7,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1497,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: OKF Log\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Product Log\ndescription: Product-level change log for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Agentforce Revenue Management (formerly Salesforce Revenue Cloud) product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 7, review count 1497 from the category listing.\n",
+          "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Agentforce Revenue Management (formerly Salesforce Revenue Cloud) product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 7, review count 1497 from the category listing."
         },
         {
           "name": "pricing.md",
-          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/pricing.md"
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/pricing.md",
+          "frontmatter": {
+            "type": "G2 Product Pricing",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Pricing",
+            "description": "Pricing seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
+            "g2_category_rank": 7,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1497,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Pricing\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Pricing\ndescription: Pricing seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Not shown in category listing |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe category listing did not expose an entry-level subscription billing price for this product in this seed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.\n",
+          "content": "# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Not shown in category listing |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe category listing did not expose an entry-level subscription billing price for this product in this seed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed."
         },
         {
           "name": "profile.md",
-          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/profile.md"
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/profile.md",
+          "frontmatter": {
+            "type": "G2 Product Profile",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Profile",
+            "description": "Neutral product profile seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
+            "g2_category_rank": 7,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1497,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Profile\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Profile\ndescription: Neutral product profile seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Profile\n\nAgentforce Revenue Management, formerly Salesforce Revenue Cloud, is positioned around CPQ, pricing, quoting, billing, and revenue operations in the Salesforce ecosystem.\n\n## Buyer fit\n\nBest modeled as adjacent to Subscription Billing: strong for Salesforce-centered revenue management and CPQ workflows, with billing relevance inside a broader revenue operations suite.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 7 by G2 Score |\n| Review count | 1497 |\n| Vendor | Salesforce |\n| Market segment | 45% Mid-Market, 33% Enterprise |\n| Common users | Account Executive, Salesforce Developer |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 1999 |\n| HQ location | San Francisco, CA |\n| Website | https://www.salesforce.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier.\n",
+          "content": "# Profile\n\nAgentforce Revenue Management, formerly Salesforce Revenue Cloud, is positioned around CPQ, pricing, quoting, billing, and revenue operations in the Salesforce ecosystem.\n\n## Buyer fit\n\nBest modeled as adjacent to Subscription Billing: strong for Salesforce-centered revenue management and CPQ workflows, with billing relevance inside a broader revenue operations suite.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 7 by G2 Score |\n| Review count | 1497 |\n| Vendor | Salesforce |\n| Market segment | 45% Mid-Market, 33% Enterprise |\n| Common users | Account Executive, Salesforce Developer |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 1999 |\n| HQ location | San Francisco, CA |\n| Website | https://www.salesforce.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier."
         },
         {
           "name": "reviews-summary.md",
-          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews-summary.md"
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews-summary.md",
+          "frontmatter": {
+            "type": "G2 Reviews Summary",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Reviews Summary",
+            "description": "Review-derived seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "review-derived",
+            "claim_policy": "synthesis",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
+            "g2_category_rank": 7,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1497,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Reviews Summary\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Reviews Summary\ndescription: Review-derived seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: review-derived\nclaim_policy: synthesis\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 1497 |\n| Market segment | 45% Mid-Market, 33% Enterprise |\n| Common users | Account Executive, Salesforce Developer |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Review-derived strengths\n\n- ease of use\n- revenue management\n- efficiency\n- product functionality\n- features\n\n## Review-derived cautions\n\n- learning curve\n- complexity\n- complex setup\n- beginner difficulty\n- customization expertise\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.\n",
+          "content": "# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 1497 |\n| Market segment | 45% Mid-Market, 33% Enterprise |\n| Common users | Account Executive, Salesforce Developer |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Review-derived strengths\n\n- ease of use\n- revenue management\n- efficiency\n- product functionality\n- features\n\n## Review-derived cautions\n\n- learning curve\n- complexity\n- complex setup\n- beginner difficulty\n- customization expertise\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes."
         },
         {
           "name": "security-compliance.md",
-          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/security-compliance.md"
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/security-compliance.md",
+          "frontmatter": {
+            "type": "G2 Product Security Compliance",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Security and Compliance",
+            "description": "Security and compliance seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
+            "g2_category_rank": 7,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1497,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Security Compliance\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Security and Compliance\ndescription: Security and compliance seed for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand.\n",
+          "content": "# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand."
         },
         {
           "name": "vendor-claims.md",
-          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/vendor-claims.md"
+          "path": "software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/vendor-claims.md",
+          "frontmatter": {
+            "type": "G2 Vendor Claims",
+            "title": "Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Vendor Claims",
+            "description": "Vendor-claim workspace for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+            "vendor_id": "salesforce",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "vendor",
+            "source_tier": "vendor-attested",
+            "claim_policy": "attested",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews",
+            "g2_category_rank": 7,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1497,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Vendor Claims\ntitle: Agentforce Revenue Management (formerly Salesforce Revenue Cloud) Vendor Claims\ndescription: Vendor-claim workspace for Agentforce Revenue Management (formerly Salesforce Revenue Cloud).\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: agentforce-revenue-management-formerly-salesforce-revenue-cloud\nvendor_id: salesforce\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: vendor\nsource_tier: vendor-attested\nclaim_policy: attested\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/reviews\ng2_category_rank: 7\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1497\nsource_observed_at: 2026-06-29\n---\n\n# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Agentforce Revenue Management (formerly Salesforce Revenue Cloud) yet.\n\n## Initial status\n\nThis file is reserved for future claims from Salesforce. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.\n",
+          "content": "# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Agentforce Revenue Management (formerly Salesforce Revenue Cloud) yet.\n\n## Initial status\n\nThis file is reserved for future claims from Salesforce. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder."
         }
       ]
     },
@@ -106,7 +455,6 @@ export const registry = {
       "claimPolicy": "none",
       "resource": "https://www.g2.com/products/chargebee/reviews",
       "rank": 1,
-      "rating": "4.4/5",
       "reviewCount": 961,
       "observedAt": "2026-06-29",
       "expiresAt": "2027-06-29",
@@ -131,43 +479,393 @@ export const registry = {
       "files": [
         {
           "name": "alternatives.md",
-          "path": "software/products/chargebee/alternatives.md"
+          "path": "software/products/chargebee/alternatives.md",
+          "frontmatter": {
+            "type": "G2 Product Alternatives",
+            "title": "Chargebee Alternatives",
+            "description": "Alternatives seed for Chargebee.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/chargebee/reviews",
+            "g2_category_rank": 1,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 961,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Alternatives\ntitle: Chargebee Alternatives\ndescription: Alternatives seed for Chargebee.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope.\n",
+          "content": "# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope."
         },
         {
           "name": "features.md",
-          "path": "software/products/chargebee/features.md"
+          "path": "software/products/chargebee/features.md",
+          "frontmatter": {
+            "type": "G2 Product Features",
+            "title": "Chargebee Features",
+            "description": "Feature seed for Chargebee.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/chargebee/reviews",
+            "g2_category_rank": 1,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 961,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Features\ntitle: Chargebee Features\ndescription: Feature seed for Chargebee.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| subscription billing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| subscription management | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| billing management | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| pricing and packaging | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| integrations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| revenue reporting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.\n",
+          "content": "# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| subscription billing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| subscription management | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| billing management | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| pricing and packaging | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| integrations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| revenue reporting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass."
         },
         {
           "name": "index.md",
-          "path": "software/products/chargebee/index.md"
+          "path": "software/products/chargebee/index.md",
+          "frontmatter": {
+            "type": "G2 Product",
+            "title": "Chargebee",
+            "description": "Initial seed for Chargebee in Subscription Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/chargebee/reviews",
+            "g2_category_rank": 1,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 961,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product\ntitle: Chargebee\ndescription: Initial seed for Chargebee in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Chargebee\n\nChargebee is seeded from the G2 Subscription Billing category page as rank 1 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/chargebee/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Chargebee\n\nChargebee is seeded from the G2 Subscription Billing category page as rank 1 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/chargebee/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
-          "path": "software/products/chargebee/integrations.md"
+          "path": "software/products/chargebee/integrations.md",
+          "frontmatter": {
+            "type": "G2 Product Integrations",
+            "title": "Chargebee Integrations",
+            "description": "Integration seed for Chargebee.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/chargebee/reviews",
+            "g2_category_rank": 1,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 961,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Integrations\ntitle: Chargebee Integrations\ndescription: Integration seed for Chargebee.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Integrations\n\n## Initial integration signal\n\nThe G2 listing highlights integrations as a recurring positive signal.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.\n",
+          "content": "# Integrations\n\n## Initial integration signal\n\nThe G2 listing highlights integrations as a recurring positive signal.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass."
         },
         {
           "name": "log.md",
-          "path": "software/products/chargebee/log.md"
+          "path": "software/products/chargebee/log.md",
+          "frontmatter": {
+            "type": "OKF Log",
+            "title": "Chargebee Product Log",
+            "description": "Product-level change log for Chargebee.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/chargebee/reviews",
+            "g2_category_rank": 1,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 961,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: OKF Log\ntitle: Chargebee Product Log\ndescription: Product-level change log for Chargebee.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Chargebee product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 1, review count 961 from the category listing.\n",
+          "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Chargebee product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 1, review count 961 from the category listing."
         },
         {
           "name": "pricing.md",
-          "path": "software/products/chargebee/pricing.md"
+          "path": "software/products/chargebee/pricing.md",
+          "frontmatter": {
+            "type": "G2 Product Pricing",
+            "title": "Chargebee Pricing",
+            "description": "Pricing seed for Chargebee.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/chargebee/reviews",
+            "g2_category_rank": 1,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 961,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Pricing\ntitle: Chargebee Pricing\ndescription: Pricing seed for Chargebee.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Free |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level price of Free when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.\n",
+          "content": "# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Free |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level price of Free when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed."
         },
         {
           "name": "profile.md",
-          "path": "software/products/chargebee/profile.md"
+          "path": "software/products/chargebee/profile.md",
+          "frontmatter": {
+            "type": "G2 Product Profile",
+            "title": "Chargebee Profile",
+            "description": "Neutral product profile seed for Chargebee.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/chargebee/reviews",
+            "g2_category_rank": 1,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 961,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Profile\ntitle: Chargebee Profile\ndescription: Neutral product profile seed for Chargebee.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Profile\n\nChargebee is a subscription billing and monetization platform focused on recurring revenue, pricing flexibility, subscription operations, and revenue scale.\n\n## Buyer fit\n\nBest modeled as a core Subscription Billing product, especially for software and technology companies that need subscription management, billing automation, pricing-packaging flexibility, and revenue operations workflows.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 1 by G2 Score |\n| Review count | 961 |\n| Vendor | Chargebee |\n| Market segment | 72% Small-Business, 22% Mid-Market |\n| Common users | CEO, Founder |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 2011 |\n| HQ location | North Bethesda, MD |\n| Website | https://www.chargebee.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier.\n",
+          "content": "# Profile\n\nChargebee is a subscription billing and monetization platform focused on recurring revenue, pricing flexibility, subscription operations, and revenue scale.\n\n## Buyer fit\n\nBest modeled as a core Subscription Billing product, especially for software and technology companies that need subscription management, billing automation, pricing-packaging flexibility, and revenue operations workflows.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 1 by G2 Score |\n| Review count | 961 |\n| Vendor | Chargebee |\n| Market segment | 72% Small-Business, 22% Mid-Market |\n| Common users | CEO, Founder |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 2011 |\n| HQ location | North Bethesda, MD |\n| Website | https://www.chargebee.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier."
         },
         {
           "name": "reviews-summary.md",
-          "path": "software/products/chargebee/reviews-summary.md"
+          "path": "software/products/chargebee/reviews-summary.md",
+          "frontmatter": {
+            "type": "G2 Reviews Summary",
+            "title": "Chargebee Reviews Summary",
+            "description": "Review-derived seed for Chargebee.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "review-derived",
+            "claim_policy": "synthesis",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/chargebee/reviews",
+            "g2_category_rank": 1,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 961,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Reviews Summary\ntitle: Chargebee Reviews Summary\ndescription: Review-derived seed for Chargebee.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: review-derived\nclaim_policy: synthesis\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 961 |\n| Market segment | 72% Small-Business, 22% Mid-Market |\n| Common users | CEO, Founder |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Review-derived strengths\n\n- ease of use\n- subscription management\n- customer support\n- billing management\n- integrations\n\n## Review-derived cautions\n\n- limited customization\n- support variability\n- access limitations\n- cost concerns\n- missing features\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.\n",
+          "content": "# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 961 |\n| Market segment | 72% Small-Business, 22% Mid-Market |\n| Common users | CEO, Founder |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Review-derived strengths\n\n- ease of use\n- subscription management\n- customer support\n- billing management\n- integrations\n\n## Review-derived cautions\n\n- limited customization\n- support variability\n- access limitations\n- cost concerns\n- missing features\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes."
         },
         {
           "name": "security-compliance.md",
-          "path": "software/products/chargebee/security-compliance.md"
+          "path": "software/products/chargebee/security-compliance.md",
+          "frontmatter": {
+            "type": "G2 Product Security Compliance",
+            "title": "Chargebee Security and Compliance",
+            "description": "Security and compliance seed for Chargebee.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/chargebee/reviews",
+            "g2_category_rank": 1,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 961,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Security Compliance\ntitle: Chargebee Security and Compliance\ndescription: Security and compliance seed for Chargebee.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand.\n",
+          "content": "# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand."
         },
         {
           "name": "vendor-claims.md",
-          "path": "software/products/chargebee/vendor-claims.md"
+          "path": "software/products/chargebee/vendor-claims.md",
+          "frontmatter": {
+            "type": "G2 Vendor Claims",
+            "title": "Chargebee Vendor Claims",
+            "description": "Vendor-claim workspace for Chargebee.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "chargebee",
+            "vendor_id": "chargebee",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "vendor",
+            "source_tier": "vendor-attested",
+            "claim_policy": "attested",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/chargebee/reviews",
+            "g2_category_rank": 1,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 961,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Vendor Claims\ntitle: Chargebee Vendor Claims\ndescription: Vendor-claim workspace for Chargebee.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: chargebee\nvendor_id: chargebee\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: vendor\nsource_tier: vendor-attested\nclaim_policy: attested\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/chargebee/reviews\ng2_category_rank: 1\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 961\nsource_observed_at: 2026-06-29\n---\n\n# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Chargebee yet.\n\n## Initial status\n\nThis file is reserved for future claims from Chargebee. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.\n",
+          "content": "# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Chargebee yet.\n\n## Initial status\n\nThis file is reserved for future claims from Chargebee. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder."
         }
       ]
     },
@@ -191,7 +889,6 @@ export const registry = {
       "claimPolicy": "none",
       "resource": "https://www.g2.com/products/maxio/reviews",
       "rank": 4,
-      "rating": "4.3/5",
       "reviewCount": 829,
       "observedAt": "2026-06-29",
       "expiresAt": "2027-06-29",
@@ -216,43 +913,393 @@ export const registry = {
       "files": [
         {
           "name": "alternatives.md",
-          "path": "software/products/maxio/alternatives.md"
+          "path": "software/products/maxio/alternatives.md",
+          "frontmatter": {
+            "type": "G2 Product Alternatives",
+            "title": "Maxio Alternatives",
+            "description": "Alternatives seed for Maxio.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/maxio/reviews",
+            "g2_category_rank": 4,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 829,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Alternatives\ntitle: Maxio Alternatives\ndescription: Alternatives seed for Maxio.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope.\n",
+          "content": "# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope."
         },
         {
           "name": "features.md",
-          "path": "software/products/maxio/features.md"
+          "path": "software/products/maxio/features.md",
+          "frontmatter": {
+            "type": "G2 Product Features",
+            "title": "Maxio Features",
+            "description": "Feature seed for Maxio.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/maxio/reviews",
+            "g2_category_rank": 4,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 829,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Features\ntitle: Maxio Features\ndescription: Feature seed for Maxio.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| subscription billing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| subscription management | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| accounts receivable | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| revenue recognition | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| API-driven transactions | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| financial operations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.\n",
+          "content": "# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| subscription billing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| subscription management | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| accounts receivable | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| revenue recognition | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| API-driven transactions | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| financial operations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass."
         },
         {
           "name": "index.md",
-          "path": "software/products/maxio/index.md"
+          "path": "software/products/maxio/index.md",
+          "frontmatter": {
+            "type": "G2 Product",
+            "title": "Maxio",
+            "description": "Initial seed for Maxio in Subscription Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/maxio/reviews",
+            "g2_category_rank": 4,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 829,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product\ntitle: Maxio\ndescription: Initial seed for Maxio in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Maxio\n\nMaxio is seeded from the G2 Subscription Billing category page as rank 4 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/maxio/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Maxio\n\nMaxio is seeded from the G2 Subscription Billing category page as rank 4 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/maxio/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
-          "path": "software/products/maxio/integrations.md"
+          "path": "software/products/maxio/integrations.md",
+          "frontmatter": {
+            "type": "G2 Product Integrations",
+            "title": "Maxio Integrations",
+            "description": "Integration seed for Maxio.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/maxio/reviews",
+            "g2_category_rank": 4,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 829,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Integrations\ntitle: Maxio Integrations\ndescription: Integration seed for Maxio.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Integrations\n\n## Initial integration signal\n\nThe G2 listing identifies integrations as a positive and integration issues as a caution, so this should be verified in a deeper product pass.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.\n",
+          "content": "# Integrations\n\n## Initial integration signal\n\nThe G2 listing identifies integrations as a positive and integration issues as a caution, so this should be verified in a deeper product pass.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass."
         },
         {
           "name": "log.md",
-          "path": "software/products/maxio/log.md"
+          "path": "software/products/maxio/log.md",
+          "frontmatter": {
+            "type": "OKF Log",
+            "title": "Maxio Product Log",
+            "description": "Product-level change log for Maxio.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/maxio/reviews",
+            "g2_category_rank": 4,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 829,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: OKF Log\ntitle: Maxio Product Log\ndescription: Product-level change log for Maxio.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Maxio product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 4, review count 829 from the category listing.\n",
+          "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Maxio product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 4, review count 829 from the category listing."
         },
         {
           "name": "pricing.md",
-          "path": "software/products/maxio/pricing.md"
+          "path": "software/products/maxio/pricing.md",
+          "frontmatter": {
+            "type": "G2 Product Pricing",
+            "title": "Maxio Pricing",
+            "description": "Pricing seed for Maxio.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/maxio/reviews",
+            "g2_category_rank": 4,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 829,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Pricing\ntitle: Maxio Pricing\ndescription: Pricing seed for Maxio.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Free trial available |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed free trial availability when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.\n",
+          "content": "# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Free trial available |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed free trial availability when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed."
         },
         {
           "name": "profile.md",
-          "path": "software/products/maxio/profile.md"
+          "path": "software/products/maxio/profile.md",
+          "frontmatter": {
+            "type": "G2 Product Profile",
+            "title": "Maxio Profile",
+            "description": "Neutral product profile seed for Maxio.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/maxio/reviews",
+            "g2_category_rank": 4,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 829,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Profile\ntitle: Maxio Profile\ndescription: Neutral product profile seed for Maxio.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Profile\n\nMaxio is a B2B SaaS financial operations platform covering billing, subscription management, accounts receivable, revenue recognition, and revenue operations workflows.\n\n## Buyer fit\n\nBest modeled as a core Subscription Billing product for B2B SaaS companies that need subscription billing connected to financial operations and revenue recognition.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 4 by G2 Score |\n| Review count | 829 |\n| Vendor | Maxio |\n| Market segment | 53% Small-Business, 44% Mid-Market |\n| Common users | Controller, CFO |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 2009 |\n| HQ location | Peachtree Corners, Georgia |\n| Website | https://www.maxio.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier.\n",
+          "content": "# Profile\n\nMaxio is a B2B SaaS financial operations platform covering billing, subscription management, accounts receivable, revenue recognition, and revenue operations workflows.\n\n## Buyer fit\n\nBest modeled as a core Subscription Billing product for B2B SaaS companies that need subscription billing connected to financial operations and revenue recognition.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 4 by G2 Score |\n| Review count | 829 |\n| Vendor | Maxio |\n| Market segment | 53% Small-Business, 44% Mid-Market |\n| Common users | Controller, CFO |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 2009 |\n| HQ location | Peachtree Corners, Georgia |\n| Website | https://www.maxio.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier."
         },
         {
           "name": "reviews-summary.md",
-          "path": "software/products/maxio/reviews-summary.md"
+          "path": "software/products/maxio/reviews-summary.md",
+          "frontmatter": {
+            "type": "G2 Reviews Summary",
+            "title": "Maxio Reviews Summary",
+            "description": "Review-derived seed for Maxio.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "review-derived",
+            "claim_policy": "synthesis",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/maxio/reviews",
+            "g2_category_rank": 4,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 829,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Reviews Summary\ntitle: Maxio Reviews Summary\ndescription: Review-derived seed for Maxio.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: review-derived\nclaim_policy: synthesis\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 829 |\n| Market segment | 53% Small-Business, 44% Mid-Market |\n| Common users | Controller, CFO |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Review-derived strengths\n\n- accounts receivable\n- API flexibility\n- subscription management\n- revenue recognition\n- billing management\n\n## Review-derived cautions\n\n- reporting gaps\n- integration issues\n- missing features\n- invoicing issues\n- add-on complexity\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.\n",
+          "content": "# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 829 |\n| Market segment | 53% Small-Business, 44% Mid-Market |\n| Common users | Controller, CFO |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Review-derived strengths\n\n- accounts receivable\n- API flexibility\n- subscription management\n- revenue recognition\n- billing management\n\n## Review-derived cautions\n\n- reporting gaps\n- integration issues\n- missing features\n- invoicing issues\n- add-on complexity\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes."
         },
         {
           "name": "security-compliance.md",
-          "path": "software/products/maxio/security-compliance.md"
+          "path": "software/products/maxio/security-compliance.md",
+          "frontmatter": {
+            "type": "G2 Product Security Compliance",
+            "title": "Maxio Security and Compliance",
+            "description": "Security and compliance seed for Maxio.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/maxio/reviews",
+            "g2_category_rank": 4,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 829,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Security Compliance\ntitle: Maxio Security and Compliance\ndescription: Security and compliance seed for Maxio.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand.\n",
+          "content": "# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand."
         },
         {
           "name": "vendor-claims.md",
-          "path": "software/products/maxio/vendor-claims.md"
+          "path": "software/products/maxio/vendor-claims.md",
+          "frontmatter": {
+            "type": "G2 Vendor Claims",
+            "title": "Maxio Vendor Claims",
+            "description": "Vendor-claim workspace for Maxio.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "maxio",
+            "vendor_id": "maxio",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "vendor",
+            "source_tier": "vendor-attested",
+            "claim_policy": "attested",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/maxio/reviews",
+            "g2_category_rank": 4,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 829,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Vendor Claims\ntitle: Maxio Vendor Claims\ndescription: Vendor-claim workspace for Maxio.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: maxio\nvendor_id: maxio\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: vendor\nsource_tier: vendor-attested\nclaim_policy: attested\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/maxio/reviews\ng2_category_rank: 4\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 829\nsource_observed_at: 2026-06-29\n---\n\n# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Maxio yet.\n\n## Initial status\n\nThis file is reserved for future claims from Maxio. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.\n",
+          "content": "# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Maxio yet.\n\n## Initial status\n\nThis file is reserved for future claims from Maxio. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder."
         }
       ]
     },
@@ -276,7 +1323,6 @@ export const registry = {
       "claimPolicy": "none",
       "resource": "https://www.g2.com/products/netsuite/reviews",
       "rank": 2,
-      "rating": "4.1/5",
       "reviewCount": 4677,
       "observedAt": "2026-06-29",
       "expiresAt": "2027-06-29",
@@ -301,43 +1347,393 @@ export const registry = {
       "files": [
         {
           "name": "alternatives.md",
-          "path": "software/products/netsuite/alternatives.md"
+          "path": "software/products/netsuite/alternatives.md",
+          "frontmatter": {
+            "type": "G2 Product Alternatives",
+            "title": "NetSuite Alternatives",
+            "description": "Alternatives seed for NetSuite.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/netsuite/reviews",
+            "g2_category_rank": 2,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4677,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Alternatives\ntitle: NetSuite Alternatives\ndescription: Alternatives seed for NetSuite.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope.\n",
+          "content": "# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope."
         },
         {
           "name": "features.md",
-          "path": "software/products/netsuite/features.md"
+          "path": "software/products/netsuite/features.md",
+          "frontmatter": {
+            "type": "G2 Product Features",
+            "title": "NetSuite Features",
+            "description": "Feature seed for NetSuite.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/netsuite/reviews",
+            "g2_category_rank": 2,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4677,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Features\ntitle: NetSuite Features\ndescription: Feature seed for NetSuite.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| ERP financials | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| billing operations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| reporting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| third-party integrations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| accounting workflows | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.\n",
+          "content": "# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| ERP financials | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| billing operations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| reporting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| third-party integrations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| accounting workflows | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass."
         },
         {
           "name": "index.md",
-          "path": "software/products/netsuite/index.md"
+          "path": "software/products/netsuite/index.md",
+          "frontmatter": {
+            "type": "G2 Product",
+            "title": "NetSuite",
+            "description": "Initial seed for NetSuite in Subscription Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/netsuite/reviews",
+            "g2_category_rank": 2,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4677,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product\ntitle: NetSuite\ndescription: Initial seed for NetSuite in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# NetSuite\n\nNetSuite is seeded from the G2 Subscription Billing category page as rank 2 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/netsuite/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# NetSuite\n\nNetSuite is seeded from the G2 Subscription Billing category page as rank 2 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/netsuite/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
-          "path": "software/products/netsuite/integrations.md"
+          "path": "software/products/netsuite/integrations.md",
+          "frontmatter": {
+            "type": "G2 Product Integrations",
+            "title": "NetSuite Integrations",
+            "description": "Integration seed for NetSuite.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/netsuite/reviews",
+            "g2_category_rank": 2,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4677,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Integrations\ntitle: NetSuite Integrations\ndescription: Integration seed for NetSuite.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# Integrations\n\n## Initial integration signal\n\nThe G2 sentiment excerpt notes integration with third-party applications as a positive signal.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.\n",
+          "content": "# Integrations\n\n## Initial integration signal\n\nThe G2 sentiment excerpt notes integration with third-party applications as a positive signal.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass."
         },
         {
           "name": "log.md",
-          "path": "software/products/netsuite/log.md"
+          "path": "software/products/netsuite/log.md",
+          "frontmatter": {
+            "type": "OKF Log",
+            "title": "NetSuite Product Log",
+            "description": "Product-level change log for NetSuite.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/netsuite/reviews",
+            "g2_category_rank": 2,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4677,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: OKF Log\ntitle: NetSuite Product Log\ndescription: Product-level change log for NetSuite.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial NetSuite product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 2, review count 4677 from the category listing.\n",
+          "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial NetSuite product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 2, review count 4677 from the category listing."
         },
         {
           "name": "pricing.md",
-          "path": "software/products/netsuite/pricing.md"
+          "path": "software/products/netsuite/pricing.md",
+          "frontmatter": {
+            "type": "G2 Product Pricing",
+            "title": "NetSuite Pricing",
+            "description": "Pricing seed for NetSuite.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/netsuite/reviews",
+            "g2_category_rank": 2,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4677,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Pricing\ntitle: NetSuite Pricing\ndescription: Pricing seed for NetSuite.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Not shown in category listing |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe category listing did not expose an entry-level subscription billing price for NetSuite in this seed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.\n",
+          "content": "# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Not shown in category listing |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe category listing did not expose an entry-level subscription billing price for NetSuite in this seed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed."
         },
         {
           "name": "profile.md",
-          "path": "software/products/netsuite/profile.md"
+          "path": "software/products/netsuite/profile.md",
+          "frontmatter": {
+            "type": "G2 Product Profile",
+            "title": "NetSuite Profile",
+            "description": "Neutral product profile seed for NetSuite.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/netsuite/reviews",
+            "g2_category_rank": 2,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4677,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Profile\ntitle: NetSuite Profile\ndescription: Neutral product profile seed for NetSuite.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# Profile\n\nNetSuite is a broad cloud ERP and financial management platform. In this category, its relevance appears tied to finance, billing, and operational accounting workflows rather than pure-play subscription billing.\n\n## Buyer fit\n\nBest modeled as adjacent to Subscription Billing: useful for buyers who want subscription billing inside a broader ERP and finance system, less direct for buyers seeking a standalone subscription billing product.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 2 by G2 Score |\n| Review count | 4677 |\n| Vendor | Oracle |\n| Market segment | 57% Mid-Market, 31% Small-Business |\n| Common users | Controller, Accounting Manager |\n| Common industries | Computer Software, Accounting |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 1977 |\n| HQ location | Austin, TX |\n| Website | https://www.oracle.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier.\n",
+          "content": "# Profile\n\nNetSuite is a broad cloud ERP and financial management platform. In this category, its relevance appears tied to finance, billing, and operational accounting workflows rather than pure-play subscription billing.\n\n## Buyer fit\n\nBest modeled as adjacent to Subscription Billing: useful for buyers who want subscription billing inside a broader ERP and finance system, less direct for buyers seeking a standalone subscription billing product.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 2 by G2 Score |\n| Review count | 4677 |\n| Vendor | Oracle |\n| Market segment | 57% Mid-Market, 31% Small-Business |\n| Common users | Controller, Accounting Manager |\n| Common industries | Computer Software, Accounting |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 1977 |\n| HQ location | Austin, TX |\n| Website | https://www.oracle.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier."
         },
         {
           "name": "reviews-summary.md",
-          "path": "software/products/netsuite/reviews-summary.md"
+          "path": "software/products/netsuite/reviews-summary.md",
+          "frontmatter": {
+            "type": "G2 Reviews Summary",
+            "title": "NetSuite Reviews Summary",
+            "description": "Review-derived seed for NetSuite.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "review-derived",
+            "claim_policy": "synthesis",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/netsuite/reviews",
+            "g2_category_rank": 2,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4677,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Reviews Summary\ntitle: NetSuite Reviews Summary\ndescription: Review-derived seed for NetSuite.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: review-derived\nclaim_policy: synthesis\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 4677 |\n| Market segment | 57% Mid-Market, 31% Small-Business |\n| Common users | Controller, Accounting Manager |\n| Common industries | Computer Software, Accounting |\n\n## Review-derived strengths\n\n- ease of use\n- customizability\n- functionality\n- customization options\n- reporting capabilities\n\n## Review-derived cautions\n\n- learning curve\n- missing features\n- limited customization\n- not user-friendly\n- unclear error handling\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.\n",
+          "content": "# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 4677 |\n| Market segment | 57% Mid-Market, 31% Small-Business |\n| Common users | Controller, Accounting Manager |\n| Common industries | Computer Software, Accounting |\n\n## Review-derived strengths\n\n- ease of use\n- customizability\n- functionality\n- customization options\n- reporting capabilities\n\n## Review-derived cautions\n\n- learning curve\n- missing features\n- limited customization\n- not user-friendly\n- unclear error handling\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes."
         },
         {
           "name": "security-compliance.md",
-          "path": "software/products/netsuite/security-compliance.md"
+          "path": "software/products/netsuite/security-compliance.md",
+          "frontmatter": {
+            "type": "G2 Product Security Compliance",
+            "title": "NetSuite Security and Compliance",
+            "description": "Security and compliance seed for NetSuite.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/netsuite/reviews",
+            "g2_category_rank": 2,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4677,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Security Compliance\ntitle: NetSuite Security and Compliance\ndescription: Security and compliance seed for NetSuite.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand.\n",
+          "content": "# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand."
         },
         {
           "name": "vendor-claims.md",
-          "path": "software/products/netsuite/vendor-claims.md"
+          "path": "software/products/netsuite/vendor-claims.md",
+          "frontmatter": {
+            "type": "G2 Vendor Claims",
+            "title": "NetSuite Vendor Claims",
+            "description": "Vendor-claim workspace for NetSuite.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "netsuite",
+            "vendor_id": "oracle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "vendor",
+            "source_tier": "vendor-attested",
+            "claim_policy": "attested",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/netsuite/reviews",
+            "g2_category_rank": 2,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4677,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Vendor Claims\ntitle: NetSuite Vendor Claims\ndescription: Vendor-claim workspace for NetSuite.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: netsuite\nvendor_id: oracle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: vendor\nsource_tier: vendor-attested\nclaim_policy: attested\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/netsuite/reviews\ng2_category_rank: 2\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4677\nsource_observed_at: 2026-06-29\n---\n\n# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for NetSuite yet.\n\n## Initial status\n\nThis file is reserved for future claims from Oracle. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.\n",
+          "content": "# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for NetSuite yet.\n\n## Initial status\n\nThis file is reserved for future claims from Oracle. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder."
         }
       ]
     },
@@ -361,7 +1757,6 @@ export const registry = {
       "claimPolicy": "none",
       "resource": "https://www.g2.com/products/paddle/reviews",
       "rank": 5,
-      "rating": "4.5/5",
       "reviewCount": 236,
       "observedAt": "2026-06-29",
       "expiresAt": "2027-06-29",
@@ -386,43 +1781,393 @@ export const registry = {
       "files": [
         {
           "name": "alternatives.md",
-          "path": "software/products/paddle/alternatives.md"
+          "path": "software/products/paddle/alternatives.md",
+          "frontmatter": {
+            "type": "G2 Product Alternatives",
+            "title": "Paddle Alternatives",
+            "description": "Alternatives seed for Paddle.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/paddle/reviews",
+            "g2_category_rank": 5,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 236,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Alternatives\ntitle: Paddle Alternatives\ndescription: Alternatives seed for Paddle.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope.\n",
+          "content": "# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope."
         },
         {
           "name": "features.md",
-          "path": "software/products/paddle/features.md"
+          "path": "software/products/paddle/features.md",
+          "frontmatter": {
+            "type": "G2 Product Features",
+            "title": "Paddle Features",
+            "description": "Feature seed for Paddle.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/paddle/reviews",
+            "g2_category_rank": 5,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 236,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Features\ntitle: Paddle Features\ndescription: Feature seed for Paddle.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| subscription billing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| merchant of record | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| payment processing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| tax compliance | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| reporting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| failed payment recovery | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.\n",
+          "content": "# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| subscription billing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| merchant of record | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| payment processing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| tax compliance | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| reporting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| failed payment recovery | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass."
         },
         {
           "name": "index.md",
-          "path": "software/products/paddle/index.md"
+          "path": "software/products/paddle/index.md",
+          "frontmatter": {
+            "type": "G2 Product",
+            "title": "Paddle",
+            "description": "Initial seed for Paddle in Subscription Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/paddle/reviews",
+            "g2_category_rank": 5,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 236,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product\ntitle: Paddle\ndescription: Initial seed for Paddle in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Paddle\n\nPaddle is seeded from the G2 Subscription Billing category page as rank 5 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paddle/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Paddle\n\nPaddle is seeded from the G2 Subscription Billing category page as rank 5 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paddle/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
-          "path": "software/products/paddle/integrations.md"
+          "path": "software/products/paddle/integrations.md",
+          "frontmatter": {
+            "type": "G2 Product Integrations",
+            "title": "Paddle Integrations",
+            "description": "Integration seed for Paddle.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/paddle/reviews",
+            "g2_category_rank": 5,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 236,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Integrations\ntitle: Paddle Integrations\ndescription: Integration seed for Paddle.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Integrations\n\n## Initial integration signal\n\nThe G2 product page lists integrations, but this seed does not yet verify coverage or depth.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.\n",
+          "content": "# Integrations\n\n## Initial integration signal\n\nThe G2 product page lists integrations, but this seed does not yet verify coverage or depth.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass."
         },
         {
           "name": "log.md",
-          "path": "software/products/paddle/log.md"
+          "path": "software/products/paddle/log.md",
+          "frontmatter": {
+            "type": "OKF Log",
+            "title": "Paddle Product Log",
+            "description": "Product-level change log for Paddle.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/paddle/reviews",
+            "g2_category_rank": 5,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 236,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: OKF Log\ntitle: Paddle Product Log\ndescription: Product-level change log for Paddle.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Paddle product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 5, review count 236 from the category listing.\n",
+          "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Paddle product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 5, review count 236 from the category listing."
         },
         {
           "name": "pricing.md",
-          "path": "software/products/paddle/pricing.md"
+          "path": "software/products/paddle/pricing.md",
+          "frontmatter": {
+            "type": "G2 Product Pricing",
+            "title": "Paddle Pricing",
+            "description": "Pricing seed for Paddle.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/paddle/reviews",
+            "g2_category_rank": 5,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 236,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Pricing\ntitle: Paddle Pricing\ndescription: Pricing seed for Paddle.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Pay As You Go |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level model of Pay As You Go when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.\n",
+          "content": "# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Pay As You Go |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level model of Pay As You Go when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed."
         },
         {
           "name": "profile.md",
-          "path": "software/products/paddle/profile.md"
+          "path": "software/products/paddle/profile.md",
+          "frontmatter": {
+            "type": "G2 Product Profile",
+            "title": "Paddle Profile",
+            "description": "Neutral product profile seed for Paddle.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/paddle/reviews",
+            "g2_category_rank": 5,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 236,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Profile\ntitle: Paddle Profile\ndescription: Neutral product profile seed for Paddle.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Profile\n\nPaddle is a subscription billing and merchant-of-record platform for digital businesses, combining payments, tax, compliance, billing, and reporting workflows.\n\n## Buyer fit\n\nBest modeled as a core Subscription Billing product for SaaS, AI, app, game, and digital-product companies that want subscription billing packaged with merchant-of-record responsibilities.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 5 by G2 Score |\n| Review count | 236 |\n| Vendor | Paddle |\n| Market segment | 89% Small-Business, 8% Mid-Market |\n| Common users | CEO, Founder |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 2012 |\n| HQ location | London, United Kingdom |\n| Website | https://paddle.com |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier.\n",
+          "content": "# Profile\n\nPaddle is a subscription billing and merchant-of-record platform for digital businesses, combining payments, tax, compliance, billing, and reporting workflows.\n\n## Buyer fit\n\nBest modeled as a core Subscription Billing product for SaaS, AI, app, game, and digital-product companies that want subscription billing packaged with merchant-of-record responsibilities.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 5 by G2 Score |\n| Review count | 236 |\n| Vendor | Paddle |\n| Market segment | 89% Small-Business, 8% Mid-Market |\n| Common users | CEO, Founder |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 2012 |\n| HQ location | London, United Kingdom |\n| Website | https://paddle.com |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier."
         },
         {
           "name": "reviews-summary.md",
-          "path": "software/products/paddle/reviews-summary.md"
+          "path": "software/products/paddle/reviews-summary.md",
+          "frontmatter": {
+            "type": "G2 Reviews Summary",
+            "title": "Paddle Reviews Summary",
+            "description": "Review-derived seed for Paddle.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "review-derived",
+            "claim_policy": "synthesis",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/paddle/reviews",
+            "g2_category_rank": 5,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 236,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Reviews Summary\ntitle: Paddle Reviews Summary\ndescription: Review-derived seed for Paddle.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: review-derived\nclaim_policy: synthesis\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 236 |\n| Market segment | 89% Small-Business, 8% Mid-Market |\n| Common users | CEO, Founder |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Review-derived strengths\n\n- customer support\n- ease of use\n- payment processing\n- helpfulness\n- payment management\n\n## Review-derived cautions\n\n- improvement needed\n- support variability\n- access limitations\n- billing issues\n- limited data visibility\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.\n",
+          "content": "# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 236 |\n| Market segment | 89% Small-Business, 8% Mid-Market |\n| Common users | CEO, Founder |\n| Common industries | Computer Software, Information Technology and Services |\n\n## Review-derived strengths\n\n- customer support\n- ease of use\n- payment processing\n- helpfulness\n- payment management\n\n## Review-derived cautions\n\n- improvement needed\n- support variability\n- access limitations\n- billing issues\n- limited data visibility\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes."
         },
         {
           "name": "security-compliance.md",
-          "path": "software/products/paddle/security-compliance.md"
+          "path": "software/products/paddle/security-compliance.md",
+          "frontmatter": {
+            "type": "G2 Product Security Compliance",
+            "title": "Paddle Security and Compliance",
+            "description": "Security and compliance seed for Paddle.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/paddle/reviews",
+            "g2_category_rank": 5,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 236,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Security Compliance\ntitle: Paddle Security and Compliance\ndescription: Security and compliance seed for Paddle.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed beyond merchant-of-record and tax context.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand.\n",
+          "content": "# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed beyond merchant-of-record and tax context.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand."
         },
         {
           "name": "vendor-claims.md",
-          "path": "software/products/paddle/vendor-claims.md"
+          "path": "software/products/paddle/vendor-claims.md",
+          "frontmatter": {
+            "type": "G2 Vendor Claims",
+            "title": "Paddle Vendor Claims",
+            "description": "Vendor-claim workspace for Paddle.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paddle",
+            "vendor_id": "paddle",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "vendor",
+            "source_tier": "vendor-attested",
+            "claim_policy": "attested",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/paddle/reviews",
+            "g2_category_rank": 5,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 236,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Vendor Claims\ntitle: Paddle Vendor Claims\ndescription: Vendor-claim workspace for Paddle.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paddle\nvendor_id: paddle\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: vendor\nsource_tier: vendor-attested\nclaim_policy: attested\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/paddle/reviews\ng2_category_rank: 5\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 236\nsource_observed_at: 2026-06-29\n---\n\n# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Paddle yet.\n\n## Initial status\n\nThis file is reserved for future claims from Paddle. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.\n",
+          "content": "# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Paddle yet.\n\n## Initial status\n\nThis file is reserved for future claims from Paddle. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder."
         }
       ]
     },
@@ -446,7 +2191,6 @@ export const registry = {
       "claimPolicy": "none",
       "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
       "rank": 6,
-      "rating": "4.4/5",
       "reviewCount": 175,
       "observedAt": "2026-06-29",
       "expiresAt": "2027-06-29",
@@ -471,43 +2215,393 @@ export const registry = {
       "files": [
         {
           "name": "alternatives.md",
-          "path": "software/products/paypal-invoicing/alternatives.md"
+          "path": "software/products/paypal-invoicing/alternatives.md",
+          "frontmatter": {
+            "type": "G2 Product Alternatives",
+            "title": "PayPal Invoicing Alternatives",
+            "description": "Alternatives seed for PayPal Invoicing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
+            "g2_category_rank": 6,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 175,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Alternatives\ntitle: PayPal Invoicing Alternatives\ndescription: Alternatives seed for PayPal Invoicing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope.\n",
+          "content": "# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope."
         },
         {
           "name": "features.md",
-          "path": "software/products/paypal-invoicing/features.md"
+          "path": "software/products/paypal-invoicing/features.md",
+          "frontmatter": {
+            "type": "G2 Product Features",
+            "title": "PayPal Invoicing Features",
+            "description": "Feature seed for PayPal Invoicing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
+            "g2_category_rank": 6,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 175,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Features\ntitle: PayPal Invoicing Features\ndescription: Feature seed for PayPal Invoicing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| invoicing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| payment processing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| invoice tracking | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| payment collection | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.\n",
+          "content": "# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| invoicing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| payment processing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| invoice tracking | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| payment collection | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass."
         },
         {
           "name": "index.md",
-          "path": "software/products/paypal-invoicing/index.md"
+          "path": "software/products/paypal-invoicing/index.md",
+          "frontmatter": {
+            "type": "G2 Product",
+            "title": "PayPal Invoicing",
+            "description": "Initial seed for PayPal Invoicing in Subscription Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
+            "g2_category_rank": 6,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 175,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product\ntitle: PayPal Invoicing\ndescription: Initial seed for PayPal Invoicing in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# PayPal Invoicing\n\nPayPal Invoicing is seeded from the G2 Subscription Billing category page as rank 6 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paypal-invoicing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# PayPal Invoicing\n\nPayPal Invoicing is seeded from the G2 Subscription Billing category page as rank 6 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/paypal-invoicing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
-          "path": "software/products/paypal-invoicing/integrations.md"
+          "path": "software/products/paypal-invoicing/integrations.md",
+          "frontmatter": {
+            "type": "G2 Product Integrations",
+            "title": "PayPal Invoicing Integrations",
+            "description": "Integration seed for PayPal Invoicing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
+            "g2_category_rank": 6,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 175,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Integrations\ntitle: PayPal Invoicing Integrations\ndescription: Integration seed for PayPal Invoicing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# Integrations\n\n## Initial integration signal\n\nNo integration inventory was captured in this initial category-page seed.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.\n",
+          "content": "# Integrations\n\n## Initial integration signal\n\nNo integration inventory was captured in this initial category-page seed.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass."
         },
         {
           "name": "log.md",
-          "path": "software/products/paypal-invoicing/log.md"
+          "path": "software/products/paypal-invoicing/log.md",
+          "frontmatter": {
+            "type": "OKF Log",
+            "title": "PayPal Invoicing Product Log",
+            "description": "Product-level change log for PayPal Invoicing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
+            "g2_category_rank": 6,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 175,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: OKF Log\ntitle: PayPal Invoicing Product Log\ndescription: Product-level change log for PayPal Invoicing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial PayPal Invoicing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to partial.\n- Added category rank 6, review count 175 from the category listing.\n",
+          "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial PayPal Invoicing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to partial.\n- Added category rank 6, review count 175 from the category listing."
         },
         {
           "name": "pricing.md",
-          "path": "software/products/paypal-invoicing/pricing.md"
+          "path": "software/products/paypal-invoicing/pricing.md",
+          "frontmatter": {
+            "type": "G2 Product Pricing",
+            "title": "PayPal Invoicing Pricing",
+            "description": "Pricing seed for PayPal Invoicing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
+            "g2_category_rank": 6,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 175,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Pricing\ntitle: PayPal Invoicing Pricing\ndescription: Pricing seed for PayPal Invoicing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Pay As You Go |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level model of Pay As You Go when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.\n",
+          "content": "# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Pay As You Go |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level model of Pay As You Go when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed."
         },
         {
           "name": "profile.md",
-          "path": "software/products/paypal-invoicing/profile.md"
+          "path": "software/products/paypal-invoicing/profile.md",
+          "frontmatter": {
+            "type": "G2 Product Profile",
+            "title": "PayPal Invoicing Profile",
+            "description": "Neutral product profile seed for PayPal Invoicing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
+            "g2_category_rank": 6,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 175,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Profile\ntitle: PayPal Invoicing Profile\ndescription: Neutral product profile seed for PayPal Invoicing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# Profile\n\nPayPal Invoicing is an invoicing product for creating, sending, tracking, and managing professional invoices through the PayPal ecosystem.\n\n## Buyer fit\n\nBest modeled as a partial Subscription Billing fit: useful for invoicing and payment collection, but the initial category-page evidence does not establish full subscription billing depth.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 6 by G2 Score |\n| Review count | 175 |\n| Vendor | PayPal |\n| Market segment | 67% Small-Business, 25% Mid-Market |\n| Common users | Founder, CEO |\n| Common industries | Information Technology and Services, Apparel & Fashion |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 1998 |\n| HQ location | San Jose, CA |\n| Website | https://www.paypal.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier.\n",
+          "content": "# Profile\n\nPayPal Invoicing is an invoicing product for creating, sending, tracking, and managing professional invoices through the PayPal ecosystem.\n\n## Buyer fit\n\nBest modeled as a partial Subscription Billing fit: useful for invoicing and payment collection, but the initial category-page evidence does not establish full subscription billing depth.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 6 by G2 Score |\n| Review count | 175 |\n| Vendor | PayPal |\n| Market segment | 67% Small-Business, 25% Mid-Market |\n| Common users | Founder, CEO |\n| Common industries | Information Technology and Services, Apparel & Fashion |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 1998 |\n| HQ location | San Jose, CA |\n| Website | https://www.paypal.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier."
         },
         {
           "name": "reviews-summary.md",
-          "path": "software/products/paypal-invoicing/reviews-summary.md"
+          "path": "software/products/paypal-invoicing/reviews-summary.md",
+          "frontmatter": {
+            "type": "G2 Reviews Summary",
+            "title": "PayPal Invoicing Reviews Summary",
+            "description": "Review-derived seed for PayPal Invoicing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "review-derived",
+            "claim_policy": "synthesis",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
+            "g2_category_rank": 6,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 175,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Reviews Summary\ntitle: PayPal Invoicing Reviews Summary\ndescription: Review-derived seed for PayPal Invoicing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: review-derived\nclaim_policy: synthesis\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 175 |\n| Market segment | 67% Small-Business, 25% Mid-Market |\n| Common users | Founder, CEO |\n| Common industries | Information Technology and Services, Apparel & Fashion |\n\n## Review-derived strengths\n\n- ease of use\n- invoicing\n- invoice management\n- speed\n- payment processing\n\n## Review-derived cautions\n\n- expense concerns\n- high fees\n- limited customization\n- payment issues\n- invoicing issues\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.\n",
+          "content": "# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 175 |\n| Market segment | 67% Small-Business, 25% Mid-Market |\n| Common users | Founder, CEO |\n| Common industries | Information Technology and Services, Apparel & Fashion |\n\n## Review-derived strengths\n\n- ease of use\n- invoicing\n- invoice management\n- speed\n- payment processing\n\n## Review-derived cautions\n\n- expense concerns\n- high fees\n- limited customization\n- payment issues\n- invoicing issues\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes."
         },
         {
           "name": "security-compliance.md",
-          "path": "software/products/paypal-invoicing/security-compliance.md"
+          "path": "software/products/paypal-invoicing/security-compliance.md",
+          "frontmatter": {
+            "type": "G2 Product Security Compliance",
+            "title": "PayPal Invoicing Security and Compliance",
+            "description": "Security and compliance seed for PayPal Invoicing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
+            "g2_category_rank": 6,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 175,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Security Compliance\ntitle: PayPal Invoicing Security and Compliance\ndescription: Security and compliance seed for PayPal Invoicing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand.\n",
+          "content": "# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand."
         },
         {
           "name": "vendor-claims.md",
-          "path": "software/products/paypal-invoicing/vendor-claims.md"
+          "path": "software/products/paypal-invoicing/vendor-claims.md",
+          "frontmatter": {
+            "type": "G2 Vendor Claims",
+            "title": "PayPal Invoicing Vendor Claims",
+            "description": "Vendor-claim workspace for PayPal Invoicing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "paypal-invoicing",
+            "vendor_id": "paypal",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "vendor",
+            "source_tier": "vendor-attested",
+            "claim_policy": "attested",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/paypal-invoicing/reviews",
+            "g2_category_rank": 6,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 175,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Vendor Claims\ntitle: PayPal Invoicing Vendor Claims\ndescription: Vendor-claim workspace for PayPal Invoicing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: paypal-invoicing\nvendor_id: paypal\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: vendor\nsource_tier: vendor-attested\nclaim_policy: attested\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/paypal-invoicing/reviews\ng2_category_rank: 6\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 175\nsource_observed_at: 2026-06-29\n---\n\n# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for PayPal Invoicing yet.\n\n## Initial status\n\nThis file is reserved for future claims from PayPal. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.\n",
+          "content": "# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for PayPal Invoicing yet.\n\n## Initial status\n\nThis file is reserved for future claims from PayPal. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder."
         }
       ]
     },
@@ -531,7 +2625,6 @@ export const registry = {
       "claimPolicy": "none",
       "resource": "https://www.g2.com/products/sage-intacct/reviews",
       "rank": 3,
-      "rating": "4.3/5",
       "reviewCount": 4118,
       "observedAt": "2026-06-29",
       "expiresAt": "2027-06-29",
@@ -556,43 +2649,393 @@ export const registry = {
       "files": [
         {
           "name": "alternatives.md",
-          "path": "software/products/sage-intacct/alternatives.md"
+          "path": "software/products/sage-intacct/alternatives.md",
+          "frontmatter": {
+            "type": "G2 Product Alternatives",
+            "title": "Sage Intacct Alternatives",
+            "description": "Alternatives seed for Sage Intacct.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews",
+            "g2_category_rank": 3,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4118,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Alternatives\ntitle: Sage Intacct Alternatives\ndescription: Alternatives seed for Sage Intacct.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope.\n",
+          "content": "# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope."
         },
         {
           "name": "features.md",
-          "path": "software/products/sage-intacct/features.md"
+          "path": "software/products/sage-intacct/features.md",
+          "frontmatter": {
+            "type": "G2 Product Features",
+            "title": "Sage Intacct Features",
+            "description": "Feature seed for Sage Intacct.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews",
+            "g2_category_rank": 3,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4118,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Features\ntitle: Sage Intacct Features\ndescription: Feature seed for Sage Intacct.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| accounting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| financial reporting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| billing context | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| revenue workflows | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| finance operations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.\n",
+          "content": "# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| accounting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| financial reporting | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| billing context | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| revenue workflows | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| finance operations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass."
         },
         {
           "name": "index.md",
-          "path": "software/products/sage-intacct/index.md"
+          "path": "software/products/sage-intacct/index.md",
+          "frontmatter": {
+            "type": "G2 Product",
+            "title": "Sage Intacct",
+            "description": "Initial seed for Sage Intacct in Subscription Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews",
+            "g2_category_rank": 3,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4118,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product\ntitle: Sage Intacct\ndescription: Initial seed for Sage Intacct in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Sage Intacct\n\nSage Intacct is seeded from the G2 Subscription Billing category page as rank 3 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/sage-intacct/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Sage Intacct\n\nSage Intacct is seeded from the G2 Subscription Billing category page as rank 3 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/sage-intacct/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
-          "path": "software/products/sage-intacct/integrations.md"
+          "path": "software/products/sage-intacct/integrations.md",
+          "frontmatter": {
+            "type": "G2 Product Integrations",
+            "title": "Sage Intacct Integrations",
+            "description": "Integration seed for Sage Intacct.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews",
+            "g2_category_rank": 3,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4118,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Integrations\ntitle: Sage Intacct Integrations\ndescription: Integration seed for Sage Intacct.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Integrations\n\n## Initial integration signal\n\nNo integration inventory was captured in this initial category-page seed.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.\n",
+          "content": "# Integrations\n\n## Initial integration signal\n\nNo integration inventory was captured in this initial category-page seed.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass."
         },
         {
           "name": "log.md",
-          "path": "software/products/sage-intacct/log.md"
+          "path": "software/products/sage-intacct/log.md",
+          "frontmatter": {
+            "type": "OKF Log",
+            "title": "Sage Intacct Product Log",
+            "description": "Product-level change log for Sage Intacct.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews",
+            "g2_category_rank": 3,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4118,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: OKF Log\ntitle: Sage Intacct Product Log\ndescription: Product-level change log for Sage Intacct.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Sage Intacct product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 3, review count 4118 from the category listing.\n",
+          "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Sage Intacct product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to adjacent.\n- Added category rank 3, review count 4118 from the category listing."
         },
         {
           "name": "pricing.md",
-          "path": "software/products/sage-intacct/pricing.md"
+          "path": "software/products/sage-intacct/pricing.md",
+          "frontmatter": {
+            "type": "G2 Product Pricing",
+            "title": "Sage Intacct Pricing",
+            "description": "Pricing seed for Sage Intacct.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews",
+            "g2_category_rank": 3,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4118,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Pricing\ntitle: Sage Intacct Pricing\ndescription: Pricing seed for Sage Intacct.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Not shown in category listing |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe category listing did not expose an entry-level subscription billing price for Sage Intacct in this seed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.\n",
+          "content": "# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Not shown in category listing |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe category listing did not expose an entry-level subscription billing price for Sage Intacct in this seed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed."
         },
         {
           "name": "profile.md",
-          "path": "software/products/sage-intacct/profile.md"
+          "path": "software/products/sage-intacct/profile.md",
+          "frontmatter": {
+            "type": "G2 Product Profile",
+            "title": "Sage Intacct Profile",
+            "description": "Neutral product profile seed for Sage Intacct.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews",
+            "g2_category_rank": 3,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4118,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Profile\ntitle: Sage Intacct Profile\ndescription: Neutral product profile seed for Sage Intacct.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Profile\n\nSage Intacct is a cloud financial platform with deep accounting capabilities. In Subscription Billing, its relevance is tied to accounting, finance, and recurring revenue management workflows.\n\n## Buyer fit\n\nBest modeled as adjacent to Subscription Billing: strong for finance teams that need billing context within accounting, but not necessarily a pure subscription billing system.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 3 by G2 Score |\n| Review count | 4118 |\n| Vendor | Sage Software |\n| Market segment | 58% Mid-Market, 25% Small-Business |\n| Common users | Controller, Senior Accountant |\n| Common industries | Accounting, Non-Profit Organization Management |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 1981 |\n| HQ location | Newcastle |\n| Website | https://www.sage.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier.\n",
+          "content": "# Profile\n\nSage Intacct is a cloud financial platform with deep accounting capabilities. In Subscription Billing, its relevance is tied to accounting, finance, and recurring revenue management workflows.\n\n## Buyer fit\n\nBest modeled as adjacent to Subscription Billing: strong for finance teams that need billing context within accounting, but not necessarily a pure subscription billing system.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 3 by G2 Score |\n| Review count | 4118 |\n| Vendor | Sage Software |\n| Market segment | 58% Mid-Market, 25% Small-Business |\n| Common users | Controller, Senior Accountant |\n| Common industries | Accounting, Non-Profit Organization Management |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 1981 |\n| HQ location | Newcastle |\n| Website | https://www.sage.com/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier."
         },
         {
           "name": "reviews-summary.md",
-          "path": "software/products/sage-intacct/reviews-summary.md"
+          "path": "software/products/sage-intacct/reviews-summary.md",
+          "frontmatter": {
+            "type": "G2 Reviews Summary",
+            "title": "Sage Intacct Reviews Summary",
+            "description": "Review-derived seed for Sage Intacct.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "review-derived",
+            "claim_policy": "synthesis",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews",
+            "g2_category_rank": 3,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4118,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Reviews Summary\ntitle: Sage Intacct Reviews Summary\ndescription: Review-derived seed for Sage Intacct.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: review-derived\nclaim_policy: synthesis\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 4118 |\n| Market segment | 58% Mid-Market, 25% Small-Business |\n| Common users | Controller, Senior Accountant |\n| Common industries | Accounting, Non-Profit Organization Management |\n\n## Review-derived strengths\n\n- ease of use\n- intuitive interface\n- reporting\n- user-friendly workflows\n- feature depth\n\n## Review-derived cautions\n\n- missing features\n- learning curve\n- limited functionality\n- access limitations\n- new-user complexity\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.\n",
+          "content": "# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 4118 |\n| Market segment | 58% Mid-Market, 25% Small-Business |\n| Common users | Controller, Senior Accountant |\n| Common industries | Accounting, Non-Profit Organization Management |\n\n## Review-derived strengths\n\n- ease of use\n- intuitive interface\n- reporting\n- user-friendly workflows\n- feature depth\n\n## Review-derived cautions\n\n- missing features\n- learning curve\n- limited functionality\n- access limitations\n- new-user complexity\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes."
         },
         {
           "name": "security-compliance.md",
-          "path": "software/products/sage-intacct/security-compliance.md"
+          "path": "software/products/sage-intacct/security-compliance.md",
+          "frontmatter": {
+            "type": "G2 Product Security Compliance",
+            "title": "Sage Intacct Security and Compliance",
+            "description": "Security and compliance seed for Sage Intacct.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews",
+            "g2_category_rank": 3,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4118,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Security Compliance\ntitle: Sage Intacct Security and Compliance\ndescription: Security and compliance seed for Sage Intacct.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand.\n",
+          "content": "# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand."
         },
         {
           "name": "vendor-claims.md",
-          "path": "software/products/sage-intacct/vendor-claims.md"
+          "path": "software/products/sage-intacct/vendor-claims.md",
+          "frontmatter": {
+            "type": "G2 Vendor Claims",
+            "title": "Sage Intacct Vendor Claims",
+            "description": "Vendor-claim workspace for Sage Intacct.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "sage-intacct",
+            "vendor_id": "sage-software",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "adjacent",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "vendor",
+            "source_tier": "vendor-attested",
+            "claim_policy": "attested",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/sage-intacct/reviews",
+            "g2_category_rank": 3,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 4118,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Vendor Claims\ntitle: Sage Intacct Vendor Claims\ndescription: Vendor-claim workspace for Sage Intacct.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: sage-intacct\nvendor_id: sage-software\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: adjacent\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: vendor\nsource_tier: vendor-attested\nclaim_policy: attested\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/sage-intacct/reviews\ng2_category_rank: 3\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 4118\nsource_observed_at: 2026-06-29\n---\n\n# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Sage Intacct yet.\n\n## Initial status\n\nThis file is reserved for future claims from Sage Software. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.\n",
+          "content": "# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Sage Intacct yet.\n\n## Initial status\n\nThis file is reserved for future claims from Sage Software. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder."
         }
       ]
     },
@@ -616,7 +3059,6 @@ export const registry = {
       "claimPolicy": "none",
       "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
       "rank": 10,
-      "rating": "4.6/5",
       "reviewCount": 1196,
       "observedAt": "2026-06-29",
       "expiresAt": "2027-06-29",
@@ -641,43 +3083,393 @@ export const registry = {
       "files": [
         {
           "name": "alternatives.md",
-          "path": "software/products/square-point-of-sale/alternatives.md"
+          "path": "software/products/square-point-of-sale/alternatives.md",
+          "frontmatter": {
+            "type": "G2 Product Alternatives",
+            "title": "Square Point of Sale Alternatives",
+            "description": "Alternatives seed for Square Point of Sale.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
+            "g2_category_rank": 10,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1196,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Alternatives\ntitle: Square Point of Sale Alternatives\ndescription: Alternatives seed for Square Point of Sale.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope.\n",
+          "content": "# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope."
         },
         {
           "name": "features.md",
-          "path": "software/products/square-point-of-sale/features.md"
+          "path": "software/products/square-point-of-sale/features.md",
+          "frontmatter": {
+            "type": "G2 Product Features",
+            "title": "Square Point of Sale Features",
+            "description": "Feature seed for Square Point of Sale.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
+            "g2_category_rank": 10,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1196,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Features\ntitle: Square Point of Sale Features\ndescription: Feature seed for Square Point of Sale.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| point of sale | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| payment processing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| customer payments | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| small-business operations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.\n",
+          "content": "# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| point of sale | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| payment processing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| customer payments | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| small-business operations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass."
         },
         {
           "name": "index.md",
-          "path": "software/products/square-point-of-sale/index.md"
+          "path": "software/products/square-point-of-sale/index.md",
+          "frontmatter": {
+            "type": "G2 Product",
+            "title": "Square Point of Sale",
+            "description": "Initial seed for Square Point of Sale in Subscription Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
+            "g2_category_rank": 10,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1196,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product\ntitle: Square Point of Sale\ndescription: Initial seed for Square Point of Sale in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Square Point of Sale\n\nSquare Point of Sale is seeded from the G2 Subscription Billing category page as rank 10 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/square-point-of-sale/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Square Point of Sale\n\nSquare Point of Sale is seeded from the G2 Subscription Billing category page as rank 10 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/square-point-of-sale/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
-          "path": "software/products/square-point-of-sale/integrations.md"
+          "path": "software/products/square-point-of-sale/integrations.md",
+          "frontmatter": {
+            "type": "G2 Product Integrations",
+            "title": "Square Point of Sale Integrations",
+            "description": "Integration seed for Square Point of Sale.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
+            "g2_category_rank": 10,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1196,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Integrations\ntitle: Square Point of Sale Integrations\ndescription: Integration seed for Square Point of Sale.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Integrations\n\n## Initial integration signal\n\nNo integration inventory was captured in this initial category-page seed.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.\n",
+          "content": "# Integrations\n\n## Initial integration signal\n\nNo integration inventory was captured in this initial category-page seed.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass."
         },
         {
           "name": "log.md",
-          "path": "software/products/square-point-of-sale/log.md"
+          "path": "software/products/square-point-of-sale/log.md",
+          "frontmatter": {
+            "type": "OKF Log",
+            "title": "Square Point of Sale Product Log",
+            "description": "Product-level change log for Square Point of Sale.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
+            "g2_category_rank": 10,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1196,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: OKF Log\ntitle: Square Point of Sale Product Log\ndescription: Product-level change log for Square Point of Sale.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Square Point of Sale product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to partial.\n- Added category rank 10, review count 1196 from the category listing.\n",
+          "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Square Point of Sale product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to partial.\n- Added category rank 10, review count 1196 from the category listing."
         },
         {
           "name": "pricing.md",
-          "path": "software/products/square-point-of-sale/pricing.md"
+          "path": "software/products/square-point-of-sale/pricing.md",
+          "frontmatter": {
+            "type": "G2 Product Pricing",
+            "title": "Square Point of Sale Pricing",
+            "description": "Pricing seed for Square Point of Sale.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
+            "g2_category_rank": 10,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1196,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Pricing\ntitle: Square Point of Sale Pricing\ndescription: Pricing seed for Square Point of Sale.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Free |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level price of Free when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.\n",
+          "content": "# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | Free |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level price of Free when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed."
         },
         {
           "name": "profile.md",
-          "path": "software/products/square-point-of-sale/profile.md"
+          "path": "software/products/square-point-of-sale/profile.md",
+          "frontmatter": {
+            "type": "G2 Product Profile",
+            "title": "Square Point of Sale Profile",
+            "description": "Neutral product profile seed for Square Point of Sale.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
+            "g2_category_rank": 10,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1196,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Profile\ntitle: Square Point of Sale Profile\ndescription: Neutral product profile seed for Square Point of Sale.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Profile\n\nSquare Point of Sale is a point-of-sale and payments product for retail, restaurants, services, and other small-business contexts. In Subscription Billing, its fit appears limited to payment and recurring/customer-management adjacency.\n\n## Buyer fit\n\nBest modeled as a partial Subscription Billing fit: useful for buyers whose billing need is tightly tied to POS and payments, but not a pure subscription billing platform based on this seed.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 10 by G2 Score |\n| Review count | 1196 |\n| Vendor | Block |\n| Market segment | 89% Small-Business, 7% Mid-Market |\n| Common users | Owner, Business Owner |\n| Common industries | Retail, Food & Beverages |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 2009 |\n| HQ location | Oakland, California |\n| Website | https://block.xyz/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier.\n",
+          "content": "# Profile\n\nSquare Point of Sale is a point-of-sale and payments product for retail, restaurants, services, and other small-business contexts. In Subscription Billing, its fit appears limited to payment and recurring/customer-management adjacency.\n\n## Buyer fit\n\nBest modeled as a partial Subscription Billing fit: useful for buyers whose billing need is tightly tied to POS and payments, but not a pure subscription billing platform based on this seed.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 10 by G2 Score |\n| Review count | 1196 |\n| Vendor | Block |\n| Market segment | 89% Small-Business, 7% Mid-Market |\n| Common users | Owner, Business Owner |\n| Common industries | Retail, Food & Beverages |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 2009 |\n| HQ location | Oakland, California |\n| Website | https://block.xyz/ |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier."
         },
         {
           "name": "reviews-summary.md",
-          "path": "software/products/square-point-of-sale/reviews-summary.md"
+          "path": "software/products/square-point-of-sale/reviews-summary.md",
+          "frontmatter": {
+            "type": "G2 Reviews Summary",
+            "title": "Square Point of Sale Reviews Summary",
+            "description": "Review-derived seed for Square Point of Sale.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "review-derived",
+            "claim_policy": "synthesis",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
+            "g2_category_rank": 10,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1196,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Reviews Summary\ntitle: Square Point of Sale Reviews Summary\ndescription: Review-derived seed for Square Point of Sale.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: review-derived\nclaim_policy: synthesis\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 1196 |\n| Market segment | 89% Small-Business, 7% Mid-Market |\n| Common users | Owner, Business Owner |\n| Common industries | Retail, Food & Beverages |\n\n## Review-derived strengths\n\n- ease of use\n- payment processing\n- features\n- simplicity\n- setup ease\n\n## Review-derived cautions\n\n- high fees\n- expense concerns\n- access limitations\n- missing features\n- payment issues\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.\n",
+          "content": "# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 1196 |\n| Market segment | 89% Small-Business, 7% Mid-Market |\n| Common users | Owner, Business Owner |\n| Common industries | Retail, Food & Beverages |\n\n## Review-derived strengths\n\n- ease of use\n- payment processing\n- features\n- simplicity\n- setup ease\n\n## Review-derived cautions\n\n- high fees\n- expense concerns\n- access limitations\n- missing features\n- payment issues\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes."
         },
         {
           "name": "security-compliance.md",
-          "path": "software/products/square-point-of-sale/security-compliance.md"
+          "path": "software/products/square-point-of-sale/security-compliance.md",
+          "frontmatter": {
+            "type": "G2 Product Security Compliance",
+            "title": "Square Point of Sale Security and Compliance",
+            "description": "Security and compliance seed for Square Point of Sale.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
+            "g2_category_rank": 10,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1196,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Security Compliance\ntitle: Square Point of Sale Security and Compliance\ndescription: Security and compliance seed for Square Point of Sale.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand.\n",
+          "content": "# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand."
         },
         {
           "name": "vendor-claims.md",
-          "path": "software/products/square-point-of-sale/vendor-claims.md"
+          "path": "software/products/square-point-of-sale/vendor-claims.md",
+          "frontmatter": {
+            "type": "G2 Vendor Claims",
+            "title": "Square Point of Sale Vendor Claims",
+            "description": "Vendor-claim workspace for Square Point of Sale.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "square-point-of-sale",
+            "vendor_id": "block",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "partial",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "vendor",
+            "source_tier": "vendor-attested",
+            "claim_policy": "attested",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/square-point-of-sale/reviews",
+            "g2_category_rank": 10,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 1196,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Vendor Claims\ntitle: Square Point of Sale Vendor Claims\ndescription: Vendor-claim workspace for Square Point of Sale.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: square-point-of-sale\nvendor_id: block\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: partial\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: vendor\nsource_tier: vendor-attested\nclaim_policy: attested\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/square-point-of-sale/reviews\ng2_category_rank: 10\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 1196\nsource_observed_at: 2026-06-29\n---\n\n# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Square Point of Sale yet.\n\n## Initial status\n\nThis file is reserved for future claims from Block. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.\n",
+          "content": "# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Square Point of Sale yet.\n\n## Initial status\n\nThis file is reserved for future claims from Block. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder."
         }
       ]
     },
@@ -701,7 +3493,6 @@ export const registry = {
       "claimPolicy": "none",
       "resource": "https://www.g2.com/products/stripe-billing/reviews",
       "rank": 8,
-      "rating": "4.4/5",
       "reviewCount": 139,
       "observedAt": "2026-06-29",
       "expiresAt": "2027-06-29",
@@ -726,43 +3517,393 @@ export const registry = {
       "files": [
         {
           "name": "alternatives.md",
-          "path": "software/products/stripe-billing/alternatives.md"
+          "path": "software/products/stripe-billing/alternatives.md",
+          "frontmatter": {
+            "type": "G2 Product Alternatives",
+            "title": "Stripe Billing Alternatives",
+            "description": "Alternatives seed for Stripe Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews",
+            "g2_category_rank": 8,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 139,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Alternatives\ntitle: Stripe Billing Alternatives\ndescription: Alternatives seed for Stripe Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope.\n",
+          "content": "# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope."
         },
         {
           "name": "features.md",
-          "path": "software/products/stripe-billing/features.md"
+          "path": "software/products/stripe-billing/features.md",
+          "frontmatter": {
+            "type": "G2 Product Features",
+            "title": "Stripe Billing Features",
+            "description": "Feature seed for Stripe Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews",
+            "g2_category_rank": 8,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 139,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Features\ntitle: Stripe Billing Features\ndescription: Feature seed for Stripe Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| recurring billing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| subscription management | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| payment processing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| revenue recovery | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| pricing models | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| Stripe ecosystem integration | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.\n",
+          "content": "# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| recurring billing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| subscription management | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| payment processing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| revenue recovery | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| pricing models | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| Stripe ecosystem integration | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass."
         },
         {
           "name": "index.md",
-          "path": "software/products/stripe-billing/index.md"
+          "path": "software/products/stripe-billing/index.md",
+          "frontmatter": {
+            "type": "G2 Product",
+            "title": "Stripe Billing",
+            "description": "Initial seed for Stripe Billing in Subscription Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews",
+            "g2_category_rank": 8,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 139,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product\ntitle: Stripe Billing\ndescription: Initial seed for Stripe Billing in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Stripe Billing\n\nStripe Billing is seeded from the G2 Subscription Billing category page as rank 8 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/stripe-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Stripe Billing\n\nStripe Billing is seeded from the G2 Subscription Billing category page as rank 8 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/stripe-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
-          "path": "software/products/stripe-billing/integrations.md"
+          "path": "software/products/stripe-billing/integrations.md",
+          "frontmatter": {
+            "type": "G2 Product Integrations",
+            "title": "Stripe Billing Integrations",
+            "description": "Integration seed for Stripe Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews",
+            "g2_category_rank": 8,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 139,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Integrations\ntitle: Stripe Billing Integrations\ndescription: Integration seed for Stripe Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Integrations\n\n## Initial integration signal\n\nThe G2 category listing identifies integrations as a positive signal.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.\n",
+          "content": "# Integrations\n\n## Initial integration signal\n\nThe G2 category listing identifies integrations as a positive signal.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass."
         },
         {
           "name": "log.md",
-          "path": "software/products/stripe-billing/log.md"
+          "path": "software/products/stripe-billing/log.md",
+          "frontmatter": {
+            "type": "OKF Log",
+            "title": "Stripe Billing Product Log",
+            "description": "Product-level change log for Stripe Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews",
+            "g2_category_rank": 8,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 139,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: OKF Log\ntitle: Stripe Billing Product Log\ndescription: Product-level change log for Stripe Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Stripe Billing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 8, review count 139 from the category listing.\n",
+          "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Stripe Billing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 8, review count 139 from the category listing."
         },
         {
           "name": "pricing.md",
-          "path": "software/products/stripe-billing/pricing.md"
+          "path": "software/products/stripe-billing/pricing.md",
+          "frontmatter": {
+            "type": "G2 Product Pricing",
+            "title": "Stripe Billing Pricing",
+            "description": "Pricing seed for Stripe Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews",
+            "g2_category_rank": 8,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 139,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Pricing\ntitle: Stripe Billing Pricing\ndescription: Pricing seed for Stripe Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | 2.9% + 30c per successful charge, as displayed in the category listing |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level pricing snippet of 2.9% + 30c per successful charge when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.\n",
+          "content": "# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | 2.9% + 30c per successful charge, as displayed in the category listing |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level pricing snippet of 2.9% + 30c per successful charge when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed."
         },
         {
           "name": "profile.md",
-          "path": "software/products/stripe-billing/profile.md"
+          "path": "software/products/stripe-billing/profile.md",
+          "frontmatter": {
+            "type": "G2 Product Profile",
+            "title": "Stripe Billing Profile",
+            "description": "Neutral product profile seed for Stripe Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews",
+            "g2_category_rank": 8,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 139,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Profile\ntitle: Stripe Billing Profile\ndescription: Neutral product profile seed for Stripe Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Profile\n\nStripe Billing is a recurring billing product for billing customers, supporting recurring payments, monetization models, and recovery workflows within the Stripe payments ecosystem.\n\n## Buyer fit\n\nBest modeled as a core Subscription Billing product for companies already using or considering Stripe for payments and recurring revenue workflows.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 8 by G2 Score |\n| Review count | 139 |\n| Vendor | Stripe |\n| Market segment | 78% Small-Business, 18% Mid-Market |\n| Common users | Founder |\n| Common industries | Computer Software, Marketing and Advertising |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 2010 |\n| HQ location | San Francisco, CA |\n| Website | https://stripe.com |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier.\n",
+          "content": "# Profile\n\nStripe Billing is a recurring billing product for billing customers, supporting recurring payments, monetization models, and recovery workflows within the Stripe payments ecosystem.\n\n## Buyer fit\n\nBest modeled as a core Subscription Billing product for companies already using or considering Stripe for payments and recurring revenue workflows.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 8 by G2 Score |\n| Review count | 139 |\n| Vendor | Stripe |\n| Market segment | 78% Small-Business, 18% Mid-Market |\n| Common users | Founder |\n| Common industries | Computer Software, Marketing and Advertising |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 2010 |\n| HQ location | San Francisco, CA |\n| Website | https://stripe.com |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier."
         },
         {
           "name": "reviews-summary.md",
-          "path": "software/products/stripe-billing/reviews-summary.md"
+          "path": "software/products/stripe-billing/reviews-summary.md",
+          "frontmatter": {
+            "type": "G2 Reviews Summary",
+            "title": "Stripe Billing Reviews Summary",
+            "description": "Review-derived seed for Stripe Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "review-derived",
+            "claim_policy": "synthesis",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews",
+            "g2_category_rank": 8,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 139,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Reviews Summary\ntitle: Stripe Billing Reviews Summary\ndescription: Review-derived seed for Stripe Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: review-derived\nclaim_policy: synthesis\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 139 |\n| Market segment | 78% Small-Business, 18% Mid-Market |\n| Common users | Founder |\n| Common industries | Computer Software, Marketing and Advertising |\n\n## Review-derived strengths\n\n- payment processing\n- subscription management\n- easy integrations\n- integrations\n- ease of use\n\n## Review-derived cautions\n\n- expense concerns\n- pricing issues\n- access limitations\n- complex pricing\n- high fees\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.\n",
+          "content": "# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 139 |\n| Market segment | 78% Small-Business, 18% Mid-Market |\n| Common users | Founder |\n| Common industries | Computer Software, Marketing and Advertising |\n\n## Review-derived strengths\n\n- payment processing\n- subscription management\n- easy integrations\n- integrations\n- ease of use\n\n## Review-derived cautions\n\n- expense concerns\n- pricing issues\n- access limitations\n- complex pricing\n- high fees\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes."
         },
         {
           "name": "security-compliance.md",
-          "path": "software/products/stripe-billing/security-compliance.md"
+          "path": "software/products/stripe-billing/security-compliance.md",
+          "frontmatter": {
+            "type": "G2 Product Security Compliance",
+            "title": "Stripe Billing Security and Compliance",
+            "description": "Security and compliance seed for Stripe Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews",
+            "g2_category_rank": 8,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 139,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Security Compliance\ntitle: Stripe Billing Security and Compliance\ndescription: Security and compliance seed for Stripe Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand.\n",
+          "content": "# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand."
         },
         {
           "name": "vendor-claims.md",
-          "path": "software/products/stripe-billing/vendor-claims.md"
+          "path": "software/products/stripe-billing/vendor-claims.md",
+          "frontmatter": {
+            "type": "G2 Vendor Claims",
+            "title": "Stripe Billing Vendor Claims",
+            "description": "Vendor-claim workspace for Stripe Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "stripe-billing",
+            "vendor_id": "stripe",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "vendor",
+            "source_tier": "vendor-attested",
+            "claim_policy": "attested",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/stripe-billing/reviews",
+            "g2_category_rank": 8,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 139,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Vendor Claims\ntitle: Stripe Billing Vendor Claims\ndescription: Vendor-claim workspace for Stripe Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: stripe-billing\nvendor_id: stripe\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: vendor\nsource_tier: vendor-attested\nclaim_policy: attested\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/stripe-billing/reviews\ng2_category_rank: 8\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 139\nsource_observed_at: 2026-06-29\n---\n\n# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Stripe Billing yet.\n\n## Initial status\n\nThis file is reserved for future claims from Stripe. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.\n",
+          "content": "# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Stripe Billing yet.\n\n## Initial status\n\nThis file is reserved for future claims from Stripe. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder."
         }
       ]
     },
@@ -786,7 +3927,6 @@ export const registry = {
       "claimPolicy": "none",
       "resource": "https://www.g2.com/products/zoho-billing/reviews",
       "rank": 9,
-      "rating": "4.4/5",
       "reviewCount": 45,
       "observedAt": "2026-06-29",
       "expiresAt": "2027-06-29",
@@ -811,43 +3951,393 @@ export const registry = {
       "files": [
         {
           "name": "alternatives.md",
-          "path": "software/products/zoho-billing/alternatives.md"
+          "path": "software/products/zoho-billing/alternatives.md",
+          "frontmatter": {
+            "type": "G2 Product Alternatives",
+            "title": "Zoho Billing Alternatives",
+            "description": "Alternatives seed for Zoho Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews",
+            "g2_category_rank": 9,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 45,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Alternatives\ntitle: Zoho Billing Alternatives\ndescription: Alternatives seed for Zoho Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope.\n",
+          "content": "# Alternatives\n\nThis file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.\n\n| Product | Vendor | Category fit | Seed rank |\n| --- | --- | --- | --- |\n| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |\n| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |\n| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |\n| [Maxio](../maxio/index.md) | Maxio | core | 4 |\n| [Paddle](../paddle/index.md) | Paddle | core | 5 |\n| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |\n| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |\n| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |\n| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |\n\n## Agent guidance\n\nFor comparisons, agents should compare equivalent files across products and should account for category fit. A core subscription billing product should not be compared casually against an ERP, invoicing, or POS product without explaining the difference in scope."
         },
         {
           "name": "features.md",
-          "path": "software/products/zoho-billing/features.md"
+          "path": "software/products/zoho-billing/features.md",
+          "frontmatter": {
+            "type": "G2 Product Features",
+            "title": "Zoho Billing Features",
+            "description": "Feature seed for Zoho Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews",
+            "g2_category_rank": 9,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 45,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Features\ntitle: Zoho Billing Features\ndescription: Feature seed for Zoho Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| billing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| invoicing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| analytics | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| integrations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| Zoho ecosystem workflows | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.\n",
+          "content": "# Features\n\nThis is an initial capability seed. It should be verified against product documentation and user-review evidence before being used for high-confidence buying recommendations.\n\n| Capability | Status | Evidence level | Notes |\n| --- | --- | --- | --- |\n| billing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| invoicing | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| analytics | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| integrations | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n| Zoho ecosystem workflows | Present in seed | public-cited | Captured from the G2 category listing or product positioning context. |\n\n## Evidence note\n\nThe capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass."
         },
         {
           "name": "index.md",
-          "path": "software/products/zoho-billing/index.md"
+          "path": "software/products/zoho-billing/index.md",
+          "frontmatter": {
+            "type": "G2 Product",
+            "title": "Zoho Billing",
+            "description": "Initial seed for Zoho Billing in Subscription Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews",
+            "g2_category_rank": 9,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 45,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product\ntitle: Zoho Billing\ndescription: Initial seed for Zoho Billing in Subscription Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Zoho Billing\n\nZoho Billing is seeded from the G2 Subscription Billing category page as rank 9 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/zoho-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing\n",
+          "content": "# Zoho Billing\n\nZoho Billing is seeded from the G2 Subscription Billing category page as rank 9 under the default G2 Score sort observed on 2026-06-29.\n\n## Category fit\n\n| Category | Fit | Evidence |\n| --- | --- | --- |\n| Subscription Billing | core | G2 category listing, observed 2026-06-29. |\n\n## Product files\n\n- [Profile](profile.md)\n- [Vendor Claims](vendor-claims.md)\n- [Features](features.md)\n- [Pricing](pricing.md)\n- [Integrations](integrations.md)\n- [Security and Compliance](security-compliance.md)\n- [Reviews Summary](reviews-summary.md)\n- [Alternatives](alternatives.md)\n- [Product Log](log.md)\n\n## Source\n\n- G2 product page: https://www.g2.com/products/zoho-billing/reviews\n- G2 category page: https://www.g2.com/categories/subscription-billing"
         },
         {
           "name": "integrations.md",
-          "path": "software/products/zoho-billing/integrations.md"
+          "path": "software/products/zoho-billing/integrations.md",
+          "frontmatter": {
+            "type": "G2 Product Integrations",
+            "title": "Zoho Billing Integrations",
+            "description": "Integration seed for Zoho Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews",
+            "g2_category_rank": 9,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 45,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Integrations\ntitle: Zoho Billing Integrations\ndescription: Integration seed for Zoho Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Integrations\n\n## Initial integration signal\n\nThe G2 category listing identifies integrations and app variety as positive signals.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.\n",
+          "content": "# Integrations\n\n## Initial integration signal\n\nThe G2 category listing identifies integrations and app variety as positive signals.\n\n## Integration inventory\n\n| System | Integration type | Evidence level | Notes |\n| --- | --- | --- | --- |\n| Not yet inventoried | Unknown | unknown | Requires a product-page and vendor-doc pass. |\n\n## Agent guidance\n\nDo not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass."
         },
         {
           "name": "log.md",
-          "path": "software/products/zoho-billing/log.md"
+          "path": "software/products/zoho-billing/log.md",
+          "frontmatter": {
+            "type": "OKF Log",
+            "title": "Zoho Billing Product Log",
+            "description": "Product-level change log for Zoho Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "g2-curated",
+            "claim_policy": "none",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews",
+            "g2_category_rank": 9,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 45,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: OKF Log\ntitle: Zoho Billing Product Log\ndescription: Product-level change log for Zoho Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: g2-curated\nclaim_policy: none\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Product Log\n\n## 2026-06-29\n\n- Created initial Zoho Billing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 9, review count 45 from the category listing.\n",
+          "content": "# Product Log\n\n## 2026-06-29\n\n- Created initial Zoho Billing product folder from the G2 Subscription Billing category seed.\n- Set Subscription Billing membership fit to core.\n- Added category rank 9, review count 45 from the category listing."
         },
         {
           "name": "pricing.md",
-          "path": "software/products/zoho-billing/pricing.md"
+          "path": "software/products/zoho-billing/pricing.md",
+          "frontmatter": {
+            "type": "G2 Product Pricing",
+            "title": "Zoho Billing Pricing",
+            "description": "Pricing seed for Zoho Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews",
+            "g2_category_rank": 9,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 45,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Pricing\ntitle: Zoho Billing Pricing\ndescription: Pricing seed for Zoho Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | $25.00 |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level price of $25.00 when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.\n",
+          "content": "# Pricing\n\n## Category-page pricing signal\n\n| Field | Value |\n| --- | --- |\n| Entry-level price signal | $25.00 |\n| Source | G2 Subscription Billing category page |\n| Observed at | 2026-06-29 |\n| Freshness | expires 2026-09-27 |\n\n## Notes\n\nThe G2 category listing showed an entry-level price of $25.00 when observed.\n\nPricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed."
         },
         {
           "name": "profile.md",
-          "path": "software/products/zoho-billing/profile.md"
+          "path": "software/products/zoho-billing/profile.md",
+          "frontmatter": {
+            "type": "G2 Product Profile",
+            "title": "Zoho Billing Profile",
+            "description": "Neutral product profile seed for Zoho Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "public-cited",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2027-06-29",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews",
+            "g2_category_rank": 9,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 45,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Profile\ntitle: Zoho Billing Profile\ndescription: Neutral product profile seed for Zoho Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: public-cited\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2027-06-29\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Profile\n\nZoho Billing is a billing and invoicing solution for growing businesses, oriented around billing workflow simplification and business scaling.\n\n## Buyer fit\n\nBest modeled as a core Subscription Billing product for small and mid-sized businesses that want billing and invoicing inside the Zoho ecosystem.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 9 by G2 Score |\n| Review count | 45 |\n| Vendor | Zoho |\n| Market segment | 71% Small-Business, 18% Mid-Market |\n| Common users | Not shown in category listing |\n| Common industries | Information Technology and Services, Computer Software |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 1996 |\n| HQ location | Austin, TX |\n| Website | https://www.zoho.com |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier.\n",
+          "content": "# Profile\n\nZoho Billing is a billing and invoicing solution for growing businesses, oriented around billing workflow simplification and business scaling.\n\n## Buyer fit\n\nBest modeled as a core Subscription Billing product for small and mid-sized businesses that want billing and invoicing inside the Zoho ecosystem.\n\n## G2 category snapshot\n\n| Field | Value |\n| --- | --- |\n| Category rank | 9 by G2 Score |\n| Review count | 45 |\n| Vendor | Zoho |\n| Market segment | 71% Small-Business, 18% Mid-Market |\n| Common users | Not shown in category listing |\n| Common industries | Information Technology and Services, Computer Software |\n\n## Seller details captured from category page\n\n| Field | Value |\n| --- | --- |\n| Year founded | 1996 |\n| HQ location | Austin, TX |\n| Website | https://www.zoho.com |\n\n## Evidence note\n\nThis is an initial public-cited seed from the G2 category listing and should be deepened with product-page, vendor, review, pricing, integration, and security evidence before being treated as a complete product dossier."
         },
         {
           "name": "reviews-summary.md",
-          "path": "software/products/zoho-billing/reviews-summary.md"
+          "path": "software/products/zoho-billing/reviews-summary.md",
+          "frontmatter": {
+            "type": "G2 Reviews Summary",
+            "title": "Zoho Billing Reviews Summary",
+            "description": "Review-derived seed for Zoho Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "g2",
+            "source_tier": "review-derived",
+            "claim_policy": "synthesis",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews",
+            "g2_category_rank": 9,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 45,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Reviews Summary\ntitle: Zoho Billing Reviews Summary\ndescription: Review-derived seed for Zoho Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: g2\nsource_tier: review-derived\nclaim_policy: synthesis\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 45 |\n| Market segment | 71% Small-Business, 18% Mid-Market |\n| Common users | Not shown in category listing |\n| Common industries | Information Technology and Services, Computer Software |\n\n## Review-derived strengths\n\n- analytics\n- easy integrations\n- integrations\n- affordability\n- app variety\n\n## Review-derived cautions\n\n- access limitations\n- expense concerns\n- subscription cost concerns\n- implementation issues\n- inefficiency\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.\n",
+          "content": "# Reviews Summary\n\nThis file captures the initial review-derived signal from the G2 Subscription Billing category listing observed on 2026-06-29.\n\n## Snapshot\n\n| Field | Value |\n| --- | --- |\n| Review count | 45 |\n| Market segment | 71% Small-Business, 18% Mid-Market |\n| Common users | Not shown in category listing |\n| Common industries | Information Technology and Services, Computer Software |\n\n## Review-derived strengths\n\n- analytics\n- easy integrations\n- integrations\n- affordability\n- app variety\n\n## Review-derived cautions\n\n- access limitations\n- expense concerns\n- subscription cost concerns\n- implementation issues\n- inefficiency\n\n## Agent guidance\n\nUse this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes."
         },
         {
           "name": "security-compliance.md",
-          "path": "software/products/zoho-billing/security-compliance.md"
+          "path": "software/products/zoho-billing/security-compliance.md",
+          "frontmatter": {
+            "type": "G2 Product Security Compliance",
+            "title": "Zoho Billing Security and Compliance",
+            "description": "Security and compliance seed for Zoho Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "shared",
+            "source_tier": "mixed",
+            "claim_policy": "cited",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-12-26",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews",
+            "g2_category_rank": 9,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 45,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Product Security Compliance\ntitle: Zoho Billing Security and Compliance\ndescription: Security and compliance seed for Zoho Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: shared\nsource_tier: mixed\nclaim_policy: cited\nreviewed_at: 2026-06-29\nexpires_at: 2026-12-26\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand.\n",
+          "content": "# Security and Compliance\n\n## Initial security signal\n\nNo security or compliance claims were captured in this initial category-page seed.\n\n## Compliance posture\n\nUnknown in this seed.\n\n## Agent guidance\n\nSecurity, privacy, compliance, data residency, audit, and procurement claims need direct citations and review dates. Agents should not infer certification coverage from product category or vendor brand."
         },
         {
           "name": "vendor-claims.md",
-          "path": "software/products/zoho-billing/vendor-claims.md"
+          "path": "software/products/zoho-billing/vendor-claims.md",
+          "frontmatter": {
+            "type": "G2 Vendor Claims",
+            "title": "Zoho Billing Vendor Claims",
+            "description": "Vendor-claim workspace for Zoho Billing.",
+            "tags": [
+              "subscription-billing",
+              "billing",
+              "software-buying"
+            ],
+            "timestamp": "2026-06-29T00:00:00+02:00",
+            "g2_product_id": "zoho-billing",
+            "vendor_id": "zoho",
+            "display_category": "subscription-billing",
+            "category_memberships": [
+              {
+                "category_id": "subscription-billing",
+                "fit": "core",
+                "source_tier": "public-cited",
+                "reviewed_at": "2026-06-29"
+              }
+            ],
+            "owner": "vendor",
+            "source_tier": "vendor-attested",
+            "claim_policy": "attested",
+            "reviewed_at": "2026-06-29",
+            "expires_at": "2026-09-27",
+            "resource": "https://www.g2.com/products/zoho-billing/reviews",
+            "g2_category_rank": 9,
+            "g2_category_source": "https://www.g2.com/categories/subscription-billing",
+            "g2_category_sort": "G2 Score",
+            "g2_review_count": 45,
+            "source_observed_at": "2026-06-29"
+          },
+          "raw": "---\ntype: G2 Vendor Claims\ntitle: Zoho Billing Vendor Claims\ndescription: Vendor-claim workspace for Zoho Billing.\ntags: [subscription-billing, billing, software-buying]\ntimestamp: 2026-06-29T00:00:00+02:00\ng2_product_id: zoho-billing\nvendor_id: zoho\ndisplay_category: subscription-billing\ncategory_memberships:\n  - category_id: subscription-billing\n    fit: core\n    source_tier: public-cited\n    reviewed_at: 2026-06-29\nowner: vendor\nsource_tier: vendor-attested\nclaim_policy: attested\nreviewed_at: 2026-06-29\nexpires_at: 2026-09-27\nresource: https://www.g2.com/products/zoho-billing/reviews\ng2_category_rank: 9\ng2_category_source: https://www.g2.com/categories/subscription-billing\ng2_category_sort: G2 Score\ng2_review_count: 45\nsource_observed_at: 2026-06-29\n---\n\n# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Zoho Billing yet.\n\n## Initial status\n\nThis file is reserved for future claims from Zoho. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.\n",
+          "content": "# Vendor Claims\n\nNo vendor-submitted registry claims have been accepted for Zoho Billing yet.\n\n## Initial status\n\nThis file is reserved for future claims from Zoho. Until a verified vendor PR updates this file, agents should not treat this page as an active vendor-maintained source.\n\n## Suggested vendor claim format\n\n> Claim status: vendor-attested\n> Evidence: Vendor-provided documentation or statement.\n> Freshness: expires 2026-09-27.\n\n## Agent guidance\n\nAgents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder."
         }
       ]
     }
@@ -905,7 +4395,6 @@ export const registry = {
           "product": "[Chargebee](../../products/chargebee/index.md)",
           "vendor": "[Chargebee](../../vendors/chargebee/index.md)",
           "fit": "core",
-          "rating": "4.4/5",
           "reviewCount": "961",
           "segment": "72% Small-Business, 22% Mid-Market"
         },
@@ -914,7 +4403,6 @@ export const registry = {
           "product": "[NetSuite](../../products/netsuite/index.md)",
           "vendor": "[Oracle](../../vendors/oracle/index.md)",
           "fit": "adjacent",
-          "rating": "4.1/5",
           "reviewCount": "4677",
           "segment": "57% Mid-Market, 31% Small-Business"
         },
@@ -923,7 +4411,6 @@ export const registry = {
           "product": "[Sage Intacct](../../products/sage-intacct/index.md)",
           "vendor": "[Sage Software](../../vendors/sage-software/index.md)",
           "fit": "adjacent",
-          "rating": "4.3/5",
           "reviewCount": "4118",
           "segment": "58% Mid-Market, 25% Small-Business"
         },
@@ -932,7 +4419,6 @@ export const registry = {
           "product": "[Maxio](../../products/maxio/index.md)",
           "vendor": "[Maxio](../../vendors/maxio/index.md)",
           "fit": "core",
-          "rating": "4.3/5",
           "reviewCount": "829",
           "segment": "53% Small-Business, 44% Mid-Market"
         },
@@ -941,7 +4427,6 @@ export const registry = {
           "product": "[Paddle](../../products/paddle/index.md)",
           "vendor": "[Paddle](../../vendors/paddle/index.md)",
           "fit": "core",
-          "rating": "4.5/5",
           "reviewCount": "236",
           "segment": "89% Small-Business, 8% Mid-Market"
         },
@@ -950,7 +4435,6 @@ export const registry = {
           "product": "[PayPal Invoicing](../../products/paypal-invoicing/index.md)",
           "vendor": "[PayPal](../../vendors/paypal/index.md)",
           "fit": "partial",
-          "rating": "4.4/5",
           "reviewCount": "175",
           "segment": "67% Small-Business, 25% Mid-Market"
         },
@@ -959,7 +4443,6 @@ export const registry = {
           "product": "[Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../../products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md)",
           "vendor": "[Salesforce](../../vendors/salesforce/index.md)",
           "fit": "adjacent",
-          "rating": "4.2/5",
           "reviewCount": "1497",
           "segment": "45% Mid-Market, 33% Enterprise"
         },
@@ -968,7 +4451,6 @@ export const registry = {
           "product": "[Stripe Billing](../../products/stripe-billing/index.md)",
           "vendor": "[Stripe](../../vendors/stripe/index.md)",
           "fit": "core",
-          "rating": "4.4/5",
           "reviewCount": "139",
           "segment": "78% Small-Business, 18% Mid-Market"
         },
@@ -977,7 +4459,6 @@ export const registry = {
           "product": "[Zoho Billing](../../products/zoho-billing/index.md)",
           "vendor": "[Zoho](../../vendors/zoho/index.md)",
           "fit": "core",
-          "rating": "4.4/5",
           "reviewCount": "45",
           "segment": "71% Small-Business, 18% Mid-Market"
         },
@@ -986,7 +4467,6 @@ export const registry = {
           "product": "[Square Point of Sale](../../products/square-point-of-sale/index.md)",
           "vendor": "[Block](../../vendors/block/index.md)",
           "fit": "partial",
-          "rating": "4.6/5",
           "reviewCount": "1196",
           "segment": "89% Small-Business, 7% Mid-Market"
         }

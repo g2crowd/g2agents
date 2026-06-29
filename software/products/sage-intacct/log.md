@@ -21,7 +21,6 @@ resource: https://www.g2.com/products/sage-intacct/reviews
 g2_category_rank: 3
 g2_category_source: https://www.g2.com/categories/subscription-billing
 g2_category_sort: G2 Score
-g2_rating: "4.3/5"
 g2_review_count: 4118
 source_observed_at: 2026-06-29
 ---
@@ -32,4 +31,4 @@ source_observed_at: 2026-06-29
 
 - Created initial Sage Intacct product folder from the G2 Subscription Billing category seed.
 - Set Subscription Billing membership fit to adjacent.
-- Added category rank 3, review count 4118, and rating 4.3/5 from the category listing.
+- Added category rank 3, review count 4118 from the category listing.
