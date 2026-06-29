@@ -31,7 +31,7 @@ PayPal Invoicing is an invoicing product for creating, sending, tracking, and ma
 
 ## Buyer fit
 
-Best modeled as a partial Subscription Billing fit: useful for invoicing and payment collection, but the initial category-page evidence does not establish full subscription billing depth.
+Best modeled as a Limited slice match for Subscription Billing: useful for invoicing and payment collection, but the initial category-page evidence does not establish full subscription billing depth.
 
 ## G2 category snapshot
 

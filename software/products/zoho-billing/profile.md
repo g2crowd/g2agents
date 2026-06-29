@@ -31,7 +31,7 @@ Zoho Billing is a billing and invoicing solution for growing businesses, oriente
 
 ## Buyer fit
 
-Best modeled as a core Subscription Billing product for small and mid-sized businesses that want billing and invoicing inside the Zoho ecosystem.
+Best modeled as a Primary match for Subscription Billing for small and mid-sized businesses that want billing and invoicing inside the Zoho ecosystem.
 
 ## G2 category snapshot
 

@@ -30,5 +30,5 @@ source_observed_at: 2026-06-29
 ## 2026-06-29
 
 - Created initial Zoho Billing product folder from the G2 Subscription Billing category seed.
-- Set Subscription Billing membership fit to core.
+- Set Subscription Billing category match to Primary.
 - Added category rank 9, review count 45 from the category listing.

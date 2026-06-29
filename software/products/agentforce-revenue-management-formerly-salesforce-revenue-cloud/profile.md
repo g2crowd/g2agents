@@ -31,7 +31,7 @@ Agentforce Revenue Management, formerly Salesforce Revenue Cloud, is positioned 
 
 ## Buyer fit
 
-Best modeled as adjacent to Subscription Billing: strong for Salesforce-centered revenue management and CPQ workflows, with billing relevance inside a broader revenue operations suite.
+Best modeled as a Related suite match for Subscription Billing: strong for Salesforce-centered revenue management and CPQ workflows, with billing relevance inside a broader revenue operations suite.
 
 ## G2 category snapshot
 

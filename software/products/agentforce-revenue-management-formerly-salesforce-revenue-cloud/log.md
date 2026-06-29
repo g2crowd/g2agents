@@ -30,5 +30,5 @@ source_observed_at: 2026-06-29
 ## 2026-06-29
 
 - Created initial Agentforce Revenue Management (formerly Salesforce Revenue Cloud) product folder from the G2 Subscription Billing category seed.
-- Set Subscription Billing membership fit to adjacent.
+- Set Subscription Billing category match to Related suite.
 - Added category rank 7, review count 1497 from the category listing.

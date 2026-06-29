@@ -31,7 +31,7 @@ Square Point of Sale is a point-of-sale and payments product for retail, restaur
 
 ## Buyer fit
 
-Best modeled as a partial Subscription Billing fit: useful for buyers whose billing need is tightly tied to POS and payments, but not a pure subscription billing platform based on this seed.
+Best modeled as a Limited slice match for Subscription Billing: useful for buyers whose billing need is tightly tied to POS and payments, but not a pure subscription billing platform based on this seed.
 
 ## G2 category snapshot
 

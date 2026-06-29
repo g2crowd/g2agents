@@ -30,5 +30,5 @@ source_observed_at: 2026-06-29
 ## 2026-06-29
 
 - Created initial PayPal Invoicing product folder from the G2 Subscription Billing category seed.
-- Set Subscription Billing membership fit to partial.
+- Set Subscription Billing category match to Limited slice.
 - Added category rank 6, review count 175 from the category listing.

@@ -132,12 +132,12 @@ const registryData = registry as unknown as Registry
 const fitOrder = ['all', 'core', 'adjacent', 'partial', 'legacy', 'vendor-claimed', 'disputed'] as const
 const fitLabels: Record<string, string> = {
   all: 'All',
-  core: 'Core',
-  adjacent: 'Adjacent',
-  partial: 'Partial',
+  core: 'Primary',
+  adjacent: 'Related suite',
+  partial: 'Limited slice',
   legacy: 'Legacy',
   'vendor-claimed': 'Vendor claimed',
-  disputed: 'Disputed',
+  disputed: 'Under review',
 }
 
 const sourceTierLabels: Record<string, string> = {
@@ -150,9 +150,9 @@ const sourceTierLabels: Record<string, string> = {
 }
 
 const relationshipDescriptions: Record<string, string> = {
-  core: 'Primary product for the current category.',
-  adjacent: 'Relevant to the category through a broader suite or neighboring workflow.',
-  partial: 'Covers part of the category use case, but is not primarily built for it.',
+  core: 'Mainly built for this category and a direct match for the buyer use case.',
+  adjacent: 'Relevant through a broader suite or neighboring workflow, but not mainly this category.',
+  partial: 'Covers one slice of the category, but not the full expected workflow.',
   legacy: 'Previously associated or retained for historical continuity.',
   'vendor-claimed': 'Vendor says this belongs here; G2 has not curated it yet.',
   disputed: 'Category relationship needs review.',
@@ -170,7 +170,7 @@ const sourceTierDescriptions: Record<string, string> = {
 const columnHelp = {
   rank: 'Seed order from the category source page. This is not a recommendation or score.',
   product: 'Canonical product folder in the registry.',
-  relationship: 'Static category membership: core, adjacent, or partial. This is not based on your current search.',
+  relationship: 'G2 category fit for the selected category. This is not a search score.',
   reviews: 'Review count captured from the source snapshot.',
   source: 'Where the registry claim came from, such as public-cited or G2-curated.',
 }
@@ -233,6 +233,23 @@ function SourceBadge({ tier }: { tier: string }) {
   )
 }
 
+function CategoryFitLegend() {
+  return (
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-border px-3 py-2 text-xs text-muted-foreground">
+      <span className="mono-label">Category match</span>
+      <span>
+        <span className="text-foreground">Primary</span> direct match
+      </span>
+      <span>
+        <span className="text-foreground">Related suite</span> broader product suite
+      </span>
+      <span>
+        <span className="text-foreground">Limited slice</span> partial workflow coverage
+      </span>
+    </div>
+  )
+}
+
 function ProductTable({
   products,
   selected,
@@ -254,7 +271,7 @@ function ProductTable({
               <HelpLabel label="Product" description={columnHelp.product} />
             </th>
             <th className="hidden w-36 py-2 pr-3 font-medium md:table-cell">
-              <HelpLabel label="Relationship" description={columnHelp.relationship} />
+              <HelpLabel label="Category match" description={columnHelp.relationship} />
             </th>
             <th className="hidden w-24 py-2 pr-3 text-right font-medium md:table-cell">
               <HelpLabel label="Reviews" description={columnHelp.reviews} align="right" />
@@ -720,7 +737,7 @@ function ProductTabs({ product, vendor, includeFiles = true }: { product: Produc
               <dd className="mt-1">{vendor?.title || product.vendorId}</dd>
             </div>
             <div>
-              <dt className="mono-label">Relationship</dt>
+              <dt className="mono-label">Category match</dt>
               <dd className="mt-1">
                 <Badge variant={fitVariant(fit)}>{fitLabels[fit] || fit}</Badge>
                 <div className="mt-1 text-xs leading-4 text-muted-foreground">{relationshipDescriptions[fit] || 'Category relationship is not classified yet.'}</div>
@@ -1164,7 +1181,7 @@ function App() {
               </div>
               <div className="flex flex-wrap items-center gap-1.5">
                 <Filter className="h-4 w-4 text-muted-foreground" />
-                <span className="mono-label hidden sm:inline">Relationship</span>
+                <span className="mono-label hidden sm:inline">Category match</span>
                 {fitOrder.slice(0, 4).map((option) => (
                   <Button
                     key={option}
@@ -1194,6 +1211,7 @@ function App() {
                     <div className="mono-label">{filteredProducts.length} products</div>
                     <div className="font-mono text-xs text-muted-foreground">seed order: category page</div>
                   </div>
+                  <CategoryFitLegend />
                   <ProductTable products={filteredProducts} selected={selectedProduct?.slug || ''} onSelect={setSelectedSlug} />
                 </section>
                 {selectedProduct ? (

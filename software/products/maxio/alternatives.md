@@ -29,17 +29,17 @@ source_observed_at: 2026-06-29
 
 This file lists other top Subscription Billing products from the same seed set. It is not a paid-placement or recommendation ranking.
 
-| Product | Vendor | Category fit | Seed rank |
+| Product | Vendor | Category match | Seed rank |
 | --- | --- | --- | --- |
-| [Chargebee](../chargebee/index.md) | Chargebee | core | 1 |
-| [NetSuite](../netsuite/index.md) | Oracle | adjacent | 2 |
-| [Sage Intacct](../sage-intacct/index.md) | Sage Software | adjacent | 3 |
-| [Paddle](../paddle/index.md) | Paddle | core | 5 |
-| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | partial | 6 |
-| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | adjacent | 7 |
-| [Stripe Billing](../stripe-billing/index.md) | Stripe | core | 8 |
-| [Zoho Billing](../zoho-billing/index.md) | Zoho | core | 9 |
-| [Square Point of Sale](../square-point-of-sale/index.md) | Block | partial | 10 |
+| [Chargebee](../chargebee/index.md) | Chargebee | Primary | 1 |
+| [NetSuite](../netsuite/index.md) | Oracle | Related suite | 2 |
+| [Sage Intacct](../sage-intacct/index.md) | Sage Software | Related suite | 3 |
+| [Paddle](../paddle/index.md) | Paddle | Primary | 5 |
+| [PayPal Invoicing](../paypal-invoicing/index.md) | PayPal | Limited slice | 6 |
+| [Agentforce Revenue Management (formerly Salesforce Revenue Cloud)](../agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md) | Salesforce | Related suite | 7 |
+| [Stripe Billing](../stripe-billing/index.md) | Stripe | Primary | 8 |
+| [Zoho Billing](../zoho-billing/index.md) | Zoho | Primary | 9 |
+| [Square Point of Sale](../square-point-of-sale/index.md) | Block | Limited slice | 10 |
 
 ## Agent guidance
 

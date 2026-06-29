@@ -31,7 +31,7 @@ Paddle is a subscription billing and merchant-of-record platform for digital bus
 
 ## Buyer fit
 
-Best modeled as a core Subscription Billing product for SaaS, AI, app, game, and digital-product companies that want subscription billing packaged with merchant-of-record responsibilities.
+Best modeled as a Primary match for Subscription Billing for SaaS, AI, app, game, and digital-product companies that want subscription billing packaged with merchant-of-record responsibilities.
 
 ## G2 category snapshot
 

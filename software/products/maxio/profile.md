@@ -31,7 +31,7 @@ Maxio is a B2B SaaS financial operations platform covering billing, subscription
 
 ## Buyer fit
 
-Best modeled as a core Subscription Billing product for B2B SaaS companies that need subscription billing connected to financial operations and revenue recognition.
+Best modeled as a Primary match for Subscription Billing for B2B SaaS companies that need subscription billing connected to financial operations and revenue recognition.
 
 ## G2 category snapshot
 

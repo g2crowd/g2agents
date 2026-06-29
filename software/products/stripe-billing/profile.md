@@ -31,7 +31,7 @@ Stripe Billing is a recurring billing product for billing customers, supporting 
 
 ## Buyer fit
 
-Best modeled as a core Subscription Billing product for companies already using or considering Stripe for payments and recurring revenue workflows.
+Best modeled as a Primary match for Subscription Billing for companies already using or considering Stripe for payments and recurring revenue workflows.
 
 ## G2 category snapshot
 

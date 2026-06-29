@@ -88,16 +88,18 @@ category_memberships:
 
 `display_category` is a UI convenience. It is not the whole truth about the product.
 
-## Membership fit values
+## Category match values
 
-| Fit | Meaning |
-| --- | --- |
-| `core` | The product substantially belongs in the category by G2's definition. |
-| `adjacent` | The product is relevant but not primarily in the category. |
-| `partial` | The product covers part of the category but lacks important expected capabilities. |
-| `legacy` | The product historically belonged, but the category or product has shifted. |
-| `vendor-claimed` | The vendor claims membership, but G2 has not endorsed it as core or adjacent. |
-| `disputed` | Category membership is actively contested or under review. |
+The machine field is called `fit`, but buyer-facing surfaces should label it as `Category match`.
+
+| Fit value | Buyer-facing label | Meaning |
+| --- | --- | --- |
+| `core` | Primary | The product substantially belongs in the category by G2's definition. |
+| `adjacent` | Related suite | The product is relevant through a broader suite or neighboring workflow, but is not primarily in the category. |
+| `partial` | Limited slice | The product covers part of the category but lacks important expected capabilities. |
+| `legacy` | Legacy | The product historically belonged, but the category or product has shifted. |
+| `vendor-claimed` | Vendor claimed | The vendor claims membership, but G2 has not endorsed it as primary or related. |
+| `disputed` | Under review | Category membership is actively contested or under review. |
 
 ## Agent behavior
 
@@ -105,13 +107,13 @@ Agents should not treat category membership as binary.
 
 When answering category questions, agents should consider:
 
-- whether membership is `core`, `adjacent`, `partial`, `legacy`, `vendor-claimed`, or `disputed`
+- whether the category match is Primary, Related suite, Limited slice, Legacy, Vendor claimed, or Under review
 - whether the category definition matches the buyer's use case
 - whether capability evidence supports the category membership
 - whether review-derived evidence supports the product's actual buyer fit
 
 ## Governance
 
-Vendors may propose category memberships, but G2 should control category definitions and endorsed membership fit.
+Vendors may propose category memberships, but G2 should control category definitions and endorsed category match.
 
 Vendor-submitted category claims should remain visible as `vendor-claimed` unless G2 reviews and changes the fit.

@@ -31,7 +31,7 @@ Chargebee is a subscription billing and monetization platform focused on recurri
 
 ## Buyer fit
 
-Best modeled as a core Subscription Billing product, especially for software and technology companies that need subscription management, billing automation, pricing-packaging flexibility, and revenue operations workflows.
+Best modeled as a Primary match for Subscription Billing, especially for software and technology companies that need subscription management, billing automation, pricing-packaging flexibility, and revenue operations workflows.
 
 ## G2 category snapshot
 

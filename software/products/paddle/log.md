@@ -30,5 +30,5 @@ source_observed_at: 2026-06-29
 ## 2026-06-29
 
 - Created initial Paddle product folder from the G2 Subscription Billing category seed.
-- Set Subscription Billing membership fit to core.
+- Set Subscription Billing category match to Primary.
 - Added category rank 5, review count 236 from the category listing.

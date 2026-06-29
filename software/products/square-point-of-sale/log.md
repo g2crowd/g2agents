@@ -30,5 +30,5 @@ source_observed_at: 2026-06-29
 ## 2026-06-29
 
 - Created initial Square Point of Sale product folder from the G2 Subscription Billing category seed.
-- Set Subscription Billing membership fit to partial.
+- Set Subscription Billing category match to Limited slice.
 - Added category rank 10, review count 1196 from the category listing.

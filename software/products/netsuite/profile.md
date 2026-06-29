@@ -31,7 +31,7 @@ NetSuite is a broad cloud ERP and financial management platform. In this categor
 
 ## Buyer fit
 
-Best modeled as adjacent to Subscription Billing: useful for buyers who want subscription billing inside a broader ERP and finance system, less direct for buyers seeking a standalone subscription billing product.
+Best modeled as a Related suite match for Subscription Billing: useful for buyers who want subscription billing inside a broader ERP and finance system, less direct for buyers seeking a standalone subscription billing product.
 
 ## G2 category snapshot
 

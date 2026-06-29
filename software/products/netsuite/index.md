@@ -29,11 +29,11 @@ source_observed_at: 2026-06-29
 
 NetSuite is seeded from the G2 Subscription Billing category page as rank 2 under the default G2 Score sort observed on 2026-06-29.
 
-## Category fit
+## Category match
 
-| Category | Fit | Evidence |
+| Category | Match | Evidence |
 | --- | --- | --- |
-| Subscription Billing | adjacent | G2 category listing, observed 2026-06-29. |
+| Subscription Billing | Related suite | G2 category listing, observed 2026-06-29. |
 
 ## Product files
 

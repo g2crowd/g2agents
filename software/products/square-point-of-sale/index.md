@@ -29,11 +29,11 @@ source_observed_at: 2026-06-29
 
 Square Point of Sale is seeded from the G2 Subscription Billing category page as rank 10 under the default G2 Score sort observed on 2026-06-29.
 
-## Category fit
+## Category match
 
-| Category | Fit | Evidence |
+| Category | Match | Evidence |
 | --- | --- | --- |
-| Subscription Billing | partial | G2 category listing, observed 2026-06-29. |
+| Subscription Billing | Limited slice | G2 category listing, observed 2026-06-29. |
 
 ## Product files
 

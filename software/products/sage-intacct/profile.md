@@ -31,7 +31,7 @@ Sage Intacct is a cloud financial platform with deep accounting capabilities. In
 
 ## Buyer fit
 
-Best modeled as adjacent to Subscription Billing: strong for finance teams that need billing context within accounting, but not necessarily a pure subscription billing system.
+Best modeled as a Related suite match for Subscription Billing: strong for finance teams that need billing context within accounting, but not necessarily a pure subscription billing system.
 
 ## G2 category snapshot
 
