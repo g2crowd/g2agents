@@ -131,6 +131,17 @@ type Registry = {
 const registryData = registry as unknown as Registry
 
 const fitOrder = ['all', 'core', 'adjacent', 'partial', 'legacy', 'vendor-claimed', 'disputed'] as const
+type FitFilter = (typeof fitOrder)[number]
+type AppTab = 'products' | 'news' | 'categories' | 'vendors' | 'docs'
+type AppHashState = {
+  tab: AppTab
+  product?: string
+  news?: string
+  query: string
+  fit: FitFilter
+  expanded: boolean
+}
+const appTabs = ['products', 'news', 'categories', 'vendors', 'docs'] as const
 const fitLabels: Record<string, string> = {
   all: 'All',
   core: 'Primary',
@@ -346,6 +357,60 @@ function searchScore(text: string, query: string) {
   if (matched === tokens.length) return score + matched
   if (matched > 0 && tokens.length > 2) return score * (matched / tokens.length)
   return 0
+}
+
+function validTab(value: string): value is AppTab {
+  return (appTabs as readonly string[]).includes(value)
+}
+
+function validFit(value: string | null): value is FitFilter {
+  return Boolean(value && (fitOrder as readonly string[]).includes(value))
+}
+
+function readAppHash(): AppHashState {
+  if (typeof window === 'undefined') {
+    return { tab: 'products', query: '', fit: 'all', expanded: false }
+  }
+
+  const raw = window.location.hash.replace(/^#/, '')
+  const [pathPart = '', queryPart = ''] = raw.split('?')
+  const segments = pathPart.split('/').map(decodeURIComponent).filter(Boolean)
+  const tabCandidate = segments[0] || ''
+  const tab: AppTab = validTab(tabCandidate) ? tabCandidate : 'products'
+  const params = new URLSearchParams(queryPart)
+  const fit = params.get('fit')
+
+  return {
+    tab,
+    product: tab === 'products' ? segments[1] : undefined,
+    news: tab === 'news' ? segments[1] : undefined,
+    query: params.get('q') || '',
+    fit: validFit(fit) ? fit : 'all',
+    expanded: tab === 'products' && params.get('view') === 'full',
+  }
+}
+
+function buildAppHash(state: Partial<AppHashState>) {
+  const tab = state.tab && validTab(state.tab) ? state.tab : 'products'
+  const segments: string[] = [tab]
+  if (tab === 'products' && state.product) segments.push(encodeURIComponent(state.product))
+  if (tab === 'news' && state.news) segments.push(encodeURIComponent(state.news))
+
+  const params = new URLSearchParams()
+  if (state.query?.trim()) params.set('q', state.query.trim())
+  if (state.fit && state.fit !== 'all') params.set('fit', state.fit)
+  if (tab === 'products' && state.expanded) params.set('view', 'full')
+
+  const query = params.toString()
+  return `#${segments.join('/')}${query ? `?${query}` : ''}`
+}
+
+function slugSegment(value: string) {
+  return normalizeSearchText(value).replace(/\s+/g, '-').replace(/^-|-$/g, '') || 'news'
+}
+
+function newsEntryKey(item: NewsFeedEntry) {
+  return `${item.productSlug}-${item.date || 'undated'}-${slugSegment(item.headline || 'news')}`
 }
 
 function formatCount(value: number) {
@@ -1035,7 +1100,15 @@ function SignalList({ title, items, icon }: { title: string; items: readonly str
   )
 }
 
-function NewsItems({ items, onOpenProduct }: { items: readonly NewsFeedEntry[]; onOpenProduct?: (slug: string) => void }) {
+function NewsItems({
+  items,
+  onOpenNews,
+  onOpenProduct,
+}: {
+  items: readonly NewsFeedEntry[]
+  onOpenNews?: (item: NewsFeedEntry) => void
+  onOpenProduct?: (slug: string) => void
+}) {
   if (!items.length) {
     return (
       <div className="dense-panel p-4 text-sm text-muted-foreground">
@@ -1046,56 +1119,168 @@ function NewsItems({ items, onOpenProduct }: { items: readonly NewsFeedEntry[]; 
 
   return (
     <div className="grid gap-3">
-      {items.map((item, index) => (
-        <article key={`${item.productSlug}-${item.date}-${item.headline}-${index}`} className="dense-panel p-4">
-          <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-            <div className="min-w-0">
-              <div className="flex flex-wrap items-center gap-2">
-                <div className="font-mono text-xs text-muted-foreground">{item.date || 'undated'}</div>
-                <Badge variant="muted">{item.type || 'news'}</Badge>
-                <Badge variant={item.status === 'accepted' ? 'core' : 'outline'}>{item.status || 'proposed'}</Badge>
+      {items.map((item, index) => {
+        const sourceUrl = item.sourceUrl || ''
+        const hasPrimaryAction = Boolean(onOpenNews || sourceUrl)
+        const openNews = () => {
+          if (onOpenNews) onOpenNews(item)
+          else if (sourceUrl) window.open(sourceUrl, '_blank', 'noopener,noreferrer')
+        }
+
+        return (
+          <article
+            key={`${item.productSlug}-${item.date}-${item.headline}-${index}`}
+            className={cn('dense-panel p-4', hasPrimaryAction && 'cursor-pointer transition-colors hover:border-foreground/40')}
+            role={hasPrimaryAction ? 'link' : undefined}
+            tabIndex={hasPrimaryAction ? 0 : undefined}
+            onClick={(event) => {
+              if (!hasPrimaryAction || (event.target as HTMLElement).closest('a,button')) return
+              openNews()
+            }}
+            onKeyDown={(event) => {
+              if (!hasPrimaryAction || (event.target as HTMLElement).closest('a,button')) return
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault()
+                openNews()
+              }
+            }}
+          >
+            <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="font-mono text-xs text-muted-foreground">{item.date || 'undated'}</div>
+                  <Badge variant="muted">{item.type || 'news'}</Badge>
+                  <Badge variant={item.status === 'accepted' ? 'core' : 'outline'}>{item.status || 'proposed'}</Badge>
+                </div>
+                <h2 className="mt-2 text-lg font-semibold leading-tight">
+                  {onOpenNews ? (
+                    <button type="button" className="text-left transition-colors hover:text-foreground hover:underline" onClick={() => openNews()}>
+                      {item.headline || 'Untitled news item'}
+                    </button>
+                  ) : sourceUrl ? (
+                    <a className="transition-colors hover:text-foreground hover:underline" href={sourceUrl} target="_blank" rel="noreferrer">
+                      {item.headline || 'Untitled news item'}
+                    </a>
+                  ) : (
+                    item.headline || 'Untitled news item'
+                  )}
+                </h2>
+                <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">{item.buyerRelevance || 'No buyer relevance summary captured yet.'}</p>
+                {item.sourceNote ? <p className="mt-2 max-w-4xl text-xs leading-5 text-muted-foreground">Source: {item.sourceNote}</p> : null}
+                <div className="mt-2 flex flex-wrap items-center gap-2 font-mono text-xs text-muted-foreground">
+                  <span>{item.productTitle}</span>
+                  <span>/</span>
+                  <span>{item.vendorId}</span>
+                  <span>/</span>
+                  <span>{item.category}</span>
+                </div>
               </div>
-              <h2 className="mt-2 text-lg font-semibold leading-tight">{item.headline || 'Untitled news item'}</h2>
-              <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">{item.buyerRelevance || 'No buyer relevance summary captured yet.'}</p>
-              {item.sourceNote ? <p className="mt-2 max-w-4xl text-xs leading-5 text-muted-foreground">Source: {item.sourceNote}</p> : null}
-              <div className="mt-2 flex flex-wrap items-center gap-2 font-mono text-xs text-muted-foreground">
-                <span>{item.productTitle}</span>
-                <span>/</span>
-                <span>{item.vendorId}</span>
-                <span>/</span>
-                <span>{item.category}</span>
+              <div className="flex shrink-0 flex-wrap items-center gap-2">
+                {sourceUrl ? (
+                  <Button variant="outline" size="sm" asChild>
+                    <a href={sourceUrl} target="_blank" rel="noreferrer">
+                      <ArrowUpRight className="h-3.5 w-3.5" />
+                      {item.sourceLabel || 'Source'}
+                    </a>
+                  </Button>
+                ) : null}
+                {onOpenProduct ? (
+                  <Button variant="outline" size="sm" onClick={() => onOpenProduct(item.productSlug)}>
+                    <FileText className="h-3.5 w-3.5" />
+                    Product
+                  </Button>
+                ) : null}
               </div>
             </div>
-            <div className="flex shrink-0 flex-wrap items-center gap-2">
-              {item.sourceUrl ? (
-                <Button variant="outline" size="sm" asChild>
-                  <a href={item.sourceUrl} target="_blank" rel="noreferrer">
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                    {item.sourceLabel || 'Source'}
-                  </a>
-                </Button>
-              ) : null}
-              {onOpenProduct ? (
-                <Button variant="outline" size="sm" onClick={() => onOpenProduct(item.productSlug)}>
-                  <FileText className="h-3.5 w-3.5" />
-                  Product
-                </Button>
-              ) : null}
-            </div>
-          </div>
-        </article>
-      ))}
+          </article>
+        )
+      })}
     </div>
+  )
+}
+
+function NewsDetail({
+  item,
+  onBack,
+  onOpenProduct,
+}: {
+  item: NewsFeedEntry
+  onBack: () => void
+  onOpenProduct: (slug: string) => void
+}) {
+  return (
+    <section className="dense-panel overflow-hidden">
+      <div className="flex flex-col gap-3 border-b border-border p-4 md:flex-row md:items-start md:justify-between">
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2">
+            <button type="button" className="font-mono text-xs text-muted-foreground transition-colors hover:text-foreground" onClick={onBack}>
+              News feed
+            </button>
+            <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
+            <span className="font-mono text-xs text-muted-foreground">{item.date || 'undated'}</span>
+            <Badge variant="muted">{item.type || 'news'}</Badge>
+            <Badge variant={item.status === 'accepted' ? 'core' : 'outline'}>{item.status || 'proposed'}</Badge>
+          </div>
+          <h2 className="mt-3 max-w-5xl text-2xl font-semibold leading-tight">{item.headline || 'Untitled news item'}</h2>
+          <div className="mt-3 flex flex-wrap items-center gap-2 font-mono text-xs text-muted-foreground">
+            <span>{item.productTitle}</span>
+            <span>/</span>
+            <span>{item.vendorId}</span>
+            <span>/</span>
+            <span>{item.category}</span>
+          </div>
+        </div>
+        <div className="flex shrink-0 flex-wrap items-center gap-2">
+          {item.sourceUrl ? (
+            <Button variant="outline" size="sm" asChild>
+              <a href={item.sourceUrl} target="_blank" rel="noreferrer">
+                <ArrowUpRight className="h-3.5 w-3.5" />
+                {item.sourceLabel || 'Source'}
+              </a>
+            </Button>
+          ) : null}
+          <Button variant="outline" size="sm" onClick={() => onOpenProduct(item.productSlug)}>
+            <FileText className="h-3.5 w-3.5" />
+            Product
+          </Button>
+        </div>
+      </div>
+      <div className="grid gap-4 p-4 lg:grid-cols-[minmax(0,1fr)_320px]">
+        <div className="min-w-0 space-y-4">
+          <div>
+            <div className="mono-label">Buyer relevance</div>
+            <p className="mt-2 max-w-4xl text-base leading-7 text-foreground">{item.buyerRelevance || 'No buyer relevance summary captured yet.'}</p>
+          </div>
+          <div>
+            <div className="mono-label">Source note</div>
+            <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">{item.sourceNote || 'No source note captured yet.'}</p>
+          </div>
+        </div>
+        <div className="grid content-start gap-3 rounded-md border border-border bg-muted/10 p-3 text-sm">
+          <MetaBlock label="Product" value={item.productTitle} />
+          <MetaBlock label="Vendor" value={item.vendorId} />
+          <MetaBlock label="Category" value={item.category} />
+          <MetaBlock label="Status" value={item.status || 'proposed'} />
+          <MetaBlock label="Registry key" value={newsEntryKey(item)} />
+        </div>
+      </div>
+    </section>
   )
 }
 
 function NewsView({
   news,
   query,
+  selectedNewsKey,
+  onOpenNews,
+  onCloseNews,
   onOpenProduct,
 }: {
   news: readonly NewsFeedEntry[]
   query: string
+  selectedNewsKey: string
+  onOpenNews: (item: NewsFeedEntry) => void
+  onCloseNews: () => void
   onOpenProduct: (slug: string) => void
 }) {
   const filteredNews = useMemo(() => {
@@ -1110,6 +1295,11 @@ function NewsView({
       .sort((a, b) => b.score - a.score || String(b.item.date).localeCompare(String(a.item.date)))
       .map(({ item }) => item)
   }, [news, query])
+  const selectedNews = selectedNewsKey ? news.find((item) => newsEntryKey(item) === selectedNewsKey) : undefined
+
+  if (selectedNews) {
+    return <NewsDetail item={selectedNews} onBack={onCloseNews} onOpenProduct={onOpenProduct} />
+  }
 
   return (
     <section className="grid gap-3">
@@ -1125,7 +1315,7 @@ function NewsView({
           <div className="font-mono text-xs text-muted-foreground">{filteredNews.length} entries</div>
         </div>
       </div>
-      <NewsItems items={filteredNews} onOpenProduct={onOpenProduct} />
+      <NewsItems items={filteredNews} onOpenNews={onOpenNews} onOpenProduct={onOpenProduct} />
     </section>
   )
 }
@@ -1223,22 +1413,61 @@ function MetaBlock({ label, value }: { label: string; value: string }) {
 }
 
 function App() {
+  const initialHashState = useMemo(() => readAppHash(), [])
   const products = useMemo(() => [...registryData.products].sort((a, b) => {
     if (!a.rank && !b.rank) return a.title.localeCompare(b.title)
     if (!a.rank) return 1
     if (!b.rank) return -1
     return a.rank - b.rank
   }), [])
-  const [query, setQuery] = useState('')
-  const [fit, setFit] = useState<(typeof fitOrder)[number]>('all')
-  const [selectedSlug, setSelectedSlug] = useState<string>(products[0]?.slug || '')
-  const [detailExpanded, setDetailExpanded] = useState(false)
-  const [activeTab, setActiveTab] = useState('products')
+  const [query, setQuery] = useState(initialHashState.query)
+  const [fit, setFit] = useState<FitFilter>(initialHashState.fit)
+  const [selectedSlug, setSelectedSlug] = useState<string>(initialHashState.product || products[0]?.slug || '')
+  const [selectedNewsKey, setSelectedNewsKey] = useState<string>(initialHashState.news || '')
+  const [detailExpanded, setDetailExpanded] = useState(initialHashState.expanded)
+  const [activeTab, setActiveTab] = useState<AppTab>(initialHashState.tab)
   const vendorBySlug = useMemo(() => new Map(registryData.vendors.map((vendor) => [vendor.slug, vendor])), [])
   const productSearchIndex = useMemo(
     () => new Map(products.map((product) => [product.slug, productSearchText(product, vendorBySlug.get(product.vendorId))])),
     [products, vendorBySlug],
   )
+
+  const writeHash = (overrides: Partial<AppHashState>, mode: 'push' | 'replace' = 'push') => {
+    if (typeof window === 'undefined') return
+    const hash = buildAppHash({
+      tab: activeTab,
+      product: selectedSlug,
+      news: selectedNewsKey,
+      query,
+      fit,
+      expanded: detailExpanded,
+      ...overrides,
+    })
+    if (window.location.hash === hash) return
+    const url = `${window.location.pathname}${window.location.search}${hash}`
+    if (mode === 'replace') window.history.replaceState(null, '', url)
+    else window.history.pushState(null, '', url)
+  }
+
+  useEffect(() => {
+    const applyHash = () => {
+      const state = readAppHash()
+      setActiveTab(state.tab)
+      setQuery(state.query)
+      setFit(state.fit)
+      setDetailExpanded(state.expanded)
+      setSelectedNewsKey(state.news || '')
+      if (state.product) setSelectedSlug(state.product)
+      else if (state.tab === 'products') setSelectedSlug(products[0]?.slug || '')
+    }
+
+    window.addEventListener('hashchange', applyHash)
+    window.addEventListener('popstate', applyHash)
+    return () => {
+      window.removeEventListener('hashchange', applyHash)
+      window.removeEventListener('popstate', applyHash)
+    }
+  }, [products])
 
   const filteredProducts = useMemo(() => {
     const normalized = normalizeSearchText(query)
@@ -1262,10 +1491,52 @@ function App() {
 
   const selectedProduct = filteredProducts.find((product) => product.slug === selectedSlug) || filteredProducts[0] || products.find((product) => product.slug === selectedSlug) || products[0]
   const selectedVendor = selectedProduct ? vendorBySlug.get(selectedProduct.vendorId) : undefined
-  const openProduct = (slug: string) => {
+  const selectProduct = (slug: string, expanded = detailExpanded) => {
     setSelectedSlug(slug)
-    setDetailExpanded(true)
     setActiveTab('products')
+    setDetailExpanded(expanded)
+    setSelectedNewsKey('')
+    writeHash({ tab: 'products', product: slug, expanded }, 'push')
+  }
+  const openProduct = (slug: string) => {
+    selectProduct(slug, true)
+  }
+  const openNews = (item: NewsFeedEntry) => {
+    const key = newsEntryKey(item)
+    setSelectedNewsKey(key)
+    setActiveTab('news')
+    setDetailExpanded(false)
+    writeHash({ tab: 'news', news: key, expanded: false }, 'push')
+  }
+  const closeNews = () => {
+    setSelectedNewsKey('')
+    setActiveTab('news')
+    setDetailExpanded(false)
+    writeHash({ tab: 'news', news: undefined, expanded: false }, 'push')
+  }
+  const changeTab = (value: string) => {
+    if (!validTab(value)) return
+    setActiveTab(value)
+    setSelectedNewsKey('')
+    if (value !== 'products') setDetailExpanded(false)
+    writeHash({ tab: value, news: undefined, expanded: value === 'products' ? detailExpanded : false }, 'push')
+  }
+  const changeQuery = (value: string) => {
+    setQuery(value)
+    if (activeTab === 'news') setSelectedNewsKey('')
+    writeHash({ query: value, product: activeTab === 'products' ? undefined : selectedSlug, news: activeTab === 'news' ? undefined : selectedNewsKey }, 'replace')
+  }
+  const changeFit = (value: FitFilter) => {
+    setFit(value)
+    if (activeTab === 'news') setSelectedNewsKey('')
+    writeHash({ fit: value, product: activeTab === 'products' ? undefined : selectedSlug, news: activeTab === 'news' ? undefined : selectedNewsKey }, 'replace')
+  }
+  const toggleDetailExpanded = () => {
+    const nextExpanded = !detailExpanded
+    setDetailExpanded(nextExpanded)
+    setActiveTab('products')
+    setSelectedNewsKey('')
+    writeHash({ tab: 'products', product: selectedProduct?.slug || selectedSlug, expanded: nextExpanded }, 'push')
   }
 
   return (
@@ -1315,7 +1586,7 @@ function App() {
           </div>
         </section>
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-4">
+        <Tabs value={activeTab} onValueChange={changeTab} className="mt-4">
           <div className="flex flex-col gap-3 border-b border-border pb-3 lg:flex-row lg:items-center lg:justify-between">
             <TabsList>
               <TabsTrigger value="products">
@@ -1345,7 +1616,7 @@ function App() {
                 <Search className="pointer-events-none absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input
                   value={query}
-                  onChange={(event) => setQuery(event.target.value)}
+                  onChange={(event) => changeQuery(event.target.value)}
                   placeholder="Search products, vendors, files..."
                   className="pl-8 font-mono"
                 />
@@ -1358,7 +1629,7 @@ function App() {
                     key={option}
                     variant={fit === option ? 'secondary' : 'ghost'}
                     size="sm"
-                    onClick={() => setFit(option)}
+                    onClick={() => changeFit(option)}
                   >
                     {fitLabels[option]}
                   </Button>
@@ -1373,7 +1644,7 @@ function App() {
                 product={selectedProduct}
                 vendor={selectedVendor}
                 expanded={detailExpanded}
-                onToggleExpanded={() => setDetailExpanded((value) => !value)}
+                onToggleExpanded={toggleDetailExpanded}
               />
             ) : (
               <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_520px]">
@@ -1383,14 +1654,14 @@ function App() {
                     <div className="font-mono text-xs text-muted-foreground">seed order: category page</div>
                   </div>
                   <CategoryFitLegend />
-                  <ProductTable products={filteredProducts} selected={selectedProduct?.slug || ''} onSelect={setSelectedSlug} />
+                  <ProductTable products={filteredProducts} selected={selectedProduct?.slug || ''} onSelect={(slug) => selectProduct(slug, false)} />
                 </section>
                 {selectedProduct ? (
                   <ProductDetail
                     product={selectedProduct}
                     vendor={selectedVendor}
                     expanded={detailExpanded}
-                    onToggleExpanded={() => setDetailExpanded((value) => !value)}
+                    onToggleExpanded={toggleDetailExpanded}
                   />
                 ) : null}
               </div>
@@ -1398,7 +1669,14 @@ function App() {
           </TabsContent>
 
           <TabsContent value="news" id="news">
-            <NewsView news={registryData.news} query={query} onOpenProduct={openProduct} />
+            <NewsView
+              news={registryData.news}
+              query={query}
+              selectedNewsKey={selectedNewsKey}
+              onOpenNews={openNews}
+              onCloseNews={closeNews}
+              onOpenProduct={openProduct}
+            />
           </TabsContent>
 
           <TabsContent value="categories" id="categories">
