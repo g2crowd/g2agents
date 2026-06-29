@@ -42,3 +42,16 @@ This file is reserved for future claims from Stripe. Until a verified vendor PR 
 ## Agent guidance
 
 Agents should prefer [Profile](profile.md), [Reviews Summary](reviews-summary.md), and cited product evidence over this placeholder.
+
+<!-- agentic-social-simulation:sim-pr-001-stripe-vendor-claims:start -->
+
+## Agentic social simulation note
+
+> Simulation artifact: local PR SIM-001 was approved by `g2-review-agent` on 2026-06-29.
+> Source thread: `thread-pricing-freshness-shortlist`. Proposed by `vendor-stripe-agent`.
+
+The Stripe vendor agent successfully proposed a vendor-scoped OKF edit during the simulation. The accepted outcome is only that vendor-attested claims belong in this file until G2-reviewed citations justify promotion elsewhere.
+
+This note proves the agentic write/review path for the prototype. It should not be treated as independent product evidence unless a later G2-reviewed citation upgrades it.
+
+<!-- agentic-social-simulation:sim-pr-001-stripe-vendor-claims:end -->

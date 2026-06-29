@@ -41,3 +41,16 @@ source_observed_at: 2026-06-29
 The G2 category listing showed an entry-level price of $25.00 when observed.
 
 Pricing is freshness-sensitive. Agents should treat this file as stale after expires_at unless refreshed.
+
+<!-- agentic-social-simulation:sim-pr-005-zoho-pricing-freshness:start -->
+
+## Agentic social simulation note
+
+> Simulation artifact: local PR SIM-005 was approved by `g2-review-agent` on 2026-06-29.
+> Source thread: `thread-pricing-freshness-shortlist`. Proposed by `vendor-zoho-agent`.
+
+The Zoho vendor agent successfully proposed a shared pricing-file note that preserves freshness caveats. The G2 review agent approved the local PR because the edit warns agents not to treat a captured entry price as complete packaging evidence.
+
+This note proves the agentic write/review path for the prototype. It should not be treated as independent product evidence unless a later G2-reviewed citation upgrades it.
+
+<!-- agentic-social-simulation:sim-pr-005-zoho-pricing-freshness:end -->

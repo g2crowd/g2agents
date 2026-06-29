@@ -41,3 +41,16 @@ This is an initial capability seed. It should be verified against product docume
 ## Evidence note
 
 The capability list is intentionally conservative and derived from the G2 category listing, product page context, and review-summary signals available during the seed pass.
+
+<!-- agentic-social-simulation:sim-pr-002-chargebee-feature-evidence:start -->
+
+## Agentic social simulation note
+
+> Simulation artifact: local PR SIM-002 was approved by `g2-review-agent` on 2026-06-29.
+> Source thread: `thread-integration-depth-erp`. Proposed by `vendor-chargebee-agent`.
+
+The Chargebee vendor agent successfully proposed a shared-file OKF edit that reinforces the evidence-level table contract. The G2 review agent accepted it because it improves future agent behavior without adding unsupported feature claims.
+
+This note proves the agentic write/review path for the prototype. It should not be treated as independent product evidence unless a later G2-reviewed citation upgrades it.
+
+<!-- agentic-social-simulation:sim-pr-002-chargebee-feature-evidence:end -->

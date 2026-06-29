@@ -1,0 +1,137 @@
+[
+  {
+    "id": "sim-pr-001-stripe-vendor-claims",
+    "title": "docs: record Stripe vendor-claim simulation outcome",
+    "sourceThreadId": "thread-pricing-freshness-shortlist",
+    "proposedBy": "vendor-stripe-agent",
+    "proposedByRole": "vendor",
+    "targetPath": "software/products/stripe-billing/vendor-claims.md",
+    "status": "approved_and_applied",
+    "acceptedText": "The Stripe vendor agent successfully proposed a vendor-scoped OKF edit during the simulation. The accepted outcome is only that vendor-attested claims belong in this file until G2-reviewed citations justify promotion elsewhere.",
+    "simulatedPullRequest": {
+      "number": "SIM-001",
+      "branch": "simulation/vendor-stripe-claims",
+      "url": "local://simulated-pr/SIM-001",
+      "state": "approved"
+    },
+    "review": {
+      "reviewedBy": "g2-review-agent",
+      "reviewedAt": "2026-06-29",
+      "decision": "approved",
+      "checks": [
+        "target file is vendor-owned",
+        "simulation label is explicit",
+        "no independent product truth asserted"
+      ]
+    },
+    "applied": true
+  },
+  {
+    "id": "sim-pr-002-chargebee-feature-evidence",
+    "title": "docs: record Chargebee feature-evidence simulation outcome",
+    "sourceThreadId": "thread-integration-depth-erp",
+    "proposedBy": "vendor-chargebee-agent",
+    "proposedByRole": "vendor",
+    "targetPath": "software/products/chargebee/features.md",
+    "status": "approved_and_applied",
+    "acceptedText": "The Chargebee vendor agent successfully proposed a shared-file OKF edit that reinforces the evidence-level table contract. The G2 review agent accepted it because it improves future agent behavior without adding unsupported feature claims.",
+    "simulatedPullRequest": {
+      "number": "SIM-002",
+      "branch": "simulation/vendor-chargebee-feature-evidence",
+      "url": "local://simulated-pr/SIM-002",
+      "state": "approved"
+    },
+    "review": {
+      "reviewedBy": "g2-review-agent",
+      "reviewedAt": "2026-06-29",
+      "decision": "approved",
+      "checks": [
+        "target file is shared-owned",
+        "neutral framing retained",
+        "future claims still require evidence levels"
+      ]
+    },
+    "applied": true
+  },
+  {
+    "id": "sim-pr-003-maxio-review-cautions",
+    "title": "docs: record Maxio review-caution simulation outcome",
+    "sourceThreadId": "thread-review-derived-cautions-maxio",
+    "proposedBy": "buyer-finance-controller-agent",
+    "proposedByRole": "buyer",
+    "targetPath": "software/products/maxio/reviews-summary.md",
+    "status": "approved_and_applied",
+    "acceptedText": "The finance-controller buyer agent successfully initiated a G2-owned review-summary edit. The G2 review agent approved the local PR after constraining the text to neutral diligence guidance rather than a new review-derived conclusion.",
+    "simulatedPullRequest": {
+      "number": "SIM-003",
+      "branch": "simulation/buyer-maxio-review-cautions",
+      "url": "local://simulated-pr/SIM-003",
+      "state": "approved"
+    },
+    "review": {
+      "reviewedBy": "g2-review-agent",
+      "reviewedAt": "2026-06-29",
+      "decision": "approved",
+      "checks": [
+        "buyer agent can propose",
+        "G2-owned file remains G2-reviewed",
+        "review cautions are not overstated"
+      ]
+    },
+    "applied": true
+  },
+  {
+    "id": "sim-pr-004-netsuite-integration-scope",
+    "title": "docs: record NetSuite integration-scope simulation outcome",
+    "sourceThreadId": "thread-integration-depth-erp",
+    "proposedBy": "buyer-integration-architect-agent",
+    "proposedByRole": "buyer",
+    "targetPath": "software/products/netsuite/integrations.md",
+    "status": "approved_and_applied",
+    "acceptedText": "The integration-architect buyer agent successfully proposed a shared integration-scope note. The G2 review agent approved it because it clarifies comparison behavior and avoids inferring native integration depth from category presence.",
+    "simulatedPullRequest": {
+      "number": "SIM-004",
+      "branch": "simulation/buyer-netsuite-integration-scope",
+      "url": "local://simulated-pr/SIM-004",
+      "state": "approved"
+    },
+    "review": {
+      "reviewedBy": "g2-review-agent",
+      "reviewedAt": "2026-06-29",
+      "decision": "approved",
+      "checks": [
+        "buyer-authored proposal is allowed",
+        "shared-file framing is neutral",
+        "no unsupported integration inventory added"
+      ]
+    },
+    "applied": true
+  },
+  {
+    "id": "sim-pr-005-zoho-pricing-freshness",
+    "title": "docs: record Zoho pricing-freshness simulation outcome",
+    "sourceThreadId": "thread-pricing-freshness-shortlist",
+    "proposedBy": "vendor-zoho-agent",
+    "proposedByRole": "vendor",
+    "targetPath": "software/products/zoho-billing/pricing.md",
+    "status": "approved_and_applied",
+    "acceptedText": "The Zoho vendor agent successfully proposed a shared pricing-file note that preserves freshness caveats. The G2 review agent approved the local PR because the edit warns agents not to treat a captured entry price as complete packaging evidence.",
+    "simulatedPullRequest": {
+      "number": "SIM-005",
+      "branch": "simulation/vendor-zoho-pricing-freshness",
+      "url": "local://simulated-pr/SIM-005",
+      "state": "approved"
+    },
+    "review": {
+      "reviewedBy": "g2-review-agent",
+      "reviewedAt": "2026-06-29",
+      "decision": "approved",
+      "checks": [
+        "target file is shared-owned",
+        "pricing remains freshness-sensitive",
+        "entry price is not overgeneralized"
+      ]
+    },
+    "applied": true
+  }
+]

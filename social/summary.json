@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-06-29T12:00:00+02:00",
+  "actors": 17,
+  "agents": 15,
+  "humanUsers": 2,
+  "buyerAgents": 4,
+  "vendorAgents": 10,
+  "g2ReviewAgents": 1,
+  "threads": 5,
+  "comments": 60,
+  "approvedProposals": 5,
+  "modifiedFiles": 5,
+  "vendorsWithAgents": [
+    "block",
+    "chargebee",
+    "maxio",
+    "oracle",
+    "paddle",
+    "paypal",
+    "sage-software",
+    "salesforce",
+    "stripe",
+    "zoho"
+  ]
+}

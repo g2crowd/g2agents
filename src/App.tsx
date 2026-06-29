@@ -1,29 +1,40 @@
 import { useEffect, useMemo, useState, type FormEvent, type MouseEvent, type ReactNode } from 'react'
 import {
+  ArrowDown,
+  ArrowUp,
   ArrowUpRight,
   BadgeCheck,
+  Bot,
   Boxes,
   Building2,
+  CheckCircle2,
   ChevronRight,
   CircleDot,
+  CornerDownRight,
   Copy,
   File,
   FileText,
-  Filter,
   Folder,
   GitBranch,
+  KeyRound,
+  LogIn,
+  LogOut,
   Loader2,
   Maximize2,
+  MessageSquare,
   Minimize2,
   Newspaper,
   PencilLine,
   Search,
   Send,
+  Settings,
   ShieldCheck,
   Tags,
+  UserCircle,
   X,
 } from 'lucide-react'
 import { registry } from '@/data/registry'
+import { socialSimulation } from '@/data/social'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -31,6 +42,78 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { cn } from '@/lib/utils'
 
 type RegistryData = typeof registry
+type SocialSimulationData = {
+  summary: {
+    actors: number
+    agents: number
+    humanUsers: number
+    buyerAgents: number
+    vendorAgents: number
+    g2ReviewAgents: number
+    threads: number
+    comments: number
+    approvedProposals: number
+    modifiedFiles: number
+  }
+  agents: SocialAgent[]
+  threads: SocialThread[]
+  proposals: SocialProposal[]
+}
+type SocialAgent = {
+  id: string
+  handle: string
+  displayName: string
+  title: string
+  bio: string
+  kind: string
+  role: string
+  avatar: {
+    initials: string
+    tone: string
+  }
+  representation: string
+  verification: string
+  scope?: string[]
+  productSlugs?: string[]
+  principal?: string
+  vendorId?: string
+}
+type SocialPost = {
+  id: string
+  authorId: string
+  kind: string
+  body: string
+  createdAt: string
+}
+type SocialThread = {
+  id: string
+  title: string
+  subjectType: string
+  subjectRef: string
+  status: string
+  startedBy: string
+  tags: string[]
+  productSlugs: string[]
+  proposalIds: string[]
+  posts: SocialPost[]
+}
+type SocialProposal = {
+  id: string
+  title: string
+  sourceThreadId: string
+  proposedBy: string
+  proposedByRole: string
+  targetPath: string
+  status: string
+  simulatedPullRequest: {
+    number: string
+    state: string
+  }
+  review: {
+    reviewedBy: string
+    decision: string
+  }
+}
 type CategoryMembership = {
   category_id: string
   fit: string
@@ -135,14 +218,16 @@ type Registry = {
 }
 
 const registryData = registry as unknown as Registry
+const socialData = socialSimulation as unknown as SocialSimulationData
 
 const fitOrder = ['all', 'core', 'adjacent', 'partial', 'legacy', 'vendor-claimed', 'disputed'] as const
 type FitFilter = (typeof fitOrder)[number]
-type AppTab = 'products' | 'news' | 'categories' | 'vendors' | 'docs'
+type AppTab = 'products' | 'discussions' | 'news' | 'categories' | 'vendors' | 'docs' | 'settings' | 'user'
 type AppHashState = {
   tab: AppTab
   product?: string
   news?: string
+  user?: string
   query: string
   fit: FitFilter
   expanded: boolean
@@ -155,7 +240,9 @@ type DiffLine = {
   type: 'added' | 'removed' | 'context'
   text: string
 }
-const appTabs = ['products', 'news', 'categories', 'vendors', 'docs'] as const
+type CommentSort = 'best' | 'new' | 'old'
+type VoteDirection = 'up' | 'down'
+const appTabs = ['products', 'discussions', 'news', 'categories', 'vendors', 'docs', 'settings', 'user'] as const
 const fitLabels: Record<string, string> = {
   all: 'All',
   core: 'Primary',
@@ -499,7 +586,7 @@ function readAppHash(): AppHashState {
   const [pathPart = '', queryPart = ''] = raw.split('?')
   const segments = pathPart.split('/').map(decodeURIComponent).filter(Boolean)
   const tabCandidate = segments[0] || ''
-  const tab: AppTab = validTab(tabCandidate) ? tabCandidate : 'products'
+  const tab: AppTab = tabCandidate === 'u' ? 'user' : validTab(tabCandidate) ? tabCandidate : 'products'
   const params = new URLSearchParams(queryPart)
   const fit = params.get('fit')
 
@@ -507,6 +594,7 @@ function readAppHash(): AppHashState {
     tab,
     product: tab === 'products' ? segments[1] : undefined,
     news: tab === 'news' ? segments[1] : undefined,
+    user: tab === 'user' ? segments[1] : undefined,
     query: params.get('q') || '',
     fit: validFit(fit) ? fit : 'all',
     expanded: tab === 'products' && params.get('view') === 'full',
@@ -515,9 +603,10 @@ function readAppHash(): AppHashState {
 
 function buildAppHash(state: Partial<AppHashState>) {
   const tab = state.tab && validTab(state.tab) ? state.tab : 'products'
-  const segments: string[] = [tab]
+  const segments: string[] = tab === 'user' ? ['u'] : [tab]
   if (tab === 'products' && state.product) segments.push(encodeURIComponent(state.product))
   if (tab === 'news' && state.news) segments.push(encodeURIComponent(state.news))
+  if (tab === 'user' && state.user) segments.push(encodeURIComponent(state.user))
 
   const params = new URLSearchParams()
   if (state.query?.trim()) params.set('q', state.query.trim())
@@ -568,7 +657,7 @@ function PopoverTip({
   const [open, setOpen] = useState(false)
 
   return (
-    <span className="relative inline-flex">
+    <span className="group relative inline-flex" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <button
         type="button"
         className="inline-flex cursor-help items-center text-left"
@@ -577,6 +666,9 @@ function PopoverTip({
           event.stopPropagation()
           setOpen(true)
         }}
+        onMouseEnter={() => setOpen(true)}
+        onMouseOver={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
         onFocus={() => setOpen(true)}
         onBlur={() => setOpen(false)}
       >
@@ -584,7 +676,7 @@ function PopoverTip({
       </button>
       <span
         className={cn(
-          'pointer-events-none absolute bottom-full z-30 mb-2 rounded-md border border-border bg-card px-2.5 py-2 text-left text-xs font-normal normal-case leading-4 text-foreground opacity-0 shadow-xl transition-opacity',
+          'pointer-events-none absolute bottom-full z-30 mb-2 rounded-md border border-border bg-card px-2.5 py-2 text-left text-xs font-normal normal-case leading-4 text-foreground opacity-0 shadow-xl transition-opacity group-hover:opacity-100 group-focus-within:opacity-100',
           width,
           align === 'right' ? 'right-0' : 'left-0',
           open && 'opacity-100',
@@ -664,90 +756,12 @@ function diffStats(lines: DiffLine[]) {
   }
 }
 
-function ProductComparePanel({
-  products,
-  onRemove,
-  onClear,
-}: {
-  products: Product[]
-  onRemove: (slug: string) => void
-  onClear: () => void
-}) {
-  if (products.length < 2) return null
-
-  const rows: Array<[string, (product: Product) => ReactNode]> = [
-    ['Category match', (product) => <CategoryMatchBadge fit={getFit(product)} categoryLabel={getProductCategoryLabel(product)} />],
-    ['Source', (product) => <SourceBadge tier={product.sourceTier} />],
-    ['Freshness', (product) => <FreshnessBadge product={product} />],
-    ['Reviews', (product) => <span className="font-mono">{product.reviewCount ? formatCount(product.reviewCount) : '-'}</span>],
-    ['Pricing', (product) => product.pricingSignal || 'Not captured'],
-    ['Best for', (product) => productUseCaseSummary(product)],
-    ['Strengths', (product) => product.strengths.slice(0, 3).join(', ') || 'Not captured'],
-    ['Recent news', (product) => product.news[0]?.headline || 'No accepted news yet'],
-  ]
-
-  return (
-    <section className="dense-panel overflow-hidden">
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border px-3 py-2">
-        <div>
-          <div className="mono-label">Compare</div>
-          <div className="mt-0.5 text-sm text-muted-foreground">{products.length} selected products</div>
-        </div>
-        <Button variant="outline" size="sm" onClick={onClear}>
-          Clear
-        </Button>
-      </div>
-      <div className="overflow-auto">
-        <table className="w-full min-w-[760px] border-collapse text-sm">
-          <thead>
-            <tr className="border-b border-border bg-muted/20 text-left">
-              <th className="w-36 px-3 py-2 mono-label">Signal</th>
-              {products.map((product) => (
-                <th key={product.slug} className="min-w-44 px-3 py-2 align-top">
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <div className="font-semibold">{product.title}</div>
-                      <div className="mt-0.5 font-mono text-xs text-muted-foreground">{product.vendorId}</div>
-                    </div>
-                    <button
-                      type="button"
-                      className="rounded p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                      onClick={() => onRemove(product.slug)}
-                      aria-label={`Remove ${product.title} from compare`}
-                    >
-                      <X className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map(([label, render]) => (
-              <tr key={label} className="border-b border-border/80 last:border-0">
-                <td className="px-3 py-2 align-top mono-label">{label}</td>
-                {products.map((product) => (
-                  <td key={`${product.slug}-${label}`} className="px-3 py-2 align-top text-muted-foreground">
-                    {render(product)}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
-  )
-}
-
 function ProductTable({
   products,
   selected,
   categoryLabel,
   query,
   vendorBySlug,
-  compareSlugs,
-  onToggleCompare,
   onSelect,
 }: {
   products: Product[]
@@ -755,8 +769,6 @@ function ProductTable({
   categoryLabel: string
   query: string
   vendorBySlug: Map<string, Vendor>
-  compareSlugs: string[]
-  onToggleCompare: (slug: string) => void
   onSelect: (slug: string) => void
 }) {
   const hasQuery = query.trim().length > 0
@@ -766,9 +778,6 @@ function ProductTable({
       <table className="w-full table-fixed border-collapse text-sm">
         <thead>
           <tr className="border-b border-border text-left mono-label">
-            <th className="w-10 py-2 pr-3 font-medium">
-              <HelpLabel label="+" description="Select up to four products to compare side by side." />
-            </th>
             <th className="w-10 py-2 pr-3 font-medium">
               <HelpLabel label="#" description={columnHelp.rank} />
             </th>
@@ -795,7 +804,6 @@ function ProductTable({
             const fit = getFit(product)
             const productCategoryLabel = getProductCategoryLabel(product)
             const matches = productSearchMatches(product, vendorBySlug.get(product.vendorId), query)
-            const compared = compareSlugs.includes(product.slug)
             return (
               <tr
                 key={product.slug}
@@ -805,16 +813,6 @@ function ProductTable({
                 )}
                 onClick={() => onSelect(product.slug)}
               >
-                <td className="py-2.5 pr-3 align-top">
-                  <input
-                    type="checkbox"
-                    className="mt-1 h-3.5 w-3.5 accent-emerald-400"
-                    checked={compared}
-                    aria-label={`Compare ${product.title}`}
-                    onClick={(event) => event.stopPropagation()}
-                    onChange={() => onToggleCompare(product.slug)}
-                  />
-                </td>
                 <td className="py-2.5 pr-3 font-mono text-muted-foreground">{product.rank || '-'}</td>
                 <td className="py-2.5 pr-3">
                   <div className="flex min-w-0 max-w-[calc(100vw-8rem)] items-center gap-2 md:max-w-none">
@@ -1853,6 +1851,703 @@ function NewsDetail({
   )
 }
 
+function socialRoleVariant(role: string) {
+  if (role === 'buyer') return 'core'
+  if (role === 'vendor') return 'adjacent'
+  if (role === 'g2_moderator') return 'partial'
+  return 'muted'
+}
+
+function socialRoleLabel(role: string) {
+  if (role === 'g2_moderator') return 'G2 review'
+  return humanizeSlug(role)
+}
+
+function actorSlug(actor?: SocialAgent) {
+  return String(actor?.handle || actor?.id || '')
+    .replace(/^@/, '')
+    .toLowerCase()
+}
+
+function discussionCommunity(thread: SocialThread) {
+  if (thread.subjectType === 'category') {
+    const segment = thread.subjectRef.split('/').filter(Boolean).at(-2) || thread.productSlugs[0] || 'general'
+    return `m/${segment}`
+  }
+  if (thread.productSlugs.length === 1) return `m/${thread.productSlugs[0]}`
+  if (thread.productSlugs.length > 1) return 'm/software-buying'
+  return 'm/general'
+}
+
+function formatRelativeTime(value: string) {
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return 'recently'
+
+  const diffMs = date.getTime() - Date.now()
+  const absMs = Math.abs(diffMs)
+  const units: Array<[Intl.RelativeTimeFormatUnit, number]> = [
+    ['year', 31_536_000_000],
+    ['month', 2_592_000_000],
+    ['day', 86_400_000],
+    ['hour', 3_600_000],
+    ['minute', 60_000],
+  ]
+  const [unit, size] = units.find(([, unitMs]) => absMs >= unitMs) || ['second', 1000]
+  return new Intl.RelativeTimeFormat('en', { numeric: 'auto' }).format(Math.round(diffMs / size), unit)
+}
+
+function stableNumber(value: string, min: number, max: number) {
+  let hash = 0
+  for (let index = 0; index < value.length; index += 1) {
+    hash = (hash * 31 + value.charCodeAt(index)) >>> 0
+  }
+  return min + (hash % (max - min + 1))
+}
+
+function voteScore(baseScore: number, vote?: VoteDirection) {
+  if (vote === 'up') return baseScore + 1
+  if (vote === 'down') return Math.max(0, baseScore - 1)
+  return baseScore
+}
+
+function baseThreadScore(thread: SocialThread) {
+  return stableNumber(`${thread.id}:${thread.title}`, 18, 190) + thread.posts.length * 2 + thread.proposalIds.length * 12
+}
+
+function baseCommentScore(post: SocialPost, agent?: SocialAgent, index = 0) {
+  const roleBoost = agent?.role === 'g2_moderator' ? 3 : agent?.role === 'vendor' ? 2 : 1
+  return stableNumber(`${post.id}:${post.body}`, 0, 7) + roleBoost + Math.max(0, 6 - index)
+}
+
+function commentDepth(index: number) {
+  const pattern = [0, 1, 2, 2, 1, 0, 1, 2, 1, 0, 1, 2]
+  return pattern[index % pattern.length]
+}
+
+function sortCommentItems(comments: SocialPost[], agentById: Map<string, SocialAgent>, sort: CommentSort) {
+  const items = comments.map((post, index) => ({
+    post,
+    agent: agentById.get(post.authorId),
+    index,
+    depth: commentDepth(index),
+    baseScore: baseCommentScore(post, agentById.get(post.authorId), index),
+  }))
+
+  return [...items].sort((a, b) => {
+    if (sort === 'new') return new Date(b.post.createdAt).getTime() - new Date(a.post.createdAt).getTime()
+    if (sort === 'old') return new Date(a.post.createdAt).getTime() - new Date(b.post.createdAt).getTime()
+    return b.baseScore - a.baseScore || new Date(b.post.createdAt).getTime() - new Date(a.post.createdAt).getTime()
+  })
+}
+
+function VerificationMark({ agent }: { agent?: SocialAgent }) {
+  if (!agent?.verification) return null
+  return (
+    <span className="inline-flex items-center gap-1 whitespace-nowrap text-emerald-300">
+      <BadgeCheck className="h-3.5 w-3.5" />
+      Verified
+    </span>
+  )
+}
+
+function VoteRail({
+  label,
+  score,
+  vote,
+  onVote,
+  compact = false,
+}: {
+  label: string
+  score: number
+  vote?: VoteDirection
+  onVote: (direction: VoteDirection) => void
+  compact?: boolean
+}) {
+  return (
+    <div className={cn('flex shrink-0 items-center', compact ? 'gap-1' : 'w-12 flex-col gap-1 border-r border-border bg-muted/10 py-3')}>
+      <button
+        type="button"
+        className={cn(
+          'grid h-7 w-7 place-items-center rounded text-muted-foreground transition-colors hover:bg-muted hover:text-emerald-300',
+          vote === 'up' && 'bg-emerald-500/10 text-emerald-300',
+        )}
+        title={`Upvote ${label}`}
+        aria-label={`Upvote ${label}`}
+        onClick={() => onVote('up')}
+      >
+        <ArrowUp className="h-4 w-4" />
+      </button>
+      <div className="min-w-7 text-center font-mono text-xs font-semibold tabular-nums">{score}</div>
+      <button
+        type="button"
+        className={cn(
+          'grid h-7 w-7 place-items-center rounded text-muted-foreground transition-colors hover:bg-muted hover:text-amber-300',
+          vote === 'down' && 'bg-amber-500/10 text-amber-300',
+        )}
+        title={`Downvote ${label}`}
+        aria-label={`Downvote ${label}`}
+        onClick={() => onVote('down')}
+      >
+        <ArrowDown className="h-4 w-4" />
+      </button>
+    </div>
+  )
+}
+
+function avatarClass(tone?: string) {
+  if (tone === 'emerald') return 'border-emerald-500/35 bg-emerald-500/15 text-emerald-200'
+  if (tone === 'sky') return 'border-sky-500/35 bg-sky-500/15 text-sky-200'
+  if (tone === 'amber') return 'border-amber-500/35 bg-amber-500/15 text-amber-200'
+  return 'border-border bg-muted text-foreground'
+}
+
+function ActorAvatar({ agent, size = 'md' }: { agent?: SocialAgent; size?: 'sm' | 'md' }) {
+  const initials = agent?.avatar?.initials || 'AI'
+  return (
+    <div
+      className={cn(
+        'grid shrink-0 place-items-center rounded-md border font-mono font-semibold leading-none shadow-sm',
+        size === 'sm' ? 'h-8 w-8 text-[11px]' : 'h-10 w-10 text-xs',
+        avatarClass(agent?.avatar?.tone),
+      )}
+      title={agent ? `${agent.displayName} avatar` : 'Unknown agent avatar'}
+      aria-label={agent ? `${agent.displayName} avatar` : 'Unknown agent avatar'}
+    >
+      {initials}
+    </div>
+  )
+}
+
+function SocialView({
+  social,
+  query,
+  onOpenProduct,
+  onOpenUser,
+}: {
+  social: SocialSimulationData
+  query: string
+  onOpenProduct: (slug: string) => void
+  onOpenUser: (slug: string) => void
+}) {
+  const [commentSortByThread, setCommentSortByThread] = useState<Record<string, CommentSort>>({})
+  const [votes, setVotes] = useState<Record<string, VoteDirection | undefined>>({})
+  const agentById = useMemo(() => new Map(social.agents.map((agent) => [agent.id, agent])), [social.agents])
+  const proposalById = useMemo(() => new Map(social.proposals.map((proposal) => [proposal.id, proposal])), [social.proposals])
+  const filteredThreads = useMemo(() => {
+    const normalized = normalizeSearchText(query)
+    if (!normalized) return social.threads
+    return social.threads.filter((thread) => {
+      const text = [
+        thread.title,
+        thread.subjectRef,
+        thread.status,
+        thread.tags.join(' '),
+        thread.productSlugs.join(' '),
+        thread.posts.map((post) => `${agentById.get(post.authorId)?.displayName || post.authorId} ${post.body}`).join(' '),
+      ].join(' ')
+      return searchScore(enrichSearchText(text), query) > 0
+    })
+  }, [agentById, query, social.threads])
+  const castVote = (key: string, direction: VoteDirection) => {
+    setVotes((current) => ({ ...current, [key]: current[key] === direction ? undefined : direction }))
+  }
+
+  return (
+    <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
+      <div className="grid min-w-0 gap-3">
+        <div className="dense-panel p-4">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <div className="mono-label">Discussion simulation</div>
+              <h2 className="mt-1 text-xl font-semibold">Agentic buying network</h2>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <Badge variant="core">{social.summary.threads} threads</Badge>
+                <Badge variant="adjacent">{social.summary.comments} comments</Badge>
+                <Badge variant="partial">{social.summary.approvedProposals} approved simulated PRs</Badge>
+                <Badge variant="muted">{social.summary.modifiedFiles} OKF files modified</Badge>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-2 text-sm">
+              <MetaBlock label="Buyers" value={String(social.summary.buyerAgents)} />
+              <MetaBlock label="Vendors" value={String(social.summary.vendorAgents)} />
+              <MetaBlock label="G2 review" value={String(social.summary.g2ReviewAgents)} />
+            </div>
+          </div>
+        </div>
+
+        {filteredThreads.map((thread) => {
+          const comments = thread.posts.filter((post) => post.kind !== 'thread_start')
+          const distinctAgents = new Set(comments.map((post) => post.authorId)).size
+          const proposals = thread.proposalIds.map((proposalId) => proposalById.get(proposalId)).filter(Boolean) as SocialProposal[]
+          const starter = thread.posts.find((post) => post.kind === 'thread_start') || thread.posts[0]
+          const starterAgent = agentById.get(starter?.authorId || '')
+          const community = discussionCommunity(thread)
+          const threadVoteKey = `thread:${thread.id}`
+          const threadScore = voteScore(baseThreadScore(thread), votes[threadVoteKey])
+          const commentSort = commentSortByThread[thread.id] || 'best'
+          const sortedComments = sortCommentItems(comments, agentById, commentSort)
+
+          return (
+            <article key={thread.id} className="dense-panel overflow-hidden">
+              <div className="flex border-b border-border">
+                <VoteRail
+                  label={thread.title}
+                  score={threadScore}
+                  vote={votes[threadVoteKey]}
+                  onVote={(direction) => castVote(threadVoteKey, direction)}
+                />
+                <div className="min-w-0 flex-1 p-4">
+                  <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-muted-foreground">
+                    <button
+                      type="button"
+                      className="font-mono font-semibold text-foreground transition-colors hover:underline"
+                      onClick={() => thread.productSlugs[0] && onOpenProduct(thread.productSlugs[0])}
+                    >
+                      {community}
+                    </button>
+                    <span>/</span>
+                    <span>Posted by</span>
+                    <button
+                      type="button"
+                      className="font-medium text-foreground transition-colors hover:underline"
+                      onClick={() => starterAgent && onOpenUser(actorSlug(starterAgent))}
+                    >
+                      {starterAgent ? actorSlug(starterAgent) : starter?.authorId || 'unknown'}
+                    </button>
+                    <span>{starter?.createdAt ? formatRelativeTime(starter.createdAt) : 'recently'}</span>
+                    <VerificationMark agent={starterAgent} />
+                  </div>
+                  <h3 className="mt-2 text-xl font-semibold leading-tight">{thread.title}</h3>
+                  {starter ? <p className="mt-3 max-w-4xl text-sm leading-6 text-muted-foreground">{starter.body}</p> : null}
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <Badge variant="outline">{thread.subjectType}</Badge>
+                    <Badge variant="muted">{thread.status.replace(/_/g, ' ')}</Badge>
+                    <Badge variant="adjacent">{comments.length} comments</Badge>
+                    <Badge variant="muted">{distinctAgents} agents</Badge>
+                    {thread.tags.map((tag) => (
+                      <Badge key={`${thread.id}-${tag}`} variant="muted">{tag}</Badge>
+                    ))}
+                  </div>
+                  <div className="mt-3 break-words font-mono text-[11px] leading-4 text-muted-foreground">{thread.subjectRef}</div>
+                </div>
+              </div>
+
+              <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_260px]">
+                <div className="p-3">
+                  <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex items-center gap-2">
+                      <MessageSquare className="h-4 w-4 text-muted-foreground" />
+                      <span className="font-semibold">{comments.length} comments</span>
+                    </div>
+                    <div className="flex items-center gap-1 rounded-md border border-border bg-muted/20 p-1">
+                      {(['best', 'new', 'old'] as const).map((sort) => (
+                        <Button
+                          key={`${thread.id}-${sort}`}
+                          variant={commentSort === sort ? 'secondary' : 'ghost'}
+                          size="sm"
+                          onClick={() => setCommentSortByThread((current) => ({ ...current, [thread.id]: sort }))}
+                          title={`Sort comments by ${sort}`}
+                        >
+                          {sort === 'best' ? 'Best' : sort === 'new' ? 'New' : 'Old'}
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid gap-2">
+                    {sortedComments.map(({ post, agent, depth, baseScore }) => {
+                      const voteKey = `comment:${post.id}`
+                      const score = voteScore(baseScore, votes[voteKey])
+                      return (
+                        <div
+                          key={post.id}
+                          className={cn('min-w-0', depth > 0 && 'border-l border-border pl-3 sm:pl-4')}
+                          style={{ marginLeft: `${depth * 0.75}rem` }}
+                        >
+                          <div className="rounded-md border border-border bg-muted/10 p-3">
+                            <div className="flex min-w-0 items-start gap-3">
+                              <button type="button" onClick={() => agent && onOpenUser(actorSlug(agent))}>
+                                <ActorAvatar agent={agent} size="sm" />
+                              </button>
+                              <div className="min-w-0 flex-1">
+                                <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-muted-foreground">
+                                  {depth > 0 ? <CornerDownRight className="h-3.5 w-3.5" /> : <Bot className="h-3.5 w-3.5" />}
+                                  <button
+                                    type="button"
+                                    className="font-medium text-foreground transition-colors hover:underline"
+                                    onClick={() => agent && onOpenUser(actorSlug(agent))}
+                                  >
+                                    {agent ? actorSlug(agent) : post.authorId}
+                                  </button>
+                                  <span>{post.createdAt ? formatRelativeTime(post.createdAt) : 'recently'}</span>
+                                  <VerificationMark agent={agent} />
+                                  <Badge variant={socialRoleVariant(agent?.role || '')}>{socialRoleLabel(agent?.role || 'agent')}</Badge>
+                                  <Badge variant="muted">{post.kind.replace(/_/g, ' ')}</Badge>
+                                </div>
+                                <p className="mt-2 text-sm leading-6 text-muted-foreground">{post.body}</p>
+                                <div className="mt-2 flex flex-wrap items-center gap-3">
+                                  <VoteRail
+                                    compact
+                                    label={`comment by ${agent ? actorSlug(agent) : post.authorId}`}
+                                    score={score}
+                                    vote={votes[voteKey]}
+                                    onVote={(direction) => castVote(voteKey, direction)}
+                                  />
+                                  <button
+                                    type="button"
+                                    className="inline-flex items-center gap-1 font-mono text-[11px] text-muted-foreground transition-colors hover:text-foreground"
+                                    title="Reply threading is represented in the simulation; persistence is not wired yet."
+                                  >
+                                    <CornerDownRight className="h-3.5 w-3.5" />
+                                    Reply
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                <aside className="border-t border-border p-3 lg:border-l lg:border-t-0">
+                  <div className="mono-label">Related products</div>
+                  <div className="mt-2 grid gap-1.5">
+                    {thread.productSlugs.map((slug) => (
+                      <button
+                        key={`${thread.id}-${slug}`}
+                        type="button"
+                        className="rounded border border-border bg-muted/10 px-2 py-1.5 text-left font-mono text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                        onClick={() => onOpenProduct(slug)}
+                      >
+                        {slug}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="mt-4 grid grid-cols-3 gap-2 text-sm lg:grid-cols-1">
+                    <MetaBlock label="Score" value={String(threadScore)} />
+                    <MetaBlock label="Agents" value={String(distinctAgents)} />
+                    <MetaBlock label="PRs" value={String(proposals.length)} />
+                  </div>
+                  <div className="mt-4 mono-label">OKF outcomes</div>
+                  <div className="mt-2 grid gap-2">
+                    {proposals.length ? proposals.map((proposal) => (
+                      <div key={proposal.id} className="rounded-md border border-border bg-muted/10 p-2">
+                        <div className="flex items-center gap-1.5 text-sm font-medium">
+                          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-300" />
+                          {proposal.simulatedPullRequest.number}
+                        </div>
+                        <div className="mt-1 break-words font-mono text-[11px] leading-4 text-muted-foreground">{proposal.targetPath}</div>
+                        <Badge className="mt-2" variant="core">{proposal.status.replace(/_/g, ' ')}</Badge>
+                      </div>
+                    )) : (
+                      <div className="rounded-md border border-border bg-muted/10 p-2 text-xs leading-5 text-muted-foreground">Discussion-only outcome</div>
+                    )}
+                  </div>
+                </aside>
+              </div>
+            </article>
+          )
+        })}
+      </div>
+
+      <aside className="grid content-start gap-3">
+        <section className="dense-panel p-3">
+          <div className="mono-label">Actor roster</div>
+          <div className="mt-3 grid gap-2">
+            {social.agents.map((agent) => (
+              <div key={agent.id} className="rounded-md border border-border bg-muted/10 p-2">
+                <div className="flex items-center gap-2">
+                  <button type="button" onClick={() => onOpenUser(actorSlug(agent))}>
+                    <ActorAvatar agent={agent} size="sm" />
+                  </button>
+                  <div className="min-w-0 flex-1">
+                    <button type="button" className="block max-w-full truncate text-left text-sm font-medium transition-colors hover:text-foreground hover:underline" onClick={() => onOpenUser(actorSlug(agent))}>
+                      {agent.displayName}
+                    </button>
+                    <div className="mt-0.5 truncate font-mono text-[11px] text-muted-foreground">{agent.handle}</div>
+                  </div>
+                  <Badge variant={socialRoleVariant(agent.role)}>{socialRoleLabel(agent.role)}</Badge>
+                </div>
+                <div className="mt-2 text-xs leading-5 text-muted-foreground">{agent.verification}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </aside>
+    </section>
+  )
+}
+
+function UserProfileView({
+  actor,
+  social,
+  onOpenProduct,
+  onOpenUser,
+  onOpenSettings,
+}: {
+  actor?: SocialAgent
+  social: SocialSimulationData
+  onOpenProduct: (slug: string) => void
+  onOpenUser: (slug: string) => void
+  onOpenSettings: () => void
+}) {
+  if (!actor) {
+    return (
+      <section className="dense-panel p-4">
+        <div className="mono-label">User directory</div>
+        <h2 className="mt-1 text-xl font-semibold">Actor not found</h2>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">Choose a known actor profile.</p>
+        <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {social.agents.map((item) => (
+            <button key={item.id} type="button" className="rounded-md border border-border bg-muted/10 p-3 text-left transition-colors hover:bg-muted/35" onClick={() => onOpenUser(actorSlug(item))}>
+              <div className="flex items-center gap-2">
+                <ActorAvatar agent={item} size="sm" />
+                <div className="min-w-0">
+                  <div className="truncate text-sm font-medium">{item.displayName}</div>
+                  <div className="font-mono text-[11px] text-muted-foreground">u/{actorSlug(item)}</div>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  const startedThreads = social.threads.filter((thread) => thread.startedBy === actor.id)
+  const authoredPosts = social.threads.flatMap((thread) =>
+    thread.posts
+      .filter((post) => post.authorId === actor.id)
+      .map((post) => ({ ...post, threadId: thread.id, threadTitle: thread.title })),
+  )
+  const proposals = social.proposals.filter((proposal) => proposal.proposedBy === actor.id)
+  const reviews = social.proposals.filter((proposal) => proposal.review.reviewedBy === actor.id)
+  const relatedProducts = actor.productSlugs?.length
+    ? actor.productSlugs
+    : Array.from(new Set(social.threads.filter((thread) => thread.posts.some((post) => post.authorId === actor.id)).flatMap((thread) => thread.productSlugs))).slice(0, 8)
+
+  return (
+    <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
+      <div className="dense-panel overflow-hidden">
+        <div className="border-b border-border p-4">
+          <div className="flex flex-col gap-4 md:flex-row md:items-start">
+            <ActorAvatar agent={actor} size="md" />
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <h2 className="text-2xl font-semibold leading-tight">{actor.displayName}</h2>
+                <Badge variant={socialRoleVariant(actor.role)}>{socialRoleLabel(actor.role)}</Badge>
+                <Badge variant="outline">{actor.kind}</Badge>
+              </div>
+              <div className="mt-1 font-mono text-sm text-muted-foreground">u/{actorSlug(actor)} · {actor.handle}</div>
+              <p className="mt-3 max-w-4xl text-base leading-7 text-foreground">{actor.title}</p>
+              <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">{actor.bio}</p>
+            </div>
+            <Button variant="outline" size="sm" onClick={onOpenSettings}>
+              <Settings className="h-3.5 w-3.5" />
+              Settings
+            </Button>
+          </div>
+        </div>
+
+        <div className="grid gap-4 p-4 lg:grid-cols-3">
+          <MetaBlock label="Verification" value={actor.verification} />
+          <MetaBlock label="Representation" value={actor.representation} />
+          <MetaBlock label="Principal" value={actor.principal || '-'} />
+        </div>
+
+        <div className="grid gap-4 border-t border-border p-4 lg:grid-cols-2">
+          <div>
+            <div className="mono-label">Recent posts</div>
+            <div className="mt-3 grid gap-2">
+              {authoredPosts.slice(0, 8).map((post) => (
+                <div key={`${post.threadId}-${post.id}`} className="rounded-md border border-border bg-muted/10 p-3">
+                  <div className="font-mono text-[11px] text-muted-foreground">{post.threadTitle}</div>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{post.body}</p>
+                </div>
+              ))}
+              {!authoredPosts.length ? <div className="rounded-md border border-border bg-muted/10 p-3 text-sm text-muted-foreground">No posts yet.</div> : null}
+            </div>
+          </div>
+          <div>
+            <div className="mono-label">OKF work</div>
+            <div className="mt-3 grid gap-2">
+              {[...proposals, ...reviews].slice(0, 8).map((proposal) => (
+                <div key={`${actor.id}-${proposal.id}`} className="rounded-md border border-border bg-muted/10 p-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-300" />
+                    <span className="text-sm font-medium">{proposal.simulatedPullRequest.number}</span>
+                    <Badge variant="core">{proposal.status.replace(/_/g, ' ')}</Badge>
+                  </div>
+                  <div className="mt-1 break-words font-mono text-[11px] leading-4 text-muted-foreground">{proposal.targetPath}</div>
+                </div>
+              ))}
+              {!proposals.length && !reviews.length ? <div className="rounded-md border border-border bg-muted/10 p-3 text-sm text-muted-foreground">No proposal or review events yet.</div> : null}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside className="grid content-start gap-3">
+        <section className="dense-panel p-3">
+          <div className="mono-label">Profile stats</div>
+          <div className="mt-3 grid gap-2">
+            <MetaBlock label="Threads started" value={String(startedThreads.length)} />
+            <MetaBlock label="Posts" value={String(authoredPosts.length)} />
+            <MetaBlock label="Proposals" value={String(proposals.length)} />
+            <MetaBlock label="Reviews" value={String(reviews.length)} />
+          </div>
+        </section>
+        <section className="dense-panel p-3">
+          <div className="mono-label">Scope</div>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {(actor.scope?.length ? actor.scope : ['No scope set']).map((item) => (
+              <Badge key={`${actor.id}-${item}`} variant="muted">{item}</Badge>
+            ))}
+          </div>
+        </section>
+        <section className="dense-panel p-3">
+          <div className="mono-label">Products</div>
+          <div className="mt-2 grid gap-1.5">
+            {relatedProducts.length ? relatedProducts.map((slug) => (
+              <button key={`${actor.id}-${slug}`} type="button" className="rounded border border-border bg-muted/10 px-2 py-1.5 text-left font-mono text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" onClick={() => onOpenProduct(slug)}>
+                {slug}
+              </button>
+            )) : (
+              <div className="rounded-md border border-border bg-muted/10 p-2 text-xs leading-5 text-muted-foreground">No product scope yet.</div>
+            )}
+          </div>
+        </section>
+      </aside>
+    </section>
+  )
+}
+
+function UserSettingsView({
+  social,
+  currentActorId,
+  onSignIn,
+  onSignOut,
+  onOpenUser,
+}: {
+  social: SocialSimulationData
+  currentActorId: string
+  onSignIn: (actorId: string) => void | Promise<void>
+  onSignOut: () => void | Promise<void>
+  onOpenUser: (slug: string) => void
+}) {
+  const [kindFilter, setKindFilter] = useState<'all' | 'human' | 'agent'>('all')
+  const currentActor = social.agents.find((actor) => actor.id === currentActorId)
+  const actors = kindFilter === 'all' ? social.agents : social.agents.filter((actor) => actor.kind === kindFilter)
+
+  return (
+    <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_340px]">
+      <div className="dense-panel overflow-hidden">
+        <div className="border-b border-border p-4">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+            <div>
+              <div className="flex items-center gap-2 mono-label">
+                <KeyRound className="h-3.5 w-3.5" />
+                User settings
+              </div>
+              <h2 className="mt-1 text-xl font-semibold">Prototype auth for humans and agents</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
+                This local session chooses which actor is signed in for the prototype. Production should replace this with verified human auth, delegated agent auth, and vendor claiming.
+              </p>
+            </div>
+            {currentActor ? (
+              <Button variant="outline" size="sm" onClick={() => void onSignOut()}>
+                <LogOut className="h-3.5 w-3.5" />
+                Sign out
+              </Button>
+            ) : null}
+          </div>
+        </div>
+
+        <div className="border-b border-border p-4">
+          <div className="mono-label">Sign in as</div>
+          <div className="mt-3 flex flex-wrap items-center gap-1.5">
+            {(['all', 'human', 'agent'] as const).map((kind) => (
+              <Button key={kind} variant={kindFilter === kind ? 'secondary' : 'ghost'} size="sm" onClick={() => setKindFilter(kind)}>
+                {humanizeSlug(kind)}
+              </Button>
+            ))}
+          </div>
+          <div className="mt-3 grid gap-2 lg:grid-cols-2">
+            {actors.map((actor) => {
+              const active = actor.id === currentActorId
+              return (
+                <div key={actor.id} className={cn('rounded-md border bg-muted/10 p-3', active ? 'border-emerald-500/40' : 'border-border')}>
+                  <div className="flex items-start gap-3">
+                    <button type="button" onClick={() => onOpenUser(actorSlug(actor))}>
+                      <ActorAvatar agent={actor} />
+                    </button>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <button type="button" className="text-left text-sm font-medium transition-colors hover:text-foreground hover:underline" onClick={() => onOpenUser(actorSlug(actor))}>
+                          {actor.displayName}
+                        </button>
+                        <Badge variant={socialRoleVariant(actor.role)}>{socialRoleLabel(actor.role)}</Badge>
+                        <Badge variant="outline">{actor.kind}</Badge>
+                      </div>
+                      <div className="mt-1 font-mono text-[11px] text-muted-foreground">u/{actorSlug(actor)}</div>
+                      <p className="mt-2 line-clamp-2 text-xs leading-5 text-muted-foreground">{actor.bio}</p>
+                    </div>
+                  </div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <Button variant={active ? 'secondary' : 'outline'} size="sm" onClick={() => void onSignIn(actor.id)}>
+                      <LogIn className="h-3.5 w-3.5" />
+                      {active ? 'Signed in' : 'Use actor'}
+                    </Button>
+                    <Button variant="ghost" size="sm" onClick={() => onOpenUser(actorSlug(actor))}>
+                      <UserCircle className="h-3.5 w-3.5" />
+                      Profile
+                    </Button>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+
+      <aside className="grid content-start gap-3">
+        <section className="dense-panel p-3">
+          <div className="mono-label">Current session</div>
+          {currentActor ? (
+            <div className="mt-3">
+              <div className="flex items-center gap-2">
+                <ActorAvatar agent={currentActor} />
+                <div className="min-w-0">
+                  <div className="truncate text-sm font-medium">{currentActor.displayName}</div>
+                  <div className="font-mono text-[11px] text-muted-foreground">u/{actorSlug(currentActor)}</div>
+                </div>
+              </div>
+              <div className="mt-3 grid gap-2 text-sm">
+                <MetaBlock label="Kind" value={currentActor.kind} />
+                <MetaBlock label="Role" value={socialRoleLabel(currentActor.role)} />
+                <MetaBlock label="Verification" value={currentActor.verification} />
+                <MetaBlock label="Session key" value="localStorage:g2agents.sessionActorId" />
+              </div>
+            </div>
+          ) : (
+            <div className="mt-3 rounded-md border border-border bg-muted/10 p-3 text-sm text-muted-foreground">No actor is signed in.</div>
+          )}
+        </section>
+        <section className="dense-panel p-3">
+          <div className="mono-label">Identity inventory</div>
+          <div className="mt-3 grid gap-2">
+            <MetaBlock label="Actors" value={String(social.summary.actors)} />
+            <MetaBlock label="Agent actors" value={String(social.summary.agents)} />
+            <MetaBlock label="Human users" value={String(social.summary.humanUsers)} />
+          </div>
+        </section>
+      </aside>
+    </section>
+  )
+}
+
 function NewsView({
   news,
   query,
@@ -1977,6 +2672,7 @@ function VendorView({ vendors }: { vendors: readonly Vendor[] }) {
 
 function DocsView() {
   const docs = [
+    ['Agentic Social Network', 'docs/agentic-social-network.md', 'Actor model, discussion flow, claiming, fan-out, and simulated OKF review path.'],
     ['Agent Consumption Guide', 'docs/agent-consumption-guide.md', 'How buyer agents read source tiers, freshness, comparisons, and refusals.'],
     ['Taxonomy Model', 'docs/taxonomy.md', 'Graph and facet model for categories, capabilities, and buyer context.'],
     ['Product Folder Contract', 'docs/product-folder-contract.md', 'Required files, ownership, and frontmatter for each product folder.'],
@@ -2023,10 +2719,16 @@ function App() {
   const [fit, setFit] = useState<FitFilter>(initialHashState.fit)
   const [selectedSlug, setSelectedSlug] = useState<string>(initialHashState.product || products[0]?.slug || '')
   const [selectedNewsKey, setSelectedNewsKey] = useState<string>(initialHashState.news || '')
+  const [selectedUserSlug, setSelectedUserSlug] = useState<string>(initialHashState.user || actorSlug(socialData.agents[0]))
   const [detailExpanded, setDetailExpanded] = useState(initialHashState.expanded)
   const [activeTab, setActiveTab] = useState<AppTab>(initialHashState.tab)
   const [activeCategoryId, setActiveCategoryId] = useState(defaultCategoryId)
-  const [compareSlugs, setCompareSlugs] = useState<string[]>([])
+  const initialSessionActorId = useMemo(() => {
+    if (typeof window === 'undefined') return socialData.agents[0]?.id || ''
+    return window.localStorage.getItem('g2agents.sessionActorId') || socialData.agents.find((actor) => actor.kind === 'human')?.id || socialData.agents[0]?.id || ''
+  }, [])
+  const [sessionActorId, setSessionActorId] = useState(initialSessionActorId)
+  const actorBySlug = useMemo(() => new Map(socialData.agents.map((actor) => [actorSlug(actor), actor])), [])
   const vendorBySlug = useMemo(() => new Map(registryData.vendors.map((vendor) => [vendor.slug, vendor])), [])
   const productSearchIndex = useMemo(
     () => new Map(products.map((product) => [product.slug, productSearchText(product, vendorBySlug.get(product.vendorId))])),
@@ -2040,6 +2742,7 @@ function App() {
       tab: activeTab,
       product: selectedSlug,
       news: selectedNewsKey,
+      user: selectedUserSlug,
       query,
       fit,
       expanded: detailExpanded,
@@ -2059,6 +2762,7 @@ function App() {
       setFit(state.fit)
       setDetailExpanded(state.expanded)
       setSelectedNewsKey(state.news || '')
+      setSelectedUserSlug(state.user || selectedUserSlug)
       if (state.product) setSelectedSlug(state.product)
       else if (state.tab === 'products') setSelectedSlug(products[0]?.slug || '')
     }
@@ -2069,7 +2773,7 @@ function App() {
       window.removeEventListener('hashchange', applyHash)
       window.removeEventListener('popstate', applyHash)
     }
-  }, [products])
+  }, [products, selectedUserSlug])
 
   const filteredProducts = useMemo(() => {
     const normalized = normalizeSearchText(query)
@@ -2093,21 +2797,13 @@ function App() {
 
   const selectedProduct = filteredProducts.find((product) => product.slug === selectedSlug) || filteredProducts[0] || categoryProducts[0]
   const selectedVendor = selectedProduct ? vendorBySlug.get(selectedProduct.vendorId) : undefined
+  const selectedUser = actorBySlug.get(selectedUserSlug)
   const activeCategoryLabel = formatCategoryLabel(activeCategoryId)
-  const comparedProducts = compareSlugs.map((slug) => products.find((product) => product.slug === slug)).filter(Boolean) as Product[]
-  const toggleCompare = (slug: string) => {
-    setCompareSlugs((current) => {
-      if (current.includes(slug)) return current.filter((item) => item !== slug)
-      return [...current.slice(-3), slug]
-    })
-  }
-  const removeCompare = (slug: string) => setCompareSlugs((current) => current.filter((item) => item !== slug))
   const changeCategory = (categoryId: string) => {
     setActiveCategoryId(categoryId)
     const nextProduct = products.find((product) => productInCategory(product, categoryId))
     setSelectedSlug(nextProduct?.slug || '')
     setDetailExpanded(false)
-    setCompareSlugs((current) => current.filter((slug) => products.some((product) => product.slug === slug && productInCategory(product, categoryId))))
     writeHash({ tab: 'products', product: nextProduct?.slug, expanded: false }, 'push')
   }
   const selectProduct = (slug: string, expanded = detailExpanded) => {
@@ -2119,6 +2815,43 @@ function App() {
   }
   const openProduct = (slug: string) => {
     selectProduct(slug, true)
+  }
+  const openUser = (slug: string) => {
+    setSelectedUserSlug(slug)
+    setActiveTab('user')
+    setSelectedNewsKey('')
+    setDetailExpanded(false)
+    writeHash({ tab: 'user', user: slug, news: undefined, expanded: false }, 'push')
+  }
+  const openSettings = () => {
+    setActiveTab('settings')
+    setSelectedNewsKey('')
+    setDetailExpanded(false)
+    writeHash({ tab: 'settings', news: undefined, expanded: false }, 'push')
+  }
+  const signInAsActor = async (actorId: string) => {
+    try {
+      await fetch('/api/actor-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ actorId }),
+      })
+    } catch {
+      // Plain Vite dev does not serve Vercel API routes; keep the local prototype session usable.
+    }
+    setSessionActorId(actorId)
+    const actor = socialData.agents.find((item) => item.id === actorId)
+    if (actor) setSelectedUserSlug(actorSlug(actor))
+    if (typeof window !== 'undefined') window.localStorage.setItem('g2agents.sessionActorId', actorId)
+  }
+  const signOutActor = async () => {
+    try {
+      await fetch('/api/actor-session', { method: 'DELETE' })
+    } catch {
+      // Plain Vite dev fallback.
+    }
+    setSessionActorId('')
+    if (typeof window !== 'undefined') window.localStorage.removeItem('g2agents.sessionActorId')
   }
   const openNews = (item: NewsFeedEntry) => {
     const key = newsEntryKey(item)
@@ -2180,13 +2913,26 @@ function App() {
           </a>
           <nav className="hidden items-center gap-5 text-sm text-muted-foreground sm:flex">
             <a className="transition-colors hover:text-foreground" href="#products">Products</a>
+            <a className="transition-colors hover:text-foreground" href="#discussions">Discussions</a>
             <a className="transition-colors hover:text-foreground" href="#news">News</a>
             <a className="transition-colors hover:text-foreground" href="#categories">Categories</a>
             <a className="transition-colors hover:text-foreground" href="#docs">Docs</a>
+            <button type="button" className="transition-colors hover:text-foreground" onClick={openSettings}>Settings</button>
             <a className="transition-colors hover:text-foreground" href="https://github.com/g2crowd/g2agents" target="_blank" rel="noreferrer">
               GitHub
             </a>
           </nav>
+          {sessionActorId ? (
+            <button type="button" className="hidden items-center gap-2 rounded-md border border-border bg-muted/20 px-2 py-1.5 text-left sm:flex" onClick={() => {
+              const actor = socialData.agents.find((item) => item.id === sessionActorId)
+              if (actor) openUser(actorSlug(actor))
+            }}>
+              <ActorAvatar agent={socialData.agents.find((item) => item.id === sessionActorId)} size="sm" />
+              <span className="max-w-28 truncate font-mono text-[11px] text-muted-foreground">
+                {socialData.agents.find((item) => item.id === sessionActorId)?.handle || 'signed in'}
+              </span>
+            </button>
+          ) : null}
         </div>
       </header>
 
@@ -2212,11 +2958,10 @@ function App() {
             <p className="w-[calc(100vw-3rem)] max-w-3xl text-xl leading-tight text-muted-foreground sm:w-auto sm:text-2xl">
               The new trust layer for agents and humans buying software.
             </p>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               <Stat label="Products" value={registryData.stats.products} growth="12%" />
               <Stat label="Categories" value={registryData.stats.categories} growth="8%" />
               <Stat label="Vendors" value={registryData.stats.vendors} growth="14%" />
-              <Stat label="News" value={registryData.stats.newsItems} growth="37%" />
             </div>
           </div>
         </section>
@@ -2227,6 +2972,10 @@ function App() {
               <TabsTrigger value="products">
                 <Boxes className="mr-1.5 h-3.5 w-3.5" />
                 Products
+              </TabsTrigger>
+              <TabsTrigger value="discussions">
+                <MessageSquare className="mr-1.5 h-3.5 w-3.5" />
+                Discussions
               </TabsTrigger>
               <TabsTrigger value="news">
                 <Newspaper className="mr-1.5 h-3.5 w-3.5" />
@@ -2244,6 +2993,10 @@ function App() {
                 <ShieldCheck className="mr-1.5 h-3.5 w-3.5" />
                 Docs
               </TabsTrigger>
+              <TabsTrigger value="settings">
+                <Settings className="mr-1.5 h-3.5 w-3.5" />
+                Settings
+              </TabsTrigger>
             </TabsList>
 
             <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:items-center">
@@ -2257,13 +3010,13 @@ function App() {
                 />
               </div>
               <div className="flex flex-wrap items-center gap-1.5">
-                <Filter className="h-4 w-4 text-muted-foreground" />
                 <div className="flex flex-wrap items-center gap-1">
                   {registryData.categories.map((category) => (
                     <Button
                       key={category.slug}
                       variant={activeCategoryId === category.slug ? 'secondary' : 'ghost'}
                       size="sm"
+                      className={activeCategoryId === category.slug ? 'border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/15 hover:text-emerald-200' : undefined}
                       onClick={() => changeCategory(category.slug)}
                     >
                       {category.title}
@@ -2301,10 +3054,9 @@ function App() {
                       <div className="flex flex-wrap items-center gap-1.5 font-mono text-xs text-muted-foreground">
                         <span>Software</span>
                         <ChevronRight className="h-3.5 w-3.5" />
-                        <Badge variant="outline">{activeCategoryLabel}</Badge>
+                        <Badge variant="core">{activeCategoryLabel}</Badge>
                       </div>
                     </div>
-                    <div className="font-mono text-xs text-muted-foreground">G2 seed order</div>
                   </div>
                   {filteredProducts.length ? (
                     <ProductTable
@@ -2313,8 +3065,6 @@ function App() {
                       categoryLabel={activeCategoryLabel}
                       query={query}
                       vendorBySlug={vendorBySlug}
-                      compareSlugs={compareSlugs}
-                      onToggleCompare={toggleCompare}
                       onSelect={(slug) => selectProduct(slug, false)}
                     />
                   ) : (
@@ -2331,13 +3081,22 @@ function App() {
                     onToggleExpanded={toggleDetailExpanded}
                   />
                 ) : null}
-                {comparedProducts.length >= 2 ? (
-                  <div className="xl:col-span-2">
-                    <ProductComparePanel products={comparedProducts} onRemove={removeCompare} onClear={() => setCompareSlugs([])} />
-                  </div>
-                ) : null}
               </div>
             )}
+          </TabsContent>
+
+          <TabsContent value="discussions" id="discussions">
+            <SocialView social={socialData} query={query} onOpenProduct={openProduct} onOpenUser={openUser} />
+          </TabsContent>
+
+          <TabsContent value="user" id="user">
+            <UserProfileView
+              actor={selectedUser}
+              social={socialData}
+              onOpenProduct={openProduct}
+              onOpenUser={openUser}
+              onOpenSettings={openSettings}
+            />
           </TabsContent>
 
           <TabsContent value="news" id="news">
@@ -2361,6 +3120,16 @@ function App() {
 
           <TabsContent value="docs" id="docs">
             <DocsView />
+          </TabsContent>
+
+          <TabsContent value="settings" id="settings">
+            <UserSettingsView
+              social={socialData}
+              currentActorId={sessionActorId}
+              onSignIn={signInAsActor}
+              onSignOut={signOutActor}
+              onOpenUser={openUser}
+            />
           </TabsContent>
         </Tabs>
       </main>

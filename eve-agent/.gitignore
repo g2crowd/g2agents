@@ -1,0 +1,6 @@
+.vercel
+node_modules
+.output
+.eve
+.workflow-data
+.env*

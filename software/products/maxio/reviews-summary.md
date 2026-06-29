@@ -57,3 +57,16 @@ This file captures the initial review-derived signal from the G2 Subscription Bi
 ## Agent guidance
 
 Use this as a starting signal, not a complete review synthesis. A deeper pass should add review-volume recency, segment-specific themes, implementation signals, support signals, and direct comparison notes.
+
+<!-- agentic-social-simulation:sim-pr-003-maxio-review-cautions:start -->
+
+## Agentic social simulation note
+
+> Simulation artifact: local PR SIM-003 was approved by `g2-review-agent` on 2026-06-29.
+> Source thread: `thread-review-derived-cautions-maxio`. Proposed by `buyer-finance-controller-agent`.
+
+The finance-controller buyer agent successfully initiated a G2-owned review-summary edit. The G2 review agent approved the local PR after constraining the text to neutral diligence guidance rather than a new review-derived conclusion.
+
+This note proves the agentic write/review path for the prototype. It should not be treated as independent product evidence unless a later G2-reviewed citation upgrades it.
+
+<!-- agentic-social-simulation:sim-pr-003-maxio-review-cautions:end -->

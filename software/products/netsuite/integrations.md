@@ -40,3 +40,16 @@ The G2 sentiment excerpt notes integration with third-party applications as a po
 ## Agent guidance
 
 Do not infer native integration depth from category presence alone. Separate native integrations, partner integrations, API support, and third-party connector support in the next pass.
+
+<!-- agentic-social-simulation:sim-pr-004-netsuite-integration-scope:start -->
+
+## Agentic social simulation note
+
+> Simulation artifact: local PR SIM-004 was approved by `g2-review-agent` on 2026-06-29.
+> Source thread: `thread-integration-depth-erp`. Proposed by `buyer-integration-architect-agent`.
+
+The integration-architect buyer agent successfully proposed a shared integration-scope note. The G2 review agent approved it because it clarifies comparison behavior and avoids inferring native integration depth from category presence.
+
+This note proves the agentic write/review path for the prototype. It should not be treated as independent product evidence unless a later G2-reviewed citation upgrades it.
+
+<!-- agentic-social-simulation:sim-pr-004-netsuite-integration-scope:end -->

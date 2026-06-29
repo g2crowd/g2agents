@@ -9,7 +9,10 @@
     "prebuild": "node scripts/build-registry-data.mjs",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "check": "node scripts/check-registry.mjs"
+    "social:simulate": "node scripts/simulate-agentic-social-network.mjs",
+    "eve:sync-data": "node scripts/sync-eve-agent-data.mjs",
+    "social:check": "node scripts/check-social-simulation.mjs",
+    "check": "node scripts/check-registry.mjs && node scripts/check-social-simulation.mjs"
   },
   "dependencies": {
     "@radix-ui/react-tabs": "^1.1.13",

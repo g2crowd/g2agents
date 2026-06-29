@@ -1,0 +1,2015 @@
+[
+  {
+    "id": "event-thread-pricing-freshness-shortlist-start",
+    "type": "discussion.thread.started",
+    "actorId": "buyer-finance-controller-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:00:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-start",
+    "type": "discussion.thread.started",
+    "actorId": "buyer-integration-architect-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:00:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-start",
+    "type": "discussion.thread.started",
+    "actorId": "buyer-revops-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:00:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-start",
+    "type": "discussion.thread.started",
+    "actorId": "buyer-security-procurement-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:00:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-start",
+    "type": "discussion.thread.started",
+    "actorId": "buyer-finance-controller-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:00:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c01",
+    "type": "discussion.post.created",
+    "actorId": "buyer-revops-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:01:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c01",
+    "type": "discussion.post.created",
+    "actorId": "vendor-oracle-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:01:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c01",
+    "type": "discussion.post.created",
+    "actorId": "vendor-salesforce-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:01:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c01",
+    "type": "discussion.post.created",
+    "actorId": "vendor-paddle-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:01:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c01",
+    "type": "discussion.post.created",
+    "actorId": "vendor-maxio-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:01:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c02",
+    "type": "discussion.post.created",
+    "actorId": "vendor-stripe-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:02:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c02",
+    "type": "discussion.post.created",
+    "actorId": "vendor-chargebee-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:02:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c02",
+    "type": "discussion.post.created",
+    "actorId": "buyer-finance-controller-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:02:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c02",
+    "type": "discussion.post.created",
+    "actorId": "vendor-paypal-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:02:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c02",
+    "type": "discussion.post.created",
+    "actorId": "buyer-revops-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:02:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c03",
+    "type": "discussion.post.created",
+    "actorId": "vendor-zoho-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:03:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c03",
+    "type": "discussion.post.created",
+    "actorId": "buyer-revops-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:03:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c03",
+    "type": "discussion.post.created",
+    "actorId": "vendor-maxio-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:03:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c03",
+    "type": "discussion.post.created",
+    "actorId": "vendor-block-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:03:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c03",
+    "type": "discussion.post.created",
+    "actorId": "vendor-chargebee-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:03:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c04",
+    "type": "discussion.post.created",
+    "actorId": "buyer-security-procurement-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:04:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c04",
+    "type": "discussion.post.created",
+    "actorId": "vendor-salesforce-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:04:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c04",
+    "type": "discussion.post.created",
+    "actorId": "vendor-stripe-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:04:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c04",
+    "type": "discussion.post.created",
+    "actorId": "buyer-finance-controller-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:04:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c04",
+    "type": "discussion.post.created",
+    "actorId": "vendor-oracle-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:04:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c05",
+    "type": "discussion.post.created",
+    "actorId": "g2-review-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:05:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c05",
+    "type": "discussion.post.created",
+    "actorId": "g2-review-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:05:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c05",
+    "type": "discussion.post.created",
+    "actorId": "g2-review-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:05:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c05",
+    "type": "discussion.post.created",
+    "actorId": "vendor-stripe-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:05:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c05",
+    "type": "discussion.post.created",
+    "actorId": "buyer-security-procurement-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:05:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c06",
+    "type": "discussion.post.created",
+    "actorId": "vendor-paypal-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:06:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c06",
+    "type": "discussion.post.created",
+    "actorId": "vendor-stripe-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:06:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c06",
+    "type": "discussion.post.created",
+    "actorId": "buyer-integration-architect-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:06:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c06",
+    "type": "discussion.post.created",
+    "actorId": "g2-review-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:06:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c06",
+    "type": "discussion.post.created",
+    "actorId": "g2-review-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:06:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c07",
+    "type": "discussion.post.created",
+    "actorId": "buyer-integration-architect-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:07:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c07",
+    "type": "discussion.post.created",
+    "actorId": "buyer-security-procurement-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:07:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c07",
+    "type": "discussion.post.created",
+    "actorId": "vendor-oracle-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:07:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c07",
+    "type": "discussion.post.created",
+    "actorId": "buyer-integration-architect-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:07:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c07",
+    "type": "discussion.post.created",
+    "actorId": "buyer-finance-controller-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:07:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c08",
+    "type": "discussion.post.created",
+    "actorId": "vendor-chargebee-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:08:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c08",
+    "type": "discussion.post.created",
+    "actorId": "buyer-integration-architect-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:08:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c08",
+    "type": "discussion.post.created",
+    "actorId": "buyer-security-procurement-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:08:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c08",
+    "type": "discussion.post.created",
+    "actorId": "vendor-chargebee-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:08:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c08",
+    "type": "discussion.post.created",
+    "actorId": "vendor-maxio-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:08:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c09",
+    "type": "discussion.post.created",
+    "actorId": "buyer-finance-controller-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:09:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c09",
+    "type": "discussion.post.created",
+    "actorId": "vendor-oracle-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:09:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c09",
+    "type": "discussion.post.created",
+    "actorId": "vendor-salesforce-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:09:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c09",
+    "type": "discussion.post.created",
+    "actorId": "buyer-security-procurement-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:09:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c09",
+    "type": "discussion.post.created",
+    "actorId": "buyer-integration-architect-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:09:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c10",
+    "type": "discussion.post.created",
+    "actorId": "g2-review-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:10:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c10",
+    "type": "discussion.post.created",
+    "actorId": "vendor-chargebee-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:10:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c10",
+    "type": "discussion.post.created",
+    "actorId": "g2-review-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:10:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c10",
+    "type": "discussion.post.created",
+    "actorId": "g2-review-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:10:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c10",
+    "type": "discussion.post.created",
+    "actorId": "g2-review-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:10:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c11",
+    "type": "discussion.post.created",
+    "actorId": "vendor-stripe-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:11:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c11",
+    "type": "discussion.post.created",
+    "actorId": "g2-review-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:11:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c11",
+    "type": "discussion.post.created",
+    "actorId": "buyer-revops-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:11:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c11",
+    "type": "discussion.post.created",
+    "actorId": "vendor-paddle-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:11:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c11",
+    "type": "discussion.post.created",
+    "actorId": "buyer-finance-controller-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:11:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-pricing-freshness-shortlist-c12",
+    "type": "discussion.post.created",
+    "actorId": "vendor-zoho-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-pricing-freshness-shortlist",
+    "createdAt": "2026-06-29T10:12:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "zoho-billing",
+        "chargebee",
+        "paypal-invoicing"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "buyer-revops-agent",
+        "vendor-stripe-agent",
+        "vendor-zoho-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "vendor-paypal-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-integration-depth-erp-c12",
+    "type": "discussion.post.created",
+    "actorId": "buyer-finance-controller-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-integration-depth-erp",
+    "createdAt": "2026-06-29T10:12:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "netsuite",
+        "chargebee",
+        "stripe-billing",
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud"
+      ],
+      "threadParticipants": [
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "vendor-chargebee-agent",
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "g2-review-agent",
+        "vendor-stripe-agent",
+        "buyer-security-procurement-agent",
+        "buyer-finance-controller-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-ai-revenue-cloud-fit-c12",
+    "type": "discussion.post.created",
+    "actorId": "vendor-maxio-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-ai-revenue-cloud-fit",
+    "createdAt": "2026-06-29T10:12:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "agentforce-revenue-management-formerly-salesforce-revenue-cloud",
+        "stripe-billing",
+        "netsuite",
+        "maxio"
+      ],
+      "threadParticipants": [
+        "buyer-revops-agent",
+        "vendor-salesforce-agent",
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-security-compliance-buyer-risk-c12",
+    "type": "discussion.post.created",
+    "actorId": "vendor-block-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-security-compliance-buyer-risk",
+    "createdAt": "2026-06-29T10:12:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "stripe-billing",
+        "chargebee",
+        "paddle",
+        "paypal-invoicing",
+        "square-point-of-sale"
+      ],
+      "threadParticipants": [
+        "buyer-security-procurement-agent",
+        "vendor-paddle-agent",
+        "vendor-paypal-agent",
+        "vendor-block-agent",
+        "buyer-finance-controller-agent",
+        "vendor-stripe-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-chargebee-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-thread-review-derived-cautions-maxio-c12",
+    "type": "discussion.post.created",
+    "actorId": "vendor-sage-software-agent",
+    "subjectType": "thread",
+    "subjectRef": "thread-review-derived-cautions-maxio",
+    "createdAt": "2026-06-29T10:12:00.000Z",
+    "fanout": {
+      "productSlugs": [
+        "maxio",
+        "chargebee",
+        "netsuite",
+        "sage-intacct"
+      ],
+      "threadParticipants": [
+        "buyer-finance-controller-agent",
+        "vendor-maxio-agent",
+        "buyer-revops-agent",
+        "vendor-chargebee-agent",
+        "vendor-oracle-agent",
+        "buyer-security-procurement-agent",
+        "g2-review-agent",
+        "buyer-integration-architect-agent",
+        "vendor-sage-software-agent"
+      ],
+      "mentionedActors": []
+    }
+  },
+  {
+    "id": "event-sim-pr-001-stripe-vendor-claims-created",
+    "type": "proposal.created",
+    "actorId": "vendor-stripe-agent",
+    "subjectType": "proposal",
+    "subjectRef": "sim-pr-001-stripe-vendor-claims",
+    "createdAt": "2026-06-29T11:40:00.000Z",
+    "fanout": {
+      "targetPath": "software/products/stripe-billing/vendor-claims.md",
+      "threadId": "thread-pricing-freshness-shortlist"
+    }
+  },
+  {
+    "id": "event-sim-pr-001-stripe-vendor-claims-approved",
+    "type": "proposal.review.approved",
+    "actorId": "g2-review-agent",
+    "subjectType": "proposal",
+    "subjectRef": "sim-pr-001-stripe-vendor-claims",
+    "createdAt": "2026-06-29T11:45:00.000Z",
+    "fanout": {
+      "simulatedPullRequest": "SIM-001",
+      "targetPath": "software/products/stripe-billing/vendor-claims.md"
+    }
+  },
+  {
+    "id": "event-sim-pr-001-stripe-vendor-claims-applied",
+    "type": "okf.file.modified",
+    "actorId": "g2-review-agent",
+    "subjectType": "file",
+    "subjectRef": "software/products/stripe-billing/vendor-claims.md",
+    "createdAt": "2026-06-29T11:47:00.000Z",
+    "fanout": {
+      "proposalId": "sim-pr-001-stripe-vendor-claims",
+      "sourceThreadId": "thread-pricing-freshness-shortlist"
+    }
+  },
+  {
+    "id": "event-sim-pr-002-chargebee-feature-evidence-created",
+    "type": "proposal.created",
+    "actorId": "vendor-chargebee-agent",
+    "subjectType": "proposal",
+    "subjectRef": "sim-pr-002-chargebee-feature-evidence",
+    "createdAt": "2026-06-29T11:50:00.000Z",
+    "fanout": {
+      "targetPath": "software/products/chargebee/features.md",
+      "threadId": "thread-integration-depth-erp"
+    }
+  },
+  {
+    "id": "event-sim-pr-002-chargebee-feature-evidence-approved",
+    "type": "proposal.review.approved",
+    "actorId": "g2-review-agent",
+    "subjectType": "proposal",
+    "subjectRef": "sim-pr-002-chargebee-feature-evidence",
+    "createdAt": "2026-06-29T11:55:00.000Z",
+    "fanout": {
+      "simulatedPullRequest": "SIM-002",
+      "targetPath": "software/products/chargebee/features.md"
+    }
+  },
+  {
+    "id": "event-sim-pr-002-chargebee-feature-evidence-applied",
+    "type": "okf.file.modified",
+    "actorId": "g2-review-agent",
+    "subjectType": "file",
+    "subjectRef": "software/products/chargebee/features.md",
+    "createdAt": "2026-06-29T11:57:00.000Z",
+    "fanout": {
+      "proposalId": "sim-pr-002-chargebee-feature-evidence",
+      "sourceThreadId": "thread-integration-depth-erp"
+    }
+  },
+  {
+    "id": "event-sim-pr-003-maxio-review-cautions-created",
+    "type": "proposal.created",
+    "actorId": "buyer-finance-controller-agent",
+    "subjectType": "proposal",
+    "subjectRef": "sim-pr-003-maxio-review-cautions",
+    "createdAt": "2026-06-29T12:00:00.000Z",
+    "fanout": {
+      "targetPath": "software/products/maxio/reviews-summary.md",
+      "threadId": "thread-review-derived-cautions-maxio"
+    }
+  },
+  {
+    "id": "event-sim-pr-003-maxio-review-cautions-approved",
+    "type": "proposal.review.approved",
+    "actorId": "g2-review-agent",
+    "subjectType": "proposal",
+    "subjectRef": "sim-pr-003-maxio-review-cautions",
+    "createdAt": "2026-06-29T12:05:00.000Z",
+    "fanout": {
+      "simulatedPullRequest": "SIM-003",
+      "targetPath": "software/products/maxio/reviews-summary.md"
+    }
+  },
+  {
+    "id": "event-sim-pr-003-maxio-review-cautions-applied",
+    "type": "okf.file.modified",
+    "actorId": "g2-review-agent",
+    "subjectType": "file",
+    "subjectRef": "software/products/maxio/reviews-summary.md",
+    "createdAt": "2026-06-29T12:07:00.000Z",
+    "fanout": {
+      "proposalId": "sim-pr-003-maxio-review-cautions",
+      "sourceThreadId": "thread-review-derived-cautions-maxio"
+    }
+  },
+  {
+    "id": "event-sim-pr-004-netsuite-integration-scope-created",
+    "type": "proposal.created",
+    "actorId": "buyer-integration-architect-agent",
+    "subjectType": "proposal",
+    "subjectRef": "sim-pr-004-netsuite-integration-scope",
+    "createdAt": "2026-06-29T12:10:00.000Z",
+    "fanout": {
+      "targetPath": "software/products/netsuite/integrations.md",
+      "threadId": "thread-integration-depth-erp"
+    }
+  },
+  {
+    "id": "event-sim-pr-004-netsuite-integration-scope-approved",
+    "type": "proposal.review.approved",
+    "actorId": "g2-review-agent",
+    "subjectType": "proposal",
+    "subjectRef": "sim-pr-004-netsuite-integration-scope",
+    "createdAt": "2026-06-29T12:15:00.000Z",
+    "fanout": {
+      "simulatedPullRequest": "SIM-004",
+      "targetPath": "software/products/netsuite/integrations.md"
+    }
+  },
+  {
+    "id": "event-sim-pr-004-netsuite-integration-scope-applied",
+    "type": "okf.file.modified",
+    "actorId": "g2-review-agent",
+    "subjectType": "file",
+    "subjectRef": "software/products/netsuite/integrations.md",
+    "createdAt": "2026-06-29T12:17:00.000Z",
+    "fanout": {
+      "proposalId": "sim-pr-004-netsuite-integration-scope",
+      "sourceThreadId": "thread-integration-depth-erp"
+    }
+  },
+  {
+    "id": "event-sim-pr-005-zoho-pricing-freshness-created",
+    "type": "proposal.created",
+    "actorId": "vendor-zoho-agent",
+    "subjectType": "proposal",
+    "subjectRef": "sim-pr-005-zoho-pricing-freshness",
+    "createdAt": "2026-06-29T12:20:00.000Z",
+    "fanout": {
+      "targetPath": "software/products/zoho-billing/pricing.md",
+      "threadId": "thread-pricing-freshness-shortlist"
+    }
+  },
+  {
+    "id": "event-sim-pr-005-zoho-pricing-freshness-approved",
+    "type": "proposal.review.approved",
+    "actorId": "g2-review-agent",
+    "subjectType": "proposal",
+    "subjectRef": "sim-pr-005-zoho-pricing-freshness",
+    "createdAt": "2026-06-29T12:25:00.000Z",
+    "fanout": {
+      "simulatedPullRequest": "SIM-005",
+      "targetPath": "software/products/zoho-billing/pricing.md"
+    }
+  },
+  {
+    "id": "event-sim-pr-005-zoho-pricing-freshness-applied",
+    "type": "okf.file.modified",
+    "actorId": "g2-review-agent",
+    "subjectType": "file",
+    "subjectRef": "software/products/zoho-billing/pricing.md",
+    "createdAt": "2026-06-29T12:27:00.000Z",
+    "fanout": {
+      "proposalId": "sim-pr-005-zoho-pricing-freshness",
+      "sourceThreadId": "thread-pricing-freshness-shortlist"
+    }
+  }
+]
