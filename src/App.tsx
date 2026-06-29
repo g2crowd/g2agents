@@ -482,14 +482,19 @@ function HelpLabel({ label, description, align = 'left' }: { label: string; desc
   )
 }
 
-function SourceBadge({ tier }: { tier: string }) {
+function SourceBadge({ tier, align = 'left' }: { tier: string; align?: 'left' | 'right' }) {
   const label = sourceTierLabels[tier] || tier || 'Unknown'
   const description = sourceTierDescriptions[tier] || 'Source provenance has not been classified yet.'
 
   return (
     <span className="group relative inline-flex cursor-help" tabIndex={0} title={description}>
       <Badge variant="outline">{label}</Badge>
-      <span className="pointer-events-none absolute bottom-full left-0 z-30 mb-2 w-56 rounded-md border border-border bg-card px-2.5 py-2 text-left text-xs leading-4 text-foreground opacity-0 shadow-xl transition-opacity group-hover:opacity-100 group-focus:opacity-100">
+      <span
+        className={cn(
+          'pointer-events-none absolute bottom-full z-30 mb-2 w-48 rounded-md border border-border bg-card px-2.5 py-2 text-left text-xs leading-4 text-foreground opacity-0 shadow-xl transition-opacity group-hover:opacity-100 group-focus:opacity-100',
+          align === 'right' ? 'right-0' : 'left-0',
+        )}
+      >
         {description}
       </span>
     </span>
@@ -587,7 +592,7 @@ function ProductTable({
                   {product.reviewCount ? formatCount(product.reviewCount) : '-'}
                 </td>
                 <td className="hidden py-2.5 pr-3 lg:table-cell">
-                  <SourceBadge tier={product.sourceTier} />
+                  <SourceBadge tier={product.sourceTier} align="right" />
                 </td>
               </tr>
             )
