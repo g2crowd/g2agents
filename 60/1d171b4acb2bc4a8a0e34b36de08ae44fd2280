@@ -1,0 +1,66 @@
+software/index.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-17
+software/products/example-crm/features.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-29
+CONTRIBUTING.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-40
+software/categories/crm/index.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-31
+index.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-21
+.gitignore
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-6
+docs/agent-consumption-guide.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-112
+docs/product-folder-contract.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-101
+software/products/example-crm/profile.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-38
+docs/source-tiers.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-35
+software/products/example-crm/integrations.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-32
+software/products/example-crm/index.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-36
+schemas/product-frontmatter.schema.json
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-2,4-89
+  s_fda4ed059e285b::t_630ad04e0ff4ff 3
+software/products/example-crm/reviews-summary.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-38
+software/products/example-crm/alternatives.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-33
+software/vendors/exampleco/index.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-19
+software/products/example-crm/pricing.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-36
+software/products/example-crm/log.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-19
+log.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-15
+docs/governance.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-95
+software/products/example-crm/vendor-claims.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-34
+software/products/example-crm/security-compliance.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-32
+software/products/index.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-13
+README.md
+  s_fda4ed059e285b::t_185dcf50eac4e6 1-67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "601d171b4acb2bc4a8a0e34b36de08ae44fd2280",
+  "prompts": {},
+  "sessions": {
+    "s_fda4ed059e285b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f132e-d764-7c63-b87d-376363118fe7",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
