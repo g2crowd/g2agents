@@ -11,7 +11,7 @@ timestamp: 2026-06-29T00:00:00+02:00
 Browse by:
 
 - [Products](products/index.md)
-- [Vendors](vendors/exampleco/index.md)
+- [Vendors](vendors/index.md)
 - [Categories](categories/index.md)
 
-Canonical product identity lives under `software/products/`. Category pages are taxonomy graph nodes. Products link to categories through explicit category-membership records.
+Canonical product identity lives under software/products/. Category pages are taxonomy graph nodes. Products link to categories through explicit category-membership records.

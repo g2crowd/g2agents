@@ -13,3 +13,4 @@ Categories are graph nodes, not product containers.
 | Category | Parents | Children | Related categories | Status |
 | --- | --- | --- | --- | --- |
 | [CRM](crm/index.md) | sales-software | enterprise-crm, small-business-crm | sales-engagement, customer-success, marketing-automation | active |
+| [Subscription Billing](subscription-billing/index.md) | billing | None yet | subscription-management, subscription-revenue-management, revenue-recognition, payment-processing, merchant-of-record, invoicing | active |
