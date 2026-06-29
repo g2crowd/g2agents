@@ -1877,7 +1877,7 @@ function App() {
           </a>
           <div className="grid min-w-0 content-start gap-4">
             <p className="w-[calc(100vw-3rem)] max-w-3xl text-xl leading-tight text-muted-foreground sm:w-auto sm:text-2xl">
-              Browse G2 product knowledge as versioned Markdown: category graph, product dossiers, source tiers, review signals, and vendor claim slots.
+              The new trust layer for agents and humans when buying software.
             </p>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
               <Stat label="Products" value={registryData.stats.products} />
