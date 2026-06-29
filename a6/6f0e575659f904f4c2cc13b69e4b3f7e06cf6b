@@ -1,0 +1,73 @@
+scripts/build-registry-data.mjs
+  s_fda4ed059e285b::t_ced1d5c22f847a 96-101,115-117,128,133,156-168,228-244,247,250,255
+docs/governance.md
+  s_fda4ed059e285b::t_c4a830c14104d2 23,42,90
+docs/product-folder-contract.md
+  s_fda4ed059e285b::t_4f6940d2dab9d3 34,108-110
+  s_fda4ed059e285b::t_7487d104836d23 111
+src/App.tsx
+  s_fda4ed059e285b::t_3ad116308526b3 17,42-58,87,126
+  s_fda4ed059e285b::t_a9a172e28eb649 1058,1077-1081,1093,1120,1124,1130,1137-1140,1211-1212
+  s_fda4ed059e285b::t_333fffa87939ec 683-694,701,770-771
+  s_fda4ed059e285b::t_3c6bb8e3f6876a 863-954
+  s_fda4ed059e285b::t_0794cbe66f700f 772-773
+  s_fda4ed059e285b::t_595ea42242912a 1213-1214
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/index.md
+  s_fda4ed059e285b::t_df057ad31441c3 48
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/news.md
+  s_fda4ed059e285b::t_ff1a3bd7e09f41 1-43
+software/products/chargebee/index.md
+  s_fda4ed059e285b::t_5c2ae92c0c71d5 48
+software/products/chargebee/news.md
+  s_fda4ed059e285b::t_b9ee482acbd33f 1-42
+software/products/maxio/index.md
+  s_fda4ed059e285b::t_5d961f2f053557 48
+software/products/maxio/news.md
+  s_fda4ed059e285b::t_b2ad7024348e25 1-42
+software/products/netsuite/index.md
+  s_fda4ed059e285b::t_ea23340994698a 48
+software/products/netsuite/news.md
+  s_fda4ed059e285b::t_5f5479619afcf3 1-42
+software/products/paddle/index.md
+  s_fda4ed059e285b::t_e96c396ba5f730 48
+software/products/paddle/news.md
+  s_fda4ed059e285b::t_19e64d8ff9649a 1-42
+software/products/paypal-invoicing/index.md
+  s_fda4ed059e285b::t_d546a6a0f76fc7 48
+software/products/paypal-invoicing/news.md
+  s_fda4ed059e285b::t_e61f76980b1ece 1-42
+software/products/sage-intacct/index.md
+  s_fda4ed059e285b::t_b00dcc6b0d2d95 48
+software/products/sage-intacct/news.md
+  s_fda4ed059e285b::t_d7e8c0e57c8603 1-42
+software/products/square-point-of-sale/index.md
+  s_fda4ed059e285b::t_6c088d4bc0a3e3 48
+software/products/square-point-of-sale/news.md
+  s_fda4ed059e285b::t_d96134227583a8 1-42
+software/products/stripe-billing/index.md
+  s_fda4ed059e285b::t_a57837c6da3214 48
+software/products/stripe-billing/news.md
+  s_fda4ed059e285b::t_35a761a0e472f3 1-42
+software/products/zoho-billing/index.md
+  s_fda4ed059e285b::t_b77fc8708353d9 48
+software/products/zoho-billing/news.md
+  s_fda4ed059e285b::t_64541850f93720 1-42
+src/data/registry.ts
+  s_fda4ed059e285b::t_212613b6045652 44-55,172-173,253-287,525-536,653-654,734-768,1006-1017,1134-1135,1215-1249,1487-1498,1615-1616,1696-1730,1968-1979,2096-2097,2177-2211,2449-2460,2577-2578,2658-2692,2930-2941,3058-3059,3139-3173,3411-3422,3539-3540,3620-3654,3892-3903,4020-4021,4101-4135,4373-4384,4501-4502,4582-4616,5098-5249,5254-5255
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "a66f0e575659f904f4c2cc13b69e4b3f7e06cf6b",
+  "prompts": {},
+  "sessions": {
+    "s_fda4ed059e285b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f132e-d764-7c63-b87d-376363118fe7",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
