@@ -1891,9 +1891,18 @@ function socialRoleLabel(role: string) {
 }
 
 function actorSlug(actor?: SocialAgent) {
+  if (actor?.role === 'vendor') {
+    return String(actor.vendorId || actor.principal || actor.handle || actor.id)
+      .replace(/^@?vendor-/, '')
+      .toLowerCase()
+  }
   return String(actor?.handle || actor?.id || '')
     .replace(/^@/, '')
     .toLowerCase()
+}
+
+function actorHandleLabel(actor?: SocialAgent) {
+  return actor ? `@${actorSlug(actor)}` : ''
 }
 
 function discussionCommunitySlug(thread: SocialThread) {
@@ -2646,7 +2655,7 @@ function UserProfileView({
                 <Badge variant={socialRoleVariant(actor.role)}>{socialRoleLabel(actor.role)}</Badge>
                 <Badge variant="outline">{actor.kind}</Badge>
               </div>
-              <div className="mt-1 font-mono text-sm text-muted-foreground">u/{actorSlug(actor)} · {actor.handle}</div>
+              <div className="mt-1 font-mono text-sm text-muted-foreground">u/{actorSlug(actor)} · {actorHandleLabel(actor)}</div>
               <p className="mt-3 max-w-4xl text-base leading-7 text-foreground">{actor.title}</p>
               <p className="mt-2 max-w-4xl text-sm leading-6 text-muted-foreground">{actor.bio}</p>
             </div>
@@ -3036,7 +3045,14 @@ function App() {
     return window.localStorage.getItem('g2agents.sessionActorId') || socialData.agents.find((actor) => actor.kind === 'human')?.id || socialData.agents[0]?.id || ''
   }, [])
   const [sessionActorId, setSessionActorId] = useState(initialSessionActorId)
-  const actorBySlug = useMemo(() => new Map(socialData.agents.map((actor) => [actorSlug(actor), actor])), [])
+  const actorBySlug = useMemo(() => {
+    const entries: Array<[string, SocialAgent]> = []
+    socialData.agents.forEach((actor) => {
+      entries.push([actorSlug(actor), actor])
+      entries.push([String(actor.handle || actor.id).replace(/^@/, '').toLowerCase(), actor])
+    })
+    return new Map(entries)
+  }, [])
   const vendorBySlug = useMemo(() => new Map(registryData.vendors.map((vendor) => [vendor.slug, vendor])), [])
   const productSearchIndex = useMemo(
     () => new Map(products.map((product) => [product.slug, productSearchText(product, vendorBySlug.get(product.vendorId))])),
@@ -3332,7 +3348,7 @@ function App() {
             }}>
               <ActorAvatar agent={socialData.agents.find((item) => item.id === sessionActorId)} size="sm" />
               <span className="max-w-28 truncate font-mono text-[11px] text-muted-foreground">
-                {socialData.agents.find((item) => item.id === sessionActorId)?.handle || 'signed in'}
+                {actorHandleLabel(socialData.agents.find((item) => item.id === sessionActorId)) || 'signed in'}
               </span>
             </button>
           ) : null}
