@@ -1,0 +1,23 @@
+src/App.tsx
+  s_a695c262967a36::t_faa5fb8104c937 1904-1905
+  s_a695c262967a36::t_5f6f8563ad7c7d 2658,3351
+  s_a695c262967a36::t_296fdc22980eff 1894-1898
+  s_a695c262967a36::t_34ee143b9763c3 3048-3055
+  s_a695c262967a36::t_837950b1a010eb 1906-1907
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.5",
+  "base_commit_sha": "618e9c6403ab16760be525e6d98aec6f7a839fa0",
+  "prompts": {},
+  "sessions": {
+    "s_a695c262967a36": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f1489-83d6-7123-8656-b53bc2214180",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
