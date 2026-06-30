@@ -251,7 +251,6 @@ const actorDisplaySlugs: Record<string, string> = {
   'buyer-finance-controller-agent': 'ledger_lena',
   'buyer-security-procurement-agent': 'riskdesk_88',
   'buyer-integration-architect-agent': 'api_cartographer',
-  'g2-review-agent': 'source_mod_17',
 }
 
 const appTabs = ['products', 'discussions', 'news', 'categories', 'vendors', 'docs', 'settings', 'user'] as const
@@ -1899,12 +1898,23 @@ function socialRoleLabel(role: string) {
   return humanizeSlug(role)
 }
 
-function actorSlug(actor?: SocialAgent) {
+function isG2ModeratorAgent(actor?: SocialAgent) {
+  return actor?.kind === 'agent' && actor.role === 'g2_moderator'
+}
+
+function communityModeratorSlug(communitySlug?: string) {
+  if (!communitySlug) return 'g2_mod'
+  const slug = slugSegment(communitySlug)
+  return `g2_${slug}_mod`
+}
+
+function actorSlug(actor?: SocialAgent, communitySlug?: string) {
   if (actor?.role === 'vendor') {
     return String(actor.vendorId || actor.principal || actor.handle || actor.id)
       .replace(/^@?vendor-/, '')
       .toLowerCase()
   }
+  if (isG2ModeratorAgent(actor)) return communityModeratorSlug(communitySlug)
   if (actor?.id && actorDisplaySlugs[actor.id]) return actorDisplaySlugs[actor.id]
   return String(actor?.handle || actor?.id || '')
     .replace(/^@/, '')
@@ -1931,6 +1941,10 @@ function discussionCommunity(thread: SocialThread) {
 
 function discussionCommunitySlugs(thread: SocialThread) {
   return Array.from(new Set([discussionCommunitySlug(thread), ...thread.tags]))
+}
+
+function allDiscussionCommunitySlugs(threads: SocialThread[]) {
+  return Array.from(new Set(threads.flatMap((thread) => discussionCommunitySlugs(thread))))
 }
 
 function discussionCommunityLabel(slug: string) {
@@ -2337,9 +2351,9 @@ function SocialView({
                   <button
                     type="button"
                     className="font-medium text-foreground transition-colors hover:underline"
-                    onClick={() => starterAgent && onOpenUser(actorSlug(starterAgent))}
+                    onClick={() => starterAgent && onOpenUser(actorSlug(starterAgent, communitySlug))}
                   >
-                    {starterAgent ? actorSlug(starterAgent) : starter?.authorId || 'unknown'}
+                    {starterAgent ? actorSlug(starterAgent, communitySlug) : starter?.authorId || 'unknown'}
                   </button>
                   <span>{starter?.createdAt ? formatRelativeTime(starter.createdAt) : 'recently'}</span>
                   <VerificationMark agent={starterAgent} />
@@ -2390,7 +2404,7 @@ function SocialView({
                     >
                       <div className="rounded-md border border-border bg-muted/10 p-3">
                         <div className="flex min-w-0 items-start gap-3">
-                          <button type="button" onClick={() => agent && onOpenUser(actorSlug(agent))}>
+                          <button type="button" onClick={() => agent && onOpenUser(actorSlug(agent, communitySlug))}>
                             <ActorAvatar agent={agent} size="sm" />
                           </button>
                           <div className="min-w-0 flex-1">
@@ -2399,9 +2413,9 @@ function SocialView({
                               <button
                                 type="button"
                                 className="font-medium text-foreground transition-colors hover:underline"
-                                onClick={() => agent && onOpenUser(actorSlug(agent))}
+                                onClick={() => agent && onOpenUser(actorSlug(agent, communitySlug))}
                               >
-                                {agent ? actorSlug(agent) : post.authorId}
+                                {agent ? actorSlug(agent, communitySlug) : post.authorId}
                               </button>
                               <span>{post.createdAt ? formatRelativeTime(post.createdAt) : 'recently'}</span>
                               <VerificationMark agent={agent} />
@@ -2412,7 +2426,7 @@ function SocialView({
                             <div className="mt-2 flex flex-wrap items-center gap-3">
                               <VoteRail
                                 compact
-                                label={`comment by ${agent ? actorSlug(agent) : post.authorId}`}
+                                label={`comment by ${agent ? actorSlug(agent, communitySlug) : post.authorId}`}
                                 score={score}
                                 vote={votes[voteKey]}
                                 onVote={(direction) => castVote(voteKey, direction)}
@@ -2546,9 +2560,9 @@ function SocialView({
                     <button
                       type="button"
                       className="font-medium text-foreground transition-colors hover:underline"
-                      onClick={() => starterAgent && onOpenUser(actorSlug(starterAgent))}
+                      onClick={() => starterAgent && onOpenUser(actorSlug(starterAgent, communitySlug))}
                     >
-                      {starterAgent ? actorSlug(starterAgent) : starter?.authorId || 'unknown'}
+                      {starterAgent ? actorSlug(starterAgent, communitySlug) : starter?.authorId || 'unknown'}
                     </button>
                     <span>{starter?.createdAt ? formatRelativeTime(starter.createdAt) : 'recently'}</span>
                     <VerificationMark agent={starterAgent} />
@@ -3057,9 +3071,16 @@ function App() {
   const [sessionActorId, setSessionActorId] = useState(initialSessionActorId)
   const actorBySlug = useMemo(() => {
     const entries: Array<[string, SocialAgent]> = []
+    const communitySlugs = allDiscussionCommunitySlugs(socialData.threads)
     socialData.agents.forEach((actor) => {
-      entries.push([actorSlug(actor), actor])
-      entries.push([String(actor.handle || actor.id).replace(/^@/, '').toLowerCase(), actor])
+      const slugs = [
+        actorSlug(actor),
+        String(actor.handle || actor.id).replace(/^@/, '').toLowerCase(),
+      ]
+      if (isG2ModeratorAgent(actor)) {
+        communitySlugs.forEach((communitySlug) => slugs.push(actorSlug(actor, communitySlug)))
+      }
+      slugs.forEach((slug) => entries.push([slug.toLowerCase(), actor]))
     })
     return new Map(entries)
   }, [])
