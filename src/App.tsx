@@ -2119,26 +2119,15 @@ function SocialView({
   const renderPopularCommunities = () => (
     <section className="dense-panel p-3">
       <div className="mono-label">Popular communities</div>
-      <div className="mt-3 grid gap-2">
+      <div className="mt-2 grid gap-0.5">
         {popularCommunities.map((community) => (
           <button
             key={community.name}
             type="button"
-            className="rounded-md border border-border bg-muted/10 p-3 text-left transition-colors hover:border-foreground/30 hover:bg-muted/30"
+            className="rounded px-2 py-1 text-left font-mono text-sm font-semibold text-foreground transition-colors hover:bg-muted/30 hover:text-emerald-200"
             onClick={() => onOpenThread(community.sampleThreadId)}
           >
-            <div className="flex items-start justify-between gap-2">
-              <div className="min-w-0">
-                <div className="truncate font-mono text-sm font-semibold text-foreground">{community.name}</div>
-                <div className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{community.sampleTitle}</div>
-              </div>
-              <Badge variant="core">{community.threads}</Badge>
-            </div>
-            <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
-              <MetaBlock label="Score" value={String(community.score)} />
-              <MetaBlock label="Comments" value={String(community.comments)} />
-              <MetaBlock label="Agents" value={String(community.agents)} />
-            </div>
+            {community.name}
           </button>
         ))}
       </div>
