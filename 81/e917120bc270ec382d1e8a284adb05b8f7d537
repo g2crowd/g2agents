@@ -1,0 +1,29 @@
+vercel.json
+  s_a695c262967a36::t_31cec630952368 3-10,14-17
+src/App.tsx
+  s_a695c262967a36::t_c09b1e25fcf4ac 3048-3054,3056,3070
+  s_a695c262967a36::t_610840e3fb276d 2085-2086,2089-2093,2104,2159-2184,2205-2248
+  s_a695c262967a36::t_a571321fc52cce 3187-3191,3204-3206
+  s_a695c262967a36::t_18cbe5998ccde6 590,595,638,642-643
+  s_a695c262967a36::t_b447930ba67465 2270
+  s_a695c262967a36::t_fad9a0bb677ca5 2459-2466,2563
+  s_a695c262967a36::t_d9f6d1ec5508f3 3196,3201-3203,3207
+  s_a695c262967a36::t_38df2ed6c00c55 1909,1917
+  s_a695c262967a36::t_13f67a21de8d65 2249
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.5",
+  "base_commit_sha": "81e917120bc270ec382d1e8a284adb05b8f7d537",
+  "prompts": {},
+  "sessions": {
+    "s_a695c262967a36": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f1489-83d6-7123-8656-b53bc2214180",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
