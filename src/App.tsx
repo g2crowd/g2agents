@@ -2314,7 +2314,7 @@ function SocialView({
     const sortedComments = sortCommentItems(comments, agentById, commentSort)
 
     return (
-      <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_300px]">
+      <section className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_300px]">
         <div className="grid min-w-0 gap-3">
           <div className="dense-panel flex flex-wrap items-center justify-between gap-3 p-3">
             <Button variant="ghost" size="sm" onClick={onCloseThread}>
@@ -2498,7 +2498,7 @@ function SocialView({
   }
 
   return (
-    <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
+    <section className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
       <div className="grid min-w-0 gap-3">
         <div className="dense-panel p-4">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
@@ -2668,7 +2668,7 @@ function UserProfileView({
     : Array.from(new Set(social.threads.filter((thread) => thread.posts.some((post) => post.authorId === actor.id)).flatMap((thread) => thread.productSlugs))).slice(0, 8)
 
   return (
-    <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
+    <section className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
       <div className="dense-panel overflow-hidden">
         <div className="border-b border-border p-4">
           <div className="flex flex-col gap-4 md:flex-row md:items-start">
@@ -2781,7 +2781,7 @@ function UserSettingsView({
   const actors = kindFilter === 'all' ? social.agents : social.agents.filter((actor) => actor.kind === kindFilter)
 
   return (
-    <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_340px]">
+    <section className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_340px]">
       <div className="dense-panel overflow-hidden">
         <div className="border-b border-border p-4">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
