@@ -589,10 +589,11 @@ function readAppHash(): AppHashState {
   const pathSegments = window.location.pathname.split('/').map(decodeURIComponent).filter(Boolean)
   if (!raw && (pathSegments[0] === 'c' || pathSegments[0] === 'd') && pathSegments[1]) {
     const params = new URLSearchParams(window.location.search)
+    const discussionSegment = pathSegments[2] === 'comments' ? pathSegments[3] : pathSegments[2]
     return {
       tab: 'discussions',
       community: pathSegments[1],
-      discussion: pathSegments[2] === 'comments' ? pathSegments[3] : undefined,
+      discussion: discussionRouteSegmentToThreadId(discussionSegment),
       query: params.get('q') || '',
       fit: 'all',
       expanded: false,
@@ -639,7 +640,7 @@ function buildCommunityPath(slug: string, query = '', discussionId = '') {
   const params = new URLSearchParams()
   if (query.trim()) params.set('q', query.trim())
   const queryString = params.toString()
-  const path = `/c/${encodeURIComponent(slug)}${discussionId ? `/comments/${encodeURIComponent(discussionId)}` : ''}`
+  const path = `/c/${encodeURIComponent(slug)}${discussionId ? `/${encodeURIComponent(discussionId)}` : ''}`
   return `${path}${queryString ? `?${queryString}` : ''}`
 }
 
@@ -1917,6 +1918,24 @@ function discussionCommunityLabel(slug: string) {
   return `c/${slug}`
 }
 
+function discussionThreadSlug(thread: SocialThread) {
+  return slugSegment(thread.title)
+}
+
+function findDiscussionThreadByRouteSegment(segment?: string) {
+  if (!segment) return undefined
+  return socialData.threads.find((thread) => thread.id === segment || discussionThreadSlug(thread) === segment)
+}
+
+function discussionRouteSegmentToThreadId(segment?: string) {
+  return findDiscussionThreadByRouteSegment(segment)?.id
+}
+
+function discussionThreadRouteSegment(threadId: string) {
+  const thread = socialData.threads.find((item) => item.id === threadId)
+  return thread ? discussionThreadSlug(thread) : threadId
+}
+
 function formatRelativeTime(value: string) {
   const date = new Date(value)
   if (Number.isNaN(date.getTime())) return 'recently'
@@ -3047,10 +3066,18 @@ function App() {
   useEffect(() => {
     const canonicalizeCommunityPath = () => {
       const pathSegments = window.location.pathname.split('/').map(decodeURIComponent).filter(Boolean)
-      if (window.location.hash || pathSegments[0] !== 'd' || !pathSegments[1]) return
+      if (window.location.hash || (pathSegments[0] !== 'c' && pathSegments[0] !== 'd') || !pathSegments[1]) return
       const params = new URLSearchParams(window.location.search)
-      const discussionId = pathSegments[2] === 'comments' ? pathSegments[3] : ''
-      window.history.replaceState(null, '', buildCommunityPath(pathSegments[1], params.get('q') || '', discussionId))
+      const discussionSegment = pathSegments[2] === 'comments' ? pathSegments[3] : pathSegments[2]
+      const discussionThread = findDiscussionThreadByRouteSegment(discussionSegment)
+      const canonicalPath = buildCommunityPath(
+        pathSegments[1],
+        params.get('q') || '',
+        discussionThread ? discussionThreadSlug(discussionThread) : '',
+      )
+      if (window.location.pathname + window.location.search !== canonicalPath) {
+        window.history.replaceState(null, '', canonicalPath)
+      }
     }
     const applyHash = () => {
       canonicalizeCommunityPath()
@@ -3180,12 +3207,15 @@ function App() {
     writeHash({ tab: 'news', news: undefined, expanded: false }, 'push')
   }
   const openDiscussion = (threadId: string) => {
+    const thread = socialData.threads.find((item) => item.id === threadId)
+    const communitySlug = selectedCommunitySlug || (thread ? discussionCommunitySlug(thread) : '')
     setSelectedDiscussionId(threadId)
+    setSelectedCommunitySlug(communitySlug)
     setActiveTab('discussions')
     setSelectedNewsKey('')
     setDetailExpanded(false)
-    if (selectedCommunitySlug) {
-      window.history.pushState(null, '', buildCommunityPath(selectedCommunitySlug, '', threadId))
+    if (communitySlug && thread) {
+      window.history.pushState(null, '', buildCommunityPath(communitySlug, '', discussionThreadRouteSegment(threadId)))
       window.scrollTo({ top: 0 })
       return
     }

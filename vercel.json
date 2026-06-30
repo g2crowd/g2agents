@@ -9,11 +9,19 @@
       "destination": "/index.html"
     },
     {
+      "source": "/c/:community/:thread",
+      "destination": "/index.html"
+    },
+    {
       "source": "/d/:community",
       "destination": "/index.html"
     },
     {
       "source": "/d/:community/comments/:thread",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/d/:community/:thread",
       "destination": "/index.html"
     }
   ]
