@@ -321,6 +321,16 @@ const newsTypeLabels: Record<string, string> = {
   'subscription-billing': 'Subscription billing',
 }
 
+const docsCatalog = [
+  { title: 'Agentic Social Network', path: 'docs/agentic-social-network.md', description: 'Actor model, discussion flow, claiming, fan-out, and simulated OKF review path.' },
+  { title: 'Agent Consumption Guide', path: 'docs/agent-consumption-guide.md', description: 'How buyer agents read source tiers, freshness, comparisons, and refusals.' },
+  { title: 'Taxonomy Model', path: 'docs/taxonomy.md', description: 'Graph and facet model for categories, capabilities, and buyer context.' },
+  { title: 'Product Folder Contract', path: 'docs/product-folder-contract.md', description: 'Required files, ownership, and frontmatter for each product folder.' },
+  { title: 'Governance Model', path: 'docs/governance.md', description: 'Vendor PR flow, dispute handling, freshness policy, and CI checks.' },
+  { title: 'Source Tiers', path: 'docs/source-tiers.md', description: 'Registry-wide provenance vocabulary for agent-readable claims.' },
+] as const
+type DocEntry = (typeof docsCatalog)[number]
+
 function humanizeSlug(value: string) {
   return value
     .split('-')
@@ -454,23 +464,23 @@ const searchConcepts = [
   },
   {
     marker: 'concept-revenue',
-    terms: ['arpu', 'cash', 'charge', 'charges', 'finance', 'financial', 'monetization', 'pricing', 'quote', 'quoting', 'revenue', 'revenuecloud', 'revops', 'salesforce'],
+    terms: ['arpu', 'cash', 'charge', 'charges', 'finance', 'financial', 'monetization', 'pricing', 'quote', 'quoting', 'revenue', 'revenuecloud', 'revops'],
   },
   {
     marker: 'concept-payments',
-    terms: ['autopay', 'card', 'cards', 'checkout', 'gateway', 'merchant', 'payment', 'payments', 'paypal', 'pix', 'stripe', 'surcharge', 'upi'],
+    terms: ['autopay', 'card', 'cards', 'checkout', 'gateway', 'merchant', 'payment', 'payments', 'pix', 'surcharge', 'upi'],
   },
   {
     marker: 'concept-erp',
-    terms: ['accounting', 'ap', 'ar', 'close', 'controller', 'erp', 'finance', 'financial', 'netsuite', 'reconciliation', 'sage'],
+    terms: ['accounting', 'ap', 'ar', 'close', 'controller', 'erp', 'finance', 'financial', 'reconciliation'],
   },
   {
     marker: 'concept-ai',
-    terms: ['agentforce', 'agentic', 'ai', 'assistant', 'assistants', 'automation', 'mcp'],
+    terms: ['agentic', 'ai', 'assistant', 'assistants', 'automation', 'mcp'],
   },
   {
     marker: 'concept-pos',
-    terms: ['checkout', 'handheld', 'pos', 'retail', 'restaurant', 'square', 'store', 'terminal'],
+    terms: ['checkout', 'handheld', 'pos', 'retail', 'restaurant', 'store', 'terminal'],
   },
 ]
 
@@ -550,6 +560,104 @@ function newsSearchText(item: NewsFeedEntry) {
       item.status,
     ].join(' '),
   )
+}
+
+function categorySearchText(category: Category) {
+  return [
+    category.slug,
+    category.path,
+    category.title,
+    category.description,
+    category.sourceTier,
+    category.parents.join(' '),
+    category.children.join(' '),
+    category.relatedCategories.join(' '),
+    category.status,
+    category.resource,
+    category.productRows.map((row) => [row.rank, row.product, row.vendor, row.fit, row.reviewCount, row.segment].join(' ')).join(' '),
+  ].join(' ')
+}
+
+function vendorSearchText(vendor: Vendor) {
+  return [
+    vendor.slug,
+    vendor.path,
+    vendor.title,
+    vendor.description,
+    vendor.sourceTier,
+    vendor.resource,
+    vendor.products.map((product) => [cleanMarkdownLink(product.product), product.category, product.fit].join(' ')).join(' '),
+  ].join(' ')
+}
+
+function docSearchText(doc: DocEntry) {
+  return [doc.title, doc.path, doc.description].join(' ')
+}
+
+function actorSearchText(actor?: SocialAgent, communitySlug?: string) {
+  return [
+    actor?.id,
+    actor?.handle,
+    actorSlug(actor, communitySlug),
+    actor?.displayName,
+    actor?.title,
+    actor?.bio,
+    actor?.kind,
+    actor?.role,
+    actor?.role ? socialRoleLabel(actor.role) : '',
+    actor?.representation,
+    actor?.verification,
+    actor?.principal,
+    actor?.vendorId,
+    actor?.scope?.join(' '),
+    actor?.productSlugs?.join(' '),
+  ].filter(Boolean).join(' ')
+}
+
+function postSearchText(post: SocialPost, agent: SocialAgent | undefined, thread?: SocialThread) {
+  const communitySlug = thread ? discussionCommunitySlug(thread) : undefined
+  return [
+    post.id,
+    post.kind,
+    post.body,
+    agent ? actorSearchText(agent, communitySlug) : post.authorId,
+    thread?.title,
+    thread?.subjectType,
+    thread?.subjectRef,
+    thread?.status,
+    thread?.tags.join(' '),
+    thread?.productSlugs.join(' '),
+  ].filter(Boolean).join(' ')
+}
+
+function proposalSearchText(proposal: SocialProposal, agentById: Map<string, SocialAgent>) {
+  return [
+    proposal.id,
+    proposal.title,
+    proposal.sourceThreadId,
+    proposal.proposedByRole,
+    proposal.targetPath,
+    proposal.status,
+    proposal.simulatedPullRequest.number,
+    proposal.simulatedPullRequest.state,
+    proposal.review.decision,
+    actorSearchText(agentById.get(proposal.proposedBy)),
+    actorSearchText(agentById.get(proposal.review.reviewedBy)),
+  ].filter(Boolean).join(' ')
+}
+
+function filterBySearchScore<T>(items: readonly T[], query: string, getText: (item: T) => string) {
+  const normalized = normalizeSearchText(query)
+  if (!normalized) return [...items]
+  return items
+    .map((item, index) => ({
+      item,
+      index,
+      score: searchScore(enrichSearchText(getText(item)), query),
+    }))
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .map(({ item }) => item)
 }
 
 function searchScore(text: string, query: string) {
@@ -2140,18 +2248,19 @@ function SocialView({
       : social.threads
   ), [selectedCommunitySlug, social.threads])
   const filteredThreads = useMemo(() => {
-    const normalized = normalizeSearchText(query)
-    if (!normalized) return communityThreads
-    return communityThreads.filter((thread) => {
-      const text = [
+    return filterBySearchScore(communityThreads, query, (thread) => {
+      const communitySlug = discussionCommunitySlug(thread)
+      return [
+        discussionCommunity(thread),
         thread.title,
         thread.subjectRef,
+        thread.subjectType,
         thread.status,
         thread.tags.join(' '),
         thread.productSlugs.join(' '),
-        thread.posts.map((post) => `${agentById.get(post.authorId)?.displayName || post.authorId} ${post.body}`).join(' '),
+        thread.posts.map((post) => postSearchText(post, agentById.get(post.authorId), thread)).join(' '),
+        thread.posts.map((post) => actorSlug(agentById.get(post.authorId), communitySlug)).join(' '),
       ].join(' ')
-      return searchScore(enrichSearchText(text), query) > 0
     })
   }, [agentById, communityThreads, query])
   const popularCommunities = useMemo(() => {
@@ -2311,7 +2420,9 @@ function SocialView({
     const threadVoteKey = `thread:${thread.id}`
     const threadScore = voteScore(baseThreadScore(thread), votes[threadVoteKey])
     const commentSort = commentSortByThread[thread.id] || 'best'
-    const sortedComments = sortCommentItems(comments, agentById, commentSort)
+    const searchedComments = filterBySearchScore(comments, query, (post) => postSearchText(post, agentById.get(post.authorId), thread))
+    const sortedComments = sortCommentItems(searchedComments, agentById, commentSort)
+    const hasCommentSearch = Boolean(normalizeSearchText(query))
 
     return (
       <section className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_300px]">
@@ -2322,7 +2433,7 @@ function SocialView({
               {selectedCommunityLabel ? `Back to ${selectedCommunityLabel}` : 'Discussions'}
             </Button>
             <div className="flex flex-wrap items-center gap-2">
-              <Badge variant="adjacent">{comments.length} comments</Badge>
+              <Badge variant="adjacent">{hasCommentSearch ? `${searchedComments.length}/${comments.length}` : comments.length} comments</Badge>
               <Badge variant="muted">{distinctAgents} agents</Badge>
               <Badge variant="muted">{thread.status.replace(/_/g, ' ')}</Badge>
             </div>
@@ -2375,7 +2486,7 @@ function SocialView({
               <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-2">
                   <MessageSquare className="h-4 w-4 text-muted-foreground" />
-                  <span className="font-semibold">{comments.length} comments</span>
+                  <span className="font-semibold">{hasCommentSearch ? `${searchedComments.length} of ${comments.length}` : comments.length} comments</span>
                 </div>
                 <div className="flex items-center gap-1 rounded-md border border-border bg-muted/20 p-1">
                   {(['best', 'new', 'old'] as const).map((sort) => (
@@ -2446,6 +2557,11 @@ function SocialView({
                     </div>
                   )
                 })}
+                {!sortedComments.length ? (
+                  <div className="rounded-md border border-border bg-muted/10 p-3 text-sm text-muted-foreground">
+                    No comments match this thread search.
+                  </div>
+                ) : null}
               </div>
             </div>
           </article>
@@ -2622,24 +2738,30 @@ function SocialView({
 function UserProfileView({
   actor,
   social,
+  query,
   onOpenProduct,
   onOpenUser,
   onOpenSettings,
 }: {
   actor?: SocialAgent
   social: SocialSimulationData
+  query: string
   onOpenProduct: (slug: string) => void
   onOpenUser: (slug: string) => void
   onOpenSettings: () => void
 }) {
+  const hasQuery = Boolean(normalizeSearchText(query))
+
   if (!actor) {
+    const directoryActors = filterBySearchScore(social.agents, query, actorSearchText)
+
     return (
       <section className="dense-panel p-4">
         <div className="mono-label">User directory</div>
         <h2 className="mt-1 text-xl font-semibold">Actor not found</h2>
         <p className="mt-2 text-sm leading-6 text-muted-foreground">Choose a known actor profile.</p>
         <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {social.agents.map((item) => (
+          {directoryActors.map((item) => (
             <button key={item.id} type="button" className="rounded-md border border-border bg-muted/10 p-3 text-left transition-colors hover:bg-muted/35" onClick={() => onOpenUser(actorSlug(item))}>
               <div className="flex items-center gap-2">
                 <ActorAvatar agent={item} size="sm" />
@@ -2650,11 +2772,17 @@ function UserProfileView({
               </div>
             </button>
           ))}
+          {!directoryActors.length ? (
+            <div className="rounded-md border border-border bg-muted/10 p-3 text-sm text-muted-foreground sm:col-span-2 lg:col-span-3">
+              No actors match this search.
+            </div>
+          ) : null}
         </div>
       </section>
     )
   }
 
+  const agentById = new Map(social.agents.map((item) => [item.id, item]))
   const startedThreads = social.threads.filter((thread) => thread.startedBy === actor.id)
   const authoredPosts = social.threads.flatMap((thread) =>
     thread.posts
@@ -2666,6 +2794,13 @@ function UserProfileView({
   const relatedProducts = actor.productSlugs?.length
     ? actor.productSlugs
     : Array.from(new Set(social.threads.filter((thread) => thread.posts.some((post) => post.authorId === actor.id)).flatMap((thread) => thread.productSlugs))).slice(0, 8)
+  const visibleAuthoredPosts = filterBySearchScore(authoredPosts, query, (post) => {
+    const thread = social.threads.find((item) => item.id === post.threadId)
+    return [post.threadTitle, postSearchText(post, actor, thread)].join(' ')
+  })
+  const workItems = [...proposals, ...reviews]
+  const visibleWorkItems = filterBySearchScore(workItems, query, (proposal) => proposalSearchText(proposal, agentById))
+  const visibleRelatedProducts = filterBySearchScore(relatedProducts, query, (slug) => slug)
 
   return (
     <section className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
@@ -2700,19 +2835,19 @@ function UserProfileView({
           <div>
             <div className="mono-label">Recent posts</div>
             <div className="mt-3 grid gap-2">
-              {authoredPosts.slice(0, 8).map((post) => (
+              {visibleAuthoredPosts.slice(0, 8).map((post) => (
                 <div key={`${post.threadId}-${post.id}`} className="rounded-md border border-border bg-muted/10 p-3">
                   <div className="font-mono text-[11px] text-muted-foreground">{post.threadTitle}</div>
                   <p className="mt-1 text-sm leading-6 text-muted-foreground">{post.body}</p>
                 </div>
               ))}
-              {!authoredPosts.length ? <div className="rounded-md border border-border bg-muted/10 p-3 text-sm text-muted-foreground">No posts yet.</div> : null}
+              {!visibleAuthoredPosts.length ? <div className="rounded-md border border-border bg-muted/10 p-3 text-sm text-muted-foreground">{hasQuery ? 'No posts match this search.' : 'No posts yet.'}</div> : null}
             </div>
           </div>
           <div>
             <div className="mono-label">OKF work</div>
             <div className="mt-3 grid gap-2">
-              {[...proposals, ...reviews].slice(0, 8).map((proposal) => (
+              {visibleWorkItems.slice(0, 8).map((proposal) => (
                 <div key={`${actor.id}-${proposal.id}`} className="rounded-md border border-border bg-muted/10 p-3">
                   <div className="flex flex-wrap items-center gap-2">
                     <CheckCircle2 className="h-3.5 w-3.5 text-emerald-300" />
@@ -2722,7 +2857,7 @@ function UserProfileView({
                   <div className="mt-1 break-words font-mono text-[11px] leading-4 text-muted-foreground">{proposal.targetPath}</div>
                 </div>
               ))}
-              {!proposals.length && !reviews.length ? <div className="rounded-md border border-border bg-muted/10 p-3 text-sm text-muted-foreground">No proposal or review events yet.</div> : null}
+              {!visibleWorkItems.length ? <div className="rounded-md border border-border bg-muted/10 p-3 text-sm text-muted-foreground">{hasQuery ? 'No OKF work matches this search.' : 'No proposal or review events yet.'}</div> : null}
             </div>
           </div>
         </div>
@@ -2749,12 +2884,12 @@ function UserProfileView({
         <section className="dense-panel p-3">
           <div className="mono-label">Products</div>
           <div className="mt-2 grid gap-1.5">
-            {relatedProducts.length ? relatedProducts.map((slug) => (
+            {visibleRelatedProducts.length ? visibleRelatedProducts.map((slug) => (
               <button key={`${actor.id}-${slug}`} type="button" className="rounded border border-border bg-muted/10 px-2 py-1.5 text-left font-mono text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" onClick={() => onOpenProduct(slug)}>
                 {slug}
               </button>
             )) : (
-              <div className="rounded-md border border-border bg-muted/10 p-2 text-xs leading-5 text-muted-foreground">No product scope yet.</div>
+              <div className="rounded-md border border-border bg-muted/10 p-2 text-xs leading-5 text-muted-foreground">{hasQuery ? 'No products match this search.' : 'No product scope yet.'}</div>
             )}
           </div>
         </section>
@@ -2766,12 +2901,14 @@ function UserProfileView({
 function UserSettingsView({
   social,
   currentActorId,
+  query,
   onSignIn,
   onSignOut,
   onOpenUser,
 }: {
   social: SocialSimulationData
   currentActorId: string
+  query: string
   onSignIn: (actorId: string) => void | Promise<void>
   onSignOut: () => void | Promise<void>
   onOpenUser: (slug: string) => void
@@ -2779,6 +2916,7 @@ function UserSettingsView({
   const [kindFilter, setKindFilter] = useState<'all' | 'human' | 'agent'>('all')
   const currentActor = social.agents.find((actor) => actor.id === currentActorId)
   const actors = kindFilter === 'all' ? social.agents : social.agents.filter((actor) => actor.kind === kindFilter)
+  const filteredActors = filterBySearchScore(actors, query, actorSearchText)
 
   return (
     <section className="grid items-start gap-4 xl:grid-cols-[minmax(0,1fr)_340px]">
@@ -2805,7 +2943,10 @@ function UserSettingsView({
         </div>
 
         <div className="border-b border-border p-4">
-          <div className="mono-label">Sign in as</div>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="mono-label">Sign in as</div>
+            <div className="font-mono text-[11px] text-muted-foreground">{filteredActors.length} actors</div>
+          </div>
           <div className="mt-3 flex flex-wrap items-center gap-1.5">
             {(['all', 'human', 'agent'] as const).map((kind) => (
               <Button key={kind} variant={kindFilter === kind ? 'secondary' : 'ghost'} size="sm" onClick={() => setKindFilter(kind)}>
@@ -2814,7 +2955,7 @@ function UserSettingsView({
             ))}
           </div>
           <div className="mt-3 grid gap-2 lg:grid-cols-2">
-            {actors.map((actor) => {
+            {filteredActors.map((actor) => {
               const active = actor.id === currentActorId
               return (
                 <div key={actor.id} className={cn('rounded-md border bg-muted/10 p-3', active ? 'border-emerald-500/40' : 'border-border')}>
@@ -2847,6 +2988,11 @@ function UserSettingsView({
                 </div>
               )
             })}
+            {!filteredActors.length ? (
+              <div className="rounded-md border border-border bg-muted/10 p-3 text-sm text-muted-foreground lg:col-span-2">
+                No actors match this search.
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
@@ -2953,10 +3099,12 @@ function NewsView({
   )
 }
 
-function CategoryView({ categories }: { categories: readonly Category[] }) {
+function CategoryView({ categories, query }: { categories: readonly Category[]; query: string }) {
+  const filteredCategories = filterBySearchScore(categories, query, categorySearchText)
+
   return (
     <div className="grid gap-3 lg:grid-cols-2">
-      {categories.map((category) => (
+      {filteredCategories.map((category) => (
         <section key={category.slug} className="dense-panel p-4">
           <div className="flex items-start justify-between gap-3">
             <div>
@@ -2976,11 +3124,18 @@ function CategoryView({ categories }: { categories: readonly Category[] }) {
           </div>
         </section>
       ))}
+      {!filteredCategories.length ? (
+        <div className="dense-panel p-4 text-sm text-muted-foreground lg:col-span-2">
+          No categories match this search.
+        </div>
+      ) : null}
     </div>
   )
 }
 
-function VendorView({ vendors }: { vendors: readonly Vendor[] }) {
+function VendorView({ vendors, query }: { vendors: readonly Vendor[]; query: string }) {
+  const filteredVendors = filterBySearchScore(vendors, query, vendorSearchText)
+
   return (
     <div className="overflow-hidden rounded-md border border-border">
       <table className="w-full min-w-[680px] border-collapse text-sm">
@@ -2993,7 +3148,7 @@ function VendorView({ vendors }: { vendors: readonly Vendor[] }) {
           </tr>
         </thead>
         <tbody>
-          {vendors.map((vendor) => (
+          {filteredVendors.map((vendor) => (
             <tr key={vendor.slug} className="border-b border-border/80 last:border-0">
               <td className="px-3 py-2 font-medium">{vendor.title}</td>
               <td className="px-3 py-2">
@@ -3005,34 +3160,37 @@ function VendorView({ vendors }: { vendors: readonly Vendor[] }) {
           ))}
         </tbody>
       </table>
+      {!filteredVendors.length ? (
+        <div className="border-t border-border p-4 text-sm text-muted-foreground">
+          No vendors match this search.
+        </div>
+      ) : null}
     </div>
   )
 }
 
-function DocsView() {
-  const docs = [
-    ['Agentic Social Network', 'docs/agentic-social-network.md', 'Actor model, discussion flow, claiming, fan-out, and simulated OKF review path.'],
-    ['Agent Consumption Guide', 'docs/agent-consumption-guide.md', 'How buyer agents read source tiers, freshness, comparisons, and refusals.'],
-    ['Taxonomy Model', 'docs/taxonomy.md', 'Graph and facet model for categories, capabilities, and buyer context.'],
-    ['Product Folder Contract', 'docs/product-folder-contract.md', 'Required files, ownership, and frontmatter for each product folder.'],
-    ['Governance Model', 'docs/governance.md', 'Vendor PR flow, dispute handling, freshness policy, and CI checks.'],
-    ['Source Tiers', 'docs/source-tiers.md', 'Registry-wide provenance vocabulary for agent-readable claims.'],
-  ] as const
+function DocsView({ query }: { query: string }) {
+  const filteredDocs = filterBySearchScore(docsCatalog, query, docSearchText)
 
   return (
     <div className="grid gap-2">
-      {docs.map(([title, path, description]) => (
-        <div key={path} className="flex flex-col gap-2 rounded-md border border-border bg-muted/20 px-3 py-2 sm:flex-row sm:items-center sm:justify-between">
+      {filteredDocs.map((doc) => (
+        <div key={doc.path} className="flex flex-col gap-2 rounded-md border border-border bg-muted/20 px-3 py-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <div className="font-medium">{title}</div>
-            <div className="mt-0.5 text-sm text-muted-foreground">{description}</div>
+            <div className="font-medium">{doc.title}</div>
+            <div className="mt-0.5 text-sm text-muted-foreground">{doc.description}</div>
           </div>
           <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
             <FileText className="h-3.5 w-3.5" />
-            {path}
+            {doc.path}
           </div>
         </div>
       ))}
+      {!filteredDocs.length ? (
+        <div className="dense-panel p-4 text-sm text-muted-foreground">
+          No docs match this search.
+        </div>
+      ) : null}
     </div>
   )
 }
@@ -3170,10 +3328,24 @@ function App() {
       .map(({ product }) => product)
   }, [categoryProducts, fit, productSearchIndex, query])
 
-  const selectedProduct = filteredProducts.find((product) => product.slug === selectedSlug) || filteredProducts[0] || categoryProducts[0]
+  const hasQuery = Boolean(normalizeSearchText(query))
+  const selectedProduct = filteredProducts.find((product) => product.slug === selectedSlug) || filteredProducts[0]
   const selectedVendor = selectedProduct ? vendorBySlug.get(selectedProduct.vendorId) : undefined
   const selectedUser = actorBySlug.get(selectedUserSlug)
   const activeCategoryLabel = formatCategoryLabel(activeCategoryId)
+  const searchPlaceholder = (() => {
+    if (activeTab === 'products') return `Search ${activeCategoryLabel} products...`
+    if (activeTab === 'discussions' && selectedDiscussionId) return 'Search comments in this thread...'
+    if (activeTab === 'discussions' && selectedCommunitySlug) return `Search threads in ${discussionCommunityLabel(selectedCommunitySlug)}...`
+    if (activeTab === 'discussions') return 'Search discussions, communities, agents...'
+    if (activeTab === 'news') return 'Search product news...'
+    if (activeTab === 'categories') return 'Search categories...'
+    if (activeTab === 'vendors') return 'Search vendors...'
+    if (activeTab === 'docs') return 'Search docs...'
+    if (activeTab === 'settings') return 'Search actors...'
+    if (activeTab === 'user') return selectedUser ? `Search ${selectedUser.displayName} profile...` : 'Search actors...'
+    return 'Search...'
+  })()
   const changeCategory = (categoryId: string) => {
     setActiveCategoryId(categoryId)
     const nextProduct = products.find((product) => productInCategory(product, categoryId))
@@ -3453,9 +3625,11 @@ function App() {
               <div className="relative min-w-0 sm:min-w-[260px]">
                 <Search className="pointer-events-none absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input
+                  type="search"
                   value={query}
                   onChange={(event) => changeQuery(event.target.value)}
-                  placeholder="Search products, vendors, files..."
+                  placeholder={searchPlaceholder}
+                  aria-label={searchPlaceholder.replace(/\.\.\.$/, '')}
                   className="pl-8 font-mono"
                 />
               </div>
@@ -3494,7 +3668,9 @@ function App() {
                     />
                   ) : (
                     <div className="p-4 text-sm text-muted-foreground">
-                      No products are seeded for {activeCategoryLabel} yet. Use the category model as a placeholder until product folders are added.
+                      {hasQuery
+                        ? `No products match this search in ${activeCategoryLabel}.`
+                        : `No products are seeded for ${activeCategoryLabel} yet. Use the category model as a placeholder until product folders are added.`}
                     </div>
                   )}
                 </section>
@@ -3528,6 +3704,7 @@ function App() {
             <UserProfileView
               actor={selectedUser}
               social={socialData}
+              query={query}
               onOpenProduct={openProduct}
               onOpenUser={openUser}
               onOpenSettings={openSettings}
@@ -3546,21 +3723,22 @@ function App() {
           </TabsContent>
 
           <TabsContent value="categories" id="categories">
-            <CategoryView categories={registryData.categories} />
+            <CategoryView categories={registryData.categories} query={query} />
           </TabsContent>
 
           <TabsContent value="vendors">
-            <VendorView vendors={registryData.vendors} />
+            <VendorView vendors={registryData.vendors} query={query} />
           </TabsContent>
 
           <TabsContent value="docs" id="docs">
-            <DocsView />
+            <DocsView query={query} />
           </TabsContent>
 
           <TabsContent value="settings" id="settings">
             <UserSettingsView
               social={socialData}
               currentActorId={sessionActorId}
+              query={query}
               onSignIn={signInAsActor}
               onSignOut={signOutActor}
               onOpenUser={openUser}
