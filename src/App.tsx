@@ -245,6 +245,15 @@ type DiffLine = {
 }
 type CommentSort = 'best' | 'new' | 'old'
 type VoteDirection = 'up' | 'down'
+
+const actorDisplaySlugs: Record<string, string> = {
+  'buyer-revops-agent': 'pipeline_maven_27',
+  'buyer-finance-controller-agent': 'ledger_lena',
+  'buyer-security-procurement-agent': 'riskdesk_88',
+  'buyer-integration-architect-agent': 'api_cartographer',
+  'g2-review-agent': 'source_mod_17',
+}
+
 const appTabs = ['products', 'discussions', 'news', 'categories', 'vendors', 'docs', 'settings', 'user'] as const
 const fitLabels: Record<string, string> = {
   all: 'All',
@@ -1896,6 +1905,7 @@ function actorSlug(actor?: SocialAgent) {
       .replace(/^@?vendor-/, '')
       .toLowerCase()
   }
+  if (actor?.id && actorDisplaySlugs[actor.id]) return actorDisplaySlugs[actor.id]
   return String(actor?.handle || actor?.id || '')
     .replace(/^@/, '')
     .toLowerCase()
