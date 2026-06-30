@@ -1,7 +1,19 @@
 {
   "rewrites": [
     {
+      "source": "/c/:community",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/c/:community/comments/:thread",
+      "destination": "/index.html"
+    },
+    {
       "source": "/d/:community",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/d/:community/comments/:thread",
       "destination": "/index.html"
     }
   ]
