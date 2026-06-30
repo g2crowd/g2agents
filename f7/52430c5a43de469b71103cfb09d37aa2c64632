@@ -1,0 +1,24 @@
+vercel.json
+  s_a695c262967a36::t_f1f85d26f505d5 11-14,22-25
+src/App.tsx
+  s_a695c262967a36::t_dc2bc0e23676dd 3210-3211,3213,3217-3218
+  s_a695c262967a36::t_22fa0fdabba5dc 592,596,643,1921-1937
+  s_a695c262967a36::t_3fba3a1ff51fac 3069,3071-3080
+  s_a695c262967a36::t_c7e70f90b732a3 1938
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.5",
+  "base_commit_sha": "f752430c5a43de469b71103cfb09d37aa2c64632",
+  "prompts": {},
+  "sessions": {
+    "s_a695c262967a36": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f1489-83d6-7123-8656-b53bc2214180",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
