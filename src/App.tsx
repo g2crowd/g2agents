@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type FormEvent, type MouseEvent, type ReactNode } from 'react'
 import {
+  ArrowLeft,
   ArrowDown,
   ArrowUp,
   ArrowUpRight,
@@ -227,6 +228,7 @@ type AppHashState = {
   tab: AppTab
   product?: string
   news?: string
+  discussion?: string
   user?: string
   query: string
   fit: FitFilter
@@ -594,6 +596,7 @@ function readAppHash(): AppHashState {
     tab,
     product: tab === 'products' ? segments[1] : undefined,
     news: tab === 'news' ? segments[1] : undefined,
+    discussion: tab === 'discussions' ? segments[1] : undefined,
     user: tab === 'user' ? segments[1] : undefined,
     query: params.get('q') || '',
     fit: validFit(fit) ? fit : 'all',
@@ -606,6 +609,7 @@ function buildAppHash(state: Partial<AppHashState>) {
   const segments: string[] = tab === 'user' ? ['u'] : [tab]
   if (tab === 'products' && state.product) segments.push(encodeURIComponent(state.product))
   if (tab === 'news' && state.news) segments.push(encodeURIComponent(state.news))
+  if (tab === 'discussions' && state.discussion) segments.push(encodeURIComponent(state.discussion))
   if (tab === 'user' && state.user) segments.push(encodeURIComponent(state.user))
 
   const params = new URLSearchParams()
@@ -2021,11 +2025,17 @@ function ActorAvatar({ agent, size = 'md' }: { agent?: SocialAgent; size?: 'sm' 
 function SocialView({
   social,
   query,
+  selectedThreadId,
+  onOpenThread,
+  onCloseThread,
   onOpenProduct,
   onOpenUser,
 }: {
   social: SocialSimulationData
   query: string
+  selectedThreadId: string
+  onOpenThread: (threadId: string) => void
+  onCloseThread: () => void
   onOpenProduct: (slug: string) => void
   onOpenUser: (slug: string) => void
 }) {
@@ -2033,6 +2043,7 @@ function SocialView({
   const [votes, setVotes] = useState<Record<string, VoteDirection | undefined>>({})
   const agentById = useMemo(() => new Map(social.agents.map((agent) => [agent.id, agent])), [social.agents])
   const proposalById = useMemo(() => new Map(social.proposals.map((proposal) => [proposal.id, proposal])), [social.proposals])
+  const selectedThread = selectedThreadId ? social.threads.find((thread) => thread.id === selectedThreadId) : undefined
   const filteredThreads = useMemo(() => {
     const normalized = normalizeSearchText(query)
     if (!normalized) return social.threads
@@ -2050,6 +2061,227 @@ function SocialView({
   }, [agentById, query, social.threads])
   const castVote = (key: string, direction: VoteDirection) => {
     setVotes((current) => ({ ...current, [key]: current[key] === direction ? undefined : direction }))
+  }
+
+  const renderActorRoster = () => (
+    <section className="dense-panel p-3">
+      <div className="mono-label">Actor roster</div>
+      <div className="mt-3 grid gap-2">
+        {social.agents.map((agent) => (
+          <div key={agent.id} className="rounded-md border border-border bg-muted/10 p-2">
+            <div className="flex items-center gap-2">
+              <button type="button" onClick={() => onOpenUser(actorSlug(agent))}>
+                <ActorAvatar agent={agent} size="sm" />
+              </button>
+              <div className="min-w-0 flex-1">
+                <button type="button" className="block max-w-full truncate text-left text-sm font-medium transition-colors hover:text-foreground hover:underline" onClick={() => onOpenUser(actorSlug(agent))}>
+                  {agent.displayName}
+                </button>
+                <div className="mt-0.5 truncate font-mono text-[11px] text-muted-foreground">{agent.handle}</div>
+              </div>
+              <Badge variant={socialRoleVariant(agent.role)}>{socialRoleLabel(agent.role)}</Badge>
+            </div>
+            <div className="mt-2 text-xs leading-5 text-muted-foreground">{agent.verification}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+
+  if (selectedThread) {
+    const thread = selectedThread
+    const comments = thread.posts.filter((post) => post.kind !== 'thread_start')
+    const distinctAgents = new Set(thread.posts.map((post) => post.authorId)).size
+    const proposals = thread.proposalIds.map((proposalId) => proposalById.get(proposalId)).filter(Boolean) as SocialProposal[]
+    const starter = thread.posts.find((post) => post.kind === 'thread_start') || thread.posts[0]
+    const starterAgent = agentById.get(starter?.authorId || '')
+    const community = discussionCommunity(thread)
+    const threadVoteKey = `thread:${thread.id}`
+    const threadScore = voteScore(baseThreadScore(thread), votes[threadVoteKey])
+    const commentSort = commentSortByThread[thread.id] || 'best'
+    const sortedComments = sortCommentItems(comments, agentById, commentSort)
+
+    return (
+      <section className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_300px]">
+        <div className="grid min-w-0 gap-3">
+          <div className="dense-panel flex flex-wrap items-center justify-between gap-3 p-3">
+            <Button variant="ghost" size="sm" onClick={onCloseThread}>
+              <ArrowLeft className="h-3.5 w-3.5" />
+              Discussions
+            </Button>
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge variant="adjacent">{comments.length} comments</Badge>
+              <Badge variant="muted">{distinctAgents} agents</Badge>
+              <Badge variant="muted">{thread.status.replace(/_/g, ' ')}</Badge>
+            </div>
+          </div>
+
+          <article className="dense-panel overflow-hidden">
+            <div className="flex border-b border-border">
+              <VoteRail
+                label={thread.title}
+                score={threadScore}
+                vote={votes[threadVoteKey]}
+                onVote={(direction) => castVote(threadVoteKey, direction)}
+              />
+              <div className="min-w-0 flex-1 p-4">
+                <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-muted-foreground">
+                  <button
+                    type="button"
+                    className="font-mono font-semibold text-foreground transition-colors hover:underline"
+                    onClick={() => thread.productSlugs[0] && onOpenProduct(thread.productSlugs[0])}
+                  >
+                    {community}
+                  </button>
+                  <span>/</span>
+                  <span>Posted by</span>
+                  <button
+                    type="button"
+                    className="font-medium text-foreground transition-colors hover:underline"
+                    onClick={() => starterAgent && onOpenUser(actorSlug(starterAgent))}
+                  >
+                    {starterAgent ? actorSlug(starterAgent) : starter?.authorId || 'unknown'}
+                  </button>
+                  <span>{starter?.createdAt ? formatRelativeTime(starter.createdAt) : 'recently'}</span>
+                  <VerificationMark agent={starterAgent} />
+                  <Badge variant="outline">OP</Badge>
+                </div>
+                <h2 className="mt-2 text-2xl font-semibold leading-tight">{thread.title}</h2>
+                {starter ? <p className="mt-3 max-w-4xl text-sm leading-6 text-muted-foreground">{starter.body}</p> : null}
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <Badge variant="outline">{thread.subjectType}</Badge>
+                  {thread.tags.map((tag) => (
+                    <Badge key={`${thread.id}-${tag}`} variant="muted">{tag}</Badge>
+                  ))}
+                </div>
+                <div className="mt-3 break-words font-mono text-[11px] leading-4 text-muted-foreground">{thread.subjectRef}</div>
+              </div>
+            </div>
+
+            <div className="p-3">
+              <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-center gap-2">
+                  <MessageSquare className="h-4 w-4 text-muted-foreground" />
+                  <span className="font-semibold">{comments.length} comments</span>
+                </div>
+                <div className="flex items-center gap-1 rounded-md border border-border bg-muted/20 p-1">
+                  {(['best', 'new', 'old'] as const).map((sort) => (
+                    <Button
+                      key={`${thread.id}-${sort}`}
+                      variant={commentSort === sort ? 'secondary' : 'ghost'}
+                      size="sm"
+                      onClick={() => setCommentSortByThread((current) => ({ ...current, [thread.id]: sort }))}
+                      title={`Sort comments by ${sort}`}
+                    >
+                      {sort === 'best' ? 'Best' : sort === 'new' ? 'New' : 'Old'}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid gap-2">
+                {sortedComments.map(({ post, agent, depth, baseScore }) => {
+                  const voteKey = `comment:${post.id}`
+                  const score = voteScore(baseScore, votes[voteKey])
+                  return (
+                    <div
+                      key={post.id}
+                      className={cn('min-w-0', depth > 0 && 'border-l border-border pl-3 sm:pl-4')}
+                      style={{ marginLeft: `${depth * 0.75}rem` }}
+                    >
+                      <div className="rounded-md border border-border bg-muted/10 p-3">
+                        <div className="flex min-w-0 items-start gap-3">
+                          <button type="button" onClick={() => agent && onOpenUser(actorSlug(agent))}>
+                            <ActorAvatar agent={agent} size="sm" />
+                          </button>
+                          <div className="min-w-0 flex-1">
+                            <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-muted-foreground">
+                              {depth > 0 ? <CornerDownRight className="h-3.5 w-3.5" /> : <Bot className="h-3.5 w-3.5" />}
+                              <button
+                                type="button"
+                                className="font-medium text-foreground transition-colors hover:underline"
+                                onClick={() => agent && onOpenUser(actorSlug(agent))}
+                              >
+                                {agent ? actorSlug(agent) : post.authorId}
+                              </button>
+                              <span>{post.createdAt ? formatRelativeTime(post.createdAt) : 'recently'}</span>
+                              <VerificationMark agent={agent} />
+                              <Badge variant={socialRoleVariant(agent?.role || '')}>{socialRoleLabel(agent?.role || 'agent')}</Badge>
+                              <Badge variant="muted">{post.kind.replace(/_/g, ' ')}</Badge>
+                            </div>
+                            <p className="mt-2 text-sm leading-6 text-muted-foreground">{post.body}</p>
+                            <div className="mt-2 flex flex-wrap items-center gap-3">
+                              <VoteRail
+                                compact
+                                label={`comment by ${agent ? actorSlug(agent) : post.authorId}`}
+                                score={score}
+                                vote={votes[voteKey]}
+                                onVote={(direction) => castVote(voteKey, direction)}
+                              />
+                              <button
+                                type="button"
+                                className="inline-flex items-center gap-1 font-mono text-[11px] text-muted-foreground transition-colors hover:text-foreground"
+                                title="Reply threading is represented in the simulation; persistence is not wired yet."
+                              >
+                                <CornerDownRight className="h-3.5 w-3.5" />
+                                Reply
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside className="grid content-start gap-3">
+          <section className="dense-panel p-3">
+            <div className="mono-label">Related products</div>
+            <div className="mt-2 grid gap-1.5">
+              {thread.productSlugs.map((slug) => (
+                <button
+                  key={`${thread.id}-${slug}`}
+                  type="button"
+                  className="rounded border border-border bg-muted/10 px-2 py-1.5 text-left font-mono text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  onClick={() => onOpenProduct(slug)}
+                >
+                  {slug}
+                </button>
+              ))}
+            </div>
+          </section>
+          <section className="dense-panel p-3">
+            <div className="mono-label">Thread stats</div>
+            <div className="mt-3 grid gap-2">
+              <MetaBlock label="Score" value={String(threadScore)} />
+              <MetaBlock label="Agents" value={String(distinctAgents)} />
+              <MetaBlock label="PRs" value={String(proposals.length)} />
+            </div>
+          </section>
+          <section className="dense-panel p-3">
+            <div className="mono-label">OKF outcomes</div>
+            <div className="mt-2 grid gap-2">
+              {proposals.length ? proposals.map((proposal) => (
+                <div key={proposal.id} className="rounded-md border border-border bg-muted/10 p-2">
+                  <div className="flex items-center gap-1.5 text-sm font-medium">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-300" />
+                    {proposal.simulatedPullRequest.number}
+                  </div>
+                  <div className="mt-1 break-words font-mono text-[11px] leading-4 text-muted-foreground">{proposal.targetPath}</div>
+                  <Badge className="mt-2" variant="core">{proposal.status.replace(/_/g, ' ')}</Badge>
+                </div>
+              )) : (
+                <div className="rounded-md border border-border bg-muted/10 p-2 text-xs leading-5 text-muted-foreground">Discussion-only outcome</div>
+              )}
+            </div>
+          </section>
+        </aside>
+      </section>
+    )
   }
 
   return (
@@ -2077,19 +2309,16 @@ function SocialView({
 
         {filteredThreads.map((thread) => {
           const comments = thread.posts.filter((post) => post.kind !== 'thread_start')
-          const distinctAgents = new Set(comments.map((post) => post.authorId)).size
-          const proposals = thread.proposalIds.map((proposalId) => proposalById.get(proposalId)).filter(Boolean) as SocialProposal[]
+          const distinctAgents = new Set(thread.posts.map((post) => post.authorId)).size
           const starter = thread.posts.find((post) => post.kind === 'thread_start') || thread.posts[0]
           const starterAgent = agentById.get(starter?.authorId || '')
           const community = discussionCommunity(thread)
           const threadVoteKey = `thread:${thread.id}`
           const threadScore = voteScore(baseThreadScore(thread), votes[threadVoteKey])
-          const commentSort = commentSortByThread[thread.id] || 'best'
-          const sortedComments = sortCommentItems(comments, agentById, commentSort)
 
           return (
             <article key={thread.id} className="dense-panel overflow-hidden">
-              <div className="flex border-b border-border">
+              <div className="flex">
                 <VoteRail
                   label={thread.title}
                   score={threadScore}
@@ -2117,135 +2346,39 @@ function SocialView({
                     <span>{starter?.createdAt ? formatRelativeTime(starter.createdAt) : 'recently'}</span>
                     <VerificationMark agent={starterAgent} />
                   </div>
-                  <h3 className="mt-2 text-xl font-semibold leading-tight">{thread.title}</h3>
+                  <button
+                    type="button"
+                    className="mt-2 block w-full text-left text-xl font-semibold leading-tight transition-colors hover:text-foreground hover:underline"
+                    onClick={() => onOpenThread(thread.id)}
+                  >
+                    {thread.title}
+                  </button>
                   {starter ? <p className="mt-3 max-w-4xl text-sm leading-6 text-muted-foreground">{starter.body}</p> : null}
                   <div className="mt-3 flex flex-wrap items-center gap-2">
                     <Badge variant="outline">{thread.subjectType}</Badge>
                     <Badge variant="muted">{thread.status.replace(/_/g, ' ')}</Badge>
-                    <Badge variant="adjacent">{comments.length} comments</Badge>
+                    <button type="button" onClick={() => onOpenThread(thread.id)}>
+                      <Badge variant="adjacent">{comments.length} comments</Badge>
+                    </button>
                     <Badge variant="muted">{distinctAgents} agents</Badge>
                     {thread.tags.map((tag) => (
                       <Badge key={`${thread.id}-${tag}`} variant="muted">{tag}</Badge>
                     ))}
                   </div>
                   <div className="mt-3 break-words font-mono text-[11px] leading-4 text-muted-foreground">{thread.subjectRef}</div>
-                </div>
-              </div>
-
-              <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_260px]">
-                <div className="p-3">
-                  <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                    <div className="flex items-center gap-2">
-                      <MessageSquare className="h-4 w-4 text-muted-foreground" />
-                      <span className="font-semibold">{comments.length} comments</span>
-                    </div>
-                    <div className="flex items-center gap-1 rounded-md border border-border bg-muted/20 p-1">
-                      {(['best', 'new', 'old'] as const).map((sort) => (
-                        <Button
-                          key={`${thread.id}-${sort}`}
-                          variant={commentSort === sort ? 'secondary' : 'ghost'}
-                          size="sm"
-                          onClick={() => setCommentSortByThread((current) => ({ ...current, [thread.id]: sort }))}
-                          title={`Sort comments by ${sort}`}
-                        >
-                          {sort === 'best' ? 'Best' : sort === 'new' ? 'New' : 'Old'}
-                        </Button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="grid gap-2">
-                    {sortedComments.map(({ post, agent, depth, baseScore }) => {
-                      const voteKey = `comment:${post.id}`
-                      const score = voteScore(baseScore, votes[voteKey])
-                      return (
-                        <div
-                          key={post.id}
-                          className={cn('min-w-0', depth > 0 && 'border-l border-border pl-3 sm:pl-4')}
-                          style={{ marginLeft: `${depth * 0.75}rem` }}
-                        >
-                          <div className="rounded-md border border-border bg-muted/10 p-3">
-                            <div className="flex min-w-0 items-start gap-3">
-                              <button type="button" onClick={() => agent && onOpenUser(actorSlug(agent))}>
-                                <ActorAvatar agent={agent} size="sm" />
-                              </button>
-                              <div className="min-w-0 flex-1">
-                                <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-muted-foreground">
-                                  {depth > 0 ? <CornerDownRight className="h-3.5 w-3.5" /> : <Bot className="h-3.5 w-3.5" />}
-                                  <button
-                                    type="button"
-                                    className="font-medium text-foreground transition-colors hover:underline"
-                                    onClick={() => agent && onOpenUser(actorSlug(agent))}
-                                  >
-                                    {agent ? actorSlug(agent) : post.authorId}
-                                  </button>
-                                  <span>{post.createdAt ? formatRelativeTime(post.createdAt) : 'recently'}</span>
-                                  <VerificationMark agent={agent} />
-                                  <Badge variant={socialRoleVariant(agent?.role || '')}>{socialRoleLabel(agent?.role || 'agent')}</Badge>
-                                  <Badge variant="muted">{post.kind.replace(/_/g, ' ')}</Badge>
-                                </div>
-                                <p className="mt-2 text-sm leading-6 text-muted-foreground">{post.body}</p>
-                                <div className="mt-2 flex flex-wrap items-center gap-3">
-                                  <VoteRail
-                                    compact
-                                    label={`comment by ${agent ? actorSlug(agent) : post.authorId}`}
-                                    score={score}
-                                    vote={votes[voteKey]}
-                                    onVote={(direction) => castVote(voteKey, direction)}
-                                  />
-                                  <button
-                                    type="button"
-                                    className="inline-flex items-center gap-1 font-mono text-[11px] text-muted-foreground transition-colors hover:text-foreground"
-                                    title="Reply threading is represented in the simulation; persistence is not wired yet."
-                                  >
-                                    <CornerDownRight className="h-3.5 w-3.5" />
-                                    Reply
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      )
-                    })}
-                  </div>
-                </div>
-
-                <aside className="border-t border-border p-3 lg:border-l lg:border-t-0">
-                  <div className="mono-label">Related products</div>
-                  <div className="mt-2 grid gap-1.5">
-                    {thread.productSlugs.map((slug) => (
-                      <button
-                        key={`${thread.id}-${slug}`}
-                        type="button"
-                        className="rounded border border-border bg-muted/10 px-2 py-1.5 text-left font-mono text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                        onClick={() => onOpenProduct(slug)}
-                      >
+                  <div className="mt-4 flex flex-wrap items-center gap-2">
+                    <Button variant="outline" size="sm" onClick={() => onOpenThread(thread.id)}>
+                      <MessageSquare className="h-3.5 w-3.5" />
+                      Open thread
+                    </Button>
+                    {thread.productSlugs.slice(0, 3).map((slug) => (
+                      <Button key={`${thread.id}-${slug}`} variant="ghost" size="sm" onClick={() => onOpenProduct(slug)}>
+                        <ArrowUpRight className="h-3.5 w-3.5" />
                         {slug}
-                      </button>
+                      </Button>
                     ))}
                   </div>
-                  <div className="mt-4 grid grid-cols-3 gap-2 text-sm lg:grid-cols-1">
-                    <MetaBlock label="Score" value={String(threadScore)} />
-                    <MetaBlock label="Agents" value={String(distinctAgents)} />
-                    <MetaBlock label="PRs" value={String(proposals.length)} />
-                  </div>
-                  <div className="mt-4 mono-label">OKF outcomes</div>
-                  <div className="mt-2 grid gap-2">
-                    {proposals.length ? proposals.map((proposal) => (
-                      <div key={proposal.id} className="rounded-md border border-border bg-muted/10 p-2">
-                        <div className="flex items-center gap-1.5 text-sm font-medium">
-                          <CheckCircle2 className="h-3.5 w-3.5 text-emerald-300" />
-                          {proposal.simulatedPullRequest.number}
-                        </div>
-                        <div className="mt-1 break-words font-mono text-[11px] leading-4 text-muted-foreground">{proposal.targetPath}</div>
-                        <Badge className="mt-2" variant="core">{proposal.status.replace(/_/g, ' ')}</Badge>
-                      </div>
-                    )) : (
-                      <div className="rounded-md border border-border bg-muted/10 p-2 text-xs leading-5 text-muted-foreground">Discussion-only outcome</div>
-                    )}
-                  </div>
-                </aside>
+                </div>
               </div>
             </article>
           )
@@ -2253,28 +2386,7 @@ function SocialView({
       </div>
 
       <aside className="grid content-start gap-3">
-        <section className="dense-panel p-3">
-          <div className="mono-label">Actor roster</div>
-          <div className="mt-3 grid gap-2">
-            {social.agents.map((agent) => (
-              <div key={agent.id} className="rounded-md border border-border bg-muted/10 p-2">
-                <div className="flex items-center gap-2">
-                  <button type="button" onClick={() => onOpenUser(actorSlug(agent))}>
-                    <ActorAvatar agent={agent} size="sm" />
-                  </button>
-                  <div className="min-w-0 flex-1">
-                    <button type="button" className="block max-w-full truncate text-left text-sm font-medium transition-colors hover:text-foreground hover:underline" onClick={() => onOpenUser(actorSlug(agent))}>
-                      {agent.displayName}
-                    </button>
-                    <div className="mt-0.5 truncate font-mono text-[11px] text-muted-foreground">{agent.handle}</div>
-                  </div>
-                  <Badge variant={socialRoleVariant(agent.role)}>{socialRoleLabel(agent.role)}</Badge>
-                </div>
-                <div className="mt-2 text-xs leading-5 text-muted-foreground">{agent.verification}</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {renderActorRoster()}
       </aside>
     </section>
   )
@@ -2719,6 +2831,7 @@ function App() {
   const [fit, setFit] = useState<FitFilter>(initialHashState.fit)
   const [selectedSlug, setSelectedSlug] = useState<string>(initialHashState.product || products[0]?.slug || '')
   const [selectedNewsKey, setSelectedNewsKey] = useState<string>(initialHashState.news || '')
+  const [selectedDiscussionId, setSelectedDiscussionId] = useState<string>(initialHashState.discussion || '')
   const [selectedUserSlug, setSelectedUserSlug] = useState<string>(initialHashState.user || actorSlug(socialData.agents[0]))
   const [detailExpanded, setDetailExpanded] = useState(initialHashState.expanded)
   const [activeTab, setActiveTab] = useState<AppTab>(initialHashState.tab)
@@ -2742,6 +2855,7 @@ function App() {
       tab: activeTab,
       product: selectedSlug,
       news: selectedNewsKey,
+      discussion: selectedDiscussionId,
       user: selectedUserSlug,
       query,
       fit,
@@ -2762,6 +2876,7 @@ function App() {
       setFit(state.fit)
       setDetailExpanded(state.expanded)
       setSelectedNewsKey(state.news || '')
+      setSelectedDiscussionId(state.discussion || '')
       setSelectedUserSlug(state.user || selectedUserSlug)
       if (state.product) setSelectedSlug(state.product)
       else if (state.tab === 'products') setSelectedSlug(products[0]?.slug || '')
@@ -2804,6 +2919,7 @@ function App() {
     const nextProduct = products.find((product) => productInCategory(product, categoryId))
     setSelectedSlug(nextProduct?.slug || '')
     setDetailExpanded(false)
+    setSelectedDiscussionId('')
     writeHash({ tab: 'products', product: nextProduct?.slug, expanded: false }, 'push')
   }
   const selectProduct = (slug: string, expanded = detailExpanded) => {
@@ -2811,6 +2927,7 @@ function App() {
     setActiveTab('products')
     setDetailExpanded(expanded)
     setSelectedNewsKey('')
+    setSelectedDiscussionId('')
     writeHash({ tab: 'products', product: slug, expanded }, 'push')
   }
   const openProduct = (slug: string) => {
@@ -2820,12 +2937,14 @@ function App() {
     setSelectedUserSlug(slug)
     setActiveTab('user')
     setSelectedNewsKey('')
+    setSelectedDiscussionId('')
     setDetailExpanded(false)
     writeHash({ tab: 'user', user: slug, news: undefined, expanded: false }, 'push')
   }
   const openSettings = () => {
     setActiveTab('settings')
     setSelectedNewsKey('')
+    setSelectedDiscussionId('')
     setDetailExpanded(false)
     writeHash({ tab: 'settings', news: undefined, expanded: false }, 'push')
   }
@@ -2857,37 +2976,67 @@ function App() {
     const key = newsEntryKey(item)
     setSelectedNewsKey(key)
     setActiveTab('news')
+    setSelectedDiscussionId('')
     setDetailExpanded(false)
     writeHash({ tab: 'news', news: key, expanded: false }, 'push')
   }
   const closeNews = () => {
     setSelectedNewsKey('')
     setActiveTab('news')
+    setSelectedDiscussionId('')
     setDetailExpanded(false)
     writeHash({ tab: 'news', news: undefined, expanded: false }, 'push')
+  }
+  const openDiscussion = (threadId: string) => {
+    setSelectedDiscussionId(threadId)
+    setActiveTab('discussions')
+    setSelectedNewsKey('')
+    setDetailExpanded(false)
+    writeHash({ tab: 'discussions', discussion: threadId, news: undefined, expanded: false }, 'push')
+    window.scrollTo({ top: 0 })
+  }
+  const closeDiscussion = () => {
+    setSelectedDiscussionId('')
+    setActiveTab('discussions')
+    setSelectedNewsKey('')
+    setDetailExpanded(false)
+    writeHash({ tab: 'discussions', discussion: undefined, news: undefined, expanded: false }, 'push')
+    window.scrollTo({ top: 0 })
   }
   const changeTab = (value: string) => {
     if (!validTab(value)) return
     setActiveTab(value)
     setSelectedNewsKey('')
+    setSelectedDiscussionId('')
     if (value !== 'products') setDetailExpanded(false)
-    writeHash({ tab: value, news: undefined, expanded: value === 'products' ? detailExpanded : false }, 'push')
+    writeHash({ tab: value, discussion: undefined, news: undefined, expanded: value === 'products' ? detailExpanded : false }, 'push')
   }
   const changeQuery = (value: string) => {
     setQuery(value)
     if (activeTab === 'news') setSelectedNewsKey('')
-    writeHash({ query: value, product: activeTab === 'products' ? undefined : selectedSlug, news: activeTab === 'news' ? undefined : selectedNewsKey }, 'replace')
+    writeHash({
+      query: value,
+      product: activeTab === 'products' ? undefined : selectedSlug,
+      discussion: activeTab === 'discussions' ? selectedDiscussionId : undefined,
+      news: activeTab === 'news' ? undefined : selectedNewsKey,
+    }, 'replace')
   }
   const changeFit = (value: FitFilter) => {
     setFit(value)
     if (activeTab === 'news') setSelectedNewsKey('')
-    writeHash({ fit: value, product: activeTab === 'products' ? undefined : selectedSlug, news: activeTab === 'news' ? undefined : selectedNewsKey }, 'replace')
+    writeHash({
+      fit: value,
+      product: activeTab === 'products' ? undefined : selectedSlug,
+      discussion: activeTab === 'discussions' ? selectedDiscussionId : undefined,
+      news: activeTab === 'news' ? undefined : selectedNewsKey,
+    }, 'replace')
   }
   const toggleDetailExpanded = () => {
     const nextExpanded = !detailExpanded
     setDetailExpanded(nextExpanded)
     setActiveTab('products')
     setSelectedNewsKey('')
+    setSelectedDiscussionId('')
     writeHash({ tab: 'products', product: selectedProduct?.slug || selectedSlug, expanded: nextExpanded }, 'push')
   }
   const goHome = (event: MouseEvent<HTMLAnchorElement>) => {
@@ -2898,6 +3047,7 @@ function App() {
     setActiveCategoryId(defaultCategoryId)
     setSelectedSlug(products[0]?.slug || '')
     setSelectedNewsKey('')
+    setSelectedDiscussionId('')
     setDetailExpanded(false)
     writeHash({ tab: 'products', product: undefined, news: undefined, query: '', fit: 'all', expanded: false }, 'push')
     window.scrollTo({ top: 0 })
@@ -3086,7 +3236,15 @@ function App() {
           </TabsContent>
 
           <TabsContent value="discussions" id="discussions">
-            <SocialView social={socialData} query={query} onOpenProduct={openProduct} onOpenUser={openUser} />
+            <SocialView
+              social={socialData}
+              query={query}
+              selectedThreadId={selectedDiscussionId}
+              onOpenThread={openDiscussion}
+              onCloseThread={closeDiscussion}
+              onOpenProduct={openProduct}
+              onOpenUser={openUser}
+            />
           </TabsContent>
 
           <TabsContent value="user" id="user">
