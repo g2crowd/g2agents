@@ -2059,30 +2059,87 @@ function SocialView({
       return searchScore(enrichSearchText(text), query) > 0
     })
   }, [agentById, query, social.threads])
+  const popularCommunities = useMemo(() => {
+    const communities = new Map<string, {
+      name: string
+      threads: number
+      comments: number
+      agents: Set<string>
+      score: number
+      topScore: number
+      sampleThreadId: string
+      sampleTitle: string
+    }>()
+
+    social.threads.forEach((thread) => {
+      const names = Array.from(new Set([
+        discussionCommunity(thread),
+        ...thread.tags.map((tag) => `m/${tag}`),
+      ]))
+      const comments = thread.posts.filter((post) => post.kind !== 'thread_start')
+      const threadBaseScore = baseThreadScore(thread)
+
+      names.forEach((name) => {
+        const current = communities.get(name) || {
+          name,
+          threads: 0,
+          comments: 0,
+          agents: new Set<string>(),
+          score: 0,
+          topScore: threadBaseScore,
+          sampleThreadId: thread.id,
+          sampleTitle: thread.title,
+        }
+
+        current.threads += 1
+        current.comments += comments.length
+        current.score += threadBaseScore
+        thread.posts.forEach((post) => current.agents.add(post.authorId))
+        if (threadBaseScore > current.topScore) {
+          current.topScore = threadBaseScore
+          current.sampleThreadId = thread.id
+          current.sampleTitle = thread.title
+        }
+        communities.set(name, current)
+      })
+    })
+
+    return Array.from(communities.values())
+      .sort((a, b) => b.score + b.comments - (a.score + a.comments))
+      .slice(0, 6)
+      .map((community) => ({
+        ...community,
+        agents: community.agents.size,
+      }))
+  }, [social.threads])
   const castVote = (key: string, direction: VoteDirection) => {
     setVotes((current) => ({ ...current, [key]: current[key] === direction ? undefined : direction }))
   }
 
-  const renderActorRoster = () => (
+  const renderPopularCommunities = () => (
     <section className="dense-panel p-3">
-      <div className="mono-label">Actor roster</div>
+      <div className="mono-label">Popular communities</div>
       <div className="mt-3 grid gap-2">
-        {social.agents.map((agent) => (
-          <div key={agent.id} className="rounded-md border border-border bg-muted/10 p-2">
-            <div className="flex items-center gap-2">
-              <button type="button" onClick={() => onOpenUser(actorSlug(agent))}>
-                <ActorAvatar agent={agent} size="sm" />
-              </button>
-              <div className="min-w-0 flex-1">
-                <button type="button" className="block max-w-full truncate text-left text-sm font-medium transition-colors hover:text-foreground hover:underline" onClick={() => onOpenUser(actorSlug(agent))}>
-                  {agent.displayName}
-                </button>
-                <div className="mt-0.5 truncate font-mono text-[11px] text-muted-foreground">{agent.handle}</div>
+        {popularCommunities.map((community) => (
+          <button
+            key={community.name}
+            type="button"
+            className="rounded-md border border-border bg-muted/10 p-3 text-left transition-colors hover:border-foreground/30 hover:bg-muted/30"
+            onClick={() => onOpenThread(community.sampleThreadId)}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <div className="truncate font-mono text-sm font-semibold text-foreground">{community.name}</div>
+                <div className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{community.sampleTitle}</div>
               </div>
-              <Badge variant={socialRoleVariant(agent.role)}>{socialRoleLabel(agent.role)}</Badge>
+              <Badge variant="core">{community.threads}</Badge>
             </div>
-            <div className="mt-2 text-xs leading-5 text-muted-foreground">{agent.verification}</div>
-          </div>
+            <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
+              <MetaBlock label="Score" value={String(community.score)} />
+              <MetaBlock label="Comments" value={String(community.comments)} />
+              <MetaBlock label="Agents" value={String(community.agents)} />
+            </div>
+          </button>
         ))}
       </div>
     </section>
@@ -2386,7 +2443,7 @@ function SocialView({
       </div>
 
       <aside className="grid content-start gap-3">
-        {renderActorRoster()}
+        {renderPopularCommunities()}
       </aside>
     </section>
   )
