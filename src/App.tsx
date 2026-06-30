@@ -229,6 +229,7 @@ type AppHashState = {
   product?: string
   news?: string
   discussion?: string
+  community?: string
   user?: string
   query: string
   fit: FitFilter
@@ -585,6 +586,18 @@ function readAppHash(): AppHashState {
   }
 
   const raw = window.location.hash.replace(/^#/, '')
+  const pathSegments = window.location.pathname.split('/').map(decodeURIComponent).filter(Boolean)
+  if (!raw && pathSegments[0] === 'd' && pathSegments[1]) {
+    const params = new URLSearchParams(window.location.search)
+    return {
+      tab: 'discussions',
+      community: pathSegments[1],
+      query: params.get('q') || '',
+      fit: 'all',
+      expanded: false,
+    }
+  }
+
   const [pathPart = '', queryPart = ''] = raw.split('?')
   const segments = pathPart.split('/').map(decodeURIComponent).filter(Boolean)
   const tabCandidate = segments[0] || ''
@@ -619,6 +632,13 @@ function buildAppHash(state: Partial<AppHashState>) {
 
   const query = params.toString()
   return `#${segments.join('/')}${query ? `?${query}` : ''}`
+}
+
+function buildCommunityPath(slug: string, query = '') {
+  const params = new URLSearchParams()
+  if (query.trim()) params.set('q', query.trim())
+  const queryString = params.toString()
+  return `/d/${encodeURIComponent(slug)}${queryString ? `?${queryString}` : ''}`
 }
 
 function slugSegment(value: string) {
@@ -1873,14 +1893,26 @@ function actorSlug(actor?: SocialAgent) {
     .toLowerCase()
 }
 
-function discussionCommunity(thread: SocialThread) {
+function discussionCommunitySlug(thread: SocialThread) {
   if (thread.subjectType === 'category') {
     const segment = thread.subjectRef.split('/').filter(Boolean).at(-2) || thread.productSlugs[0] || 'general'
-    return `m/${segment}`
+    return segment
   }
-  if (thread.productSlugs.length === 1) return `m/${thread.productSlugs[0]}`
-  if (thread.productSlugs.length > 1) return 'm/software-buying'
-  return 'm/general'
+  if (thread.productSlugs.length === 1) return thread.productSlugs[0]
+  if (thread.productSlugs.length > 1) return 'software-buying'
+  return 'general'
+}
+
+function discussionCommunity(thread: SocialThread) {
+  return `d/${discussionCommunitySlug(thread)}`
+}
+
+function discussionCommunitySlugs(thread: SocialThread) {
+  return Array.from(new Set([discussionCommunitySlug(thread), ...thread.tags]))
+}
+
+function discussionCommunityLabel(slug: string) {
+  return `d/${slug}`
 }
 
 function formatRelativeTime(value: string) {
@@ -2026,16 +2058,20 @@ function SocialView({
   social,
   query,
   selectedThreadId,
+  selectedCommunitySlug,
   onOpenThread,
   onCloseThread,
+  onOpenCommunity,
   onOpenProduct,
   onOpenUser,
 }: {
   social: SocialSimulationData
   query: string
   selectedThreadId: string
+  selectedCommunitySlug: string
   onOpenThread: (threadId: string) => void
   onCloseThread: () => void
+  onOpenCommunity: (slug: string) => void
   onOpenProduct: (slug: string) => void
   onOpenUser: (slug: string) => void
 }) {
@@ -2046,8 +2082,11 @@ function SocialView({
   const selectedThread = selectedThreadId ? social.threads.find((thread) => thread.id === selectedThreadId) : undefined
   const filteredThreads = useMemo(() => {
     const normalized = normalizeSearchText(query)
-    if (!normalized) return social.threads
-    return social.threads.filter((thread) => {
+    const communityFilteredThreads = selectedCommunitySlug
+      ? social.threads.filter((thread) => discussionCommunitySlugs(thread).includes(selectedCommunitySlug))
+      : social.threads
+    if (!normalized) return communityFilteredThreads
+    return communityFilteredThreads.filter((thread) => {
       const text = [
         thread.title,
         thread.subjectRef,
@@ -2058,7 +2097,7 @@ function SocialView({
       ].join(' ')
       return searchScore(enrichSearchText(text), query) > 0
     })
-  }, [agentById, query, social.threads])
+  }, [agentById, query, selectedCommunitySlug, social.threads])
   const popularCommunities = useMemo(() => {
     const communities = new Map<string, {
       name: string
@@ -2072,10 +2111,7 @@ function SocialView({
     }>()
 
     social.threads.forEach((thread) => {
-      const names = Array.from(new Set([
-        discussionCommunity(thread),
-        ...thread.tags.map((tag) => `m/${tag}`),
-      ]))
+      const names = discussionCommunitySlugs(thread)
       const comments = thread.posts.filter((post) => post.kind !== 'thread_start')
       const threadBaseScore = baseThreadScore(thread)
 
@@ -2115,6 +2151,8 @@ function SocialView({
   const castVote = (key: string, direction: VoteDirection) => {
     setVotes((current) => ({ ...current, [key]: current[key] === direction ? undefined : direction }))
   }
+  const selectedCommunityLabel = selectedCommunitySlug ? discussionCommunityLabel(selectedCommunitySlug) : ''
+  const visibleCommentCount = filteredThreads.reduce((total, thread) => total + thread.posts.filter((post) => post.kind !== 'thread_start').length, 0)
 
   const renderPopularCommunities = () => (
     <section className="dense-panel p-3">
@@ -2124,10 +2162,11 @@ function SocialView({
           <button
             key={community.name}
             type="button"
+            data-community-list-item={community.name}
             className="rounded px-2 py-1 text-left font-mono text-sm font-semibold text-foreground transition-colors hover:bg-muted/30 hover:text-emerald-200"
-            onClick={() => onOpenThread(community.sampleThreadId)}
+            onClick={() => onOpenCommunity(community.name)}
           >
-            {community.name}
+            {discussionCommunityLabel(community.name)}
           </button>
         ))}
       </div>
@@ -2141,6 +2180,7 @@ function SocialView({
     const proposals = thread.proposalIds.map((proposalId) => proposalById.get(proposalId)).filter(Boolean) as SocialProposal[]
     const starter = thread.posts.find((post) => post.kind === 'thread_start') || thread.posts[0]
     const starterAgent = agentById.get(starter?.authorId || '')
+    const communitySlug = discussionCommunitySlug(thread)
     const community = discussionCommunity(thread)
     const threadVoteKey = `thread:${thread.id}`
     const threadScore = voteScore(baseThreadScore(thread), votes[threadVoteKey])
@@ -2174,8 +2214,9 @@ function SocialView({
                 <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-muted-foreground">
                   <button
                     type="button"
+                    data-community-link={communitySlug}
                     className="font-mono font-semibold text-foreground transition-colors hover:underline"
-                    onClick={() => thread.productSlugs[0] && onOpenProduct(thread.productSlugs[0])}
+                    onClick={() => onOpenCommunity(communitySlug)}
                   >
                     {community}
                   </button>
@@ -2336,11 +2377,11 @@ function SocialView({
         <div className="dense-panel p-4">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <div className="mono-label">Discussion simulation</div>
-              <h2 className="mt-1 text-xl font-semibold">Agentic buying network</h2>
+              <div className="mono-label">{selectedCommunitySlug ? 'Discussion community' : 'Discussion simulation'}</div>
+              <h2 className="mt-1 text-xl font-semibold">{selectedCommunityLabel || 'Agentic buying network'}</h2>
               <div className="mt-2 flex flex-wrap gap-2">
-                <Badge variant="core">{social.summary.threads} threads</Badge>
-                <Badge variant="adjacent">{social.summary.comments} comments</Badge>
+                <Badge variant="core">{selectedCommunitySlug ? filteredThreads.length : social.summary.threads} threads</Badge>
+                <Badge variant="adjacent">{selectedCommunitySlug ? visibleCommentCount : social.summary.comments} comments</Badge>
                 <Badge variant="partial">{social.summary.approvedProposals} approved simulated PRs</Badge>
                 <Badge variant="muted">{social.summary.modifiedFiles} OKF files modified</Badge>
               </div>
@@ -2358,6 +2399,7 @@ function SocialView({
           const distinctAgents = new Set(thread.posts.map((post) => post.authorId)).size
           const starter = thread.posts.find((post) => post.kind === 'thread_start') || thread.posts[0]
           const starterAgent = agentById.get(starter?.authorId || '')
+          const communitySlug = discussionCommunitySlug(thread)
           const community = discussionCommunity(thread)
           const threadVoteKey = `thread:${thread.id}`
           const threadScore = voteScore(baseThreadScore(thread), votes[threadVoteKey])
@@ -2375,8 +2417,9 @@ function SocialView({
                   <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-muted-foreground">
                     <button
                       type="button"
+                      data-community-link={communitySlug}
                       className="font-mono font-semibold text-foreground transition-colors hover:underline"
-                      onClick={() => thread.productSlugs[0] && onOpenProduct(thread.productSlugs[0])}
+                      onClick={() => onOpenCommunity(communitySlug)}
                     >
                       {community}
                     </button>
@@ -2429,6 +2472,11 @@ function SocialView({
             </article>
           )
         })}
+        {!filteredThreads.length ? (
+          <div className="dense-panel p-4 text-sm text-muted-foreground">
+            No discussions match {selectedCommunityLabel || 'this view'}.
+          </div>
+        ) : null}
       </div>
 
       <aside className="grid content-start gap-3">
@@ -2878,6 +2926,7 @@ function App() {
   const [selectedSlug, setSelectedSlug] = useState<string>(initialHashState.product || products[0]?.slug || '')
   const [selectedNewsKey, setSelectedNewsKey] = useState<string>(initialHashState.news || '')
   const [selectedDiscussionId, setSelectedDiscussionId] = useState<string>(initialHashState.discussion || '')
+  const [selectedCommunitySlug, setSelectedCommunitySlug] = useState<string>(initialHashState.community || '')
   const [selectedUserSlug, setSelectedUserSlug] = useState<string>(initialHashState.user || actorSlug(socialData.agents[0]))
   const [detailExpanded, setDetailExpanded] = useState(initialHashState.expanded)
   const [activeTab, setActiveTab] = useState<AppTab>(initialHashState.tab)
@@ -2909,7 +2958,7 @@ function App() {
       ...overrides,
     })
     if (window.location.hash === hash) return
-    const url = `${window.location.pathname}${window.location.search}${hash}`
+    const url = `/${hash}`
     if (mode === 'replace') window.history.replaceState(null, '', url)
     else window.history.pushState(null, '', url)
   }
@@ -2923,6 +2972,7 @@ function App() {
       setDetailExpanded(state.expanded)
       setSelectedNewsKey(state.news || '')
       setSelectedDiscussionId(state.discussion || '')
+      setSelectedCommunitySlug(state.community || '')
       setSelectedUserSlug(state.user || selectedUserSlug)
       if (state.product) setSelectedSlug(state.product)
       else if (state.tab === 'products') setSelectedSlug(products[0]?.slug || '')
@@ -2966,6 +3016,7 @@ function App() {
     setSelectedSlug(nextProduct?.slug || '')
     setDetailExpanded(false)
     setSelectedDiscussionId('')
+    setSelectedCommunitySlug('')
     writeHash({ tab: 'products', product: nextProduct?.slug, expanded: false }, 'push')
   }
   const selectProduct = (slug: string, expanded = detailExpanded) => {
@@ -2974,6 +3025,7 @@ function App() {
     setDetailExpanded(expanded)
     setSelectedNewsKey('')
     setSelectedDiscussionId('')
+    setSelectedCommunitySlug('')
     writeHash({ tab: 'products', product: slug, expanded }, 'push')
   }
   const openProduct = (slug: string) => {
@@ -2984,6 +3036,7 @@ function App() {
     setActiveTab('user')
     setSelectedNewsKey('')
     setSelectedDiscussionId('')
+    setSelectedCommunitySlug('')
     setDetailExpanded(false)
     writeHash({ tab: 'user', user: slug, news: undefined, expanded: false }, 'push')
   }
@@ -2991,6 +3044,7 @@ function App() {
     setActiveTab('settings')
     setSelectedNewsKey('')
     setSelectedDiscussionId('')
+    setSelectedCommunitySlug('')
     setDetailExpanded(false)
     writeHash({ tab: 'settings', news: undefined, expanded: false }, 'push')
   }
@@ -3023,6 +3077,7 @@ function App() {
     setSelectedNewsKey(key)
     setActiveTab('news')
     setSelectedDiscussionId('')
+    setSelectedCommunitySlug('')
     setDetailExpanded(false)
     writeHash({ tab: 'news', news: key, expanded: false }, 'push')
   }
@@ -3030,11 +3085,13 @@ function App() {
     setSelectedNewsKey('')
     setActiveTab('news')
     setSelectedDiscussionId('')
+    setSelectedCommunitySlug('')
     setDetailExpanded(false)
     writeHash({ tab: 'news', news: undefined, expanded: false }, 'push')
   }
   const openDiscussion = (threadId: string) => {
     setSelectedDiscussionId(threadId)
+    setSelectedCommunitySlug('')
     setActiveTab('discussions')
     setSelectedNewsKey('')
     setDetailExpanded(false)
@@ -3043,10 +3100,22 @@ function App() {
   }
   const closeDiscussion = () => {
     setSelectedDiscussionId('')
+    setSelectedCommunitySlug('')
     setActiveTab('discussions')
     setSelectedNewsKey('')
     setDetailExpanded(false)
     writeHash({ tab: 'discussions', discussion: undefined, news: undefined, expanded: false }, 'push')
+    window.scrollTo({ top: 0 })
+  }
+  const openCommunity = (slug: string) => {
+    if (typeof window === 'undefined') return
+    setSelectedCommunitySlug(slug)
+    setSelectedDiscussionId('')
+    setSelectedNewsKey('')
+    setActiveTab('discussions')
+    setDetailExpanded(false)
+    setQuery('')
+    window.history.pushState(null, '', buildCommunityPath(slug))
     window.scrollTo({ top: 0 })
   }
   const changeTab = (value: string) => {
@@ -3054,12 +3123,17 @@ function App() {
     setActiveTab(value)
     setSelectedNewsKey('')
     setSelectedDiscussionId('')
+    setSelectedCommunitySlug('')
     if (value !== 'products') setDetailExpanded(false)
     writeHash({ tab: value, discussion: undefined, news: undefined, expanded: value === 'products' ? detailExpanded : false }, 'push')
   }
   const changeQuery = (value: string) => {
     setQuery(value)
     if (activeTab === 'news') setSelectedNewsKey('')
+    if (activeTab === 'discussions' && selectedCommunitySlug && typeof window !== 'undefined') {
+      window.history.replaceState(null, '', buildCommunityPath(selectedCommunitySlug, value))
+      return
+    }
     writeHash({
       query: value,
       product: activeTab === 'products' ? undefined : selectedSlug,
@@ -3083,6 +3157,7 @@ function App() {
     setActiveTab('products')
     setSelectedNewsKey('')
     setSelectedDiscussionId('')
+    setSelectedCommunitySlug('')
     writeHash({ tab: 'products', product: selectedProduct?.slug || selectedSlug, expanded: nextExpanded }, 'push')
   }
   const goHome = (event: MouseEvent<HTMLAnchorElement>) => {
@@ -3094,6 +3169,7 @@ function App() {
     setSelectedSlug(products[0]?.slug || '')
     setSelectedNewsKey('')
     setSelectedDiscussionId('')
+    setSelectedCommunitySlug('')
     setDetailExpanded(false)
     writeHash({ tab: 'products', product: undefined, news: undefined, query: '', fit: 'all', expanded: false }, 'push')
     window.scrollTo({ top: 0 })
@@ -3108,11 +3184,11 @@ function App() {
             <span className="text-base font-semibold">G2 Agents</span>
           </a>
           <nav className="hidden items-center gap-5 text-sm text-muted-foreground sm:flex">
-            <a className="transition-colors hover:text-foreground" href="#products">Products</a>
-            <a className="transition-colors hover:text-foreground" href="#discussions">Discussions</a>
-            <a className="transition-colors hover:text-foreground" href="#news">News</a>
-            <a className="transition-colors hover:text-foreground" href="#categories">Categories</a>
-            <a className="transition-colors hover:text-foreground" href="#docs">Docs</a>
+            <a className="transition-colors hover:text-foreground" href="#products" onClick={(event) => { event.preventDefault(); changeTab('products') }}>Products</a>
+            <a className="transition-colors hover:text-foreground" href="#discussions" onClick={(event) => { event.preventDefault(); changeTab('discussions') }}>Discussions</a>
+            <a className="transition-colors hover:text-foreground" href="#news" onClick={(event) => { event.preventDefault(); changeTab('news') }}>News</a>
+            <a className="transition-colors hover:text-foreground" href="#categories" onClick={(event) => { event.preventDefault(); changeTab('categories') }}>Categories</a>
+            <a className="transition-colors hover:text-foreground" href="#docs" onClick={(event) => { event.preventDefault(); changeTab('docs') }}>Docs</a>
             <button type="button" className="transition-colors hover:text-foreground" onClick={openSettings}>Settings</button>
             <a className="transition-colors hover:text-foreground" href="https://github.com/g2crowd/g2agents" target="_blank" rel="noreferrer">
               GitHub
@@ -3288,8 +3364,10 @@ function App() {
               social={socialData}
               query={query}
               selectedThreadId={selectedDiscussionId}
+              selectedCommunitySlug={selectedCommunitySlug}
               onOpenThread={openDiscussion}
               onCloseThread={closeDiscussion}
+              onOpenCommunity={openCommunity}
               onOpenProduct={openProduct}
               onOpenUser={openUser}
             />
