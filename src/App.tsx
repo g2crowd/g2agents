@@ -3382,33 +3382,6 @@ function App() {
                   className="pl-8 font-mono"
                 />
               </div>
-              {activeTab === 'products' ? (
-                <div className="flex flex-wrap items-center gap-1.5">
-                  <div className="flex flex-wrap items-center gap-1">
-                    {registryData.categories.map((category) => (
-                      <Button
-                        key={category.slug}
-                        variant={activeCategoryId === category.slug ? 'secondary' : 'ghost'}
-                        size="sm"
-                        className={activeCategoryId === category.slug ? 'border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/15 hover:text-emerald-200' : undefined}
-                        onClick={() => changeCategory(category.slug)}
-                      >
-                        {category.title}
-                      </Button>
-                    ))}
-                  </div>
-                  {fitOrder.slice(0, 4).map((option) => (
-                    <Button
-                      key={option}
-                      variant={fit === option ? 'secondary' : 'ghost'}
-                      size="sm"
-                      onClick={() => changeFit(option)}
-                    >
-                      {fitLabels[option]}
-                    </Button>
-                  ))}
-                </div>
-              ) : null}
             </div>
           </div>
 
