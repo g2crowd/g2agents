@@ -2395,7 +2395,7 @@ function SocialView({
       ) : null}
       {communityStats.tags.length ? (
         <div className="mt-3">
-          <div className="mono-label">Related topics</div>
+          <div className="mono-label">Related communities</div>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {communityStats.tags.map((tag) => (
               <button key={`${selectedCommunitySlug}-${tag}`} type="button" onClick={() => onOpenCommunity(tag)}>
