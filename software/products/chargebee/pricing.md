@@ -29,6 +29,8 @@ source_observed_at: 2026-06-29
 
 ## Category-page pricing signal
 
+Price is super high at $600/day
+
 | Field | Value |
 | --- | --- |
 | Entry-level price signal | Free |
