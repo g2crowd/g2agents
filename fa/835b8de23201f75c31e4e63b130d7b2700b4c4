@@ -1,0 +1,126 @@
+scripts/research-product-pages.mjs
+  s_a695c262967a36::t_01d34d8013977e 386
+  s_a695c262967a36::t_c674b7e08ebfb8 254,293,322-348,490
+  s_a695c262967a36::t_75af06b1d1186a 373,375,379-385,387-388,393
+  s_a695c262967a36::t_ebe095684304e3 1-253,255-292,294-321,349-372,374,376-378,389-392,394-489,491-507
+package.json
+  s_a695c262967a36::t_1efe91bf5d7f96 13
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/features.md
+  s_a695c262967a36::t_a7d15c57ddbfbc 18-19,44-82
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/integrations.md
+  s_a695c262967a36::t_11618f071f0433 18-19,43-85
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/pricing.md
+  s_a695c262967a36::t_6c79da5dd47f42 18-19,44-87
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/security-compliance.md
+  s_a695c262967a36::t_3d7467e099275f 18-19,41-83
+software/products/agentforce-revenue-management-formerly-salesforce-revenue-cloud/vendor-claims.md
+  s_a695c262967a36::t_7caee61e923f20 18-19,45-74
+software/products/chargebee/features.md
+  s_a695c262967a36::t_976e540f80b781 18-19,57-110
+software/products/chargebee/integrations.md
+  s_a695c262967a36::t_868a276ed7fe00 18-19,43-94
+software/products/chargebee/pricing.md
+  s_a695c262967a36::t_893d4a4e54fcfd 18-19,44-88
+software/products/chargebee/security-compliance.md
+  s_a695c262967a36::t_0aa7933b86405b 18-19,41-89
+software/products/chargebee/vendor-claims.md
+  s_a695c262967a36::t_f6dc54b2565bdb 18-19,45-83
+software/products/maxio/features.md
+  s_a695c262967a36::t_8e734eb8d65225 18-19,44-89
+software/products/maxio/integrations.md
+  s_a695c262967a36::t_3bdba3f17b4210 18-19,43-93
+software/products/maxio/pricing.md
+  s_a695c262967a36::t_ab6a16ec7e2113 18-19,44-90
+software/products/maxio/security-compliance.md
+  s_a695c262967a36::t_7a71dbcf15a115 18-19,41-84
+software/products/maxio/vendor-claims.md
+  s_a695c262967a36::t_342090ca4506a5 18-19,45-80
+software/products/netsuite/features.md
+  s_a695c262967a36::t_195c425bc25eb3 18-19,43-88
+software/products/netsuite/integrations.md
+  s_a695c262967a36::t_6e858346867675 18-19,56-104
+software/products/netsuite/pricing.md
+  s_a695c262967a36::t_3b2df39116d81e 18-19,44-95
+software/products/netsuite/security-compliance.md
+  s_a695c262967a36::t_751983cea3d5ce 18-19,41-79
+software/products/netsuite/vendor-claims.md
+  s_a695c262967a36::t_508e5851fddd38 18-19,45-82
+software/products/paddle/features.md
+  s_a695c262967a36::t_1021c0ff7add52 18-19,44-87
+software/products/paddle/integrations.md
+  s_a695c262967a36::t_2a94666790005e 18-19,43-90
+software/products/paddle/pricing.md
+  s_a695c262967a36::t_8cd00b5097191f 18-19,44-84
+software/products/paddle/security-compliance.md
+  s_a695c262967a36::t_80f603eb7d47e9 18-19,41-78
+software/products/paddle/vendor-claims.md
+  s_a695c262967a36::t_9bb7db67e6d562 18-19,45-85
+software/products/paypal-invoicing/features.md
+  s_a695c262967a36::t_47d32a7dacd2a3 18-19,42-81
+software/products/paypal-invoicing/integrations.md
+  s_a695c262967a36::t_a35495c9d3d138 18-19,43-89
+software/products/paypal-invoicing/pricing.md
+  s_a695c262967a36::t_56c3bc8157cb28 18-19,44-95
+software/products/paypal-invoicing/security-compliance.md
+  s_a695c262967a36::t_121d89117b1dfe 18-19,41-78
+software/products/paypal-invoicing/vendor-claims.md
+  s_a695c262967a36::t_f76700fc272179 18-19,45-80
+software/products/sage-intacct/features.md
+  s_a695c262967a36::t_5dcc7a2baa0d00 18-19,43-86
+software/products/sage-intacct/integrations.md
+  s_a695c262967a36::t_51ed3fa87cab35 18-19,43-91
+software/products/sage-intacct/pricing.md
+  s_a695c262967a36::t_df3dcfbfc9aca9 18-19,44-83
+software/products/sage-intacct/security-compliance.md
+  s_a695c262967a36::t_f10246fe036b80 18-19,41-91
+software/products/sage-intacct/vendor-claims.md
+  s_a695c262967a36::t_c671674ba674b7 18-19,45-82
+software/products/square-point-of-sale/features.md
+  s_a695c262967a36::t_f5e1c388245dfa 18-19,42-86
+software/products/square-point-of-sale/integrations.md
+  s_a695c262967a36::t_219517e6e0aa06 18-19,43-92
+software/products/square-point-of-sale/pricing.md
+  s_a695c262967a36::t_cae7ff09cb5f0e 18-19,44-103
+software/products/square-point-of-sale/security-compliance.md
+  s_a695c262967a36::t_08798a9e53e240 18-19,41-77
+software/products/square-point-of-sale/vendor-claims.md
+  s_a695c262967a36::t_929d81d3dd8311 18-19,45-82
+software/products/stripe-billing/features.md
+  s_a695c262967a36::t_27fc233461d9d2 18-19,44-95
+software/products/stripe-billing/integrations.md
+  s_a695c262967a36::t_ec68113e6f4906 18-19,43-101
+software/products/stripe-billing/pricing.md
+  s_a695c262967a36::t_a5338308edab39 18-19,44-93
+software/products/stripe-billing/security-compliance.md
+  s_a695c262967a36::t_93550f56a4e324 18-19,41-79
+software/products/stripe-billing/vendor-claims.md
+  s_a695c262967a36::t_d2d9cfe34b95e5 18-19,58-95
+software/products/zoho-billing/features.md
+  s_a695c262967a36::t_b33cf3ae7c2e8c 18-19,43-81
+software/products/zoho-billing/integrations.md
+  s_a695c262967a36::t_b976edf4ac1bde 18-19,43-99
+software/products/zoho-billing/pricing.md
+  s_a695c262967a36::t_df897d159a66bb 18-19,57-108
+software/products/zoho-billing/security-compliance.md
+  s_a695c262967a36::t_a4ec674a233f93 18-19,41-91
+software/products/zoho-billing/vendor-claims.md
+  s_a695c262967a36::t_a56e87db3f4af6 18-19,45-81
+src/data/registry.ts
+  s_a695c262967a36::t_62dcd4c9ba0a88 140-141,149-150,218-219,227-228,331-332,340-341,448-449,457-458,487-488,496-497,650-651,659-660,728-729,737-738,841-842,850-851,958-959,967-968,997-998,1006-1007,1160-1161,1169-1170,1238-1239,1247-1248,1351-1352,1360-1361,1468-1469,1477-1478,1507-1508,1516-1517,1657-1658,1666-1667,1735-1736,1744-1745,1848-1849,1857-1858,1965-1966,1974-1975,2004-2005,2013-2014,2167-2168,2176-2177,2245-2246,2254-2255,2358-2359,2367-2368,2475-2476,2484-2485,2514-2515,2523-2524,2677-2678,2686-2687,2755-2756,2764-2765,2868-2869,2877-2878,2985-2986,2994-2995,3024-3025,3033-3034,3187-3188,3196-3197,3265-3266,3274-3275,3378-3379,3387-3388,3495-3496,3504-3505,3534-3535,3543-3544,3697-3698,3706-3707,3775-3776,3784-3785,3888-3889,3897-3898,4005-4006,4014-4015,4044-4045,4053-4054,4207-4208,4216-4217,4285-4286,4294-4295,4398-4399,4407-4408,4515-4516,4524-4525,4554-4555,4563-4564,4717-4718,4726-4727,4795-4796,4804-4805,4908-4909,4917-4918,5025-5026,5034-5035,5064-5065,5073-5074
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "fa835b8de23201f75c31e4e63b130d7b2700b4c4",
+  "prompts": {},
+  "sessions": {
+    "s_a695c262967a36": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f1489-83d6-7123-8656-b53bc2214180",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Andrej Zukov Gregoric <agregoric@g2.com>"
+    }
+  }
+}
