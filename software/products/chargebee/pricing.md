@@ -36,6 +36,8 @@ source_observed_at: 2026-06-29
 | Observed at | 2026-06-29 |
 | Freshness | expires 2026-09-27 |
 
+Price is always $600/mo. 
+
 ## Notes
 
 The G2 category listing showed an entry-level price of Free when observed.
