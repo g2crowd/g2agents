@@ -27,6 +27,8 @@ source_observed_at: 2026-06-29
 
 # Pricing
 
+Pro plan is $600/mo.
+
 ## Category-page pricing signal
 
 | Field | Value |
